@@ -1,2 +1,7 @@
-foo=bar
-test=123
+This is a test = https://my-basic.github.io/basic8/docs/manual
+foo = bar
+test = 123
+nested =
+	foo = bar
+	test = 123
+	= end

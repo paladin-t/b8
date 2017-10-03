@@ -50,7 +50,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [Coroutine](#coroutine)
 		* [Structured exception handling](#structured-exception-handling)
 		* [Automatic memory management](#automatic-memory-management)
-	* [Generic purpose functions](#generic-purpose-functions)
+	* [Generic functions](#generic-functions)
 
 * Part III. Game driver
 	* [Graphics](#graphics)
@@ -100,7 +100,7 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy straightforward coding and playing after a computer bootup. BASIC8 is aimed to bring a sense of joy back from retro/vintage computing and gaming. It's trying to stay at a balance point of simplicity, fun, creativity and usability.
+It's been a while since people used to enjoy straightforward coding and playing after a computer bootup. BASIC8 is aimed to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, fun, creativity and usability.
 
 ### Operations
 
@@ -189,7 +189,7 @@ BASIC8 is a dynamic programming language, therefore variables don't have types, 
 
 Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `NOTHING`.
 
-A variable identifier is formed with letters, underline and numbers, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pi = 22 / 7`, `s = pi * r * r`, etc.
+A variable identifier is formed with letters, underline and numbers, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pie = 22 / 7`, `s = pie * r * r`, etc.
 
 Only `NIL`, `0` and constant `false` result "false" within boolean expressions; non-zero numbers, `true` and all other values, including an empty string `""` result "true" in BASIC8.
 
@@ -660,9 +660,9 @@ PRINT ret;
 
 BASIC8 automatically manages the memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing finished files, etc.
 
-## Generic purpose functions
+## Generic functions
 
-* `PRINT expr, ...`: for debug purpose, writes some value to the output window (click `Window`, `Output` to open it), `,` is used to separate arguments, `;` is used to make a new line
+* `PRINT expr, ...`: for debug purpose, writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 * `INPUT [prompt,] x`: this function suspends current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
 
 * `ASSERT(cond, text)`: prompts an assertion text if `cond` results in false
@@ -760,6 +760,8 @@ These functions are used to manipulate a sprite:
 
 ### Sprite
 
+The beginning index of sprite frames is 1.
+
 * `STEP_ON(y)`: creates a "step on" value, which represents for aligning a sprite's bottom to `y`
 * `SPR spr, x, y, r = 0`: draws a sprite
 	* `x`: horizontal position of the top-left corner
@@ -780,13 +782,15 @@ These functions are used to manipulate a sprite:
 
 ### Map
 
+The beginning index of map layers is 0. Furthermore, layer 0 is for logic mark purpose, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 240.
+
 * `MAP m, x, y`: draws one or more map layers at a specific position
 	* `m`: single layer of a map, or list of layers
 
-* `MGET m, i, x, y`: gets the tile index of a map layer at a specific position
+* `MGET m, i, x, y`: gets the tile index or logic mark of a map layer at a specific position
 	* `m`: list of layers
 	* `i`: index to access in `m`, starts from 0
-* `MSET m, i, x, y, val`: sets the tile index of a map layer
+* `MSET m, i, x, y, val`: sets the tile index or logic mark of a map layer
 	* `m`: list of layers
 	* `i`: index to access in `m`, starts from 0
 
@@ -803,7 +807,7 @@ These functions are used to manipulate a sprite:
 
 ### Mouse and touch
 
-The `TOUCH` statement takes a pointer index, and assigns all result values to following variables:
+The `TOUCH` statement takes a pointer index, and assigns all result values to following variables.
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touching states
 	* `i`: for input, pointer index
@@ -846,7 +850,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 * `USE_SOUND_FONT(path)`: uses a sound font bank for music
 	* `path`: uses the content directory of a cartridge as lookup root
 
-* `PLAY seq, ch = 0, preset = 0, loop = false`: plays a [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
+* `PLAY seq, ch = 0, preset = 0, loop = false`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
 	* `seq`: an MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index of sound font bank
@@ -1225,7 +1229,7 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 * `Json.GET()`: gets BASIC8 objects and values from a JSON object
 * `Json.SET()`: sets BASIC8 objects and values to a JSON object
 
-Conversions from JSON values to BASIC8 values, vice versa:
+Conversions from JSON values to BASIC8 values, or vice versa:
 
 | JSON | BASIC8 |
 |---|---|
@@ -1234,7 +1238,7 @@ Bool | JSON_BOOL
 Number | NUMBER
 String | STRING
 Array | LIST
-Object | DICT
+Object | DICT (unsorted)
 
 * `FROM_JSON_BOOL(b)`: converts a JSON bool to BASIC8 integer
 	* `b`: JSON bool
@@ -1298,7 +1302,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CTOR`, `DTOR`
 * `LIKE`, `FORMAT`
 * `PEEK`, `POKE`
-* `GUI`
-* `NET`, `SOCKET`, `SEND`, `RECEIVE`
+* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM`
+* `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 
 [HOME](#welcome-to-basic8)

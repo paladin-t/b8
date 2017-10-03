@@ -62,7 +62,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [Mouse and touch](#mouse-and-touch)
 		* [Gamepad](#gamepad)
 		* [Keyboard](#keyboard)
-	* [Sound](#sound)
+	* [Audio](#audio)
 		* [Music](#music)
 		* [Sound effects](#sound-effects)
 
@@ -132,7 +132,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and enjoyable dur
 
 * Canvas: 160x120 pixels
 * Gamepad: 6 buttons each, up to 8 players
-* Sound: 2 music channels, 3 sound effect channels
+* Audio: 2 music channels, 3 sound effect channels
 * Driver: up to 65535 drawing commands per cycle
 * Palette: 16 colors
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
@@ -839,7 +839,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `k`: the key value to check
 	* returns true for released from pressing
 
-## Sound
+## Audio
 
 * `SET_VOLUME(sv, mv)`: sets volume values
 	* `sv`: volume of sound effect
@@ -887,8 +887,10 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 ### Sound effects
 
-* `SFX y, hz, tm ...`: plays a sound effect sequence, can be used with one or more sets of instructions as `SFX y0, hz0, tm0, y1, hz1, tm1 ... yn, hzn, tmn`
-	* `y`: waveform type, 1/2/3/4/5 for sin/square/triangle/sawtooth/noise
+Redundant sound effect callings will be abandoned if the queue is already full.
+
+* `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of instructions as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
+	* `y`: waveform type, 1/2/3/4/5 for sine/square/triangle/sawtooth/noise
 	* `hz`: frequency
 	* `tm`: duration in seconds
 
@@ -898,7 +900,13 @@ Plus 4096 to `y` for interpolating `hz` from current set to the following one's 
 
 ## Editors
 
+To edit the properties of a cartridge, right click on it, then click `Properties`.
+
+To cleanup all persistence data of a cartridge, select it, then click `[Head]`, `Cleanup`.
+
 All paletted assets (sprites, tiles, quantized images) in a cartridge share the same palette.
+
+It automatically saves modifications when closing an asset, or closing a cartridge; to close without saving, click `Cartridge`, `Close without saving` with `Shift` pressed.
 
 ### Code
 
@@ -1023,14 +1031,14 @@ The `PERSIST` statement automatically saves and loads data with variables, all d
 Eg:
 
 ~~~~~~~~~~bas
-PERSIST xx, yy, zz
-xx = xx + 1
-yy = yy + 2
-zz = zz + 3
-PRINT xx, ", ", yy, ", ", zz;
-PERSIST ww
-PRINT ww;
-ww = LIST(-1, -2, -3)
+PERSIST x, y, z
+x = x + 1
+y = y + 2
+z = z + 3
+PRINT x, ", ", y, ", ", z;
+PERSIST w
+PRINT w;
+w = LIST(-1, -2, -3)
 ~~~~~~~~~~
 
 ## Libraries

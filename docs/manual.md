@@ -4,7 +4,7 @@
 
 ## Welcome to BASIC8
 
-BASIC8 is an integrated virtual computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
+BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
 
 It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work and, don't do anything bad.
 
@@ -130,14 +130,14 @@ When speaking of clicking `[Head]`, it means the first icon item on the main men
 
 The limitations of BASIC8 are carefully chosen to make it easy and enjoyable during making programs:
 
-* Canvas: 160x120 pixels
-* Gamepad: 6 buttons each, up to 8 players
+* Canvas: 160x128 pixels
+* Gamepad: 6 buttons for each pad, up to 8 players
 * Audio: 2 music channels, 3 sound effect channels
 * Driver: up to 65535 drawing commands per cycle
-* Palette: 16 colors
+* Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
-* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic marks) per page
+* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 
 ### Cartridge library
 
@@ -179,7 +179,7 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 ## Basic principles
 
-BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent peoples could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the virtual computer or the language it offers, according to where it appears.
+BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent peoples could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
 
 Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other descriptions.
 
@@ -680,7 +680,7 @@ BASIC8 automatically manages the memory with GC (Garbage Collection). Thus you d
 
 ## Graphics
 
-Program execution and rendering are running at different FPS in BASIC8. Some properties, such as positions, rotations, of graphics commands can be interpolated between rendering frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering are running at different FPS in BASIC8, respectively are 30 and 60. Some properties, such as positions, rotations, of graphics commands can be interpolated between rendering frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
 * "map": graphics commands are separated into 5 sub queues, later rendering covers earlier ones
@@ -696,9 +696,6 @@ These functions are used to communicate with a driver:
 
 * `DRIVER()`: gets the driver, there's only one driver instance for a running cartridge
 * `VALID(drv)`: checks whether a driver is valid
-* `SET_FPS(drv, rfps, sfps = 30)`: sets FPS of a driver
-	* `rfps`: rendering FPS
-	* `sfps`: scripting FPS, cannot be greater than `rfps`
 * `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands
@@ -766,7 +763,7 @@ The beginning index of sprite frames is 1.
 * `SPR spr, x, y, r = 0`: draws a sprite
 	* `x`: horizontal position of the top-left corner
 	* `y`: vertical position of the top-left corner, or a "step on" value
-	* `r`: rotation
+	* `r`: rotation in degrees
 * `SSPR spr, sx, sy, sw, sh, x, y, w, h, r = 0`: stretches rectangle from sprite sheet (sx, sy, sw, sh), and draws in rectangle (dx, dy, dw, dh)
 
 * `SGET spr, i, x, y`: gets the color index of a sprite at a specific position
@@ -797,7 +794,7 @@ The beginning index of map layers is 0. Furthermore, layer 0 is for logic mark p
 ### Quantized
 
 * `IMG img, x, y, r = 0, q = 0, fx = false, fy = false`: draws a quantized image at a specific position
-	* `r`: rotation
+	* `r`: rotation in degrees
 	* `q`: index of a target rendering queue
 	* `fx`: true for flipping horizontally
 	* `fy`: true for flipping vertically
@@ -900,9 +897,13 @@ Plus 4096 to `y` for interpolating `hz` from current set to the following one's 
 
 ## Editors
 
+To reload example cartridges, click `Help`, `Reload examples`. BASIC8 uses UID (Unique IDentifier) to identify different cartridges, this operation will overwrite the cartridge with the same UID.
+
 To edit the properties of a cartridge, right click on it, then click `Properties`.
 
-To cleanup all persistence data of a cartridge, select it, then click `[Head]`, `Cleanup`.
+To duplicate a cartridge, select it, then click `[Head]`, `Duplicate`.
+
+To purge all persistence data of a cartridge, select it, then click `[Head]`, `Cleanup`.
 
 All paletted assets (sprites, tiles, quantized images) in a cartridge share the same palette.
 
@@ -1269,7 +1270,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 * `CPU_CORE_COUNT`: gets the core count of current CPU
 
 * `SHOW_OUTPUT()`: shows the output window
-* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the BASIC8 virtual computer
+* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets current working directory path
 * `SET_CURRENT_DIRECTORY(dir)`: **platform dependent**, sets current working directory path
 * `SET_CLIPBOARD_TEXT(txt)`: sets the text content of clipboard

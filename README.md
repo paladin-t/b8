@@ -1,9 +1,18 @@
-# BASIC8
+## BASIC8
 
-BASIC8 is an integrated virtual computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
+[Why BASIC8?](https://my-basic.github.io/basic8/docs/why) | [Manual](https://my-basic.github.io/basic8/docs/manual)
 
-The interpreter part of BASIC8 is powered by the [MY-BASIC](https://github.com/paladin-t/my_basic) project.
+BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
 
 This project is WIP, and existing features and behaviours may be changed.
 
-[Manual](https://my-basic.github.io/basic8/docs/manual)
+**About**
+
+Call my English name Tony Wang, or Tony for short :)
+
+**Credits**
+
+* [MY-BASIC](https://github.com/paladin-t/my_basic), by Wang Renxin
+* [ImGui](https://github.com/ocornut/imgui/), by Omar Cornut
+* [libtsf](https://github.com/paladin-t/libtsf/), by Wang Renxin, Bernhard Schelling, Steve Folta
+* [SDL](https://www.libsdl.org/), see [credits](https://www.libsdl.org/credits.php)

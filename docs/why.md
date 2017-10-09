@@ -6,7 +6,7 @@ I developed BASIC8 mainly for my personal purposes, yet BASIC8 is different from
 
 ### BASIC rather than Lua
 
-Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has but not all other BASIC dialects do. Anyway it's BASIC, it's important to me.
+Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has but not all other BASIC dialects do. Anyway it's important to me to introduce BASIC.
 
 "But why using a language only make sense within one application?" You would find BASIC8 easy to learn whether you are experienced with programming; and you would get familar with new ones when moving on to new languages. Anyhow, exploring to solve problems itself is interesting.
 

@@ -1,3 +1,7 @@
+<head>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+
 ## BASIC8
 
 [Why BASIC8?](https://my-basic.github.io/basic8/docs/why) | [Manual](https://my-basic.github.io/basic8/docs/manual) | [Changelog](https://my-basic.github.io/basic8/docs/changelog)

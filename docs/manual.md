@@ -6,7 +6,7 @@
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
 
-It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work and, don't do anything bad.
+It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too, and, don't do anything bad.
 
 For the moment, BASIC8 is released for PC only, however, there are plans for porting to other systems.
 
@@ -80,7 +80,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [String functions](#string-functions)
 		* [Data transfer and persistence](#data-transfer-and-persistence)
 	* [Libraries](#libraries)
-		* [Asynchronization](#asynchronization)
+		<!--* [Asynchronization](#asynchronization)-->
 		* [Archive](#archive)
 		* [Bytes](#bytes)
 		* [Database](#database)
@@ -100,11 +100,11 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy straightforward coding and playing after a computer bootup. BASIC8 is aimed to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, fun, creativity and usability.
+It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. BASIC8 is aimed to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, fun, creativity and usability.
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mice and touching are everywhere nowadays. It's supported to use keyboard, mouse/touching and gamepad to play cartridges. But BASIC8 uses mouse as the main operation method on editors' GUI; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play cartridges. But BASIC8 uses mouse as the main operation method on editors' GUI; keyboard is mainly used to write code, and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
@@ -132,7 +132,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and enjoyable dur
 
 * Canvas: 160x128 pixels
 * Gamepad: 6 buttons for each pad, up to 8 players
-* Audio: 2 music channels, 3 sound effect channels
+* Audio: 2 music channels, 4 sound effect channels
 * Driver: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
@@ -165,11 +165,11 @@ A big part of retro computing which makes it fun to work with is sharing and dis
 
 To export a cartridge, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a cartridge, then click `Export`.
 
-To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`.
+To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses cartridges' UID (Unique IDentifier) to identify them.
 
 #### Cartridges
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for archiving and attaching purposes. Text based cartridges are formed with ASCII characters, which are friendlier when posting to places with text allowed only.
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based cartridges are formed with ASCII characters, which are friendlier when posting to places with text allowed only.
 
 #### Recording GIF
 
@@ -662,7 +662,7 @@ BASIC8 automatically manages the memory with GC (Garbage Collection). Thus you d
 
 ## Generic functions
 
-* `PRINT expr, ...`: for debug purpose, writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
+* `PRINT expr, ...`: for the purpose of debugging, writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 * `INPUT [prompt,] x`: this function suspends current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
 
 * `ASSERT(cond, text)`: prompts an assertion text if `cond` results in false
@@ -722,8 +722,8 @@ These functions are used to manipulate a sprite:
 
 * `PLAY(spr, b = -1, e = -1, loop = true, init = false)`: plays a range of frames of a sprite
 	* `spr`: a sprite
-	* `b`: begin frame index, starts from 1; or frame tag string
-	* `e`: end frame index, starts from 1, setting `b` and `e` both to -1 means play through every frame; or frame tag string
+	* `b`: begin frame index, starts from 1; or frame tag text
+	* `e`: end frame index, starts from 1, setting `b` and `e` both to -1 means play through every frame; or frame tag text
 * `STOP(spr)`: stops animating a sprite
 * `FLIP_X(spr, f = false)`: sets whether flips a sprite horizontally
 * `FLIP_Y(spr, f = false)`: sets whether flips a sprite vertically
@@ -779,7 +779,7 @@ The beginning index of sprite frames is 1.
 
 ### Map
 
-The beginning index of map layers is 0. Furthermore, layer 0 is for logic mark purpose, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 240.
+The beginning index of map layers is 0. Furthermore, layer 0 is for the purpose of logic marking, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 240.
 
 * `MAP m, x, y`: draws one or more map layers at a specific position
 	* `m`: single layer of a map, or list of layers
@@ -806,7 +806,7 @@ The beginning index of map layers is 0. Furthermore, layer 0 is for logic mark p
 
 The `TOUCH` statement takes a pointer index, and assigns all result values to following variables.
 
-* `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touching states
+* `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
 	* `i`: for input, pointer index
 	* `x`: for output, the x position of a pointer
 	* `t`: for output, the t position of a pointer
@@ -848,7 +848,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `path`: uses the content directory of a cartridge as lookup root
 
 * `PLAY seq, ch = 0, preset = 0, loop = false`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
-	* `seq`: an MML format string
+	* `seq`: MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index of sound font bank
 
@@ -884,26 +884,28 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 ### Sound effects
 
-Redundant sound effect callings will be abandoned if the queue is already full.
+Redundant sound effect callings will be abandoned if all the channels are occupied.
 
 * `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of instructions as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
-	* `y`: waveform type, 1/2/3/4/5 for sine/square/triangle/sawtooth/noise
+	* `y`: waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
 	* `hz`: frequency
 	* `tm`: duration in seconds
 
-Plus 4096 to `y` for interpolating `hz` from current set to the following one's `hz`.
+Plus 4096 to `y` for interpolating `hz` from current set with the following one's `hz`.
 
 [HOME](#welcome-to-basic8)
 
 ## Editors
 
-To reload example cartridges, click `Help`, `Reload examples`. BASIC8 uses UID (Unique IDentifier) to identify different cartridges, this operation will overwrite the cartridge with the same UID.
+To pause an opened running cartridge, click `Cartridge`, `Pause`, it will pause everything.
 
 To edit the properties of a cartridge, right click on it, then click `Properties`.
 
 To duplicate a cartridge, select it, then click `[Head]`, `Duplicate`.
 
 To purge all persistence data of a cartridge, select it, then click `[Head]`, `Cleanup`.
+
+To reload example cartridges, click `Help`, `Reload examples`. BASIC8 uses UID to identify different cartridges, this operation will overwrite the cartridge with the same UID.
 
 All paletted assets (sprites, tiles, quantized images) in a cartridge share the same palette.
 
@@ -1044,6 +1046,7 @@ w = LIST(-1, -2, -3)
 
 ## Libraries
 
+<!--
 ### Asynchronization
 
 Most functions in BASIC8 are executed synchronously, however, some of the functions can be executed asynchronously. Each asynchronous calling returns a task object.
@@ -1053,7 +1056,7 @@ Most functions in BASIC8 are executed synchronously, however, some of the functi
 	* `callback(r)`: optional, will be called when the `task` finishing
 		* `r`: execution result
 	* returns a task object
-* `AWAIT(task ...)`: waits for finishing of one or more tasks, only returns after all task(s) are finished
+* `AWAIT(task)`: waits for finishing of a task, only returns after the task is finished
 
 * `COST(task)`: gets the execution time of a task
 
@@ -1069,6 +1072,7 @@ AWAIT(task)
 PRINT GET(task);
 PRINT task;
 ~~~~~~~~~~
+-->
 
 ### Archive
 
@@ -1078,17 +1082,17 @@ PRINT task;
 	* `z`: true for packing, otherwise unpacking
 * `Archive.CLOSE()`: closes an archive file
 
-* `Archive.PACK(dst, src)`: **asynchronizable**, packs from a file or byte array
+* `Archive.PACK(dst, src)`: <!--**asynchronizable**, -->packs from a file or byte array
 	* `dst`: name in archive
 	* `src`: path of a file, or byte array
-* `Archive.UNPACK(src, dst)`: **asynchronizable**, unpacks to a file or byte array
+* `Archive.UNPACK(src, dst)`: <!--**asynchronizable**, -->unpacks to a file or byte array
 	* `src`: name in archive
 	* `dst`: path of a file, or byte array
-* `Archive.UNPACK_ALL(dir)`: **asynchronizable**, unpacks everything to a directory
+* `Archive.UNPACK_ALL(dir)`: <!--**asynchronizable**, -->unpacks everything to a directory
 
-* `COMPRESS(bytes)`: **asynchronizable**, compresses a byte array
+* `COMPRESS(bytes)`: <!--**asynchronizable**, -->compresses a byte array
 	* returns a compressed byte array
-* `DECOMPRESS(bytes)`: **asynchronizable**, decompresses a byte array
+* `DECOMPRESS(bytes)`: <!--**asynchronizable**, -->decompresses a byte array
 	* returns a decompressed byte array
 
 ### Bytes
@@ -1131,16 +1135,16 @@ PRINT task;
 
 * `Db.HAS_TABLE(tbl)`: checks whether a table exists
 	* `tbl`: table name
-* `Db.QUERY(sql)`: **asynchronizable**, executes a SQL query
+* `Db.QUERY(sql)`: <!--**asynchronizable**, -->executes a SQL query
 	* `sql`: SQL statement
 	* returns queried result
-* `Db.EXEC(sql)`: **asynchronizable**, executes a SQL statement
+* `Db.EXEC(sql)`: <!--**asynchronizable**, -->executes a SQL statement
 	* `sql`: SQL statement
 	* returns execution result
 
 ### Date time
 
-* `SLEEP(s)`: **asynchronizable**, sleeps for certain seconds
+* `SLEEP(s)`: <!--**asynchronizable**, -->sleeps for certain seconds
 	* `s`: can be integer or real numbers
 
 * `TICKS()`: gets wall clock independent ticks in milliseconds, relevant to specific hardware cycles or platform ticks
@@ -1197,6 +1201,7 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 ### IO
 
 * `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is often "C:\Users\YourName\Documents\" on Windows
+* `COMBINE_PATH(x, y)`: combines two strings into a path
 
 * `FILE_INFO(path)`: creates a file information object
 	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
@@ -1260,6 +1265,9 @@ Object | DICT (unsorted)
 
 * `PI`: gets the constant PI number
 
+* `DEG(r)`: converts radian to degree
+* `RAD(d)`: converts degree to radian
+
 * `MIN(...)`: gets the minimum one among some numbers
 * `MAX(...)`: gets the maximum one among some numbers
 
@@ -1269,7 +1277,8 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 * `CPU_CORE_COUNT`: gets the core count of current CPU
 
-* `SHOW_OUTPUT()`: shows the output window
+* `SET_OUTPUT_VISIBLE(s = true)`: shows the output window
+	* `s`: true to show, false to hide
 * `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets current working directory path
 * `SET_CURRENT_DIRECTORY(dir)`: **platform dependent**, sets current working directory path
@@ -1283,6 +1292,9 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 * `LCASE(txt)`: transforms a string to lower case
 * `UCASE(txt)`: transforms a string to upper case
+
+* `SPLIT(txt, d)`: splits a string into parts
+	* `d`: delimit
 
 * `STARTS_WITH(txt, what, ci = true)`: checks whether a string starts with a sub string
 	* `ci`: true for case-insensitive
@@ -1308,10 +1320,15 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 Some words are not implemented for actual functions, yet they are reserved for future. It's suggested to not to use them as identifiers:
 
 * `KILL`
+
+* `ASYNC`, `AWAIT`, `COST`
 * `CTOR`, `DTOR`
+* `FORK`, `JOIN
+
+* `COLLIDES`
+* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM``
 * `LIKE`, `FORMAT`
-* `PEEK`, `POKE`
-* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
+* `PEEK`, `POKE`
 
 [HOME](#welcome-to-basic8)

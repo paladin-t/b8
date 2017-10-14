@@ -26,7 +26,7 @@ It's a reasonable resolution because:
 
 ### GUI
 
-PalmOS is a good model of stylus based GUI. And it's my favourite mobile OS. I make BASIC8's GUI with an ideal combination of PalmOS, AmigaOS, and a part of my own idea. The goal is to make it possible to do most of the operations (except for coding) by clicking/touching; moreover to make it friendly to mobiles.
+PalmOS is a good model of stylus based GUI. And it's my favourite mobile OS. I make BASIC8's GUI with an ideal combination of PalmOS, AmigaOS, and a part of my own idea. The goal is to make it possible to do most of the operations (except for coding) by mouse/touch; moreover to make it friendly to modern mobile devices.
 
 ### Editors
 

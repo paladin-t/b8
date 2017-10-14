@@ -37,7 +37,7 @@ def with(p, f)
 enddef
 
 ' Joins a collection to a string.
-def join(lst, sep)
+def join_str(lst, sep)
 	ret = ""
 	l = len(lst)
 	for i = 0 to l - 1

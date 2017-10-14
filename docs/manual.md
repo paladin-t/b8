@@ -1323,10 +1323,10 @@ Some words are not implemented for actual functions, yet they are reserved for f
 
 * `ASYNC`, `AWAIT`, `COST`
 * `CTOR`, `DTOR`
-* `FORK`, `JOIN
+* `FORK`, `JOIN`
 
 * `COLLIDES`
-* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM``
+* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM`
 * `LIKE`, `FORMAT`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PEEK`, `POKE`

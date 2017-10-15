@@ -374,6 +374,8 @@ BASIC8 offers a `GOTO` statement which performs unconditional control transfer. 
 
 `GOSUB` is similar to `GOTO`, but it can be returned with a `RETURN` statement.
 
+## Advanced syntax
+
 ### Collections
 
 BASIC8 supplies a set of list and dictionary manipulation functions which do creation, accessing, iteration, etc. as following:
@@ -471,8 +473,6 @@ FOR i IN d
 	PRINT i, ", ", d(i);
 NEXT
 ~~~~~~~~~~
-
-## Advanced syntax
 
 ### Sub routine
 

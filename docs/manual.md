@@ -4,9 +4,9 @@
 
 ## Welcome to BASIC8
 
-BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
+BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too, and, don't do anything bad.
+It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
 For the moment, BASIC8 is released for PC only, however, there are plans for porting to other systems.
 
@@ -17,7 +17,7 @@ You may read this manual in any order according to your interest, and open this 
 * Part I. Fundamental
 	* [Getting started](#getting-started)
 		* [Operations](#operations)
-		* [Specs](#specs)
+		* [Specifications](#specifications)
 		* [Cartridge library](#cartridge-library)
 		* [Configuration](#configuration)
 		* [Sharing](#sharing)
@@ -100,11 +100,11 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. BASIC8 is aimed to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, fun, creativity and usability.
+It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. BASIC8's goal is to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, creativity, fun and usability.
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play cartridges. But BASIC8 uses mouse as the main operation method on editors' GUI; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play cartridges. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
@@ -122,11 +122,11 @@ Most home computers from 1970-80s use keyboards as the only developer input meth
 
 See tips in editors for other details.
 
-When speaking of clicking `[Head]`, it means the first icon item on the main menu bar:
+When speaking of clicking `[Head]` in this document, it means the first icon item on the main menu bar:
 
 ![](imgs/head.png)
 
-### Specs
+### Specifications
 
 The limitations of BASIC8 are carefully chosen to make it easy and enjoyable during making programs:
 
@@ -141,31 +141,31 @@ The limitations of BASIC8 are carefully chosen to make it easy and enjoyable dur
 
 ### Cartridge library
 
-All cartridges are stored in a library directory on disk, each cartridge has its own sub directory for all code and data. The default library root path on Windows is "C:\Users\YourName\Documents\BASIC8\".
+All cartridges are stored in a library directory on disk, each cartridge has its own sub directory for all code and data. The default root path of library on Windows is "C:\Users\YourName\Documents\BASIC8\".
 
 ### Configuration
 
 There are some configurable options available:
 
-* Maximizing the canvas on play: `Option`, `Graphics`, checking `Maximize canvas`
-* Fixing the ratio of canvas on play: `Option`, `Graphics`, checking `Fix canvas ratio`
+* Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
+* Fixing the ratio of canvas when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Entering full screen: `Option`, `Graphics`, `Full screen`
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
-* Changing the root library directory: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing cartridges to the new path
+* Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing cartridges to the new path
 * Showing stat. information: `Option`, check `Show stat.`
 * Making it running when double click on a cartridge, instead of opening it: `Option`, check `Run on click`
 * Allowing multiple editor windows: `Option`, check `Multiple windows`
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines and any sorts of communities. That is convenient to do so in BASIC8.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record GIF in BASIC8.
 
 #### Exporter and importer
 
 To export a cartridge, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a cartridge, then click `Export`.
 
-To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses cartridges' UID (Unique IDentifier) to identify them.
+To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based cartridge into clipboard already before using the second option. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of cartridges to identify them.
 
 #### Cartridges
 
@@ -181,7 +181,7 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent peoples could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
 
-Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other descriptions.
+Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other literal words.
 
 ### Variable and data types
 
@@ -189,19 +189,33 @@ BASIC8 is a dynamic programming language, therefore variables don't have types, 
 
 Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `NOTHING`.
 
-A variable identifier is formed with letters, underline and numbers, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pie = 22 / 7`, `s = pie * r * r`, etc.
+A variable identifier is formed with letters, numbers, underline and an optional dollar postfix, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pie = 22 / 7`, `s = pie * r * r`, etc.
 
-Only `NIL`, `0` and constant `false` result "false" within boolean expressions; non-zero numbers, `true` and all other values, including an empty string `""` result "true" in BASIC8.
+The dollar symbol `$` is reserved from traditional BASIC dialects as a postfix of a variable identifier. They stand for different variables while with or without it. But it doesn't decorates for type of string anymore in BASIC8:
+
+~~~~~~~~~~bas
+A$ = 1 ' Can store any type with a "$" decorated variable.
+B$ = 2
+PRINT A$ + B$;
+
+A = "Hello " ' Can store string without "$".
+B = "World"
+PRINT A + B;
+~~~~~~~~~~
+
+However, there's a special case that `$` does mean something with the `DIM` and `INPUT` statements.
+
+Only `NIL`, `0` and constant `FALSE` result "false" within boolean expressions; non-zero numbers, `TRUE` and all other values, including an empty string `""` result "true" in BASIC8.
 
 #### Number
 
-There are two types of number in BASIC8, integer and real (float point). Integer is implemented as 32-bit signed, with range of values from -2,147,483,648 to 2,147,483,647. Real is implemented as standard [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) float point. An arithmetic expression with real number may result an integer, if the result value doesn't have a fractional part, eg. `1.5 / 0.5` results in `3` rather than `3.0`.
+There are two types of number in BASIC8, integer and real (float point). Integer is implemented as 32-bit signed, with range of values from -2,147,483,648 to 2,147,483,647. Real is implemented as single precision float point of [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard. An arithmetic expression with real number may result an integer, if the result value doesn't have a fractional part, eg. `1.5 / 0.5` results in `3` rather than `3.0`.
 
 An octal integer begins with `0`, a hexadecimal one begins with `0x`, eg. `010` (oct) equals to `8` (dec), `0x10` (hex) equals to `16` (dec).
 
 #### String
 
-A string begins and ends with a pair of double quotation marks `""`, it stores what exactly you typed as a sequence of characters. Strings can be used to represent sentences, descriptions, or any text based data.
+A string begins and ends with a pair of double quotation marks `""`, it stores what exactly you typed as a sequence of characters. Strings can be used to represent sentences, descriptions, or any other text based data.
 
 ### Comment
 
@@ -212,7 +226,7 @@ A comment is a user readable explanation or annotation in source code. They are 
 These operators are used for arithmetic calculations:
 
 * `x + y`: plus
-* `x - y`: binary minus
+* `x - y`: minus
 * `x * y`: multiply
 * `x / y`: divide
 * `x MOD y`: modulus
@@ -222,7 +236,7 @@ These operators are used for arithmetic calculations:
 
 These operators are used for relational comparisons and calculations:
 
-* `x = y`: equals to comparison; the same symbol as assignment
+* `x = y`: equals to; the same symbol as assignment
 * `x < y`: less than
 * `x > y`: greater than
 * `x <= y`: less than or equals to
@@ -263,8 +277,8 @@ Other numeric functions will be mentioned at "[Math functions](#math-functions)"
 * `BOR(x, y)`: bitwise "or"
 * `BNOT(y)`: bitwise "not"
 * `BXOR(x, y)`: bitwise "xor"
-* `SHL(m, n)`: bitwise left shift
-* `SHR(m, n)`: bitwise right shift
+* `SHL(m, n)`: bitwise "left shift"
+* `SHR(m, n)`: bitwise "right shift"
 
 ### String operations
 
@@ -278,14 +292,14 @@ Other string functions will be mentioned at "[String functions](#string-function
 
 ### Array
 
-BASIC8 supports array up to 4 dimensions. An array can store a set of data that each element can be accessed by an array name and indices. Arrays can hold either real or string data. An array must be declared with a `DIM` statement before using it:
+BASIC8 supports array up to 4 dimensions. An array can store a set of data that each element can be accessed by the array name and indices. Arrays can hold either real number or string data. An array must be declared with a `DIM` statement before using it:
 
 ~~~~~~~~~~bas
 DIM nums(10)
 DIM strs$(2, 5)
 ~~~~~~~~~~
 
-The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array indices begin from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value formed as a constant, a variable with integer or an expression which results in an integer; invalid indices cause errors.
+The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array indices begin from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value of as a constant, a variable or an expression which results in an integer; invalid indices will cause errors.
 
 ## Control structures
 
@@ -293,12 +307,12 @@ Normal statements execute line by line. However, you can do more than that with 
 
 ### Conditional
 
-It's used to execute particular code block depending on conditions, with conditional structures, with `IF`/`THEN`/`ELSEIF`/`ELSE`/`ENDIF` statements.
+A conditional structure is used to execute particular code block depending on conditions, with `IF`/`THEN`/`ELSEIF`/`ELSE`/`ENDIF` statements.
 
-It's supported to write conditional `IF` statements in two ways. One is single line which the whole conditional block is written in a compact line:
+It's supported to write conditional `IF` statements in two ways. One is single line which the whole conditional block is written in a compact form:
 
 ~~~~~~~~~~bas
-IF n MOD 2 THEN PRINT "Even" ELSE PRINT "Odd"
+IF n MOD 2 THEN PRINT "Even"; ELSE PRINT "Odd";
 ~~~~~~~~~~
 
 The other way is multiline:
@@ -312,7 +326,7 @@ ELSEIF n = 2 THEN
 ELSEIF n = 3 THEN
 	PRINT "Three";
 ELSE
-	PRINT "More than three";
+	PRINT "More than it";
 ENDIF
 ~~~~~~~~~~
 
@@ -330,23 +344,25 @@ The `STEP 1` part is optional if the increment step is 1. The loop variable afte
 
 A variant form of `FOR`/`IN`/`NEXT` is used to iterate collections, which will be mentioned later.
 
-The `WHILE`/`WEND`, `DO`/`UNTIL` statements are used when the number of loop steps is uncertain.
+The `WHILE`/`WEND`, `DO`/`UNTIL` statements are used when the number of loop steps is uncertain. `WHILE`/`WEND` checks a loop condition before executing a loop body; while `DO`/`UNTIL` executes a body block before checking a condition.
 
-`WHILE`/`WEND` checks a loop condition, before executing a loop body, while `DO`/`UNTIL` executes a body block before checking a condition. `WHILE`/`WEND` keeps looping when a condition is true:
+It keeps looping when a condition is true with `WHILE`/`WEND`:
 
 ~~~~~~~~~~bas
 a = 1
 WHILE a <= 10
 	PRINT a;
+	a = a + 1
 WEND
 ~~~~~~~~~~
 
-`DO`/`UNTIL` keeps looping until a condition is true:
+It keeps looping until a condition is true with `DO`/`UNTIL`:
 
 ~~~~~~~~~~bas
-b = 1
+a = 1
 DO
-	PRINT b;
+	PRINT a;
+	a = a + 1
 UNTIL a > 10
 ~~~~~~~~~~
 
@@ -354,16 +370,16 @@ UNTIL a > 10
 
 The `EXIT` statement is used to discontinue a loop.
 
-BASIC8 offers a `GOTO` statement which performs unconditional control transfer. You can call it as `GOTO label`, it executes from `label:` in next step, rather than the following line of a `GOTO` statement. A labeled target constructs of a label name and a following colon as `label:`.
+BASIC8 offers a `GOTO` statement which performs unconditional control transfer. You can call it as `GOTO label`, it executes from `label:` in next step, rather than the following line of a `GOTO` statement. A labeled target constructs of a label identifier and a following colon as `label:`.
 
 `GOSUB` is similar to `GOTO`, but it can be returned with a `RETURN` statement.
 
 ### Collections
 
-BASIC8 supplies a set of list and dictionary manipulation function libraries which do creation, accessing, iteration, etc. as following:
+BASIC8 supplies a set of list and dictionary manipulation functions which do creation, accessing, iteration, etc. as following:
 
 * `LIST(...)`: creates a list, with optional initialization elements
-* `DICT(...)`: creates a dictionary, with optional initialization key-value pairs
+* `DICT(...)`: creates an unordered dictionary, with optional initialization key-value pairs
 * `PUSH(lst, val)`: pushes a value to the tail of a list
 * `POP(lst)`: pops a value from the tail of a list
 * `BACK(lst)`: peeks the value of the tail of a list
@@ -371,9 +387,9 @@ BASIC8 supplies a set of list and dictionary manipulation function libraries whi
 * `SORT(lst)`: sorts a list increasingly
 * `EXIST(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
 * `INDEX_OF(lst)`: gets the index of a specific value in a list
-* `GET(coll, where)`: returns the value of a specific index in a list, or the value of a specific key in a dictionary
-* `SET(coll, where, val)`: sets the value of a specific index in a list, or the value of a specific key in a dictionary
-* `REMOVE(coll, where)`: removes the element of a specific index in a list, or the element of a specific key in a dictionary
+* `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary
+* `SET(coll, where, val)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
+* `REMOVE(coll, where)`: removes the element at a specific index in a list, or the element at a specific key in a dictionary
 * `CLEAR(coll)`: clears a list or a dictionary
 * `CLONE(coll)`: clones a collection, each element will be duplicated, except for non-copyable ones
 * `TO_ARRAY(lst)`: copies all elements from a list to a new array
@@ -397,7 +413,7 @@ SET(d, 3, "Three")
 PRINT LEN(d);
 ~~~~~~~~~~
 
-BASIC8 supports directly accessing to elements in a list or dictionary using brackets:
+BASIC8 supports accessing elements directly in a list or dictionary using brackets:
 
 ~~~~~~~~~~bas
 l = LIST(1, 2, 3, 4)
@@ -406,13 +422,13 @@ d(1) = l(2)
 PRINT d(1);
 ~~~~~~~~~~
 
-List indices begin from zero too, as how an array does in BASIC8.
+List indices begin from zero too, as how array does in BASIC8.
 
 #### Iterators
 
 List iterator and dictionary iterator are used to walk through all elements in collections.
 
-Iterate a list with an explicit pattern:
+Iterate a list with an explicit movement pattern:
 
 ~~~~~~~~~~bas
 l = LIST(1, 1, 2, 3, 5, 8)
@@ -448,7 +464,7 @@ WHILE MOVE_NEXT(i)
 WEND
 ~~~~~~~~~~
 
-Iterate the previous dictionary `d` with a `FOR` loop, while the iteration variable represents for keys:
+Iterate the previous dictionary `d` with a `FOR` loop, while the iteration variable represents for each key:
 
 ~~~~~~~~~~bas
 FOR i IN d
@@ -460,7 +476,7 @@ NEXT
 
 ### Sub routine
 
-A sub routine, a.k.a. "sub", "function", "routine" or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be mentioned uniformly as "routine" for short in this document. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Use the name of a routine directly to call it, with a list of arguments clamped with a pair of brackets. But it requires an extra `CALL` command when calling a routine which is declared in following code. The `RETURN` statement is also used to exit a routine, with an optional result value.
+A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be mentioned uniformly as "routine" for short in this document. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Use the name of a routine directly to call it, with a list of arguments clamped with a pair of brackets. But it requires an extra `CALL` statement when a routine is declared below where it's called. The `RETURN` statement is also used to exit a routine, with an optional result value.
 
 Each routine has its own scope, in which statements in that routine body would lookup for variables, before looking into outer scopes.
 
@@ -480,14 +496,16 @@ ENDDEF
 PRINT foo(1, 2);
 ~~~~~~~~~~
 
-It's also possible to use the `CALL` statement with extra brackets to gets an invokable objects, instead of calling it immediately, as:
+It's also possible to use the `CALL` statement with brackets clamped identifier to gets an invokable object, instead of calling it immediately, as:
 
 ~~~~~~~~~~bas
 c = CALL(bar)
 c(a, b)
 ~~~~~~~~~~
 
-But, there's a limitation that it's not accepted to use mixed routines by `DEF` and jumps by `GOTO`/`GOSUB` together in one program.
+Keep in mind the difference between `CALL bar(...)` and `CALL(bar)`.
+
+But, there's a limitation that it's not accepted to use mixed routines with `DEF`/`ENDDEF` and jumps with `GOTO`/`GOSUB` together in one program.
 
 ### Lambda
 
@@ -498,9 +516,9 @@ A [lambda](https://en.wikipedia.org/wiki/Anonymous_function) abstraction, a.k.a.
 
 A Lambda becomes a closure after it captured some values in an outer scope.
 
-BASIC8 offers a full support for lambda, including invokable as a value, higher order function, closure and currying, etc.
+BASIC8 offers a full support for lambda, including invokable as a value, higher order function, closure, currying, etc.
 
-It begins with a `LAMBDA` keyword, and follows with a parameter list, with none or multiple parameter identifiers. Then a lambda body, which is also clamped with a pair of brackets. It's able to write multiple line statements in a lambda body, use the `RETURN` statement to return a value and exit from a lambda execution as well. The tilde character `~` is short for `LAMBDA`.
+It begins with a `LAMBDA` keyword, follows with a parameter list, with none or multiple parameter identifiers; then a lambda body, which is also clamped with a pair of brackets. It's able to write multiline statements in a lambda body. Use the `RETURN` statement to return a value and exit from a lambda execution as well. The tilde symbol `~` is short for `LAMBDA`.
 
 Eg:
 
@@ -511,6 +529,7 @@ DEF counter()
 	RETURN LAMBDA (n)
 	(
 		c = c + n
+
 		PRINT c;
 	)
 ENDDEF
@@ -523,7 +542,7 @@ acc(2)
 
 ### Class
 
-BASIC8 supports [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, it all means the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (use it as a meta class). Use `NEW` to clone a new instance of a prototype.
+BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, it means the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new instance of a prototype.
 
 See the following example of class:
 
@@ -543,7 +562,7 @@ inst = NEW(bar)
 PRINT inst.fun(3);
 ~~~~~~~~~~
 
-The `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable field or the invokable object of a routine:
+The `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable or the invokable object of a routine:
 
 ~~~~~~~~~~bas
 PRINT GET(foo, "A");   ' Results in the value of "A".
@@ -563,7 +582,7 @@ The `TYPE` statement is used to tell the type of any value.
 
 The `IS` operator is used to check whether a value is an instance of a certain type, or if an object is an instance of a class, eg. `1 IS TYPE("NUMBER")`, `"Hello" IS TYPE("STRING")`, `inst IS foo`, etc.
 
-Besides, there is also a `TYPEOF` function, which gets the type of a non-referenced value.
+Besides, there is also a `TYPEOF` function, which gets the type of a (non-referenced) library value.
 
 ### Importing another file
 
@@ -628,9 +647,9 @@ NEXT
 The `TRY` statement accepts three arguments. And works as following:
 
 * It invokes the first "try" invokable argument
-* Invokes the second "catch" routine by passing the error text, if any error occurred during the "try" routine
+* Invokes the second "catch" routine by passing the error text, if any error occurred within the "try" routine
 * The third "finally" routine is always invoked no matter error occurred or not
-* It raises an occurred error outer if it's not caught yet by current `TRY`
+* It raises an occurred error to outer, if it's not caught yet by current `TRY`
 * A `TRY` statement returns the value of the returned result from a "try" routine
 
 Eg:
@@ -658,37 +677,38 @@ PRINT ret;
 
 ### Automatic memory management
 
-BASIC8 automatically manages the memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing finished files, etc.
+BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing finished files, etc.
 
 ## Generic functions
 
-* `PRINT expr, ...`: for the purpose of debugging, writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 * `INPUT [prompt,] x`: this function suspends current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
+	* `x[$]`: variable identifier to be filled, accepts string with a `$` postfix, otherwise accepts number
+* `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
-* `ASSERT(cond, text)`: prompts an assertion text if `cond` results in false
+* `ASSERT(cond [, text])`: for the purpose of debugging; prompts an assertion and terminates execution immediately if `cond` results in false
 * `SWAP(x, y)`: swaps the values between `x` and `y`
 * `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
 
 * `TRACE()`: prints stack trace
 * `RAISE([n])`: raises an error, with an optional abort code
-* `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected
+* `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected; do not need to call this manually
 * `MEM`: gets the allocated memory size in bytes
 * `BEEP`: beeps once with the (PC) speaker, not available for all platforms
-* `TYPEOF(val)`: gets the type of a non-referenced value
+* `TYPEOF(val)`: gets the type of a (non-referenced) library value
 
 [HOME](#welcome-to-basic8)
 
 ## Graphics
 
-Program execution and rendering are running at different FPS in BASIC8, respectively are 30 and 60. Some properties, such as positions, rotations, of graphics commands can be interpolated between rendering frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties, such as positions, rotations, of graphics commands can be interpolated between rendering frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
-* "map": graphics commands are separated into 5 sub queues, later rendering covers earlier ones
+* "map": graphics commands are separated into 5 sub queues, later drawing covers earlier ones
 	* 0, ground: for layer 1 in a map asset
 	* 1, building: for layer 2 in a map asset
 	* 2, active: for sprites
 	* 3, sky: for layer 3 in a map asset
-	* 4, overlay: for primitives
+	* 4, overlay: for primitive shapes
 * "spr": sprites are ordered by their y position
 * "all": with both "map" and "spr" enabled
 
@@ -700,16 +720,16 @@ These functions are used to communicate with a driver:
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
-* `UPDATE_WITH(drv [, r])`: sets a driver to the automatic updating mode, with an invokable update argument
+* `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
 	* `r`: can be an invokable routine or lambda, or its name in string, or "update" as default
 * `LOCK(drv)`: locks a driver, suspends its resource loading procedures
 * `UNLOCK(drv)`: unlocks a driver, resumes its resource loading procedures
 
 These functions are used to load or create graphics objects and values:
 
-* `LOAD_RESOURCE(path, ref = 0)`: loads a resource from disk
-	* `path`: path of a resource, can be "*.sprite", "*.map", "*.quantized" files; uses the content directory of a cartridge as lookup root
-	* `ref`: reference source of a resource, palette index for sprites and quantized images, tiles for maps
+* `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
+	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
+	* `ref`: reference source of a resource, palette index for sprites and quantized images, tiles for maps; 0 is the only valid value for the moment
 * `LOAD_BLANK(y, n, w, h, ref = 0)`: loads a blank resource
 	* `y`: type of a resource, can be "sprite" or "map"
 	* `n`: count of sprite frames, or map layers
@@ -720,13 +740,13 @@ These functions are used to load or create graphics objects and values:
 
 These functions are used to manipulate a sprite:
 
-* `PLAY(spr, b = -1, e = -1, loop = true, init = false)`: plays a range of frames of a sprite
-	* `spr`: a sprite
-	* `b`: begin frame index, starts from 1; or frame tag text
-	* `e`: end frame index, starts from 1, setting `b` and `e` both to -1 means play through every frame; or frame tag text
+* `PLAY(spr, b = -1, e = -1, loop = TRUE, init = FALSE)`: plays a range of frames of a sprite
+	* `spr`: sprite object
+	* `b`: begin frame index, starts from 1; or tag text of a frame
+	* `e`: end frame index, starts from 1; or tag text of a frame; setting `b` and `e` both to -1 means play through all frames
 * `STOP(spr)`: stops animating a sprite
-* `FLIP_X(spr, f = false)`: sets whether flips a sprite horizontally
-* `FLIP_Y(spr, f = false)`: sets whether flips a sprite vertically
+* `FLIP_X(spr, f = FALSE)`: sets whether flips a sprite horizontally
+* `FLIP_Y(spr, f = FALSE)`: sets whether flips a sprite vertically
 * `SET_FLIP_CONDITION(spr, fx, fy)`: sets the flipping condition of a sprite
 	* `fx`: in horizontal directions, 1 for flipping when sprite's x is increasing, -1 for flipping when sprite's x is decreasing, 0 for none
 	* `fy`: in vertical directions, 1 for flipping when sprite's y is increasing, -1 for flipping when sprite's y is decreasing, 0 for none
@@ -736,12 +756,13 @@ These functions are used to manipulate a sprite:
 * `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
 	* returns elapsed time since last synchronizing
 * `COL col`: sets the default color value of future commands
-* `CLIP [x, y, w, h, ss = true]`: sets a clip area, resets to none clip areas if no argument passed
-	* `ss`: true for screen space clipping, otherwise with world space
-* `CAMERA [x, y, ip = false]`: moves the camera to a specific position, resets its position if no argument passed
-	* `ip`: true for position interpolation
+* `CLIP [x, y, w, h, ss = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
+	* `ss`: true for clipping with screen space, otherwise with world space
+* `CAMERA [x, y, ip = FALSE]`: moves the camera to a specific position, resets its position if no argument passed
+	* `ip`: true for interpolating position
 
 * `TEXT x, y, txt [, col]`: draws a text
+	* `col`: color for drawing, uses the default color set by `COL` if no argument passed
 * `LINE x0, y0, x1, y1, w = 1 [, col]`: draws a line
 	* `w`: width (thickness)
 * `CIRC x, y, r [, col]`: draws a circle
@@ -751,27 +772,29 @@ These functions are used to manipulate a sprite:
 * `RECT x0, y0, x1, y1 [, col]`: draws a rectangle
 * `RECTFILL x0, y0, x1, y1 [, col]`: draws a filled rectangle
 
-* `PGET i`: gets the color of a palette, at a specific index
-* `PSET i, col, ip = false`: sets the color of a palette
+* `PGET i`: gets a color of a palette, at a specific index
+* `PSET i, col, ip = FALSE`: sets a color of a palette
 	* `ip`: true for interpolation
 
 ### Sprite
 
-The beginning index of sprite frames is 1.
+The beginning frame index of sprite is 1.
 
-* `STEP_ON(y)`: creates a "step on" value, which represents for aligning a sprite's bottom to `y`
+* `STEP_ON(y)`: creates a "step on" value, which represents for aligning a sprite's bottom edge to `y`
 * `SPR spr, x, y, r = 0`: draws a sprite
 	* `x`: horizontal position of the top-left corner
-	* `y`: vertical position of the top-left corner, or a "step on" value
+	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `r`: rotation in degrees
-* `SSPR spr, sx, sy, sw, sh, x, y, w, h, r = 0`: stretches rectangle from sprite sheet (sx, sy, sw, sh), and draws in rectangle (dx, dy, dw, dh)
+* `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+	* `w`: defaults to `sw`
+	* `h`: defaults to `sh`
 
-* `SGET spr, i, x, y`: gets the color index of a sprite at a specific position
+* `SGET spr, i, x, y`: gets the color index of a sprite, at a specific position
 	* `i`: frame index, starts from 1
 * `SGET spr, i, what`: gets the data of a sprite
 	* `i`: frame index, starts from 1
 	* `what`: can be "tag", "interval"
-* `SSET spr, i, x, y, val`: sets the color index of a sprite at a specific position
+* `SSET spr, i, x, y, val`: sets the color index of a sprite, at a specific position
 	* `i`: frame index, starts from 1
 * `SSET spr, i, what, val`: sets the data of a sprite
 	* `i`: frame index, starts from 1
@@ -779,7 +802,7 @@ The beginning index of sprite frames is 1.
 
 ### Map
 
-The beginning index of map layers is 0. Furthermore, layer 0 is for the purpose of logic marking, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 240.
+The beginning layer index of map is 0. Furthermore, layer 0 is for the purpose of logic marking, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 240.
 
 * `MAP m, x, y`: draws one or more map layers at a specific position
 	* `m`: single layer of a map, or list of layers
@@ -793,12 +816,14 @@ The beginning index of map layers is 0. Furthermore, layer 0 is for the purpose 
 
 ### Quantized
 
-* `IMG img, x, y, r = 0, q = 0, fx = false, fy = false`: draws a quantized image at a specific position
+* `IMG img, x, y, r = 0, q = 0, fx = FALSE, fy = FALSE`: draws a quantized image at a specific position
 	* `r`: rotation in degrees
 	* `q`: index of a target rendering queue
 	* `fx`: true for flipping horizontally
 	* `fy`: true for flipping vertically
-* `SIMG img, sx, sy, sw, sh, x, y, w, h, r = 0, q = 0, fx = false, fy = false`: stretches rectangle from a quantized image (sx, sy, sw, sh), and draws in rectangle (dx, dy, dw, dh)
+* `SIMG img, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+	* `w`: defaults to `sw`
+	* `h`: defaults to `sh`
 
 ## Input
 
@@ -807,7 +832,7 @@ The beginning index of map layers is 0. Furthermore, layer 0 is for the purpose 
 The `TOUCH` statement takes a pointer index, and assigns all result values to following variables.
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
-	* `i`: for input, pointer index
+	* `i`: for input, pointer index; usually with 0
 	* `x`: for output, the x position of a pointer
 	* `t`: for output, the t position of a pointer
 	* `b0`: for output, true if the first button is pressed
@@ -825,7 +850,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 * `BTNP b, p = 0`: checks whether a virtual button is just released from pressing
 	* `b`: index of a virtual button to check, 0/1/2/3/4/5 for left/right/up/down/a/b
 	* `p`: player index, starts from 0
-	* returns true for released from pressing
+	* returns true for released
 
 ### Keyboard
 
@@ -834,11 +859,11 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* returns true for pressed
 * `KEYP k`: checks whether a key is just released from pressing
 	* `k`: the key value to check
-	* returns true for released from pressing
+	* returns true for released
 
 ## Audio
 
-* `SET_VOLUME(sv, mv)`: sets volume values
+* `SET_VOLUME(sv = 1, mv = 1)`: sets volume values, ranged from 0.0 to 1.0
 	* `sv`: volume of sound effect
 	* `sm`: volume of music
 
@@ -847,10 +872,10 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 * `USE_SOUND_FONT(path)`: uses a sound font bank for music
 	* `path`: uses the content directory of a cartridge as lookup root
 
-* `PLAY seq, ch = 0, preset = 0, loop = false`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
+* `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
 	* `seq`: MML format string
 	* `ch`: channel to play within
-	* `preset`: preset index of sound font bank
+	* `preset`: preset index in sound font
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
@@ -886,7 +911,7 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 Redundant sound effect callings will be abandoned if all the channels are occupied.
 
-* `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of instructions as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
+* `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of tones as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
 	* `y`: waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
 	* `hz`: frequency
 	* `tm`: duration in seconds
@@ -897,7 +922,11 @@ Plus 4096 to `y` for interpolating `hz` from current set with the following one'
 
 ## Editors
 
-To pause an opened running cartridge, click `Cartridge`, `Pause`, it will pause everything.
+To run a cartridge, select it, then click `Cartridge`, `Run`; or right click on a cartridge, then click `Run`; or even double click on it when the `Run on click` option is enabled.
+
+To pause a running cartridge, click `Cartridge`, `Pause`, it is only clickable with an opened cartridge.
+
+To stop a running cartridge, click `Cartridge`, `Stop`; or just click the close button on a running canvas.
 
 To edit the properties of a cartridge, right click on it, then click `Properties`.
 
@@ -907,21 +936,21 @@ To purge all persistence data of a cartridge, select it, then click `[Head]`, `C
 
 To reload example cartridges, click `Help`, `Reload examples`. BASIC8 uses UID to identify different cartridges, this operation will overwrite the cartridge with the same UID.
 
-All paletted assets (sprites, tiles, quantized images) in a cartridge share the same palette.
+All paletted assets (sprites, tiles, quantized images) in a cartridge share a same palette data.
 
-It automatically saves modifications when closing an asset, or closing a cartridge; to close without saving, click `Cartridge`, `Close without saving` with `Shift` pressed.
+It automatically saves modifications when closing an asset, or closing a cartridge; to close without saving, click `Cartridge`, `Close without saving` with `Shift` key pressed.
 
 ### Code
 
-Each cartridge has an entry source file "main.bas", it starts execution from there.
+Each cartridge has an entry source code file "main.bas", it starts execution from there.
 
-To create a new source code file, click `Cartridge`, `New asset`, `Source code`.
+To create a new code file, click `Cartridge`, `New asset`, `Source code`.
 
-To open an existing source code file, click `Cartridge`, `Open asset`, then select a "*.bas" file.
+To open an existing code file, click `Cartridge`, `Open asset`, then select a "*.bas" file.
 
-To rename a source code file, click `Cartridge`, `Rename asset`, then select a "*.bas" file.
+To rename a code file, click `Cartridge`, `Rename asset`, then select a "*.bas" file.
 
-To delete a source code file, click `Cartridge`, `Delete asset`, then select a "*.bas" file.
+To delete a code file, click `Cartridge`, `Delete asset`, then select a "*.bas" file.
 
 ### Sprite asset
 
@@ -949,17 +978,17 @@ To delete a map asset, click `Cartridge`, `Delete asset`, then select a "*.map" 
 
 You can edit colors of palette by right clicking on it.
 
-Map assets use a shared tiles asset as reference.
+All map assets in a cartridge use a shared tiles asset as reference.
 
-To open and edit a tiles asset, open an existing map asset first, then click `Edit` button on the top-left corner of a map editor.
+To open and edit a tiles asset, open an existing map asset first, then click the `Edit` button on the top-left corner of a map editor.
 
 ### Quantized asset
 
 A quantized image is a readonly paletted image. The only way in BASIC8 to create a quantized image is importing from an existing image file, it supports "*.png", "*.bmp" and "*.tga" files.
 
-To create a new quantized image asset, click `Cartridge`, `New asset`, `Quantized image`, then browse and import from a source file.
+To create a new quantized image asset, click `Cartridge`, `New asset`, `Quantized image`, then browse and import from an image file.
 
-To open an existing quantized image asset, click `Cartridge`, `Open asset`, then select a "*.quantized" asset.
+To open an existing quantized image asset, click `Cartridge`, `Open asset`, then select a "*.quantized" asset. It's for preview only.
 
 To rename a quantized image asset, click `Cartridge`, `Rename asset`, then select a "*.quantized" asset.
 
@@ -1011,7 +1040,7 @@ Retro BASIC dialects collect data before running a program with the `DATA` trans
 	* returns total collected count until the last data argument
 * `READ ...`: retrieves some inline data to a list of variables
 	* returns latest reading position
-* `RESTORE [p]`: accepts an indicated target position, or zero as default to go back to the very beginning
+* `RESTORE [p]`: accepts an indicated target position, or 0 as default to go back to the very beginning
 
 Eg:
 
@@ -1027,7 +1056,7 @@ READ w, x, y, z
 PRINT w; x; y; LEN(z);
 ~~~~~~~~~~
 
-The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to do data saving and loading, such as game progress etc. in a very simple way. It can process with a couple of data types: numbers, strings, collections. It saves the values of variables at program termination, and loads persisted values at running to the same `PERSIST` statements next time.
+The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to do data saving and loading, such as game progress etc. in a very simple way. It can process with a couple of data types: integer, real, string, and collections. It saves the values of variables at program termination, and loads persisted values when running to the same `PERSIST` statements next time.
 
 * `PERSIST ...`: marks some variables as persistence variables, this statement can be only called in the global scope
 
@@ -1097,7 +1126,7 @@ PRINT task;
 
 ### Bytes
 
-* `BYTES()`: creates a byte buffer object
+* `BYTES()`: creates a byte array object
 
 * `Bytes.PUSH(val)`: pushes a byte
 * `Bytes.POP()`: pops a byte
@@ -1107,22 +1136,22 @@ PRINT task;
 * `Bytes.PUSH_U16(val)`: pushes a number as 16-bit unsigned integer
 * `Bytes.PUSH_S16(val)`: pushes a number as 16-bit signed integer
 * `Bytes.PUSH_INT(val)`: pushes a number as 32-bit signed integer
-* `Bytes.PUSH_REAL(val)`: pushes a number as float point
+* `Bytes.PUSH_REAL(val)`: pushes a number as single precision float point
 * `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail, and decrease the size of the buffer
 * `Bytes.POP_S8()`: pops a number as 8-bit signed integer
 * `Bytes.POP_U16()`: pops a number as 16-bit unsigned integer
 * `Bytes.POP_S16()`: pops a number as 16-bit signed integer
 * `Bytes.POP_INT()`: pops a number as 32-bit signed integer
-* `Bytes.POP_REAL()`: pops a number as float point
+* `Bytes.POP_REAL()`: pops a number as single precision float point
 * `Bytes.READ_U8()`: reads a number as 8-bit unsigned integer; all reading functions retrieve data with an automatically increasing cursor from head to tail
 * `Bytes.READ_S8()`: reads a number as 8-bit signed integer
 * `Bytes.READ_U16()`: reads a number as 16-bit unsigned integer
 * `Bytes.READ_S16()`: reads a number as 16-bit signed integer
 * `Bytes.READ_INT()`: reads a number as 32-bit signed integer
-* `Bytes.READ_REAL()`: reads a number as float point
-* `Bytes.END_READ()`: checks whether has read to the end of the buffer
+* `Bytes.READ_REAL()`: reads a number as single precision float point
+* `Bytes.END_OF_STREAM()`: checks whether has read to the end of the buffer
 
-* `Bytes.LEN()`: gets the size in bytes
+* `Bytes.LEN()`: gets the size of a buffer in bytes
 * `Bytes.GET(i)`: gets the byte at a specific index
 * `Bytes.SET(i, val)`: sets the byte at a specific index with a value
 
@@ -1133,7 +1162,7 @@ PRINT task;
 	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
 * `Db.CLOSE()`: closes an opened database
 
-* `Db.HAS_TABLE(tbl)`: checks whether a table exists
+* `Db.HAS_TABLE(tbl)`: checks whether a table exists or not
 	* `tbl`: table name
 * `Db.QUERY(sql)`: <!--**asynchronizable**, -->executes a SQL query
 	* `sql`: SQL statement
@@ -1173,7 +1202,7 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 
 * `File.PEEK_POS()`: gets the accessing position of a file
 * `File.POKE_POS(i)`: sets the accessing position of a file
-* `File.READ([n])`: reads a byte, or some bytes as text
+* `File.READ([n])`: reads a byte as number, or some bytes as text
 * `File.READ_LINE()`: reads a line of text
 * `File.WRITE(val ...)`: writes one or more values to file
 * `File.WRITE_LINE(val)`: writes one value and a newline character `\n` to file
@@ -1195,22 +1224,22 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 
 * `Image.GET(x, y)`: gets the color of a pixel
 * `Image.SET(x, y, col)`: sets the color of a pixel
-* `Image.LEN([r])`: gets the count of total pixels, or width, or height of an image
-	* `r`: returns total pixels if no argument passed, 0 for width, or 1 for height
+* `Image.LEN([r])`: gets the total pixels count, or width, or height of an image
+	* `r`: for total pixels if no argument passed, 0 for width, or 1 for height
 
 ### IO
 
-* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is often "C:\Users\YourName\Documents\" on Windows
-* `COMBINE_PATH(x, y)`: combines two strings into a path
+* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is "C:\Users\YourName\Documents\" on Windows as default
+* `COMBINE_PATH(x, y)`: combines two parts into a path
 
 * `FILE_INFO(path)`: creates a file information object
 	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
-* `Fi.READ_ALL()`: reads all content of a file as text
+* `Fi.READ_ALL()`: reads all content of a file as string
 * `Fi.CREATE()`: tries to create a file
 * `Fi.PARENT()`: gets the directory information of a file's parent
 
 * `Fi.GET_FULL_PATH()`: returns the full path of a file
-* `Fi.GET_PARENT_PATH()`: gets the parent directory path of a file
+* `Fi.GET_PARENT_PATH()`: gets the directory path of a file's parent
 * `Fi.GET_FILE_NAME()`: gets the file name of a file
 * `Fi.GET_EXT_NAME()`: gets the extension name of a file
 * `Fi.IS_BLANK()`: checks whether a file is blank
@@ -1224,14 +1253,14 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 * `Dir.PARENT()`: gets the directory information of a directory's parent
 
 * `Dir.GET_FILES([p [, r]])`: gets files in a directory
-	* `p`: matching pattern
+	* `p`: matching pattern, supports wildcard
 	* `r`: true for recursive matching
-* `Dir.GET_DIRECTORIES([r])`: gets sub directories in a directory
+* `Dir.GET_DIRECTORIES([r])`: gets sub directories under a directory
 	* `r`: true for recursive matching
 * `Dir.GET_FULL_PATH()`: returns the full path of a directory
-* `Dir.GET_PARENT_PATH()`: gets the parent directory path of a directory
+* `Dir.GET_PARENT_PATH()`: gets the directory path of a directory' parent
 * `Dir.GET_DIR_NAME()`: gets the directory name of a directory
-* `Dir.IS_BLANK()`: checks whether a directory if blank
+* `Dir.IS_BLANK()`: checks whether a directory is blank
 
 ### JSON
 
@@ -1252,34 +1281,34 @@ Bool | JSON_BOOL
 Number | NUMBER
 String | STRING
 Array | LIST
-Object | DICT (unsorted)
+Object | DICT (unordered)
 
 * `FROM_JSON_BOOL(b)`: converts a JSON bool to BASIC8 integer
 	* `b`: JSON bool
-	* returns "true" or "false"
+	* returns `TRUE` or `FALSE`
 * `TO_JSON_BOOL(b)`: converts a BASIC8 integer to JSON bool
-	* `b`: BASIC8 integer
+	* `b`: BASIC8 integer as bool
 	* returns JSON bool
 
 ### Math
 
 * `PI`: gets the constant PI number
 
-* `DEG(r)`: converts radian to degree
-* `RAD(d)`: converts degree to radian
+* `DEG(r)`: converts radians to degrees
+* `RAD(d)`: converts degrees to radians
 
 * `MIN(...)`: gets the minimum one among some numbers
 * `MAX(...)`: gets the maximum one among some numbers
 
 ### OS
 
-It's **not** recommended to use functions marked with "**platform dependent**", to get best compatibility crossing platforms.
+It's **not** recommended to use functions marked with "**platform dependent**", to get best compatibility across platforms.
 
 * `CPU_CORE_COUNT`: gets the core count of current CPU
 
-* `SET_OUTPUT_VISIBLE(s = true)`: shows the output window
+* `SET_OUTPUT_VISIBLE(s = TRUE)`: for the purpose of debugging; sets the visibility of the output window
 	* `s`: true to show, false to hide
-* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the BASIC8 fantasy computer
+* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of current BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets current working directory path
 * `SET_CURRENT_DIRECTORY(dir)`: **platform dependent**, sets current working directory path
 * `SET_CLIPBOARD_TEXT(txt)`: sets the text content of clipboard
@@ -1296,10 +1325,10 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 * `SPLIT(txt, d)`: splits a string into parts
 	* `d`: delimit
 
-* `STARTS_WITH(txt, what, ci = true)`: checks whether a string starts with a sub string
-	* `ci`: true for case-insensitive
-* `ENDS_WITH(txt, what, ci = true)`: checks whether a string ends with a sub string
-	* `ci`: true for case-insensitive
+* `STARTS_WITH(txt, what, ci = TRUE)`: checks whether a string starts with a sub string
+	* `ci`: true for case-insensitive matching
+* `ENDS_WITH(txt, what, ci = TRUE)`: checks whether a string ends with a sub string
+	* `ci`: true for case-insensitive matching
 
 * `FIND(txt, what, off = 0)`: gets the start position of a sub string
 	* returns start position, or -1 for not found

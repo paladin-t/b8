@@ -6,9 +6,9 @@
 
 [Why BASIC8?](https://my-basic.github.io/basic8/docs/why) | [Manual](https://my-basic.github.io/basic8/docs/manual) | [Changelog](https://my-basic.github.io/basic8/docs/changelog)
 
-BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds and etc.
+BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-This project is WIP, and existing features and behaviours may be changed.
+This project is WIP, any documented features and behaviours may be changed.
 
 **Credits**
 
@@ -19,7 +19,7 @@ This project is WIP, and existing features and behaviours may be changed.
 * [libtsf](https://github.com/paladin-t/libtsf/), by Wang Renxin, Bernhard Schelling, Steve Folta
 <!--* [lz4](http://lz4.github.io/lz4/), by Yann Collet-->
 * [md4c](https://github.com/mity/md4c/), by Martin Mitáš
-* [Mongoose](https://github.com/cesanta/mongoose/), by Cesanta
+<!--* [Mongoose](https://github.com/cesanta/mongoose/), by Cesanta-->
 * [MY-BASIC](https://github.com/paladin-t/my_basic/), by Wang Renxin
 * [RapidJSON](https://github.com/Tencent/rapidjson/), by Milo Yip
 * [SDL](https://www.libsdl.org/), see its [credits](https://www.libsdl.org/credits.php)
@@ -29,7 +29,7 @@ This project is WIP, and existing features and behaviours may be changed.
 
 **About**
 
-Call my English name Tony Wang, or Tony for short :)
+Call me Tony Wang, or just Tony for short :)
 
 <hr>
 

@@ -6,15 +6,13 @@ I developed BASIC8 mainly for my personal purposes, therefore BASIC8 is differen
 
 ### BASIC rather than Lua
 
-Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has too, but not all other BASIC dialects do. Anyway it's important to me to introduce BASIC to the fantasy genre.
-
-"But why using a language only make sense within one application?" You would find BASIC8 easy to learn whether you are experienced with programming; and you would get familar with new ones when moving on to new languages. Anyhow, exploring to solve problems itself is interesting.
+Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has too, but not all other BASIC dialects do. "But why using a language only make sense within one application?" You would find BASIC8 easy to learn whether you are experienced with programming; and you would get familar with new ones when moving on to new languages. Anyhow, exploring to solve problems itself is interesting. Anyway it's important to me to introduce BASIC to the fantasy computer genre.
 
 ### No uniformed RAM, VRAM or ROM
 
-Most of the other fantasy computers manage memory in static layouts, in which you can "peek" and "poke" to access its content, or even directly map from resource to runtime space. That makes it simple at managing and loading, but that's an extra abstraction layer of particular (virtual) hardware. I personally prefer to be able to do everything in a generic way, not go so far as to program with esoteric tricky code.
+Most of the other fantasy computers manage memory in static layouts, at which you can to access its content by "peek" and "poke"; or even directly map from resource to runtime space. That makes it simple as managing and loading, but that's an extra abstraction layer of particular (virtual) hardware. I prefer to be able to do everything in a generic way, not go so far as to program with esoteric tricky code.
 
-### 160x128
+### 160x128 canvas
 
 It's a reasonable resolution because:
 

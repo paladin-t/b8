@@ -8,7 +8,7 @@
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-This project is WIP, any documented features and behaviours may be changed.
+This project is WIP, any documented features and behaviours may be changed in official release.
 
 **Credits**
 

@@ -100,7 +100,7 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. BASIC8's goal is to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, creativity, fun and usability.
+It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal for BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, creativity, fun and usability.
 
 ### Operations
 
@@ -159,17 +159,17 @@ There are some configurable options available:
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record GIF in BASIC8.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record frames in BASIC8.
 
 #### Exporter and importer
 
-To export a cartridge, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a cartridge, then click `Export`.
+To export a cartridge, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a cartridge, then click `Export` to open the dialog box.
 
-To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based cartridge into clipboard already before using the second option. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of cartridges to identify them.
+To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based cartridge onto clipboard already, before using the second option. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of cartridges to identify them.
 
 #### Cartridges
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based cartridges are formed with ASCII characters, which are friendlier when posting to places with text allowed only.
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based cartridges are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
 
 #### Recording GIF
 
@@ -185,7 +185,7 @@ Identifiers and keywords are case-insensitive, but it stores what exactly you ty
 
 ### Variable and data types
 
-BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The basic types are nil, numbers, string, array, collections, iterators, lambda, class, coroutine; besides, BASIC8 offers some data structures as libraries, which will be explained later.
+BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The built-in types are nil, numbers, string, array, collections, iterators, lambda, class, coroutine; besides, BASIC8 offers some data structures as libraries, which will be explained later.
 
 Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `NOTHING`.
 
@@ -203,15 +203,15 @@ B = "World"
 PRINT A + B;
 ~~~~~~~~~~
 
-However, there's a special case that `$` does mean something with the `DIM` and `INPUT` statements.
+However, there are special cases that `$` does mean something with the `DIM` and `INPUT` statements.
 
-Only `NIL`, `0` and constant `FALSE` result "false" within boolean expressions; non-zero numbers, `TRUE` and all other values, including an empty string `""` result "true" in BASIC8.
+Only `0`, constant `FALSE` and `NIL` result "false" within boolean expressions; non-zero numbers, `TRUE` and all other values, including empty string `""` result "true" in BASIC8.
 
 #### Number
 
 There are two types of number in BASIC8, integer and real (float point). Integer is implemented as 32-bit signed, with range of values from -2,147,483,648 to 2,147,483,647. Real is implemented as single precision float point of [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard. An arithmetic expression with real number may result an integer, if the result value doesn't have a fractional part, eg. `1.5 / 0.5` results in `3` rather than `3.0`.
 
-An octal integer begins with `0`, a hexadecimal one begins with `0x`, eg. `010` (oct) equals to `8` (dec), `0x10` (hex) equals to `16` (dec).
+An octal integer begins with a `0` prefix, a hexadecimal begins with a `0x`, eg. `010` (oct) equals to `8` (dec), `0x10` (hex) equals to `16` (dec).
 
 #### String
 
@@ -219,7 +219,7 @@ A string begins and ends with a pair of double quotation marks `""`, it stores w
 
 ### Comment
 
-A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of the line are ignored. Besides, BASIC8 supports a form of multiline comments, begin with `'[` and ends with `']`, all text between them are ignored.
+A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begin with `'[` and ends with `']`, all text between them are ignored.
 
 ### Arithmetic and relational operations
 
@@ -299,7 +299,7 @@ DIM nums(10)
 DIM strs$(2, 5)
 ~~~~~~~~~~
 
-The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array indices begin from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value of as a constant, a variable or an expression which results in an integer; invalid indices will cause errors.
+The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array indices begin from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid indices will cause errors.
 
 ## Control structures
 
@@ -342,9 +342,9 @@ NEXT i
 
 The `STEP 1` part is optional if the increment step is 1. The loop variable after `NEXT` is also optional if it is associated with a nearest `FOR`.
 
-A variant form of `FOR`/`IN`/`NEXT` is used to iterate collections, which will be mentioned later.
+A variant form of `FOR`/`IN`/`NEXT` is used to iterate collections and other iterable structures, which will be mentioned later.
 
-The `WHILE`/`WEND`, `DO`/`UNTIL` statements are used when the number of loop steps is uncertain. `WHILE`/`WEND` checks a loop condition before executing a loop body; while `DO`/`UNTIL` executes a body block before checking a condition.
+The `WHILE`/`WEND`, `DO`/`UNTIL` statements are used when the number of loop steps is uncertain. `WHILE`/`WEND` checks a loop condition before executing a loop body; while `DO`/`UNTIL` executes a loop body before checking a condition.
 
 It keeps looping when a condition is true with `WHILE`/`WEND`:
 
@@ -389,7 +389,7 @@ BASIC8 supplies a set of list and dictionary manipulation functions which do cre
 * `SORT(lst)`: sorts a list increasingly
 * `EXIST(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
 * `INDEX_OF(lst)`: gets the index of a specific value in a list
-* `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary
+* `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary, or the value of an iterator
 * `SET(coll, where, val)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
 * `REMOVE(coll, where)`: removes the element at a specific index in a list, or the element at a specific key in a dictionary
 * `CLEAR(coll)`: clears a list or a dictionary
@@ -476,7 +476,7 @@ NEXT
 
 ### Sub routine
 
-A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be mentioned uniformly as "routine" for short in this document. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Use the name of a routine directly to call it, with a list of arguments clamped with a pair of brackets. But it requires an extra `CALL` statement when a routine is declared below where it's called. The `RETURN` statement is also used to exit a routine, with an optional result value.
+A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be mentioned uniformly as "routine" for short in this document. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Use the name of a routine directly to call it, with a list of arguments clamped with a pair of brackets. But it requires an extra `CALL` statement when a routine is declared below where it's called. The `RETURN` statement is also used there to exit a routine, with an optional result value.
 
 Each routine has its own scope, in which statements in that routine body would lookup for variables, before looking into outer scopes.
 
@@ -496,7 +496,7 @@ ENDDEF
 PRINT foo(1, 2);
 ~~~~~~~~~~
 
-It's also possible to use the `CALL` statement with brackets clamped identifier to gets an invokable object, instead of calling it immediately, as:
+It's also possible to use the `CALL` statement with brackets clamped routine name to get an invokable object, instead of calling it immediately, as:
 
 ~~~~~~~~~~bas
 c = CALL(bar)
@@ -512,11 +512,11 @@ But, there's a limitation that it's not accepted to use mixed routines with `DEF
 A [lambda](https://en.wikipedia.org/wiki/Anonymous_function) abstraction, a.k.a. "anonymous function" or "function literal", is a function definition that is not bound to an identifier. Lambda functions are often:
 
 * Arguments being passed to higher order functions, or
-* Used for constructing the result of a higher-order function that needs to return a function
+* Used for constructing the result of a higher order function that needs to return a function
 
-A Lambda becomes a closure after it captured some values in an outer scope.
+A Lambda becomes a closure after it captured some values from an outer scope.
 
-BASIC8 offers a full support for lambda, including invokable as a value, higher order function, closure, currying, etc.
+BASIC8 offers full support for lambda, including invokable as a value, higher order function, closure, currying, etc.
 
 It begins with a `LAMBDA` keyword, follows with a parameter list, with none or multiple parameter identifiers; then a lambda body, which is also clamped with a pair of brackets. It's able to write multiline statements in a lambda body. Use the `RETURN` statement to return a value and exit from a lambda execution as well. The tilde symbol `~` is short for `LAMBDA`.
 
@@ -542,7 +542,7 @@ acc(2)
 
 ### Class
 
-BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, it means the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new instance of a prototype.
+BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new instance of a prototype.
 
 See the following example of class:
 
@@ -569,7 +569,7 @@ PRINT GET(foo, "A");   ' Results in the value of "A".
 PRINT GET(foo, "FUN"); ' Results in the invokable object.
 ~~~~~~~~~~
 
-The `SET` statement can be applied to a class instance to set the value of a variable field:
+The `SET` statement can be applied to a class instance to set the value of a field variable:
 
 ~~~~~~~~~~bas
 SET(foo, "A", 42)
@@ -578,11 +578,11 @@ PRINT GET(foo, "A");
 
 ### Typing
 
-The `TYPE` statement is used to tell the type of any value.
+The `TYPE` statement is used to tell the type of a value.
 
 The `IS` operator is used to check whether a value is an instance of a certain type, or if an object is an instance of a class, eg. `1 IS TYPE("NUMBER")`, `"Hello" IS TYPE("STRING")`, `inst IS foo`, etc.
 
-Besides, there is also a `TYPEOF` function, which gets the type of a (non-referenced) library value.
+Besides, there is also a `TYPEOF` function, which gets the type of a non-referenced library value.
 
 ### Importing another file
 
@@ -594,7 +594,7 @@ IMPORT "directory/file_name.bas"
 
 ### Coroutine
 
-A coroutine is a special data type in BASIC8, which encapsulates an invokable routine or lambda. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself.
+A coroutine is a special data type in BASIC8, which encapsulates an invokable routine or lambda. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
 
 * `COROUTINE(invokable, ...)`: creates a coroutine, with optional initialization arguments
 * `YIELD val`: yields from a coroutine, hands over the execution flow
@@ -604,7 +604,7 @@ A coroutine is a special data type in BASIC8, which encapsulates an invokable ro
 * `MOVE_NEXT(co)`: iterates a coroutine for one step
 * `GET(co)`: gets current iterated value of a coroutine
 * `GET_ERROR(co)`: gets the execution error of a coroutine
-* `WAIT_FOR_MS(ms)`: waits for certain milliseconds to dispatch next coroutine cycle
+* `WAIT_FOR_MS(ms)`: waits for certain milliseconds to dispatch for next coroutine cycle
 
 Eg:
 
@@ -647,8 +647,8 @@ NEXT
 The `TRY` statement accepts three arguments. And works as following:
 
 * It invokes the first "try" invokable argument
-* Invokes the second "catch" routine by passing the error text, if any error occurred within the "try" routine
-* The third "finally" routine is always invoked no matter error occurred or not
+* Invokes the second "catch" routine and passes the error text, if any error occurred within the "try" routine
+* The third "finally" routine is optional; it's always invoked no matter error occurred or not, if it's provided
 * It raises an occurred error to outer, if it's not caught yet by current `TRY`
 * A `TRY` statement returns the value of the returned result from a "try" routine
 
@@ -677,33 +677,35 @@ PRINT ret;
 
 ### Automatic memory management
 
-BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing finished files, etc.
+BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing databases, closing finished files, etc.
 
 ## Generic functions
 
+* `END`: terminates current program
+
 * `INPUT [prompt,] x`: this function suspends current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
-	* `x[$]`: variable identifier to be filled, accepts string with a `$` postfix, otherwise accepts number
+	* `x[$]`: variable identifier to be filled, accepts string when a `$` is decorated, otherwise accepts number
 * `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
 * `ASSERT(cond [, text])`: for the purpose of debugging; prompts an assertion and terminates execution immediately if `cond` results in false
 * `SWAP(x, y)`: swaps the values between `x` and `y`
 * `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
 
-* `TRACE()`: prints stack trace
+* `TRACE()`: for the purpose of debugging; prints stack trace
 * `RAISE([n])`: raises an error, with an optional abort code
 * `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected; do not need to call this manually
-* `MEM`: gets the allocated memory size in bytes
+* `MEM`: for the purpose of debugging; gets the size of allocated memory in bytes
 * `BEEP`: beeps once with the (PC) speaker, not available for all platforms
-* `TYPEOF(val)`: gets the type of a (non-referenced) library value
+* `TYPEOF(val)`: gets the type of a non-referenced library value
 
 [HOME](#welcome-to-basic8)
 
 ## Graphics
 
-Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties, such as positions, rotations, of graphics commands can be interpolated between rendering frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties, such as positions, rotations, etc. of graphics commands can be interpolated between current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
-* "map": graphics commands are separated into 5 sub queues, later drawing covers earlier ones
+* "map": graphics commands are separated into 5 sub queues, later drawing covers earlier
 	* 0, ground: for layer 1 in a map asset
 	* 1, building: for layer 2 in a map asset
 	* 2, active: for sprites
@@ -714,7 +716,7 @@ Program execution and rendering run on different threads with respective frame r
 
 These functions are used to communicate with a driver:
 
-* `DRIVER()`: gets the driver, there's only one driver instance for a running cartridge
+* `DRIVER()`: gets current driver, there's only one driver instance for a running cartridge
 * `VALID(drv)`: checks whether a driver is valid
 * `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
@@ -745,8 +747,8 @@ These functions are used to manipulate a sprite:
 	* `b`: begin frame index, starts from 1; or tag text of a frame
 	* `e`: end frame index, starts from 1; or tag text of a frame; setting `b` and `e` both to -1 means play through all frames
 * `STOP(spr)`: stops animating a sprite
-* `FLIP_X(spr, f = FALSE)`: sets whether flips a sprite horizontally
-* `FLIP_Y(spr, f = FALSE)`: sets whether flips a sprite vertically
+* `FLIP_X(spr, f = FALSE)`: sets whether flipping a sprite horizontally
+* `FLIP_Y(spr, f = FALSE)`: sets whether flipping a sprite vertically
 * `SET_FLIP_CONDITION(spr, fx, fy)`: sets the flipping condition of a sprite
 	* `fx`: in horizontal directions, 1 for flipping when sprite's x is increasing, -1 for flipping when sprite's x is decreasing, 0 for none
 	* `fy`: in vertical directions, 1 for flipping when sprite's y is increasing, -1 for flipping when sprite's y is decreasing, 0 for none
@@ -865,7 +867,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 * `SET_VOLUME(sv = 1, mv = 1)`: sets volume values, ranged from 0.0 to 1.0
 	* `sv`: volume of sound effect
-	* `sm`: volume of music
+	* `mv`: volume of music
 
 ### Music
 
@@ -978,7 +980,7 @@ To delete a map asset, click `Cartridge`, `Delete asset`, then select a "*.map" 
 
 You can edit colors of palette by right clicking on it.
 
-All map assets in a cartridge use a shared tiles asset as reference.
+All map assets in a cartridge use a shared tiles asset as reference. You'll be asked to specify the size of a tile when creating first map asset for a cartridge.
 
 To open and edit a tiles asset, open an existing map asset first, then click the `Edit` button on the top-left corner of a map editor.
 
@@ -1131,13 +1133,13 @@ PRINT task;
 * `Bytes.PUSH(val)`: pushes a byte
 * `Bytes.POP()`: pops a byte
 
-* `Bytes.PUSH_U8(val)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the size of the buffer
+* `Bytes.PUSH_U8(val)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the buffer size
 * `Bytes.PUSH_S8(val)`: pushes a number as 8-bit signed integer
 * `Bytes.PUSH_U16(val)`: pushes a number as 16-bit unsigned integer
 * `Bytes.PUSH_S16(val)`: pushes a number as 16-bit signed integer
 * `Bytes.PUSH_INT(val)`: pushes a number as 32-bit signed integer
 * `Bytes.PUSH_REAL(val)`: pushes a number as single precision float point
-* `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail, and decrease the size of the buffer
+* `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail, and decrease the buffer size
 * `Bytes.POP_S8()`: pops a number as 8-bit signed integer
 * `Bytes.POP_U16()`: pops a number as 16-bit unsigned integer
 * `Bytes.POP_S16()`: pops a number as 16-bit signed integer
@@ -1151,7 +1153,7 @@ PRINT task;
 * `Bytes.READ_REAL()`: reads a number as single precision float point
 * `Bytes.END_OF_STREAM()`: checks whether has read to the end of the buffer
 
-* `Bytes.LEN()`: gets the size of a buffer in bytes
+* `Bytes.LEN()`: gets the buffer size in bytes
 * `Bytes.GET(i)`: gets the byte at a specific index
 * `Bytes.SET(i, val)`: sets the byte at a specific index with a value
 
@@ -1187,12 +1189,12 @@ Parameter format of `NOW`:
 
 | Specifier | Replaced by | Example |
 |---|---|---|
-None | Represent Www Mmm dd hh:mm:ss yyyy | Sat Jun 20 09:29:00 1980
-%D | Short MM/DD/YY date | 06/20/80
-%F | Short YYYY-MM-DD date | 1980-06-20
-%T | ISO 8601 time format (HH:MM:SS) | 14:55:02
-%R | 24-hour HH:MM time | 14:55
-More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/) |
+| None | Represent Www Mmm dd hh:mm:ss yyyy | Fri Jun 20 09:29:00 1980 |
+| %D | Short MM/DD/YY date | 06/20/80 |
+| %F | Short YYYY-MM-DD date | 1980-06-20 |
+| %T | ISO 8601 time format (HH:MM:SS) | 14:55:02 |
+| %R | 24-hour HH:MM time | 14:55 |
+| More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/) | |
 
 ### File
 
@@ -1209,7 +1211,7 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 * `File.WRITE(val ...)`: writes one or more values to file
 * `File.WRITE_LINE(val)`: writes one value and a newline character `\n` to file
 
-* `File.LEN()`: gets the size of a file in bytes
+* `File.LEN()`: gets the file size in bytes
 
 ### GUI
 
@@ -1226,7 +1228,7 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 
 * `Image.GET(x, y)`: gets the color of a pixel
 * `Image.SET(x, y, col)`: sets the color of a pixel
-* `Image.LEN([r])`: gets the total pixels count, or width, or height of an image
+* `Image.LEN([r])`: gets the count of total pixels, or width, or height of an image
 	* `r`: for total pixels if no argument passed, 0 for width, or 1 for height
 
 ### IO
@@ -1254,10 +1256,10 @@ More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/
 * `Dir.CREATE()`: tries to create a directory
 * `Dir.PARENT()`: gets the directory information of a directory's parent
 
-* `Dir.GET_FILES([p [, r]])`: gets files in a directory
+* `Dir.GET_FILES([p, r = FALSE])`: gets files in a directory
 	* `p`: matching pattern, supports wildcard
 	* `r`: true for recursive matching
-* `Dir.GET_DIRECTORIES([r])`: gets sub directories under a directory
+* `Dir.GET_DIRECTORIES(r = FALSE)`: gets sub directories under a directory
 	* `r`: true for recursive matching
 * `Dir.GET_FULL_PATH()`: returns the full path of a directory
 * `Dir.GET_PARENT_PATH()`: gets the directory path of a directory' parent
@@ -1278,12 +1280,12 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 
 | JSON | BASIC8 |
 |---|---|
-Null | NIL
-Bool | JSON_BOOL
-Number | NUMBER
-String | STRING
-Array | LIST
-Object | DICT (unordered)
+| Null | NIL |
+| Bool | JSON_BOOL |
+| Number | NUMBER |
+| String | STRING |
+| Array | LIST |
+| Object | DICT (unordered) |
 
 * `FROM_JSON_BOOL(b)`: converts a JSON bool to BASIC8 integer
 	* `b`: JSON bool
@@ -1294,7 +1296,7 @@ Object | DICT (unordered)
 
 ### Math
 
-* `PI`: gets the constant PI number
+* `PI`: gets the constant Pi
 
 * `DEG(r)`: converts radians to degrees
 * `RAD(d)`: converts degrees to radians

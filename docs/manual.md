@@ -179,7 +179,7 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 ## Basic principles
 
-BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent peoples could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
+BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
 
 Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other literal words.
 
@@ -1157,6 +1157,8 @@ PRINT task;
 
 ### Database
 
+BASIC8 uses [SQLite](http://sqlite.org/docs.html) as storage engine. See its documentation for the [SQL syntax](http://sqlite.org/lang.html).
+
 * `DATABASE()`: creates a database object
 * `Db.OPEN(path)`: opens a database file
 	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
@@ -1164,10 +1166,10 @@ PRINT task;
 
 * `Db.HAS_TABLE(tbl)`: checks whether a table exists or not
 	* `tbl`: table name
-* `Db.QUERY(sql)`: <!--**asynchronizable**, -->executes a SQL query
+* `Db.QUERY(sql)`: <!--**asynchronizable**, -->executes an SQL query
 	* `sql`: SQL statement
 	* returns queried result
-* `Db.EXEC(sql)`: <!--**asynchronizable**, -->executes a SQL statement
+* `Db.EXEC(sql)`: <!--**asynchronizable**, -->executes an SQL statement
 	* `sql`: SQL statement
 	* returns execution result
 

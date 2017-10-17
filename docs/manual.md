@@ -179,7 +179,7 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 ## Basic principles
 
-BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect, with both retro simplicity and some modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
+BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect with retro simplicity, and tackles a lot of aspects of modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
 
 Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other literal words.
 
@@ -1130,22 +1130,24 @@ PRINT task;
 
 * `BYTES()`: creates a byte array object
 
-* `Bytes.PUSH(val)`: pushes a byte
-* `Bytes.POP()`: pops a byte
-
-* `Bytes.PUSH_U8(val)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the buffer size
+* `Bytes.PUSH(val)`: pushes a byte, is equivalent to `Bytes.PUSH_U8(val)`
+* `Bytes.PUSH_U8(val)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the buffer size by adding new elements
 * `Bytes.PUSH_S8(val)`: pushes a number as 8-bit signed integer
 * `Bytes.PUSH_U16(val)`: pushes a number as 16-bit unsigned integer
 * `Bytes.PUSH_S16(val)`: pushes a number as 16-bit signed integer
 * `Bytes.PUSH_INT(val)`: pushes a number as 32-bit signed integer
 * `Bytes.PUSH_REAL(val)`: pushes a number as single precision float point
-* `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail, and decrease the buffer size
+
+* `Bytes.POP()`: pops a byte, is equivalent to `Bytes.POP_U8()`
+* `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail to head, and decrease the buffer size by removing read elements
 * `Bytes.POP_S8()`: pops a number as 8-bit signed integer
 * `Bytes.POP_U16()`: pops a number as 16-bit unsigned integer
 * `Bytes.POP_S16()`: pops a number as 16-bit signed integer
 * `Bytes.POP_INT()`: pops a number as 32-bit signed integer
 * `Bytes.POP_REAL()`: pops a number as single precision float point
-* `Bytes.READ_U8()`: reads a number as 8-bit unsigned integer; all reading functions retrieve data with an automatically increasing cursor from head to tail
+
+* `Bytes.READ()`: reads a byte, is equivalent to `Bytes.READ_U8()`
+* `Bytes.READ_U8()`: reads a number as 8-bit unsigned integer; all reading functions retrieve data with an automatically increasing cursor from head to tail, without changing elements
 * `Bytes.READ_S8()`: reads a number as 8-bit signed integer
 * `Bytes.READ_U16()`: reads a number as 16-bit unsigned integer
 * `Bytes.READ_S16()`: reads a number as 16-bit signed integer
@@ -1153,6 +1155,7 @@ PRINT task;
 * `Bytes.READ_REAL()`: reads a number as single precision float point
 * `Bytes.END_OF_STREAM()`: checks whether has read to the end of the buffer
 
+* `Bytes.CLEAR()`: clears byte array
 * `Bytes.LEN()`: gets the buffer size in bytes
 * `Bytes.GET(i)`: gets the byte at a specific index
 * `Bytes.SET(i, val)`: sets the byte at a specific index with a value
@@ -1206,10 +1209,26 @@ Parameter format of `NOW`:
 
 * `File.PEEK_POS()`: gets the accessing position of a file
 * `File.POKE_POS(i)`: sets the accessing position of a file
-* `File.READ([n])`: reads a byte as number, or some bytes as text
-* `File.READ_LINE()`: reads a line of text
+
 * `File.WRITE(val ...)`: writes one or more values to file
+	* `val`: writes as byte for numbers, literally for string
+* `File.WRITE_U8(val)`: writes a number as 8-bit unsigned integer
+* `File.WRITE_S8(val)`: writes a number as 8-bit signed integer
+* `File.WRITE_U16(val)`: writes a number as 16-bit unsigned integer
+* `File.WRITE_S16(val)`: writes a number as 16-bit signed integer
+* `File.WRITE_INT(val)`: writes a number as 32-bit signed integer
+* `File.WRITE_REAL(val)`: writes a number as single precision float point
 * `File.WRITE_LINE(val)`: writes one value and a newline character `\n` to file
+
+* `File.READ([n])`: reads a byte as number, or some bytes as string
+* `File.READ_U8()`: reads a number as 8-bit unsigned integer
+* `File.READ_S8()`: reads a number as 8-bit signed integer
+* `File.READ_U16()`: reads a number as 16-bit unsigned integer
+* `File.READ_S16()`: reads a number as 16-bit signed integer
+* `File.READ_INT()`: reads a number as 32-bit signed integer
+* `File.READ_REAL()`: reads a number as single precision float point
+* `File.READ_LINE()`: reads a line of text
+* `File.END_OF_STREAM()`: checks whether has read to the end of the buffer
 
 * `File.LEN()`: gets the file size in bytes
 
@@ -1337,6 +1356,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 * `FIND(txt, what, off = 0)`: gets the start position of a sub string
 	* returns start position, or -1 for not found
 * `WILDCARD_FIND(txt, what)`: gets the start position of a sub string with wildcard matching
+	* returns true if matched, otherwise false
 
 * `REGEX(text, re)`: performs a regex matching
 

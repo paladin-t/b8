@@ -43,6 +43,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [Collections](#collections)
 			* [Iterators](#iterators)
 		* [Sub routine](#sub-routine)
+			* [Variadic](#variadic)
 		* [Lambda](#lambda)
 		* [Class](#class)
 		* [Typing](#typing)
@@ -94,9 +95,14 @@ You may read this manual in any order according to your interest, and open this 
 		* [OS](#os)
 		* [Text](#text)
 		* [Web](#web)
+
+* Part VI. Appendix
 	* [Reserved words](#reserved-words)
+	* [Type names](#type-names)
 
 [HOME](#welcome-to-basic8)
+
+# Part I. Fundamental
 
 ## Getting started
 
@@ -177,6 +183,8 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 [HOME](#welcome-to-basic8)
 
+# Part II. Syntax
+
 ## Basic principles
 
 BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect with retro simplicity, and tackles a lot of aspects of modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
@@ -185,7 +193,7 @@ Identifiers and keywords are case-insensitive, but it stores what exactly you ty
 
 ### Variable and data types
 
-BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The built-in types are nil, numbers, string, array, collections, iterators, lambda, class, coroutine; besides, BASIC8 offers some data structures as libraries, which will be explained later.
+BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The built-in types are nil, numbers, string, type, array, collections, iterators, class, routine, lambda, coroutine; besides, BASIC8 offers some data structures as libraries, which will be explained later.
 
 Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `NOTHING`.
 
@@ -507,6 +515,49 @@ Keep in mind the difference between `CALL bar(...)` and `CALL(bar)`.
 
 But, there's a limitation that it's not accepted to use mixed routines with `DEF`/`ENDDEF` and jumps with `GOTO`/`GOSUB` together in one program.
 
+#### Variadic
+
+It's supposed to receive indefinite arity with invokable sometimes. BASIC8 uses the variadic symbol `...` for both routine definition, and argument unpacking. It refers to "more arguments" can be passed in the parameter list of a routine; or refers to all remaining arguments in the body of a routine. Eg:
+
+~~~~~~~~~~bas
+DEF foo(a, b, ...)
+	RETURN a + " " + b + " " + ... + ...
+ENDDEF
+DEF bar(...)
+	RETURN foo(...)
+ENDDEF
+PRINT bar("Variadic", "argument", "list", "...");
+~~~~~~~~~~
+
+Use the `LEN` statement to tell the count of remaining arguments. Iterating all arguments, for example:
+
+~~~~~~~~~~bas
+l = LEN(...)
+FOR i = 1 TO l
+	s = s + ...
+NEXT
+~~~~~~~~~~
+
+Or:
+
+~~~~~~~~~~bas
+WHILE LEN(...)
+	s = s + ...
+WEND
+~~~~~~~~~~
+
+Or:
+
+~~~~~~~~~~bas
+t = ...
+WHILE TYPE(t) <> TYPE("UNKNOWN")
+	s = s + t
+	t = ...
+WEND
+~~~~~~~~~~
+
+Triple dots are also used to describe that a library function accepts more than one arity in this document.
+
 ### Lambda
 
 A [lambda](https://en.wikipedia.org/wiki/Anonymous_function) abstraction, a.k.a. "anonymous function" or "function literal", is a function definition that is not bound to an identifier. Lambda functions are often:
@@ -562,7 +613,9 @@ inst = NEW(bar)
 PRINT inst.fun(3);
 ~~~~~~~~~~
 
-The `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable or the invokable object of a routine:
+The `ME` keyword always stands for current class instance. A.k.a. `SELF` or `THIS` in other languages.
+
+The generic `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable or the invokable object of a routine:
 
 ~~~~~~~~~~bas
 PRINT GET(foo, "A");   ' Results in the value of "A".
@@ -578,7 +631,7 @@ PRINT GET(foo, "A");
 
 ### Typing
 
-The `TYPE` statement is used to tell the type of a value.
+The `TYPE` statement is used to tell the type of a value as `PRINT TYPE(22 / 7);`; or get a "type" object with specific type name as `TYPE("NUMBER")`.
 
 The `IS` operator is used to check whether a value is an instance of a certain type, or if an object is an instance of a class, eg. `1 IS TYPE("NUMBER")`, `"Hello" IS TYPE("STRING")`, `inst IS foo`, etc.
 
@@ -699,6 +752,8 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `TYPEOF(val)`: gets the type of a non-referenced library value
 
 [HOME](#welcome-to-basic8)
+
+# Part III. Game driver
 
 ## Graphics
 
@@ -922,6 +977,8 @@ Plus 4096 to `y` for interpolating `hz` from current set with the following one'
 
 [HOME](#welcome-to-basic8)
 
+# Part IV. Editors
+
 ## Editors
 
 To run a cartridge, select it, then click `Cartridge`, `Run`; or right click on a cartridge, then click `Run`; or even double click on it when the `Run on click` option is enabled.
@@ -998,6 +1055,8 @@ To delete a quantized image asset, click `Cartridge`, `Delete asset`, then selec
 
 [HOME](#welcome-to-basic8)
 
+# Part V. Functions
+
 ## Basic functions
 
 ### Math functions
@@ -1036,7 +1095,7 @@ All trigonometric functions calculate in radians.
 
 ### Data transfer and persistence
 
-Retro BASIC dialects collect data before running a program with the `DATA` transfer statements, and only accepts simple data; BASIC8 really executes a `DATA` statement at runtime and it must appear before calling `READ`, it can also collect advanced data types in BASIC8.
+Retro BASIC dialects collect data before running a program with the `DATA` transfer statements, and only accepts simple data. It's different with BASIC8, it actually executes a `DATA` statement at runtime and it must appear before calling `READ`, it can also collect advanced data types in BASIC8.
 
 * `DATA ...`: declares some inline data sequence
 	* returns total collected count until the last data argument
@@ -1076,6 +1135,8 @@ w = LIST(-1, -2, -3)
 ~~~~~~~~~~
 
 ## Libraries
+
+Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noticed that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) for a sequential bit order.
 
 <!--
 ### Asynchronization
@@ -1368,6 +1429,10 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 	* `f`: fields for post
 	* returns response
 
+[HOME](#welcome-to-basic8)
+
+# Part VI. Appendix
+
 ## Reserved words
 
 Some words are not implemented for actual functions, yet they are reserved for future. It's suggested to not to use them as identifiers:
@@ -1383,5 +1448,11 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `LIKE`, `FORMAT`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PEEK`, `POKE`
+
+## Type names
+
+Valid type names as following: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE".
+
+Data structures of library are implemented as non-referenced "USERTYPE", or referenced "USERTYPE_REF". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, rely on it as little as possible.
 
 [HOME](#welcome-to-basic8)

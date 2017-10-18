@@ -745,7 +745,8 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
 
 * `TRACE()`: for the purpose of debugging; prints stack trace
-* `RAISE([n])`: raises an error, with an optional abort code
+* `RAISE([ex])`: raises an error, with an optional exception message
+	* `ex`: exception string
 * `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected; do not need to call this manually
 * `MEM`: for the purpose of debugging; gets the size of allocated memory in bytes
 * `BEEP`: beeps once with the (PC) speaker, not available for all platforms

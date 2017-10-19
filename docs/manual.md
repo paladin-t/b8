@@ -615,6 +615,8 @@ PRINT inst.fun(3);
 
 The `ME` keyword always stands for current class instance. A.k.a. `SELF` or `THIS` in other languages.
 
+The `REFLECT` statement is used to traverse all member variables and routines in a class instance. It returns a dictionary filled with name of member as key, value of member as value.
+
 The generic `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable or the invokable object of a routine:
 
 ~~~~~~~~~~bas

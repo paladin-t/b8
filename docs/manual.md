@@ -1376,12 +1376,12 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 | Array | LIST |
 | Object | DICT (unordered) |
 
-* `FROM_JSON_BOOL(b)`: converts a JSON bool to BASIC8 integer
-	* `b`: JSON bool
-	* returns `TRUE` or `FALSE`
-* `TO_JSON_BOOL(b)`: converts a BASIC8 integer to JSON bool
+* `JSON_BOOL(b)`: creates a BASIC8 integer to JSON bool
 	* `b`: BASIC8 integer as bool
 	* returns JSON bool
+* `UNPACK(b)`: unpacks a JSON bool to BASIC8 integer
+	* `b`: JSON bool
+	* returns `TRUE` or `FALSE`
 
 ### Math
 

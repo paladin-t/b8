@@ -785,7 +785,7 @@ These functions are used to communicate with a driver:
 * `LOCK(drv)`: locks a driver, suspends its resource loading procedures
 * `UNLOCK(drv)`: unlocks a driver, resumes its resource loading procedures
 
-These functions are used to load or create graphics objects and values:
+These functions are used to load, create or extract graphics objects and values:
 
 * `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
@@ -797,8 +797,14 @@ These functions are used to load or create graphics objects and values:
 	* `h`: height of a frame/layer
 
 * `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer ranged from 0 to 255
+* `UNPACK(col, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to following variables
+	* `col`: for input, color value
+	* `r`: for output, the red component
+	* `g`: for output, the green component
+	* `b`: for output, the blue component
+	* `a`: for output, the alpha component
 
-These functions are used to manipulate a sprite:
+These functions are used to manipulate the states of a sprite:
 
 * `PLAY(spr, b = -1, e = -1, loop = TRUE, init = FALSE)`: plays a range of frames of a sprite
 	* `spr`: sprite object
@@ -889,10 +895,10 @@ The beginning layer index of map is 0. Furthermore, layer 0 is for the purpose o
 
 ### Mouse and touch
 
-The `TOUCH` statement takes a pointer index, and assigns all result values to following variables.
+The `TOUCH` statement takes an index of fingers, and assigns all result values to following variables.
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
-	* `i`: for input, pointer index; usually with 0
+	* `i`: for input, pointer index; usually with 0 for either the mouse or the first finger
 	* `x`: for output, the x position of a pointer
 	* `t`: for output, the t position of a pointer
 	* `b0`: for output, true if the first button is pressed

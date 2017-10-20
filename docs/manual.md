@@ -106,7 +106,7 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal for BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming. And it's trying to stay at a balance point of simplicity, creativity, fun and usability.
+It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done. It's trying to stay at a balance point of simplicity, creativity, fun and usability.
 
 ### Operations
 
@@ -134,7 +134,7 @@ When speaking of clicking `[Head]` in this document, it means the first icon ite
 
 ### Specifications
 
-The limitations of BASIC8 are carefully chosen to make it easy and enjoyable during making programs:
+The limitations of BASIC8 are carefully chosen to make it easy and simple during making programs:
 
 * Canvas: 160x128 pixels
 * Gamepad: 6 buttons for each pad, up to 8 players
@@ -659,7 +659,7 @@ A coroutine is a special data type in BASIC8, which encapsulates an invokable ro
 * `MOVE_NEXT(co)`: iterates a coroutine for one step
 * `GET(co)`: gets current iterated value of a coroutine
 * `GET_ERROR(co)`: gets the execution error of a coroutine
-* `WAIT_FOR_MS(ms)`: waits for certain milliseconds to dispatch for next coroutine cycle
+* `WAIT_FOR_MS(ms)`: returns a non-referenced value which represents for waiting for certain milliseconds before dispatching to next coroutine cycle
 
 Eg:
 
@@ -846,7 +846,7 @@ These functions are used to manipulate the states of a sprite:
 
 The beginning frame index of sprite is 1.
 
-* `STEP_ON(y)`: creates a "step on" value, which represents for aligning a sprite's bottom edge to `y`
+* `STEP_ON(y)`: creates a "step on" non-referenced value, which represents for aligning a sprite's bottom edge to `y`
 * `SPR spr, x, y, r = 0`: draws a sprite
 	* `x`: horizontal position of the top-left corner
 	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
@@ -1145,7 +1145,7 @@ w = LIST(-1, -2, -3)
 
 ## Libraries
 
-Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noticed that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) for a sequential bit order.
+Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noticed that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
 
 <!--
 ### Asynchronization
@@ -1277,8 +1277,8 @@ Parameter format of `NOW`:
 	* `acc`: accessing mark, true for writable, otherwise readonly
 * `File.CLOSE()`: closes an opened file
 
-* `File.PEEK_POS()`: gets the accessing position of a file
-* `File.POKE_POS(i)`: sets the accessing position of a file
+* `File.PEEK()`: gets the accessing position of a file
+* `File.POKE(i)`: sets the accessing position of a file
 
 * `File.WRITE(val ...)`: writes one or more values to file
 	* `val`: writes as byte for numbers, literally for string

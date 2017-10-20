@@ -32,6 +32,6 @@ Users can edit and save assets in uniformed formats, with built-in editors, that
 
 ## What's next?
 
-There are plans for new features. But the most important thing while maintaining a development tool is, I cannot absolutely change existing behaviours after it's available for users. So it's a cautious progress.
+There are plans for new features. But it's a little different from other softwares when making a development tool, with new programming language and API. The most important thing while making it is, I cannot absolutely change existing behaviours after it's available for you. So it's a cautious progress.
 
 Besides, I already got an idea of porting BASIC8 to other platforms, and making standalone players; yet details to be determined.

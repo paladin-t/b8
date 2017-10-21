@@ -1425,10 +1425,12 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 * `FIND(txt, what, off = 0)`: gets the start position of a sub string
 	* returns start position, or -1 for not found
-* `WILDCARD_FIND(txt, what)`: gets the start position of a sub string with wildcard matching
+* `LIKE(txt, what)`: matches a string with a wildcard pattern
+	* `what`: `?` for any single character, `*` for zero or more characters
 	* returns true if matched, otherwise false
 
-* `REGEX(text, re)`: performs a regex matching
+* `REGEX(text, re)`: matches a string with a [regular expression](https://en.wikipedia.org/wiki/Regular_expression)
+	* returns matched result as a list, or nil for not matched
 
 ### Web
 
@@ -1453,8 +1455,8 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `FORK`, `JOIN`
 
 * `COLLIDES`
+* `FORMAT`
 * `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM`
-* `LIKE`, `FORMAT`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PEEK`, `POKE`
 
@@ -1462,6 +1464,6 @@ Some words are not implemented for actual functions, yet they are reserved for f
 
 Valid type names as following: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE".
 
-Data structures of library are implemented as non-referenced "USERTYPE", or referenced "USERTYPE_REF". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, rely on it as little as possible.
+Data structures of library are implemented as non-referenced "USERTYPE", or referenced "USERTYPE_REF". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, so rely on it as little as possible.
 
 [HOME](#welcome-to-basic8)

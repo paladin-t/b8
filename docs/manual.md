@@ -199,7 +199,7 @@ Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `
 
 A variable identifier is formed with letters, numbers, underline and an optional dollar postfix, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pie = 22 / 7`, `s = pie * r * r`, etc.
 
-The dollar symbol `$` is reserved from traditional BASIC dialects as a postfix of a variable identifier. They stand for different variables while with or without it. But it doesn't decorates for type of string anymore in BASIC8:
+The dollar symbol `$` is reserved from traditional BASIC dialects as a postfix of a variable identifier. They stand for different identifiers depending on with or without it. But it doesn't decorates for type of string anymore in BASIC8:
 
 ~~~~~~~~~~bas
 A$ = 1 ' Can store any type with a "$" decorated variable.
@@ -390,18 +390,19 @@ BASIC8 supplies a set of list and dictionary manipulation functions which do cre
 
 * `LIST(...)`: creates a list, with optional initialization elements
 * `DICT(...)`: creates an unordered dictionary, with optional initialization key-value pairs
-* `PUSH(lst, val)`: pushes a value to the tail of a list
+* `PUSH(lst, v)`: pushes a value to the tail of a list
+	* `v`: value to be pushed
 * `POP(lst)`: pops a value from the tail of a list
 * `BACK(lst)`: peeks the value of the tail of a list
-* `INSERT(lst, where, val)`: inserts a value at a specific position of a list
+* `INSERT(lst, where, v)`: inserts a value at a specific position of a list
 * `SORT(lst)`: sorts a list increasingly
-* `EXIST(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
+* `EXISTS(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
 * `INDEX_OF(lst)`: gets the index of a specific value in a list
 * `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary, or the value of an iterator
-* `SET(coll, where, val)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
+* `SET(coll, where, v)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
 * `REMOVE(coll, where)`: removes the element at a specific index in a list, or the element at a specific key in a dictionary
 * `CLEAR(coll)`: clears a list or a dictionary
-* `CLONE(coll)`: clones a collection, each element will be duplicated, except for non-copyable ones
+* `CLONE(coll)`: clones a collection, each element will be duplicated, except for non-copyable ones; or clones a copyable referenced usertype
 * `TO_ARRAY(lst)`: copies all elements from a list to a new array
 * `ITERATOR(coll)`: gets an iterator of a list or a dictionary
 * `MOVE_NEXT(iter)`: moves an iterator to next position on a list or a dictionary
@@ -416,7 +417,7 @@ Eg:
 ~~~~~~~~~~bas
 l = LIST(1, 2, 3, 4)
 SET(l, 1, "B")
-PRINT EXIST(l, 2); POP(l); BACK(l); LEN(l);
+PRINT EXISTS(l, 2); POP(l); BACK(l); LEN(l);
 
 d = DICT(1, "One", 2, "Two")
 SET(d, 3, "Three")
@@ -580,13 +581,11 @@ DEF counter()
 	RETURN LAMBDA (n)
 	(
 		c = c + n
-
 		PRINT c;
 	)
 ENDDEF
 
 acc = counter()
-
 acc(1)
 acc(2)
 ~~~~~~~~~~
@@ -652,8 +651,10 @@ IMPORT "directory/file_name.bas"
 A coroutine is a special data type in BASIC8, which encapsulates an invokable routine or lambda. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
 
 * `COROUTINE(invokable, ...)`: creates a coroutine, with optional initialization arguments
-* `YIELD val`: yields from a coroutine, hands over the execution flow
-* `RETURN val`: returns from a coroutine
+* `YIELD v`: yields from a coroutine, hands over the execution flow
+	* `v`: value to be yielded
+* `RETURN v`: returns from a coroutine
+	* `v`: value to be returned
 * `START(co)`: starts a coroutine, which will be automatically scheduled by a dispatcher
 * `ABORT(co)`: aborts an automatically dispatched coroutine
 * `MOVE_NEXT(co)`: iterates a coroutine for one step
@@ -752,7 +753,7 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected; do not need to call this manually
 * `MEM`: for the purpose of debugging; gets the size of allocated memory in bytes
 * `BEEP`: beeps once with the (PC) speaker, not available for all platforms
-* `TYPEOF(val)`: gets the type of a non-referenced library value
+* `TYPEOF(v)`: gets the type of a non-referenced library value
 
 [HOME](#welcome-to-basic8)
 
@@ -781,11 +782,11 @@ These functions are used to communicate with a driver:
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
 * `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
-	* `r`: can be an invokable routine or lambda, or its name in string, or "update" as default
+	* `r`: can be an invokable routine or lambda, or its name in string, or defaults to "update"
 * `LOCK(drv)`: locks a driver, suspends its resource loading procedures
 * `UNLOCK(drv)`: unlocks a driver, resumes its resource loading procedures
 
-These functions are used to load, create or extract graphics objects and values:
+These functions are used to create, load or extract graphics objects and values:
 
 * `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
@@ -795,10 +796,13 @@ These functions are used to load, create or extract graphics objects and values:
 	* `n`: count of sprite frames, or map layers
 	* `w`: width of a frame/layer
 	* `h`: height of a frame/layer
+* `CLONE(g)`: clones a graphics object, and its states
+	* `g`: source graphics object, can be sprite, map or quantized
+	* returns cloned graphics object
 
 * `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer ranged from 0 to 255
-* `UNPACK(col, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to following variables
-	* `col`: for input, color value
+* `UNPACK(c, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to following variables
+	* `c`: for input, color value
 	* `r`: for output, the red component
 	* `g`: for output, the green component
 	* `b`: for output, the blue component
@@ -821,25 +825,25 @@ These functions are used to manipulate the states of a sprite:
 
 * `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
 	* returns elapsed time since last synchronizing
-* `COL col`: sets the default color value of future commands
+* `COL c`: sets the default color value of future commands
 * `CLIP [x, y, w, h, ss = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
 	* `ss`: true for clipping with screen space, otherwise with world space
 * `CAMERA [x, y, ip = FALSE]`: moves the camera to a specific position, resets its position if no argument passed
 	* `ip`: true for interpolating position
 
-* `TEXT x, y, txt [, col]`: draws a text
-	* `col`: color for drawing, uses the default color set by `COL` if no argument passed
-* `LINE x0, y0, x1, y1, w = 1 [, col]`: draws a line
+* `TEXT x, y, txt [, c]`: draws a text
+	* `c`: color for drawing, uses the default color set by `COL` if no argument passed
+* `LINE x0, y0, x1, y1, w = 1 [, c]`: draws a line
 	* `w`: width (thickness)
-* `CIRC x, y, r [, col]`: draws a circle
-* `CIRCFILL x, y, r [, col]`: draws a filled circle
-* `ELLIPSE x, y, rx, ry [, col]`: draws an ellipse
-* `ELLIPSEFILL x, y, rx, ry [, col]`: draws a filled ellipse
-* `RECT x0, y0, x1, y1 [, col]`: draws a rectangle
-* `RECTFILL x0, y0, x1, y1 [, col]`: draws a filled rectangle
+* `CIRC x, y, r [, c]`: draws a circle
+* `CIRCFILL x, y, r [, c]`: draws a filled circle
+* `ELLIPSE x, y, rx, ry [, c]`: draws an ellipse
+* `ELLIPSEFILL x, y, rx, ry [, c]`: draws a filled ellipse
+* `RECT x0, y0, x1, y1 [, c]`: draws a rectangle
+* `RECTFILL x0, y0, x1, y1 [, c]`: draws a filled rectangle
 
 * `PGET i`: gets a color of a palette, at a specific index
-* `PSET i, col, ip = FALSE`: sets a color of a palette
+* `PSET i, c, ip = FALSE`: sets a color of a palette
 	* `ip`: true for interpolation
 
 ### Sprite
@@ -860,11 +864,13 @@ The beginning frame index of sprite is 1.
 * `SGET spr, i, what`: gets the data of a sprite
 	* `i`: frame index, starts from 1
 	* `what`: can be "tag", "interval"
-* `SSET spr, i, x, y, val`: sets the color index of a sprite, at a specific position
+* `SSET spr, i, x, y, v`: sets the color index of a sprite, at a specific position
 	* `i`: frame index, starts from 1
-* `SSET spr, i, what, val`: sets the data of a sprite
+	* `v`: color index
+* `SSET spr, i, what, v`: sets the data of a sprite
 	* `i`: frame index, starts from 1
 	* `what`: can be "tag", "interval"
+	* `v`: value to be set
 
 ### Map
 
@@ -876,18 +882,20 @@ The beginning layer index of map is 0. Furthermore, layer 0 is for the purpose o
 * `MGET m, i, x, y`: gets the tile index or logic mark of a map layer at a specific position
 	* `m`: list of layers
 	* `i`: index to access in `m`, starts from 0
-* `MSET m, i, x, y, val`: sets the tile index or logic mark of a map layer
+* `MSET m, i, x, y, v`: sets the tile index or logic mark of a map layer
 	* `m`: list of layers
 	* `i`: index to access in `m`, starts from 0
+	* `v`: value to be set
 
 ### Quantized
 
-* `IMG img, x, y, r = 0, q = 0, fx = FALSE, fy = FALSE`: draws a quantized image at a specific position
+* `IMG i, x, y, r = 0, q = 0, fx = FALSE, fy = FALSE`: draws a quantized image at a specific position
+	* `i`: quantized image object
 	* `r`: rotation in degrees
 	* `q`: index of a target rendering queue
 	* `fx`: true for flipping horizontally
 	* `fy`: true for flipping vertically
-* `SIMG img, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+* `SIMG i, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
 
@@ -1200,13 +1208,13 @@ PRINT task;
 
 * `BYTES()`: creates a byte array object
 
-* `Bytes.PUSH(val)`: pushes a byte, is equivalent to `Bytes.PUSH_U8(val)`
-* `Bytes.PUSH_U8(val)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the buffer size by adding new elements
-* `Bytes.PUSH_S8(val)`: pushes a number as 8-bit signed integer
-* `Bytes.PUSH_U16(val)`: pushes a number as 16-bit unsigned integer
-* `Bytes.PUSH_S16(val)`: pushes a number as 16-bit signed integer
-* `Bytes.PUSH_INT(val)`: pushes a number as 32-bit signed integer
-* `Bytes.PUSH_REAL(val)`: pushes a number as single precision float point
+* `Bytes.PUSH(v)`: pushes a byte, is equivalent to `Bytes.PUSH_U8(v)`
+* `Bytes.PUSH_U8(v)`: pushes a number as 8-bit unsigned integer; all pushing functions increase the buffer size by adding new elements
+* `Bytes.PUSH_S8(v)`: pushes a number as 8-bit signed integer
+* `Bytes.PUSH_U16(v)`: pushes a number as 16-bit unsigned integer
+* `Bytes.PUSH_S16(v)`: pushes a number as 16-bit signed integer
+* `Bytes.PUSH_INT(v)`: pushes a number as 32-bit signed integer
+* `Bytes.PUSH_REAL(v)`: pushes a number as single precision float point
 
 * `Bytes.POP()`: pops a byte, is equivalent to `Bytes.POP_U8()`
 * `Bytes.POP_U8()`: pops a number as 8-bit unsigned integer; all popping functions retrieve data from buffer tail to head, and decrease the buffer size by removing read elements
@@ -1228,7 +1236,7 @@ PRINT task;
 * `Bytes.CLEAR()`: clears byte array
 * `Bytes.LEN()`: gets the buffer size in bytes
 * `Bytes.GET(i)`: gets the byte at a specific index
-* `Bytes.SET(i, val)`: sets the byte at a specific index with a value
+* `Bytes.SET(i, v)`: sets the byte at a specific index with a value
 
 ### Database
 
@@ -1280,15 +1288,15 @@ Parameter format of `NOW`:
 * `File.PEEK()`: gets the accessing position of a file
 * `File.POKE(i)`: sets the accessing position of a file
 
-* `File.WRITE(val ...)`: writes one or more values to file
-	* `val`: writes as byte for numbers, literally for string
-* `File.WRITE_U8(val)`: writes a number as 8-bit unsigned integer
-* `File.WRITE_S8(val)`: writes a number as 8-bit signed integer
-* `File.WRITE_U16(val)`: writes a number as 16-bit unsigned integer
-* `File.WRITE_S16(val)`: writes a number as 16-bit signed integer
-* `File.WRITE_INT(val)`: writes a number as 32-bit signed integer
-* `File.WRITE_REAL(val)`: writes a number as single precision float point
-* `File.WRITE_LINE(val)`: writes one value and a newline character `\n` to file
+* `File.WRITE(v ...)`: writes one or more values to file
+	* `v`: writes as byte for numbers, literally for string
+* `File.WRITE_U8(v)`: writes a number as 8-bit unsigned integer
+* `File.WRITE_S8(v)`: writes a number as 8-bit signed integer
+* `File.WRITE_U16(v)`: writes a number as 16-bit unsigned integer
+* `File.WRITE_S16(v)`: writes a number as 16-bit signed integer
+* `File.WRITE_INT(v)`: writes a number as 32-bit signed integer
+* `File.WRITE_REAL(v)`: writes a number as single precision float point
+* `File.WRITE_LINE(v)`: writes one value and a newline character `\n` to file
 
 * `File.READ([n])`: reads a byte as number, or some bytes as string
 * `File.READ_U8()`: reads a number as 8-bit unsigned integer
@@ -1309,14 +1317,14 @@ Parameter format of `NOW`:
 ### Image
 
 * `IMAGE()`: creates an image object
-* `Image.LOAD(val)`: loads an image from a file, or byte array
-	* `val`: file path, or byte array
-* `Image.SAVE(val, y)`: saves an image to a file, or byte array
-	* `val`: file path, or byte array
+* `Image.LOAD(v)`: loads an image from a file, or byte array
+	* `v`: file path, or byte array
+* `Image.SAVE(v, y)`: saves an image to a file, or byte array
+	* `v`: file path, or byte array
 	* `y`: target type, can be "png", "bmp" or "tga"
 
 * `Image.GET(x, y)`: gets the color of a pixel
-* `Image.SET(x, y, col)`: sets the color of a pixel
+* `Image.SET(x, y, c)`: sets the color of a pixel
 * `Image.LEN([r])`: gets the count of total pixels, or width, or height of an image
 	* `r`: for total pixels if no argument passed, 0 for width, or 1 for height
 
@@ -1337,7 +1345,7 @@ Parameter format of `NOW`:
 * `Fi.GET_EXT_NAME()`: gets the extension name of a file
 * `Fi.IS_BLANK()`: checks whether a file is blank
 
-* `Fi.EXIST()`: checks whether a file exists
+* `Fi.EXISTS()`: checks whether a file exists
 * `Fi.REMOVE()`: removes a file
 
 * `DIRECTORY_INFO(path)`: creates a directory information object
@@ -1363,7 +1371,7 @@ Parameter format of `NOW`:
 	* returns JSON string
 
 * `Json.GET()`: gets BASIC8 objects and values from a JSON object
-* `Json.SET()`: sets BASIC8 objects and values to a JSON object
+* `Json.SET(v)`: sets BASIC8 objects and values to a JSON object
 
 Conversions from JSON values to BASIC8 values, or vice versa:
 
@@ -1371,7 +1379,7 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 |---|---|
 | Null | NIL |
 | Bool | JSON_BOOL |
-| Number | NUMBER |
+| Number | INTEGER or REAL |
 | String | STRING |
 | Array | LIST |
 | Object | DICT (unordered) |
@@ -1403,7 +1411,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 	* `s`: true to show, false to hide
 * `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of current BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets current working directory path
-* `SET_CURRENT_DIRECTORY(dir)`: **platform dependent**, sets current working directory path
+* `SET_CURRENT_DIRECTORY(dir)`: **platform dependent**, sets current working directory path; do not call this if you didn't get particular reason
 * `SET_CLIPBOARD_TEXT(txt)`: sets the text content of clipboard
 * `GET_CLIPBOARD_TEXT()`: gets the text content of clipboard
 * `HAS_CLIPBOARD_TEXT()`: checks whether the clipboard is filled with text content

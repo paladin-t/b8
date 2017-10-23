@@ -18,7 +18,7 @@ It's a reasonable resolution because:
 
 * Not too small to represent sufficient visuals
 * Nor too big, or requires more contents to fill it
-* Can make exact divisions by 8, 16, 32
+* Can make exact divisions by 8, 16, 32 at both dimensions
 * Is approximate to 4:3
 * Is a common to see resolution of electronic display components
 

@@ -761,7 +761,7 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 
 ## Graphics
 
-Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties, such as positions, rotations, etc. of graphics commands can be interpolated between current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
 * "map": graphics commands are separated into 5 sub queues, later drawing covers earlier
@@ -777,9 +777,9 @@ These functions are used to communicate with a driver:
 
 * `DRIVER()`: gets current driver, there's only one driver instance for a running cartridge
 * `VALID(drv)`: checks whether a driver is valid
-* `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver
+* `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "linear" without calling this function
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
-* `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands
+* `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands; defaults to "nil" without calling this function
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
 * `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
 	* `r`: can be an invokable routine or lambda, or its name in string, or defaults to "update"
@@ -826,7 +826,7 @@ These functions are used to manipulate the states of a sprite:
 * `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
 	* returns elapsed time since last synchronizing
 * `COL c`: sets the default color value of future commands
-* `CLIP [x, y, w, h, ss = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
+* `CLIP [x, y, w, h, ss = TRUE]`: sets a clip area, resets to none clip areas if no argument passed; this command is not interpolable
 	* `ss`: true for clipping with screen space, otherwise with world space
 * `CAMERA [x, y, ip = FALSE]`: moves the camera to a specific position, resets its position if no argument passed
 	* `ip`: true for interpolating position
@@ -843,7 +843,7 @@ These functions are used to manipulate the states of a sprite:
 * `RECTFILL x0, y0, x1, y1 [, c]`: draws a filled rectangle
 
 * `PGET i`: gets a color of a palette, at a specific index
-* `PSET i, c, ip = FALSE`: sets a color of a palette
+* `PSET i, c, ip = FALSE`: sets a color of a palette; only affects during driver's updating
 	* `ip`: true for interpolation
 
 ### Sprite
@@ -856,6 +856,7 @@ The beginning frame index of sprite is 1.
 	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `r`: rotation in degrees
 * `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
 

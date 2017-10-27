@@ -826,10 +826,10 @@ These functions are used to manipulate the states of a sprite:
 * `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
 	* returns elapsed time since last synchronizing
 * `COL c`: sets the default color value of future commands
-* `CLIP [x, y, w, h, ss = TRUE]`: sets a clip area, resets to none clip areas if no argument passed; this command is not interpolable
+* `CLIP [x, y, w, h, ss = TRUE, ip = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
 	* `ss`: true for clipping with screen space, otherwise with world space
-* `CAMERA [x, y, ip = FALSE]`: moves the camera to a specific position, resets its position if no argument passed
 	* `ip`: true for interpolating position
+* `CAMERA [x, y]`: moves the camera to a specific position, resets its position if no argument passed
 
 * `TEXT x, y, txt [, c]`: draws a text
 	* `c`: color for drawing, uses the default color set by `COL` if no argument passed

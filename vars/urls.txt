@@ -1,5 +1,5 @@
-Why BASIC8? = doc://docs/why.md
-Change log = https://my-basic.github.io/basic8/docs/changelog
 Forums =
 	Coming soon...= placeholder
 	= end
+Why BASIC8? = doc://docs/why.md
+Change log = https://my-basic.github.io/basic8/docs/changelog

@@ -97,6 +97,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [Web](#web)
 
 * Part VI. Appendix
+	* [Built-in sound fonts](#built-in-sound-fonts)
 	* [Reserved words](#reserved-words)
 	* [Type names](#type-names)
 
@@ -944,8 +945,9 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 ### Music
 
-* `USE_SOUND_FONT(path)`: uses a sound font bank for music
-	* `path`: uses the content directory of a cartridge as lookup root
+* `USE_SOUND_FONT([path, r = TRUE])`: uses a sound font bank for music
+	* `path`: path of a sound font file, or uses the simple built-in one if no argument passed
+	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a cartridge instead
 
 * `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
 	* `seq`: MML format string
@@ -1451,6 +1453,11 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 [HOME](#welcome-to-basic8)
 
 # Part VI. Appendix
+
+## Built-in sound fonts
+
+* "./soundfonts/pixels.sf2": with 19 presets
+* "./soundfonts/wings.sf2": with 12 presets
 
 ## Reserved words
 

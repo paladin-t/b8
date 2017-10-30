@@ -1,8 +1,5 @@
 Why BASIC8? = doc://docs/why.md
-This is a test = https://my-basic.github.io/basic8/docs/manual
-foo = bar
-test = 123
-nested =
-	foo = bar
-	test = 123
+Change log = https://my-basic.github.io/basic8/docs/changelog
+Forums =
+	Coming soon...= placeholder
 	= end

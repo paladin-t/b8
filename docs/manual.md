@@ -924,19 +924,23 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `b`: index of a virtual button to check, 0/1/2/3/4/5 for left/right/up/down/a/b
 	* `p`: player index, starts from 0
 	* returns true for pressed
+* `BTN()`: returns true if any virtual button is pressed
 * `BTNP b, p = 0`: checks whether a virtual button is just released from pressing
 	* `b`: index of a virtual button to check, 0/1/2/3/4/5 for left/right/up/down/a/b
 	* `p`: player index, starts from 0
 	* returns true for released
+* `BTNP()`: returns true if any virtual button is just released from pressing
 
 ### Keyboard
 
 * `KEY k`: checks whether a key is pressed
 	* `k`: the key value to check
 	* returns true for pressed
+* `KEY()`: returns true if any key is pressed
 * `KEYP k`: checks whether a key is just released from pressing
 	* `k`: the key value to check
 	* returns true for released
+* `KEYP()`: returns true if any key is just released from pressing
 
 ## Audio
 
@@ -954,7 +958,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `seq`: MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index in sound font
-* `STOP ch`: stops a playing music started by `PLAY`
+* `STOP ch`: stops music started by `PLAY`
 	* `ch`: channel to play within
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:

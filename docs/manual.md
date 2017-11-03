@@ -188,7 +188,7 @@ Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a
 
 ## Basic principles
 
-BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when limited functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect with retro simplicity, and tackles a lot of aspects of modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
+BASIC, it was almost the only thing a user could get with vintage home computers. That's deeply impressive to see how challenging it was when constrained functionalities put stress on hobbyists, and how intelligent enthusiasts could be. BASIC8 implements a BASIC dialect with retro simplicity, and tackles a lot of aspects of modern concepts. You will get how to program in BASIC8 in this part. In this document, BASIC8 stands for either the fantasy computer or the language it offers, according to where it appears.
 
 Identifiers and keywords are case-insensitive, but it stores what exactly you typed within strings. All keywords and functions in this document are in upper case, to distinguish from other literal words.
 
@@ -792,6 +792,7 @@ These functions are used to create, load or extract graphics objects and values:
 * `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
 	* `ref`: reference source of a resource, palette index for sprites and quantized images, tiles for maps; 0 is the only valid value for the moment
+	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
 * `LOAD_BLANK(y, n, w, h, ref = 0)`: loads a blank resource
 	* `y`: type of a resource, can be "sprite" or "map"
 	* `n`: count of sprite frames, or map layers
@@ -953,6 +954,8 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `seq`: MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index in sound font
+* `STOP ch`: stops a playing music started by `PLAY`
+	* `ch`: channel to play within
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
@@ -1234,7 +1237,9 @@ PRINT task;
 * `Bytes.READ_S16()`: reads a number as 16-bit signed integer
 * `Bytes.READ_INT()`: reads a number as 32-bit signed integer
 * `Bytes.READ_REAL()`: reads a number as single precision float point
-* `Bytes.END_OF_STREAM()`: checks whether has read to the end of the buffer
+* `Bytes.END_OF_STREAM()`: checks whether has read to the end of a buffer
+
+* `Bytes.POKE(i)`: sets the accessing position of a buffer
 
 * `Bytes.CLEAR()`: clears byte array
 * `Bytes.LEN()`: gets the buffer size in bytes
@@ -1288,9 +1293,6 @@ Parameter format of `NOW`:
 	* `acc`: accessing mark, true for writable, otherwise readonly
 * `File.CLOSE()`: closes an opened file
 
-* `File.PEEK()`: gets the accessing position of a file
-* `File.POKE(i)`: sets the accessing position of a file
-
 * `File.WRITE(v ...)`: writes one or more values to file
 	* `v`: writes as byte for numbers, literally for string
 * `File.WRITE_U8(v)`: writes a number as 8-bit unsigned integer
@@ -1309,7 +1311,10 @@ Parameter format of `NOW`:
 * `File.READ_INT()`: reads a number as 32-bit signed integer
 * `File.READ_REAL()`: reads a number as single precision float point
 * `File.READ_LINE()`: reads a line of text
-* `File.END_OF_STREAM()`: checks whether has read to the end of the buffer
+* `File.END_OF_STREAM()`: checks whether has read to the end of a file
+
+* `File.PEEK()`: gets the accessing position of a file
+* `File.POKE(i)`: sets the accessing position of a file
 
 * `File.LEN()`: gets the file size in bytes
 

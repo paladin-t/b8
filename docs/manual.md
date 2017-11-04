@@ -551,11 +551,11 @@ WEND
 Or:
 
 ~~~~~~~~~~bas
-t = ...
-WHILE TYPE(t) <> TYPE("UNKNOWN")
+t = 0
+DO
 	s = s + t
 	t = ...
-WEND
+UNTIL TYPE(t) = TYPE("UNKNOWN")
 ~~~~~~~~~~
 
 Triple dots are also used to describe that a library function accepts more than one arity in this document.
@@ -803,7 +803,7 @@ These functions are used to create, load or extract graphics objects and values:
 	* returns cloned graphics object
 
 * `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer ranged from 0 to 255
-* `UNPACK(c, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to following variables
+* `UNPACK(c, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to rest variables
 	* `c`: for input, color value
 	* `r`: for output, the red component
 	* `g`: for output, the green component
@@ -857,7 +857,7 @@ The beginning frame index of sprite is 1.
 	* `x`: horizontal position of the top-left corner
 	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `r`: rotation in degrees
-* `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+* `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
 	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
@@ -898,7 +898,7 @@ The beginning layer index of map is 0. Furthermore, layer 0 is for the purpose o
 	* `q`: index of a target rendering queue
 	* `fx`: true for flipping horizontally
 	* `fy`: true for flipping vertically
-* `SIMG i, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image (sx, sy, sw, sh), and draws in rectangle (x, y, w, h)
+* `SIMG i, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
 
@@ -910,35 +910,35 @@ The `TOUCH` statement takes an index of fingers, and assigns all result values t
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
 	* `i`: for input, pointer index; usually with 0 for either the mouse or the first finger
-	* `x`: for output, the x position of a pointer
-	* `t`: for output, the t position of a pointer
-	* `b0`: for output, true if the first button is pressed
-	* `b1`: for output, true if the second button is pressed
-	* `b2`: for output, true if the third button is pressed
+	* `x`: for output, the horizontal position of a pointer
+	* `y`: for output, the vertical position of a pointer
+	* `b0`: for output, true if the left mouse button is pressed, or touched with a finger
+	* `b1`: for output, true if the right mouse button is pressed
+	* `b2`: for output, true if the middle mouse button is pressed
 
 ### Gamepad
 
 A virtual gamepad has 6 buttons, each button may be binded with a key on keyboard, or a button/trigger on a game controller.
 
 * `BTN b, p = 0`: checks whether a virtual button is pressed
-	* `b`: index of a virtual button to check, 0/1/2/3/4/5 for left/right/up/down/a/b
-	* `p`: player index, starts from 0
+	* `b`: index of a virtual button, 0/1/2/3/4/5 for left/right/up/down/a/b
+	* `p`: player index, ranged from 0 to 7
 	* returns true for pressed
-* `BTN()`: returns true if any virtual button is pressed
+* `BTN()`: returns true if any virtual button of the first player is pressed
 * `BTNP b, p = 0`: checks whether a virtual button is just released from pressing
-	* `b`: index of a virtual button to check, 0/1/2/3/4/5 for left/right/up/down/a/b
-	* `p`: player index, starts from 0
+	* `b`: index of a virtual button, 0/1/2/3/4/5 for left/right/up/down/a/b
+	* `p`: player index, ranged from 0 to 7
 	* returns true for released
-* `BTNP()`: returns true if any virtual button is just released from pressing
+* `BTNP()`: returns true if any virtual button of the first player is just released from pressing
 
 ### Keyboard
 
 * `KEY k`: checks whether a key is pressed
-	* `k`: the key value to check
+	* `k`: key value
 	* returns true for pressed
 * `KEY()`: returns true if any key is pressed
 * `KEYP k`: checks whether a key is just released from pressing
-	* `k`: the key value to check
+	* `k`: key value
 	* returns true for released
 * `KEYP()`: returns true if any key is just released from pressing
 
@@ -954,12 +954,10 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `path`: path of a sound font file, or uses the simple built-in one if no argument passed
 	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a cartridge instead
 
-* `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string
+* `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel
 	* `seq`: MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index in sound font
-* `STOP ch`: stops music started by `PLAY`
-	* `ch`: channel to play within
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
@@ -967,7 +965,7 @@ The tones are indicated by letters `A` through `G`. Accidentals are indicated wi
 PLAY "C C# C C#"
 ~~~~~~~~~~
 
-Whitespaces are ignored inside the string expression. There are also codes that set the duration, octave and tempo. They are all case-insensitive. PLAY executes the commands or notes the order in which they appear in the string. Any indicators that change the properties are effective for the notes following that indicator.
+Whitespaces are ignored inside the string expression. There are also codes that set the duration, octave and tempo. They are all case-insensitive. `PLAY` executes the commands or notes the order in which they appear in the string. Any indicators that change the properties are effective for the notes following that indicator.
 
 ~~~~~~~~~~
 Ln     Sets the duration (length) of the notes. The variable n does not indicate an actual duration

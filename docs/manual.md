@@ -6,11 +6,13 @@
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0/) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
+It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
 For the moment, BASIC8 is released for PC only, however, there are plans for porting to other systems.
 
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
+
+Read this [manual online](https://my-basic.github.io/basic8/docs/manual)?
 
 ## Table of content
 
@@ -657,11 +659,13 @@ A coroutine is a special data type in BASIC8, which encapsulates an invokable ro
 * `RETURN v`: returns from a coroutine
 	* `v`: value to be returned
 * `START(co)`: starts a coroutine, which will be automatically scheduled by a dispatcher
-* `ABORT(co)`: aborts an automatically dispatched coroutine
-* `MOVE_NEXT(co)`: iterates a coroutine for one step
-* `GET(co)`: gets current iterated value of a coroutine
-* `GET_ERROR(co)`: gets the execution error of a coroutine
-* `WAIT_FOR_MS(ms)`: returns a non-referenced value which represents for waiting for certain milliseconds before dispatching to next coroutine cycle
+* `ABORT(co)`: aborts an automatically dispatching coroutine
+* `MOVE_NEXT(co)`: iterates a coroutine for one step manually
+	* returns true if can be further iterated, otherwise false for finished
+* `GET(co)`: gets any yielded or returned value of current iteration
+* `GET_ERROR(co)`: gets any execution error of a coroutine
+* `WAIT_FOR_MS(ms)`: returns a non-referenced value which represents for waiting for certain milliseconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
+	* `ms`: integer
 
 Eg:
 
@@ -1285,7 +1289,7 @@ Parameter format of `NOW`:
 | %F | Short YYYY-MM-DD date | 1980-06-20 |
 | %T | ISO 8601 time format (HH:MM:SS) | 14:55:02 |
 | %R | 24-hour HH:MM time | 14:55 |
-| More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime/) | |
+| More... | Refer to [strftime](http://www.cplusplus.com/reference/ctime/strftime) | |
 
 ### File
 

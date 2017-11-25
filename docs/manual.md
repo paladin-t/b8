@@ -121,13 +121,13 @@ Most home computers from 1970-80s use keyboards as the only developer input meth
 * Ctrl+R: run a cartridge
 * Ctrl+.: stop running a cartridge
 * Ctrl+S: save all data
-* Ctrl+U/Ctrl+Y: undo/redo
-
-* Ctrl+C: copy data
+* Ctrl+Z/Ctrl+Y: undo/redo
 * Ctrl+X: cut data
+* Ctrl+C: copy data
 * Ctrl+V: paste data
 * W/S/A/D: select painting sources
 * Z/X: select painting tools
+* B/N: select active frame or layer
 
 See tips in editors for other details.
 
@@ -157,7 +157,7 @@ All cartridges are stored in a library directory on disk, each cartridge has its
 There are some configurable options available:
 
 * Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
-* Fixing the ratio of canvas when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
+* Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Entering full screen: `Option`, `Graphics`, `Full screen`
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
@@ -216,7 +216,7 @@ PRINT A + B;
 
 However, there are special cases that `$` does mean something with the `DIM` and `INPUT` statements.
 
-Only `0`, constant `FALSE` and `NIL` result "false" within boolean expressions; non-zero numbers, `TRUE` and all other values, including empty string `""` result "true" in BASIC8.
+Only `0`, `FALSE`, `NIL` and `JSON_BOOL(FALSE)` result in "false" within boolean expressions; non-zero numbers, `TRUE` and all other values, including empty string `""` result in "true" in BASIC8.
 
 #### Number
 
@@ -337,7 +337,7 @@ ELSEIF n = 2 THEN
 ELSEIF n = 3 THEN
 	PRINT "Three";
 ELSE
-	PRINT "More than it";
+	PRINT "More than that";
 ENDIF
 ~~~~~~~~~~
 
@@ -351,7 +351,7 @@ FOR i = 1 TO 10 STEP 1
 NEXT i
 ~~~~~~~~~~
 
-The `STEP 1` part is optional if the increment step is 1. The loop variable after `NEXT` is also optional if it is associated with a nearest `FOR`.
+The `STEP 1` part is optional if the increment step is 1. The loop variable after `NEXT` is also optional if it is associated with a corresponding `FOR`.
 
 A variant form of `FOR`/`IN`/`NEXT` is used to iterate collections and other iterable structures, which will be mentioned later.
 
@@ -497,14 +497,11 @@ Eg:
 ~~~~~~~~~~bas
 DEF foo(a, b)
 	c = CALL bar(a, b)
-
 	RETURN c
 ENDDEF
-
 DEF bar(a, b)
 	RETURN a + b
 ENDDEF
-
 PRINT foo(1, 2);
 ~~~~~~~~~~
 
@@ -580,14 +577,12 @@ Eg:
 ~~~~~~~~~~bas
 DEF counter()
 	c = 0
-
 	RETURN LAMBDA (n)
 	(
 		c = c + n
 		PRINT c;
 	)
 ENDDEF
-
 acc = counter()
 acc(1)
 acc(2)
@@ -606,11 +601,9 @@ CLASS foo
 		RETURN a + b
 	ENDDEF
 ENDCLASS
-
 CLASS bar(foo)
 	VAR a = 2
 ENDCLASS
-
 inst = NEW(bar)
 PRINT inst.fun(3);
 ~~~~~~~~~~
@@ -651,7 +644,7 @@ IMPORT "directory/file_name.bas"
 
 ### Coroutine
 
-A coroutine is a special data type in BASIC8, which encapsulates an invokable routine or lambda. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
+A coroutine is a special data type in BASIC8, which encapsulates an invokable object. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
 
 * `COROUTINE(invokable, ...)`: creates a coroutine, with optional initialization arguments
 * `YIELD v`: yields from a coroutine, hands over the execution flow
@@ -664,8 +657,8 @@ A coroutine is a special data type in BASIC8, which encapsulates an invokable ro
 	* returns true if can be further iterated, otherwise false for finished
 * `GET(co)`: gets any yielded or returned value of current iteration
 * `GET_ERROR(co)`: gets any execution error of a coroutine
-* `WAIT_FOR_MS(ms)`: returns a non-referenced value which represents for waiting for certain milliseconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
-	* `ms`: integer
+* `WAIT_FOR(s)`: returns a non-referenced value which represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
+	* `s`: can be integer or real numbers
 
 Eg:
 
@@ -681,12 +674,10 @@ co = COROUTINE
 		YIELD LAMBDA () (PRINT "I = " + STR(i);)
 		YIELD LIST()
 		YIELD COROUTINE(LAMBDA () (PRINT "Nested";))
-
 		RETURN "CO"
 	),
 	22, 7
 )
-
 FOR t IN co
 	IF t IS TYPE("NUMBER") THEN
 		PRINT t;
@@ -720,17 +711,16 @@ ret = TRY
 (
 	LAMBDA ()
 	(
-		PRINT "Try.";
-
+		PRINT "Try";
 		RETURN 42
 	),
 	LAMBDA (_)
 	(
-		PRINT "Catch: ", _, ".";
+		PRINT "Catch: ", _;
 	),
 	LAMBDA ()
 	(
-		PRINT "Finally.";
+		PRINT "Finally";
 	)
 )
 PRINT ret;
@@ -749,7 +739,7 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
 * `ASSERT(cond [, text])`: for the purpose of debugging; prompts an assertion and terminates execution immediately if `cond` results in false
-* `SWAP(x, y)`: swaps the values between `x` and `y`
+* `SWAP(x, y)`: swaps the values between `x` and `y`; this statement can be only called in the global scope
 * `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
 
 * `TRACE()`: for the purpose of debugging; prints stack trace
@@ -766,6 +756,10 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 
 ## Graphics
 
+Coordinate system as following:
+
+![](imgs/coordinate.png)
+
 Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
@@ -775,14 +769,14 @@ Program execution and rendering run on different threads with respective frame r
 	* 2, active: for sprites
 	* 3, sky: for layer 3 in a map asset
 	* 4, overlay: for primitive shapes
-* "spr": sprites are ordered by their y position
+* "spr": sprites are ordered by y positions
 * "all": with both "map" and "spr" enabled
 
 These functions are used to communicate with a driver:
 
 * `DRIVER()`: gets current driver, there's only one driver instance for a running cartridge
 * `VALID(drv)`: checks whether a driver is valid
-* `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "linear" without calling this function
+* `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "nil" without calling this function
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands; defaults to "nil" without calling this function
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
@@ -791,17 +785,33 @@ These functions are used to communicate with a driver:
 * `LOCK(drv)`: locks a driver, suspends its resource loading procedures
 * `UNLOCK(drv)`: unlocks a driver, resumes its resource loading procedures
 
+`UPDATE_WITH` returns if `r(...)` has just returned non-zero. Eg:
+
+~~~~~~~~~~bas
+m = 1
+DEF update(delta)
+	t = t + delta
+	IF t > 5 THEN
+		RETURN m
+	ENDIF
+ENDDEF
+n = UPDATE_WITH(DRIVER, CALL(update))
+PRINT "Done with: ", n;
+~~~~~~~~~~
+
+This `UPDATE_WITH` will return in five seconds.
+
 These functions are used to create, load or extract graphics objects and values:
 
 * `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
 	* `ref`: reference source of a resource, palette index for sprites and quantized images, tiles for maps; 0 is the only valid value for the moment
 	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
-* `LOAD_BLANK(y, n, w, h, ref = 0)`: loads a blank resource
+* `LOAD_BLANK(y, w, h, n, ref = 0)`: loads a blank resource
 	* `y`: type of a resource, can be "sprite" or "map"
-	* `n`: count of sprite frames, or map layers
 	* `w`: width of a frame/layer
 	* `h`: height of a frame/layer
+	* `n`: count of sprite frames, or map layers
 * `CLONE(g)`: clones a graphics object, and its states
 	* `g`: source graphics object, can be sprite, map or quantized
 	* returns cloned graphics object
@@ -1011,7 +1021,9 @@ Plus 4096 to `y` for interpolating `hz` from current set with the following one'
 
 ## Editors
 
-To run a cartridge, select it, then click `Cartridge`, `Run`; or right click on a cartridge, then click `Run`; or even double click on it when the `Run on click` option is enabled.
+To open a cartridge for editing, select it, then click `[Head]`, `Open`; or right click on a cartridge, then click `Open`; or simply double click on it when the `Run on click` option is disabled. You can only have one cartridge opened at a time.
+
+To run a cartridge, select it, then click `Cartridge`, `Run`; or right click on a cartridge, then click `Run`; or simply double click on it when the `Run on click` option is enabled.
 
 To pause a running cartridge, click `Cartridge`, `Pause`, it is only clickable with an opened cartridge.
 
@@ -1096,11 +1108,13 @@ To delete a quantized image asset, click `Cartridge`, `Delete asset`, then selec
 * `SQR(n)`: gets the square root of a number
 * `FLOOR(n)`: gets the greatest integer not greater than a number
 * `CEIL(n)`: gets the least integer not less than a number
-* `FIX(n)`: gets the integer format of a number
-* `ROUND(n)`: gets the rounded integer of a number
+* `FIX(n)`: gets the integer part of a number
+* `ROUND(n)`: gets the nearest approximate integer of a number
 * `SRND(n)`: plants a random seed
 * `RND`: gets a random value between [0, 1]
 * `RND([lo = 0,] hi)`: gets a random value between [`lo`, `hi`]
+	* `lo`: integer
+	* `hi`: integer
 * `SIN(n)`: gets the sin value of a number
 * `COS(n)`: gets the cos value of a number
 * `TAN(n)`: gets the tan value of a number
@@ -1137,11 +1151,9 @@ Eg:
 
 ~~~~~~~~~~bas
 DATA 22, 7, 355, 113, "Hello", LIST(1 TO 42)
-
 pos = READ a, b
 READ c, d
 PRINT a / b; c / d;
-
 RESTORE pos
 READ w, x, y, z
 PRINT w; x; y; LEN(z);
@@ -1149,7 +1161,7 @@ PRINT w; x; y; LEN(z);
 
 The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to do data saving and loading, such as game progress etc. in a very simple way. It can process with a couple of data types: integer, real, string, and collections. It saves the values of variables at program termination, and loads persisted values when running to the same `PERSIST` statements next time.
 
-* `PERSIST ...`: marks some variables as persistence variables, this statement can be only called in the global scope
+* `PERSIST ...`: marks some variables as persistence variables; this statement can be only called in the global scope
 
 Eg:
 
@@ -1189,7 +1201,7 @@ For task objects:
 It supports asynchronously execution, if a function is marked with "**asynchronizable**". For example, `SLEEP(0.5)` can be called asynchronously as:
 
 ~~~~~~~~~~bas
-task = ASYNC(SLEEP(0.5), LAMBDA (_) (PRINT "Done.";))
+task = ASYNC(SLEEP(0.5), LAMBDA (_) (PRINT "Done";))
 AWAIT(task)
 PRINT GET(task);
 PRINT task;
@@ -1439,6 +1451,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 * `SPLIT(txt, d)`: splits a string into parts
 	* `d`: delimit
+	* returns a list of strings
 
 * `STARTS_WITH(txt, what, ci = TRUE)`: checks whether a string starts with a sub string
 	* `ci`: true for case-insensitive matching
@@ -1479,9 +1492,9 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CTOR`, `DTOR`
 * `FORK`, `JOIN`
 
-* `COLLIDES`
+* `COLLIDES`, `INTERSECTS`
 * `FORMAT`
-* `GUI`, `BUTTON`, `TEXT`, `MENU`, `MENU_ITEM`
+* `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PEEK`, `POKE`
 

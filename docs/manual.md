@@ -803,11 +803,10 @@ This `UPDATE_WITH` will return in five seconds.
 
 These functions are used to create, load or extract graphics objects and values:
 
-* `LOAD_RESOURCE(path, ref = 0)`: loads a resource from bank
+* `LOAD_RESOURCE(path)`: loads a resource from bank
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
-	* `ref`: reference source of a resource, palette index for sprites and quantized images, tiles for maps; 0 is the only valid value for the moment
 	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
-* `LOAD_BLANK(y, w, h, n, ref = 0)`: loads a blank resource
+* `LOAD_BLANK(y, w, h, n = 1)`: loads a blank resource
 	* `y`: type of a resource, can be "sprite" or "map"
 	* `w`: width of a frame/layer
 	* `h`: height of a frame/layer
@@ -1497,6 +1496,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PEEK`, `POKE`
+* `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
 
 ## Type names
 

@@ -168,7 +168,7 @@ There are some configurable options available:
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record frames in BASIC8.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record frames in BASIC8 for sharing.
 
 #### Exporter and importer
 
@@ -323,7 +323,7 @@ A conditional structure is used to execute particular code block depending on co
 It's supported to write conditional `IF` statements in two ways. One is single line which the whole conditional block is written in a compact form:
 
 ~~~~~~~~~~bas
-IF n MOD 2 THEN PRINT "Even"; ELSE PRINT "Odd";
+IF n MOD 2 THEN PRINT "Odd"; ELSE PRINT "Even";
 ~~~~~~~~~~
 
 The other way is multiline:
@@ -1413,7 +1413,7 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 * `JSON_BOOL(b)`: creates a JSON bool with a BASIC8 integer
 	* `b`: BASIC8 integer as bool
 	* returns JSON bool
-* `UNPACK(b)`: unpacks a BASIC8 integer from JSON bool
+* `UNPACK(b)`: unpacks a BASIC8 integer from a JSON bool
 	* `b`: JSON bool
 	* returns `TRUE` or `FALSE`
 
@@ -1491,10 +1491,12 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CTOR`, `DTOR`
 * `FORK`, `JOIN`
 
+* `ADD`, `SUB`, `MUL`, `DIV`
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
 * `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
+* `PAIR`, `TUPLE`
 * `PEEK`, `POKE`
 * `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
 

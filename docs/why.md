@@ -1,16 +1,16 @@
 ## Why BASIC8?
 
-There are several fantasy computers/consoles coming up these days, which make it possible to program, play and share games and other programs in a retro way again. It seems that retro is new fashion.
+There are several fantasy computers/consoles coming up these days, which make it possible to program, play and share games and other programs in a retro way again. It appears that retro is new fashion.
 
-I developed BASIC8 mainly for my personal purposes, therefore BASIC8 is different from existing fantasy computers. It's designed from thinking about three aspects: how it looks and sounds, how it works, and how it speaks to a human. I'm not willing to make everything strictly retro, instead, I prefer to make it retro at appearance, simple to work with, and fun to play with. If anything was not straightforward enough for an end user, I'd replace it.
+I developed BASIC8 mainly from my personal purposes, therefore BASIC8 is different from existing fantasy computers. It's designed from thinking about three aspects: how it looks and sounds, how it works, and how it speaks to a human. I'm not willing to make everything strictly retro, instead, I prefer to make it retro at appearance, simple to work with, and fun to play with. I hope BASIC8 brings the fun back, with straightforward coding and playing after a home computer bootup.
 
 ### BASIC rather than Lua
 
-Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has too, but not all other BASIC dialects do. "But why using a language only make sense within one application?" You would find BASIC8 easy to learn whether you are experienced with programming; and you would get familar with new ones when moving on to new languages. Anyhow, exploring to solve problems itself is interesting. Anyway it's important to me to introduce BASIC to the fantasy computer genre.
+Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts which Lua has too, but not all other BASIC dialects do. "But why using a language only make sense within one application?" You would find BASIC8 easy to learn whether you are experienced with programming; and you would get familar with new ones when moving on to new languages. Anyhow, exploring to solve problems itself is interesting. It's important to me to introduce BASIC to the fantasy computer genre in brief.
 
 ### No uniformed RAM, VRAM or ROM
 
-Most of the other fantasy computers manage memory in static layouts, at which you can to access its content by "peek" and "poke"; or even directly map from resource to runtime space. That makes it simple as managing and loading, but that's an extra abstraction layer of particular (virtual) hardware. I prefer to be able to do everything in a generic way, not go so far as to program with esoteric tricky code.
+Most of the other fantasy computers manage memory in static layouts, at which you can access its content by "PEEK" and "POKE"; or even directly map from resource to runtime space. That makes it simple for managing and loading, but that's an extra abstraction layer of particular (virtual) hardware. I prefer to be able to do everything in a generic way, not go so far as to program with esoteric code.
 
 ### 160x128 canvas
 

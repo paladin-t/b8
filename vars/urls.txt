@@ -2,4 +2,3 @@ Forums =
 	Coming soon... = placeholder
 	= end
 Homepage = https://my-basic.github.io/basic8/
-Why BASIC8? = doc://docs/why.md

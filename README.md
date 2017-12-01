@@ -4,7 +4,7 @@
 
 ## BASIC8
 
-[Why BASIC8?](https://my-basic.github.io/basic8/docs/why) | [Manual](https://my-basic.github.io/basic8/docs/manual) | [Changelog](https://my-basic.github.io/basic8/docs/changelog)
+[Why BASIC8?](https://my-basic.github.io/basic8/pages/why) | [Manual](https://my-basic.github.io/basic8/docs/manual) | [Changelog](https://my-basic.github.io/basic8/docs/changelog)
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 

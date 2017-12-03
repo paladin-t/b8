@@ -34,7 +34,7 @@ BASIC8 provides built-in tools for editing sprites, maps, sounds, etc.
 
 ### Shareable cartridges
 
-![](pages/imgs/cosmos_saga.gif)
+![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
 BASIC8 cartridges can be saved as a standalone "*.b8" file, or text based.
 

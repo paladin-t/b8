@@ -1,4 +1,4 @@
-### About
+## About
 
 Call me Tony Wang, or just Tony for short :)
 

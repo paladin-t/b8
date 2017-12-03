@@ -10,7 +10,9 @@
 
 | FANTASY COMPUTER | |
 |----|----|
-| BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc. | ![](pages/imgs/app.png) |
+| ![](pages/imgs/app.png) | It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. BASIC8 is an integrated [fantasy computer](https://paladin-t.github.io/fantasy/index) for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour. |
+
+The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
 
 ### Specifications
 
@@ -28,11 +30,15 @@
 
 ![](pages/imgs/tools.png)
 
+BASIC8 provides built-in tools for editing sprites, maps, sounds, etc.
+
 ### Shareable cartridges
+
+<img src="pages/imgs/cosmos_saga.gif" width="480">
 
 ### Get BASIC8
 
-This project is WIP, any documented features and behaviours may be changed in official release.
+This machine is not distributed yet, any documented features and behaviours may be changed in official release.
 
 ### System requirements
 

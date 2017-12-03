@@ -8,7 +8,7 @@
 [Gallery](https://paladin-t.github.io/BASIC8/pages/gallery) |
 [About](https://paladin-t.github.io/BASIC8/pages/about)
 
-| FANTASY COMPUTER | |
+| FANTASY | COMPUTER |
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated [fantasy computer](https://paladin-t.github.io/fantasy/index) for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour. |
 

@@ -12,7 +12,7 @@ For the moment, BASIC8 is released for PC only, however, there are plans for por
 
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
 
-Read this [manual online](https://paladin-t.github.io/BASIC8/docs/manual)?
+Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
 
 ## Table of content
 

@@ -1,4 +1,4 @@
 Forums =
 	Coming soon... = placeholder
 	= end
-Homepage = https://paladin-t.github.io/BASIC8/
+Homepage = https://paladin-t.github.io/b8/

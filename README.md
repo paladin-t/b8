@@ -4,33 +4,43 @@
 
 ## BASIC8
 
-[Why BASIC8?](https://paladin-t.github.io/basic8/pages/why) | [Manual](https://paladin-t.github.io/basic8/docs/manual) | [Changelog](https://paladin-t.github.io/basic8/docs/changelog)
+[Why BASIC8?](https://paladin-t.github.io/BASIC8/pages/why) | [Manual](https://paladin-t.github.io/BASIC8/docs/manual) | [Changelog](https://paladin-t.github.io/BASIC8/docs/changelog) |
+[Gallery](https://paladin-t.github.io/BASIC8/pages/gallery) |
+[About](https://paladin-t.github.io/BASIC8/pages/about)
+
+![](pages/imgs/app.png)
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
+### Specifications
+
+* Display: 160x128 pixels
+* Audio: 2 music channels, 4 sound effect channels
+* Code: BASIC
+* Graphics: up to 65535 drawing commands per cycle
+* Palette: 16 colors with transparency support
+* Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
+* Tiles: 240 cels
+* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
+
+### Creative tools
+
+![](pages/imgs/tools.png)
+
+### Shareable cartridges
+
+### Get BASIC8
+
 This project is WIP, any documented features and behaviours may be changed in official release.
 
-**Credits**
+### System requirements
 
-<!--* [C4GPU](https://github.com/paladin-t/c4gpu_runtime/), by Wang Renxin-->
-* [ImGui](https://github.com/ocornut/imgui/), by Omar Cornut
-* [jo_gif](http://www.jonolick.com/home/gif-writer/), by Jon Olick
-* [libcurl](https://curl.haxx.se/libcurl/), by Daniel Stenberg
-* [libtsf](https://github.com/paladin-t/libtsf/), by Wang Renxin, Bernhard Schelling, Steve Folta
-<!--* [lz4](http://lz4.github.io/lz4/), by Yann Collet-->
-* [md4c](https://github.com/mity/md4c/), by Martin Mitáš
-<!--* [Mongoose](https://github.com/cesanta/mongoose/), by Cesanta-->
-* [MY-BASIC](https://github.com/paladin-t/my_basic/), by Wang Renxin
-* [RapidJSON](https://github.com/Tencent/rapidjson/), by Milo Yip
-* [SDL](https://www.libsdl.org/), see its [credits](https://www.libsdl.org/credits.php)
-* [SQLite](https://sqlite.org/), by Hwaci
-* [stb](https://github.com/nothings/stb/), by Sean Barrett
-* [zlib](http://zlib.net/), by Jean-loup Gailly and Mark Adler
+| | Minimum | Recommended |
+|----|----|----|
+| CPU | Atom Z8300 | Quantum |
+| RAM | 512MB | Galaxy |
+| GPU | Intel HD | Dark matter |
+| OS | Windows Vista | CosmOS 1.0 |
 
-**About**
-
-Call me Tony Wang, or just Tony for short :)
-
-<hr>
-
-[Support](mailto:hellotony521@qq.com)
+For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.

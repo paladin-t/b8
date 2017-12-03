@@ -12,7 +12,7 @@ For the moment, BASIC8 is released for PC only, however, there are plans for por
 
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
 
-Read this [manual online](https://paladin-t.github.io/basic8/docs/manual)?
+Read this [manual online](https://paladin-t.github.io/BASIC8/docs/manual)?
 
 ## Table of content
 
@@ -139,14 +139,15 @@ When speaking of clicking `[Head]` in this document, it means the first icon ite
 
 The limitations of BASIC8 are carefully chosen to make it easy and simple during making programs:
 
-* Canvas: 160x128 pixels
-* Gamepad: 6 buttons for each pad, up to 8 players
+* Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
-* Driver: up to 65535 drawing commands per cycle
+* Code: BASIC
+* Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
 * Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
 
 ### Cartridge library
 

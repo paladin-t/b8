@@ -12,13 +12,13 @@ Lua is nice, it fits well in particular fields, so do other programming language
 
 Most of the other fantasy computers manage memory in static layouts, at which you can access its content by "PEEK" and "POKE"; or even directly map from resource to runtime space. That makes it simple for managing and loading, but that's an extra abstraction layer of particular (virtual) hardware. I prefer to be able to do everything in a generic way, not go so far as to program with esoteric code.
 
-### 160x128 canvas
+### 160x128 display
 
 It's a reasonable resolution because:
 
 * Not too small to represent sufficient visuals
 * Nor too big, or requires more contents to fill it
-* Can make exact divisions by 8, 16, 32 at both dimensions
+* Can make exact divisions by 8, 16, 32 at both dimensions, which is good for arranging graphics
 * Is approximate to 4:3
 * Is a common to see resolution of electronic display components
 

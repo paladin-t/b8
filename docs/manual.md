@@ -4,9 +4,9 @@
 
 ## Welcome to BASIC8
 
-BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play cartridges in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
+BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-It's encouraged to share your creativity. All cartridges are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
+It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
 For the moment, BASIC8 is released for PC only, however, there are plans for porting to other systems.
 
@@ -20,11 +20,11 @@ Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
 	* [Getting started](#getting-started)
 		* [Operations](#operations)
 		* [Specifications](#specifications)
-		* [Cartridge library](#cartridge-library)
+		* [Disk library](#disk-library)
 		* [Configuration](#configuration)
 		* [Sharing](#sharing)
 			* [Exporter and importer](#exporter-and-importer)
-			* [Cartridges](#cartridges)
+			* [Disks](#disks)
 			* [Recording GIF](#recording-gif)
 
 * Part II. Syntax
@@ -113,13 +113,13 @@ It's been a while since people used to enjoy coding and playing straightforward 
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play cartridges. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
 * F8: record frames when playing, or stop recording
-* Ctrl+R: run a cartridge
-* Ctrl+.: stop running a cartridge
+* Ctrl+R: run a disk
+* Ctrl+.: stop running a disk
 * Ctrl+S: save all data
 * Ctrl+Z/Ctrl+Y: undo/redo
 * Ctrl+X: cut data
@@ -149,9 +149,9 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 * Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
 
-### Cartridge library
+### Disk library
 
-All cartridges are stored in a library directory on disk, each cartridge has its own sub directory for all code and data. The default root path of library on Windows is "C:\Users\YourName\Documents\BASIC8\".
+All disks are stored in a library directory on disk, each disk has its own sub directory for all code and data. The default root path of library on Windows is "C:\Users\YourName\Documents\BASIC8\".
 
 ### Configuration
 
@@ -162,28 +162,28 @@ There are some configurable options available:
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Entering full screen: `Option`, `Graphics`, `Full screen`
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
-* Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing cartridges to the new path
+* Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path
 * Showing stat. information: `Option`, check `Show stat.`
-* Making it running when double click on a cartridge, instead of opening it: `Option`, check `Run on click`
+* Making it running when double click on a disk, instead of opening it: `Option`, check `Run on click`
 * Allowing multiple editor windows: `Option`, check `Multiple windows`
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export cartridge and record frames in BASIC8 for sharing.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export disk and record frames in BASIC8 for sharing.
 
 #### Exporter and importer
 
-To export a cartridge, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a cartridge, then click `Export` to open the dialog box.
+To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a disk, then click `Export` to open the dialog box.
 
-To import a cartridge, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based cartridge onto clipboard already, before using the second option. Use option `Overwrite` (for confliction) to replace any old cartridge with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of cartridges to identify them.
+To import a disk, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based disk onto clipboard already, before using the second option. Use option `Overwrite` (for confliction) to replace any old disk with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of disks to identify them.
 
-#### Cartridges
+#### Disks
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based cartridges are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
 
 #### Recording GIF
 
-Click `Cartridge`, `Record frames`, or just press `F8` while playing to record a sequence of frames for further GIF exporting, click `Cartridge`, `Stop recording`, or press `F8` again to stop recording.
+Click `Disk`, `Record frames`, or just press `F8` while playing to record a sequence of frames for further GIF exporting, click `Disk`, `Stop recording`, or press `F8` again to stop recording.
 
 [HOME](#welcome-to-basic8)
 
@@ -775,7 +775,7 @@ Program execution and rendering run on different threads with respective frame r
 
 These functions are used to communicate with a driver:
 
-* `DRIVER()`: gets current driver, there's only one driver instance for a running cartridge
+* `DRIVER()`: gets current driver, there's only one driver instance for a running disk
 * `VALID(drv)`: checks whether a driver is valid
 * `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "nil" without calling this function
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
@@ -805,7 +805,7 @@ This `UPDATE_WITH` will return in five seconds.
 These functions are used to create, load or extract graphics objects and values:
 
 * `LOAD_RESOURCE(path)`: loads a resource from bank
-	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a cartridge as lookup root
+	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a disk as lookup root
 	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
 * `LOAD_BLANK(y, w, h, n = 1)`: loads a blank resource
 	* `y`: type of a resource, can be "sprite" or "map"
@@ -967,7 +967,7 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 * `USE_SOUND_FONT([path, r = TRUE])`: uses a sound font bank for music
 	* `path`: path of a sound font file, or uses the simple built-in one if no argument passed
-	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a cartridge instead
+	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a disk instead
 
 * `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel
 	* `seq`: MML format string
@@ -1021,65 +1021,65 @@ Plus 4096 to `y` for interpolating `hz` from current set with the following one'
 
 ## Editors
 
-To open a cartridge for editing, select it, then click `[Head]`, `Open`; or right click on a cartridge, then click `Open`; or simply double click on it when the `Run on click` option is disabled. You can only have one cartridge opened at a time.
+To open a disk for editing, select it, then click `[Head]`, `Open`; or right click on a disk, then click `Open`; or simply double click on it when the `Run on click` option is disabled. You can only have one disk opened at a time.
 
-To run a cartridge, select it, then click `Cartridge`, `Run`; or right click on a cartridge, then click `Run`; or simply double click on it when the `Run on click` option is enabled.
+To run a disk, select it, then click `Disk`, `Run`; or right click on a disk, then click `Run`; or simply double click on it when the `Run on click` option is enabled.
 
-To pause a running cartridge, click `Cartridge`, `Pause`, it is only clickable with an opened cartridge.
+To pause a running disk, click `Disk`, `Pause`, it is only clickable with an opened disk.
 
-To stop a running cartridge, click `Cartridge`, `Stop`; or just click the close button on a running canvas.
+To stop a running disk, click `Disk`, `Stop`; or just click the close button on a running canvas.
 
-To edit the properties of a cartridge, right click on it, then click `Properties`.
+To edit the properties of a disk, right click on it, then click `Properties`.
 
-To duplicate a cartridge, select it, then click `[Head]`, `Duplicate`.
+To duplicate a disk, select it, then click `[Head]`, `Duplicate`.
 
-To purge all persistence data of a cartridge, select it, then click `[Head]`, `Cleanup`.
+To purge all persistence data of a disk, select it, then click `[Head]`, `Cleanup`.
 
-To reload example cartridges, click `Help`, `Reload examples`. BASIC8 uses UID to identify different cartridges, this operation will overwrite the cartridge with the same UID.
+To reload example disks, click `Help`, `Reload examples`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
 
-All paletted assets (sprites, tiles, quantized images) in a cartridge share a same palette data.
+All paletted assets (sprites, tiles, quantized images) in a disk share a same palette data.
 
-It automatically saves modifications when closing an asset, or closing a cartridge; to close without saving, click `Cartridge`, `Close without saving` with `Shift` key pressed.
+It automatically saves modifications when closing an asset, or closing a disk; to close without saving, click `Disk`, `Close without saving` with `Shift` key pressed.
 
 ### Code
 
-Each cartridge has an entry source code file "main.bas", it starts execution from there.
+Each disk has an entry source code file "main.bas", it starts execution from there.
 
-To create a new code file, click `Cartridge`, `New asset`, `Source code`.
+To create a new code file, click `Disk`, `New asset`, `Source code`.
 
-To open an existing code file, click `Cartridge`, `Open asset`, then select a "*.bas" file.
+To open an existing code file, click `Disk`, `Open asset`, then select a "*.bas" file.
 
-To rename a code file, click `Cartridge`, `Rename asset`, then select a "*.bas" file.
+To rename a code file, click `Disk`, `Rename asset`, then select a "*.bas" file.
 
-To delete a code file, click `Cartridge`, `Delete asset`, then select a "*.bas" file.
+To delete a code file, click `Disk`, `Delete asset`, then select a "*.bas" file.
 
 ### Sprite asset
 
 You can edit colors of palette by right clicking on it.
 
-To create a new sprite asset, click `Cartridge`, `New asset`, `Sprite`.
+To create a new sprite asset, click `Disk`, `New asset`, `Sprite`.
 
-To open an existing sprite asset, click `Cartridge`, `Open asset`, then select a "*.sprite" asset.
+To open an existing sprite asset, click `Disk`, `Open asset`, then select a "*.sprite" asset.
 
-To rename a sprite asset, click `Cartridge`, `Rename asset`, then select a "*.sprite" asset.
+To rename a sprite asset, click `Disk`, `Rename asset`, then select a "*.sprite" asset.
 
-To delete a sprite asset, click `Cartridge`, `Delete asset`, then select a "*.sprite" asset.
+To delete a sprite asset, click `Disk`, `Delete asset`, then select a "*.sprite" asset.
 
 ### Map asset
 
-To create a new map asset, click `Cartridge`, `New asset`, `Map`.
+To create a new map asset, click `Disk`, `New asset`, `Map`.
 
-To open an existing map asset, click `Cartridge`, `Open asset`, then select a "*.map" asset.
+To open an existing map asset, click `Disk`, `Open asset`, then select a "*.map" asset.
 
-To rename a map asset, click `Cartridge`, `Rename asset`, then select a "*.map" asset.
+To rename a map asset, click `Disk`, `Rename asset`, then select a "*.map" asset.
 
-To delete a map asset, click `Cartridge`, `Delete asset`, then select a "*.map" asset.
+To delete a map asset, click `Disk`, `Delete asset`, then select a "*.map" asset.
 
 #### Tiles asset
 
 You can edit colors of palette by right clicking on it.
 
-All map assets in a cartridge use a shared tiles asset as reference. You'll be asked to specify the size of a tile when creating first map asset for a cartridge.
+All map assets in a disk use a shared tiles asset as reference. You'll be asked to specify the size of a tile when creating first map asset for a disk.
 
 To open and edit a tiles asset, open an existing map asset first, then click the `Edit` button on the top-left corner of a map editor.
 
@@ -1087,13 +1087,13 @@ To open and edit a tiles asset, open an existing map asset first, then click the
 
 A quantized image is a readonly paletted image. The only way in BASIC8 to create a quantized image is importing from an existing image file, it supports "*.png", "*.bmp" and "*.tga" files.
 
-To create a new quantized image asset, click `Cartridge`, `New asset`, `Quantized image`, then browse and import from an image file.
+To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then browse and import from an image file.
 
-To open an existing quantized image asset, click `Cartridge`, `Open asset`, then select a "*.quantized" asset. It's for preview only.
+To open an existing quantized image asset, click `Disk`, `Open asset`, then select a "*.quantized" asset. It's for preview only.
 
-To rename a quantized image asset, click `Cartridge`, `Rename asset`, then select a "*.quantized" asset.
+To rename a quantized image asset, click `Disk`, `Rename asset`, then select a "*.quantized" asset.
 
-To delete a quantized image asset, click `Cartridge`, `Delete asset`, then select a "*.quantized" asset.
+To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "*.quantized" asset.
 
 [HOME](#welcome-to-basic8)
 
@@ -1212,7 +1212,7 @@ PRINT task;
 
 * `ZIP()`: creates an archive object with "zip" algorithms
 * `Archive.OPEN(path, z)`: opens an archive file
-	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 	* `z`: true for packing, otherwise unpacking
 * `Archive.CLOSE()`: closes an archive file
 
@@ -1271,7 +1271,7 @@ BASIC8 uses [SQLite](http://sqlite.org/docs.html) as a storage engine of databas
 
 * `DATABASE()`: creates a database object
 * `Db.OPEN(path)`: opens a database file
-	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 * `Db.CLOSE()`: closes an opened database
 
 * `Db.HAS_TABLE(tbl)`: checks whether a table exists or not
@@ -1308,7 +1308,7 @@ Parameter format of `NOW`:
 
 * `FILE()`: creates a file object
 * `File.OPEN(path, acc)`: opens a file on disk
-	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 	* `acc`: accessing mark, true for writable, otherwise readonly
 * `File.CLOSE()`: closes an opened file
 
@@ -1361,7 +1361,7 @@ Parameter format of `NOW`:
 * `COMBINE_PATH(x, y)`: combines two parts into a path
 
 * `FILE_INFO(path)`: creates a file information object
-	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 * `Fi.READ_ALL()`: reads all content of a file as string
 * `Fi.CREATE()`: tries to create a file
 * `Fi.PARENT()`: gets the directory information of a file's parent
@@ -1376,7 +1376,7 @@ Parameter format of `NOW`:
 * `Fi.REMOVE()`: removes a file
 
 * `DIRECTORY_INFO(path)`: creates a directory information object
-	* `path`: uses the container directory (parent of "content") of a cartridge as lookup root
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 * `Dir.CREATE()`: tries to create a directory
 * `Dir.PARENT()`: gets the directory information of a directory's parent
 

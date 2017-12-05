@@ -20,10 +20,10 @@ then mix all assets into a playable game, or a usable program:
 
 ![](imgs/playable_now.png)
 
-user can create, edit, import, export, and play cartridges in an integrated environment:
+user can create, edit, import, export, and play disks in an integrated environment:
 
 ![](imgs/integrated.png)
 
-![](imgs/more_cartridges1.png)
+![](imgs/more_disks1.png)
 
-![](imgs/more_cartridges2.png)
+![](imgs/more_disks2.png)

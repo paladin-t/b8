@@ -49,6 +49,6 @@ This machine is not distributed yet, any documented features and behaviours may 
 | CPU | Atom Z8300 | Quantum |
 | RAM | 512MB | Galaxy |
 | GPU | Intel HD | Dark matter |
-| OS | Windows 7 | CosmOS 1.0 |
+| OS | Windows Vista | CosmOS 1.0 |
 
 For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.

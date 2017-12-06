@@ -1,4 +1,4 @@
-### v1.0 TBD
+### v1.0 Jan. 2018
 
 First release with:
 

@@ -1,6 +1,6 @@
 ![](imgs/logo.png)
 
-**Copyright (C) 2017 Wang Renxin**
+**Copyright (C) 2017 - 2018 Wang Renxin**
 
 ## Welcome to BASIC8
 

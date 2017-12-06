@@ -10,11 +10,11 @@
 
 | FANTASY | COMPUTER |
 |----|----|
-| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated [fantasy computer](https://paladin-t.github.io/fantasy/index) for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour. |
+| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour. |
 
 It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
 
-### Specifications
+### Technical specifications
 
 * Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
@@ -36,7 +36,7 @@ BASIC8 provides built-in tools for editing sprites, maps, sounds, etc.
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be saved as a standalone "*.b8" file, or text based.
+BASIC8 disks can be saved as a standalone "*.b8" file, or text based for sharing.
 
 ### Get BASIC8
 
@@ -46,9 +46,9 @@ This machine is not distributed yet, any documented features and behaviours may 
 
 | | Minimum | Recommended |
 |----|----|----|
-| CPU | Atom Z8300 | Quantum |
-| RAM | 512MB | Galaxy |
+| OS | Windows Vista/7/8/10 | CosmOS 1.0 |
+| CPU | Atom 1.4GHz | Quantum |
+| RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |
-| OS | Windows Vista | CosmOS 1.0 |
 
 For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.

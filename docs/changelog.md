@@ -1,6 +1,6 @@
 ### v1.0 Jan. 2018
 
-First release with:
+First release with features including:
 
 	Add the BASIC programming language
 	Add programming interfaces

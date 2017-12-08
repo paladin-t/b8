@@ -1499,6 +1499,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `PAIR`, `TUPLE`
 * `PEEK`, `POKE`
+* `PLOT`
 * `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
 
 ## Type names

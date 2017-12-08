@@ -1,10 +1,12 @@
-### Content
-
-[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Infinity%20Fighter/content)
+## Infinity Fighter
 
 ### Preview
 
 ![](../../pages/imgs/infinity_fighter.gif)
+
+### Content
+
+[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Infinity%20Fighter/content)
 
 ### Code at a glance
 

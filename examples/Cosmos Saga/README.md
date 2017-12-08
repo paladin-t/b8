@@ -1,10 +1,12 @@
-### Content
-
-[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Cosmos%20Saga/content)
+## Cosmos Saga
 
 ### Preview
 
 ![](../../pages/imgs/cosmos_saga.gif)
+
+### Content
+
+[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Cosmos%20Saga/content)
 
 ### Code at a glance
 

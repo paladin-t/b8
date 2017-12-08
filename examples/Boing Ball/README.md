@@ -1,10 +1,12 @@
-### Content
-
-[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Boing%20Ball/content)
+## Boing Ball
 
 ### Preview
 
 ![](../../pages/imgs/boing_ball.gif)
+
+### Content
+
+[GitHub](https://github.com/paladin-t/b8/tree/master/examples/Boing%20Ball/content)
 
 ### Code at a glance
 

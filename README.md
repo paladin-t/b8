@@ -38,6 +38,8 @@ BASIC8 provides built-in tools for editing sprites, maps, sounds, etc.
 
 BASIC8 disks can be saved as a standalone "*.b8" file, or text based for sharing.
 
+See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
+
 ### Get BASIC8
 
 This machine is not distributed yet, any documented features and behaviours may be changed in official release.

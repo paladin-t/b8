@@ -8,9 +8,12 @@
 [Gallery](https://paladin-t.github.io/b8/pages/gallery) |
 [About](https://paladin-t.github.io/b8/pages/about)
 
+| Get | BASIC8! |
+|----|----|
+| | [![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8) |
+
 | FANTASY | COMPUTER |
 |----|----|
-| Get BASIC8 | [![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8) |
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. Users can create, share and play disks in a BASIC dialect, with built-in tools for editing sprites, maps, sounds and more. |
 
 It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.

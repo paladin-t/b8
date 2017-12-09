@@ -42,7 +42,7 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 ### Get BASIC8
 
-<iframe src="http://store.steampowered.com/widget/767240/" frameborder="0" width="646" height="190"></iframe>
+[![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
 
 ### System requirements
 

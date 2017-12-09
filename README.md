@@ -42,7 +42,7 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 ### Get BASIC8
 
-This machine is not distributed yet, any documented features and behaviours may be changed in official release.
+<iframe src="http://store.steampowered.com/widget/767240/" frameborder="0" width="646" height="190"></iframe>
 
 ### System requirements
 

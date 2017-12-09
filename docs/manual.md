@@ -899,10 +899,10 @@ The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of l
 
 * `MGET m, i, x, y`: gets the tile index or logic mark of a map layer at a specific position
 	* `m`: list of layers
-	* `i`: index to access in `m`, starts from 0
+	* `i`: layer index in `m`, starts from 0
 * `MSET m, i, x, y, v`: sets the tile index or logic mark of a map layer
 	* `m`: list of layers
-	* `i`: index to access in `m`, starts from 0
+	* `i`: layer index in `m`, starts from 0
 	* `v`: value to be set
 
 ### Quantized

@@ -1,4 +1,4 @@
-Forums =
+Discuss =
 	Coming soon... = placeholder
 	= end
 Homepage = https://paladin-t.github.io/b8/

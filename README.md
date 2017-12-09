@@ -8,9 +8,9 @@
 [Gallery](https://paladin-t.github.io/b8/pages/gallery) |
 [About](https://paladin-t.github.io/b8/pages/about)
 
-| Get | BASIC8! |
-|----|----|
-| | [![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8) |
+**Get BASIC8!**
+
+[![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8)
 
 | FANTASY | COMPUTER |
 |----|----|

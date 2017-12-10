@@ -53,14 +53,16 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 | | Minimum | Recommended |
 |----|----|----|
 | OS | Windows Vista/7/8/10 | CosmOS 1.0 |
-| CPU | Atom 1.4GHz | Quantum |
+| CPU | Atom 1.44GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |
+
+**Requires OpenGL3.3 capable GPU**
 
 For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.
 
 <hr>
 
-| Social | links |
+| Links | |
 |----|----|
 | Email | [Tony](mailto:hellotony521@qq.com) |

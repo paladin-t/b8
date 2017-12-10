@@ -15,7 +15,7 @@ REM Constants.
 ' Colors.
 RED = rgba(255, 0, 0)
 WHITE = rgba(255, 255, 255)
-' How many radians is the ball tilted
+' How many radians is the ball tilted.
 ROTATE_ANBLE = 0.5
 
 REM Resources.

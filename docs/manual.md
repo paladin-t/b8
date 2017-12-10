@@ -948,12 +948,12 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 ### Keyboard
 
-* `KEY k`: checks whether a key is pressed
-	* `k`: key value
+* `KEY k`: checks whether a key is pressed, eg. `IF KEY ASC("a") THEN PRINT "Aha!";`
+	* `k`: key code
 	* returns true for pressed
 * `KEY()`: returns true if any key is pressed
 * `KEYP k`: checks whether a key is just released from pressing
-	* `k`: key value
+	* `k`: key code
 	* returns true for released
 * `KEYP()`: returns true if any key is just released from pressing
 

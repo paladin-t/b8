@@ -58,3 +58,9 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 | GPU | Intel HD | Dark matter |
 
 For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.
+
+<hr>
+
+| Social | links |
+|----|----|
+| Email | [Tony](mailto:hellotony521@qq.com) |

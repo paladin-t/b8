@@ -21,4 +21,4 @@ Call me Tony Wang, or just Tony for short :)
 
 <hr>
 
-[Support](mailto:hellotony521@qq.com)
+Email ![](imgs/mailto.png)

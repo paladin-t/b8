@@ -65,4 +65,4 @@ For the moment, BASIC8 is released for Windows only, however, there are plans fo
 
 | Links | |
 |----|----|
-| Email | [Tony](mailto:hellotony521@qq.com) |
+| Email | ![](pages/imgs/mailto.png) |

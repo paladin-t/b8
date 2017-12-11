@@ -1,7 +1,5 @@
 ![](imgs/logo.png)
 
-**Copyright (C) 2017 - 2018 Wang Renxin**
-
 ## Welcome to BASIC8
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
@@ -162,7 +160,7 @@ There are some configurable options available:
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Entering full screen: `Option`, `Graphics`, `Full screen`
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
-* Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path
+* Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
 * Showing stat. information: `Option`, check `Show stat.`
 * Making it running when double click on a disk, instead of opening it: `Option`, check `Run on click`
 * Allowing multiple editor windows: `Option`, check `Multiple windows`

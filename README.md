@@ -12,6 +12,8 @@
 
 [![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8)
 
+For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.
+
 | FANTASY | COMPUTER |
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. Users can create, share and play disks in a BASIC dialect, with built-in tools for editing sprites, maps, sounds and more. |
@@ -58,8 +60,6 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 | GPU | Intel HD | Dark matter |
 
 **Requires OpenGL3.3 capable GPU**
-
-For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.
 
 <hr>
 

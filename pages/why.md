@@ -37,9 +37,3 @@ The major difference between them is, open source graphics libraries and engines
 ### BASIC8 vs. Unity3D
 
 I've used Unity3D and Unreal for work. No, BASIC8 is not intending and will never be giant.
-
-## What's next?
-
-There are plans for new features. But it's a little different from other softwares when making a development tool, with new programming language and API. The most important thing while making it is, I cannot absolutely change existing behaviours after it's available to you. So it's a cautious progress.
-
-Besides, I already got an idea of porting BASIC8 to other platforms, and making standalone players; yet details to be determined.

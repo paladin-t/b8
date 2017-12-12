@@ -12,7 +12,7 @@
 
 [![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8)
 
-For the moment, BASIC8 is released for Windows only, however, there are plans for porting to other systems.
+For the moment, BASIC8 is released for Windows only, however, there are plans to support other systems.
 
 | FANTASY | COMPUTER |
 |----|----|

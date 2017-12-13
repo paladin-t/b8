@@ -29,7 +29,7 @@ REM Constants.
 RED = rgba(255, 0, 0)
 WHITE = rgba(255, 255, 255)
 ' How many radians is the ball tilted.
-ROTATE_ANBLE = 0.5
+ROTATE_ANGLE = 0.5
 
 REM Resources.
 
@@ -90,8 +90,8 @@ def plot_line(x)
 		endif
 		xx = sin(y) * cos(x) * 30
 		yy = cos(y) * 30
-		s = sin(ROTATE_ANBLE)
-		c = cos(ROTATE_ANBLE)
+		s = sin(ROTATE_ANGLE)
+		c = cos(ROTATE_ANGLE)
 		posx = xx * c - yy * s
 		posy = xx * s + yy * c
 		sset the_ball, 1, floor(posx + 30.5), floor(posy + 30.5), v

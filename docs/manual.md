@@ -229,7 +229,7 @@ A string begins and ends with a pair of double quotation marks `""`, it stores w
 
 ### Comment
 
-A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begin with `'[` and ends with `']`, all text between them are ignored.
+A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begins with `'[` and ends with `']`, all text between them are ignored.
 
 ### Arithmetic and relational operations
 
@@ -589,7 +589,7 @@ acc(2)
 
 ### Class
 
-BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new instance of a prototype.
+BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new object of a prototype.
 
 See the following example of class:
 

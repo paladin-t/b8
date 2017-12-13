@@ -68,5 +68,5 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 | Discuss | Coming soon... |
 | Chat | [FANTASY CONSOLES, Discord](https://discord.gg/phR38jm) |
 | Devlog | Coming soon... |
-| Projects | [GitHub](https://github.com/paladin-t/b8/projects) |
+| Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |
 | Email | ![](pages/imgs/mailto.png) |

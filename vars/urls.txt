@@ -3,5 +3,5 @@ Discussions =
 	Sharing = http://steamcommunity.com/app/767240/discussions/6/
 	Help Wanted = http://steamcommunity.com/app/767240/discussions/7/
 	= end
-Chat on Discord (#basic8) = https://discord.gg/phR38jm
+Chat on Discord (#basic8) = https://discordapp.com/channels/290475084101976064/389141396197736468
 Homepage = https://paladin-t.github.io/b8/

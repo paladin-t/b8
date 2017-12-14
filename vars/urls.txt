@@ -1,4 +1,7 @@
-Discuss =
-	Coming soon... = placeholder
+Discussions =
+	General Discussions = http://steamcommunity.com/app/767240/discussions/4/
+	Sharing = http://steamcommunity.com/app/767240/discussions/6/
+	Help Wanted = http://steamcommunity.com/app/767240/discussions/7/
 	= end
+Chat on Discord (#basic8) = https://discord.gg/phR38jm
 Homepage = https://paladin-t.github.io/b8/

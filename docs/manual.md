@@ -1484,7 +1484,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 ## Reserved words
 
-Some words are not implemented for actual functions, yet they are reserved for future. It's suggested to not to use them as identifiers:
+Some words are not implemented for actual functions, yet they are reserved for future. It's suggested not to use them as identifiers:
 
 * `ASYNC`, `AWAIT`, `COST`
 * `CTOR`, `DTOR`
@@ -1494,10 +1494,12 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
 * `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
+* `MEMCMP`, `MEMCPY`, `MEMSET`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
+* `NOISE`
 * `PAIR`, `TUPLE`
 * `PEEK`, `POKE`
-* `PLOT`
+* `PLOT`, `TRI`, `TTRI`, `POLY`, `TPOLY`
 * `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
 
 ## Type names

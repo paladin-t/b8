@@ -21,4 +21,6 @@ Call me Tony Wang, or just Tony for short :)
 
 <hr>
 
-Email ![](imgs/mailto.png)
+Email:
+
+![](imgs/mailto.png)

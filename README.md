@@ -36,7 +36,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprites, maps, sounds, etc.
+BASIC8 provides built-in tools for editing sprites, tiles, maps, etc.
 
 ### Shareable disks
 

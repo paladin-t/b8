@@ -36,4 +36,4 @@ The major difference between them is, open source graphics libraries and engines
 
 ### BASIC8 vs. Unity3D
 
-I've used Unity3D and Unreal for work. No, BASIC8 is not intending and will never be giant.
+I've used Unity3D and Unreal for work. BASIC8 is quite different, not intending and will never be giant. It's just something meaningful which I can keep developing and polishing for long, to make it neat.

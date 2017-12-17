@@ -171,13 +171,13 @@ A big part of retro computing which makes it fun to work with is sharing and dis
 
 #### Exporter and importer
 
-To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose either `Save "*.b8" file`, or `Copy text based to clipboard`; or right click on a disk, then click `Export` to open the dialog box.
+To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose one of `Save "*.b8" file`, `Save "*.png" file`, and `Copy text based`; or right click on a disk, then click `Export` to open the dialog box.
 
-To import a disk, click `[Head]`, `Import`, then choose either `From a "*.b8" file`, or `From text on clipboard`; you should have copied text based disk onto clipboard already, before using the second option. Use option `Overwrite` (for confliction) to replace any old disk with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of disks to identify them.
+To import a disk, click `[Head]`, `Import`, then choose one of `From a "*.b8" file`, `From a "*.png" file`, and `From text based`; you should have copied text based disk onto clipboard already, before using the third option. Use option `Overwrite` (for confliction) to replace any old disk with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of disks to identify them.
 
 #### Disks
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
 
 #### Recording GIF
 

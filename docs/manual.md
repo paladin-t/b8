@@ -1491,6 +1491,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `FORK`, `JOIN`
 
 * `ADD`, `SUB`, `MUL`, `DIV`
+* `CLS`
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
 * `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
@@ -1499,7 +1500,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NOISE`
 * `PAIR`, `TUPLE`
 * `PEEK`, `POKE`
-* `PLOT`, `TRI`, `TTRI`, `POLY`, `TPOLY`
+* `PLOT`, `TRI`, `TRIFILL`, `TRITEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
 
 ## Type names

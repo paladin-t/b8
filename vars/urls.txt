@@ -1,6 +1,6 @@
 Discussions =
 	General Discussions = http://steamcommunity.com/app/767240/discussions/4/
-	Sharing = http://steamcommunity.com/app/767240/discussions/6/
+	Help Wanted = http://steamcommunity.com/app/767240/discussions/7/
 	= end
 Artwork = http://steamcommunity.com/app/767240/images/
 Chat on Discord (#basic8) = https://discordapp.com/channels/290475084101976064/389141396197736468

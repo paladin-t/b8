@@ -957,9 +957,9 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 ## Audio
 
-* `SET_VOLUME(sv = 1, mv = 1)`: sets volume values, ranged from 0.0 to 1.0
-	* `sv`: volume of sound effect
+* `SET_VOLUME(mv = 1, sv = 1)`: sets volume values, ranged from 0.0 to 1.0
 	* `mv`: volume of music
+	* `sv`: volume of sound effect
 
 ### Music
 

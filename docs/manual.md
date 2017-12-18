@@ -149,7 +149,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 
 ### Disk library
 
-All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library on Windows is "C:\Users\YourName\Documents\BASIC8\".
+All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library on Windows is "C:/Users/YourName/Documents/BASIC8/".
 
 ### Configuration
 
@@ -1355,7 +1355,7 @@ Parameter format of `NOW`:
 
 ### IO
 
-* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is "C:\Users\YourName\Documents\" on Windows as default
+* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is "C:/Users/YourName/Documents/" on Windows as default
 * `COMBINE_PATH(x, y)`: combines two parts into a path
 
 * `FILE_INFO(path)`: creates a file information object

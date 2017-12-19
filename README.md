@@ -42,7 +42,7 @@ BASIC8 provides built-in tools for editing sprites, tiles, maps, etc.
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be saved as a standalone "*.b8" file, "*.png", or text based for sharing.
+BASIC8 disks can be saved as a standalone "`*.b8`" file, "`*.png`", or text based for sharing.
 
 See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 

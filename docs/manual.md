@@ -1,3 +1,5 @@
+<!-- Any undocumented or commented functions may be changed or removed, do not use them! -->
+
 ![](imgs/logo.png)
 
 ## Welcome to BASIC8
@@ -49,7 +51,7 @@ Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
 		* [Typing](#typing)
 		* [Importing another file](#importing-another-file)
 		* [Coroutine](#coroutine)
-		* [Structured exception handling](#structured-exception-handling)
+		<!--* [Structured exception handling](#structured-exception-handling)-->
 		* [Automatic memory management](#automatic-memory-management)
 	* [Generic functions](#generic-functions)
 
@@ -693,6 +695,7 @@ FOR t IN co
 NEXT
 ~~~~~~~~~~
 
+<!--
 ### Structured exception handling
 
 The `TRY` statement accepts three arguments. And works as following:
@@ -724,6 +727,7 @@ ret = TRY
 )
 PRINT ret;
 ~~~~~~~~~~
+-->
 
 ### Automatic memory management
 

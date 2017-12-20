@@ -1037,7 +1037,7 @@ To duplicate a disk, select it, then click `[Head]`, `Duplicate`.
 
 To purge all persistence data of a disk, select it, then click `[Head]`, `Cleanup`.
 
-To reload example disks, click `Help`, `Reload examples`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
+To reload example disks, click `Help`, `Examples`, `Reload`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
 
 All paletted assets (sprites, tiles, quantized images) in a disk share a same palette data.
 

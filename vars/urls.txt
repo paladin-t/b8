@@ -3,4 +3,4 @@ Discussions =
 	Help Wanted = http://steamcommunity.com/app/767240/discussions/7/
 	= end
 Sharing via Artwork = http://steamcommunity.com/app/767240/images/
-Chat on Discord (#basic8, FC) = https://discordapp.com/channels/290475084101976064/389141396197736468
+Chat on Discord (#basic8, FC) = https://discordapp.com/channels/290475084101976064/290479661941653506

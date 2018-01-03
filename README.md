@@ -66,7 +66,7 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 | Links | |
 |----|----|
 | Discuss | Coming soon... |
-| Chat | [FANTASY CONSOLES, Discord](https://discord.gg/phR38jm) |
+| Chat | [FANTASY CONSOLES, Discord](https://discordapp.com/channels/290475084101976064/290479661941653506) |
+| Twitter | [@wangrenxin](https://twitter.com/wangrenxin), [#basic8fc](https://twitter.com/hashtag/basic8fc?src=hash) |
 | Devlog | Coming soon... |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |
-| Email | ![](pages/imgs/mailto.png) |

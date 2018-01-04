@@ -10,7 +10,7 @@
 
 **Get BASIC8!**
 
-[![BASIC8 on Steam](pages/imgs/steam.png)](#get-basic8)
+[![BASIC8 on Steam](pages/imgs/steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
 
 For the moment, BASIC8 is released for Windows only, however, there are plans to support other systems.
 
@@ -65,8 +65,8 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 | Links | |
 |----|----|
-| Discuss | Coming soon... |
+| Discuss | [Forums](http://steamcommunity.com/app/767240/discussions/) |
 | Chat | [FANTASY CONSOLES, Discord](https://discordapp.com/channels/290475084101976064/290479661941653506) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin), [#basic8fc](https://twitter.com/hashtag/basic8fc?src=hash) |
-| Devlog | Coming soon... |
+| Devlogs | [Steam discussion](http://steamcommunity.com/app/767240/discussions/9/) |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |

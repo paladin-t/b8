@@ -16,7 +16,7 @@ For the moment, BASIC8 is released for Windows only, however, there are plans to
 
 | FANTASY | COMPUTER |
 |----|----|
-| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. Users can create, share and play disks in a BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
+| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. You can create, share and play disks in a BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
 
 It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
 
@@ -31,6 +31,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 * Tiles: 240 cels
 * Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
+* Keyboard and mouse: supported
 
 ### Creative tools
 
@@ -47,6 +48,8 @@ BASIC8 disks can be saved as a standalone "`*.b8`" file, "`*.png`", or text base
 See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 ### Get BASIC8
+
+Click to see highlights:
 
 [![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
 

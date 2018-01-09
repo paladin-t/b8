@@ -1,4 +1,4 @@
-<!-- Any undocumented or commented functions may be changed or removed, do not use them! -->
+<!-- Do not use any undocumented or commented functions, they may be changed or removed. -->
 
 ![](imgs/logo.png)
 
@@ -12,7 +12,7 @@ For the moment, BASIC8 is released for PC only, however, there are plans for por
 
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
 
-Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
+Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read about [Workshop](workshop)?
 
 ## Table of content
 
@@ -83,8 +83,9 @@ Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
 		* [String functions](#string-functions)
 		* [Data transfer and persistence](#data-transfer-and-persistence)
 	* [Libraries](#libraries)
-		<!--* [Asynchronization](#asynchronization)-->
+		* [Algorithm](#algorithm)
 		* [Archive](#archive)
+		<!--* [Asynchronization](#asynchronization)-->
 		* [Bytes](#bytes)
 		* [Database](#database)
 		* [Date time](#date-time)
@@ -94,7 +95,8 @@ Read this [manual online](https://paladin-t.github.io/b8/docs/manual)?
 		* [IO](#io)
 		* [JSON](#json)
 		* [Math](#math)
-		* [OS](#os)
+			* [Vector and matrix](#vector-and-matrix)
+		* [System](#system)
 		* [Text](#text)
 		* [Web](#web)
 
@@ -169,17 +171,17 @@ There are some configurable options available:
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines or any sorts of communities. It is convenient to export disk and record frames in BASIC8 for sharing.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines and other medias. It is convenient to export disk and record frames in BASIC8 for sharing.
 
 #### Exporter and importer
 
-To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose one of `Save "*.b8" file`, `Save "*.png" file`, and `Copy text based`; or right click on a disk, then click `Export` to open the dialog box.
+To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose one of `Save "*.b8" file`, `Save "*.png" file`, and `Copy text based`; or right click on a disk, then click `Export` to open the dialog box. It packs all code, assets and customized data (*.dat) in the content directory of a disk; but doesn't deal with sub directories.
 
 To import a disk, click `[Head]`, `Import`, then choose one of `From a "*.b8" file`, `From a "*.png" file`, and `From text based`; you should have copied text based disk onto clipboard already, before using the third option. Use option `Overwrite` (for confliction) to replace any old disk with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of disks to identify them.
 
 #### Disks
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only.
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only. Besides, you can share your disk via [Workshop](workshop).
 
 #### Recording GIF
 
@@ -255,9 +257,9 @@ These operators are used for relational comparisons and calculations:
 * `x >= y`: greater than or equals to
 * `x <> y`: not equals to
 
-* `x AND y`: logical "and"
-* `x OR y`: logical "or"
-* `NOT y`: logical "not"
+* `p AND q`: logical "and"
+* `p OR q`: logical "or"
+* `NOT q`: logical "not"
 
 Logical truth table:
 
@@ -311,7 +313,7 @@ DIM nums(10)
 DIM strs$(2, 5)
 ~~~~~~~~~~
 
-The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array indices begin from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid indices will cause errors.
+The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array index begins from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid index will cause an error.
 
 ## Control structures
 
@@ -437,7 +439,7 @@ d(1) = l(2)
 PRINT d(1);
 ~~~~~~~~~~
 
-List indices begin from zero too, as how array does in BASIC8.
+List index begins from zero too, as how array does in BASIC8.
 
 #### Iterators
 
@@ -531,7 +533,7 @@ ENDDEF
 PRINT bar("Variadic", "argument", "list", "...");
 ~~~~~~~~~~
 
-Use the `LEN` statement to tell the count of remaining arguments. Iterating all arguments, for example:
+Use the `LEN` statement to tell the count of remaining arguments. Iterating all arguments, eg:
 
 ~~~~~~~~~~bas
 l = LEN(...)
@@ -989,7 +991,7 @@ Ln     Sets the duration (length) of the notes. The variable n does not indicate
        amount but rather a note type; L1 - whole note, L2 - half note, L4 - quarter note, etc.
        (L8, L16, L32, L64, ...). By default, n = 4.
        For triplets and quintets, use L3, L6, L12, ... and L5, L10, L20, ... series respectively.
-       The shorthand notation of length is also provided for a note. For example, "L4 CDE L8 FG L4 AB"
+       The shorthand notation of length is also provided for a note. Eg. "L4 CDE L8 FG L4 AB"
        can be shortened to "L4 CDE F8G8 AB". F and G play as eighth notes while others play as quarter notes.
 On     Sets the current octave. Valid values for n are 0 through 6. An octave begins with C and ends with B.
        Remember that C- is equivalent to B. 
@@ -1037,11 +1039,11 @@ To duplicate a disk, select it, then click `[Head]`, `Duplicate`.
 
 To purge all persistence data of a disk, select it, then click `[Head]`, `Cleanup`.
 
-To reload example disks, click `Help`, `Examples`, `Reload`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
+To reload example disks, click `Help`, `Examples`, `Reload all`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
 
 All paletted assets (sprites, tiles, quantized images) in a disk share a same palette data.
 
-It automatically saves modifications when closing an asset, or closing a disk; to close without saving, click `Disk`, `Close without saving` with `Shift` key pressed.
+The title bar of an unsaved asset will be shown in different color. It automatically saves modifications when closing an asset, or closing a disk; to close without saving, click `Disk`, `Close without saving` with `Shift` key pressed.
 
 ### Code
 
@@ -1182,6 +1184,81 @@ w = LIST(-1, -2, -3)
 
 Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noticed that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
 
+### Algorithm
+
+These functions are used to perform a path finding algorithm on 2D grids:
+
+* `PATHER(w, n, e, s)`: creates a pather object
+	* `w`: west position, minimum on x direction
+	* `n`: north position, minimum on y direction
+	* `e`: east position, maximum on x direction
+	* `s`: south position, maximum on y direction
+* `Pather.GET(x, y)`: gets walking cost of a prefilled grid at specific position, will raise an error if there's no grid prefilled
+* `Pather.SET(x, y, cost)`: sets walking cost of a prefilled grid, will initialize cost matrix with 1 for all grids before first calling to this function
+* `Pather.CLEAR()`: clears prefilled matrix and internal cached data
+* `Pather.SET_DIAGONAL_COST(cost = 1.414)`: sets the walking cost of diagonal direction neighbors
+* `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a path finding
+	* `bx`: x value of beginning position
+	* `by`: y value of beginning position
+	* `ex`: x value of ending position
+	* `ey`: y value of ending position
+	* `p`: an invokable object which accepts x, y position and returns the walking cost at that point
+	* returns found path, in a list of "[vec2](#vector-and-matrix)", may be empty
+
+Grid coordinates can be any integer, with range of values from -32,767 to 32,767. Once the `SET` function of a pather is called, a cost matrix will be prefilled; it exists until calling `CLEAR`. The `FIND` function prefers to use invokable to get grid cost, and falls to use prefilled matrix if no lazy evaluator provided.
+
+Walking cost is combined with two parts by multiplicative: neighbor cost and map cost. Neighbor cost stands for how much does it cost to walk from current grid to its neighbor directions as following, in which `D` defaults to 1.414:
+
+~~~~~~~~~~
+ _________________
+|     |     |     |
+|  D  |  1  |  D  |
+|_____|_____|_____|
+|     |     |     |
+|  1  |     |  1  |
+|_____|_____|_____|
+|     |     |     |
+|  D  |  1  |  D  |
+|_____|_____|_____|
+~~~~~~~~~~
+
+Pather retrieves grid cost from either lazy evaluator or prefilled matrix. All cost states must be immutable when calling the `FIND` function. It's not walkable if either part of the cost combination results -1; positive cost means walkable, and the pather prefers lower cost grids. Eg:
+
+~~~~~~~~~~bas
+p = PATHER(-3, -3, 3, 3)
+p.SET_DIAGONAL_COST(-1)
+p.SET(1, 1, 2)
+l = p.FIND(-3, -3, 3, 3, NIL)
+PRINT LEN(l);
+FOR n IN l
+	UNPACK(n, x, y)
+	PRINT x, ", ", y;
+NEXT
+~~~~~~~~~~
+
+Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate with walking cost `m` for grid `x`, `y`.
+
+### Archive
+
+* `ZIP()`: creates an archive object with "zip" algorithms
+* `Archive.OPEN(path, z)`: opens an archive file
+	* `path`: uses the container directory (parent of "content") of a disk as lookup root
+	* `z`: true for packing, otherwise unpacking
+* `Archive.CLOSE()`: closes an archive file
+
+* `Archive.PACK(dst, src)`: <!--**asynchronizable**, -->packs from a file or byte array
+	* `dst`: name in archive
+	* `src`: path of a file, or byte array
+* `Archive.UNPACK(src, dst)`: <!--**asynchronizable**, -->unpacks to a file or byte array
+	* `src`: name in archive
+	* `dst`: path of a file, or byte array
+* `Archive.UNPACK_ALL(dir)`: <!--**asynchronizable**, -->unpacks everything to a directory
+
+* `COMPRESS(bytes)`: <!--**asynchronizable**, -->compresses a byte array
+	* returns a compressed byte array
+* `DECOMPRESS(bytes)`: <!--**asynchronizable**, -->decompresses a byte array
+	* returns a decompressed byte array
+
 <!--
 ### Asynchronization
 
@@ -1209,27 +1286,6 @@ PRINT GET(task);
 PRINT task;
 ~~~~~~~~~~
 -->
-
-### Archive
-
-* `ZIP()`: creates an archive object with "zip" algorithms
-* `Archive.OPEN(path, z)`: opens an archive file
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
-	* `z`: true for packing, otherwise unpacking
-* `Archive.CLOSE()`: closes an archive file
-
-* `Archive.PACK(dst, src)`: <!--**asynchronizable**, -->packs from a file or byte array
-	* `dst`: name in archive
-	* `src`: path of a file, or byte array
-* `Archive.UNPACK(src, dst)`: <!--**asynchronizable**, -->unpacks to a file or byte array
-	* `src`: name in archive
-	* `dst`: path of a file, or byte array
-* `Archive.UNPACK_ALL(dir)`: <!--**asynchronizable**, -->unpacks everything to a directory
-
-* `COMPRESS(bytes)`: <!--**asynchronizable**, -->compresses a byte array
-	* returns a compressed byte array
-* `DECOMPRESS(bytes)`: <!--**asynchronizable**, -->decompresses a byte array
-	* returns a decompressed byte array
 
 ### Bytes
 
@@ -1430,7 +1486,93 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 * `MIN(...)`: gets the minimum one among some numbers
 * `MAX(...)`: gets the maximum one among some numbers
 
-### OS
+#### Vector and matrix
+
+There are some built-in data types for vector and matrix algebra, which are all implemented as non-referenced values. The "vec4" is also used to represent for the structure of quaternion. BASIC8 uses row-major order to store matrix:
+
+~~~~~~~~~~
+m11, m12, m13, m14,
+m21, m22, m23, m24,
+m31, m32, m33, m34,
+m41, m42, m43, m44
+~~~~~~~~~~
+
+These functions are used to construct vector and matrix:
+
+* `VEC2(x = 0, y = 0)`: constructs a "vec2" with two real numbers
+* `VEC3(x = 0, y = 0, z = 0)`: constructs a "vec3" with three real numbers
+* `VEC3(v2, z = 0)`: constructs a "vec3" with a "vec2" and a real number
+* `VEC4(x = 0, y = 0, z = 0, w = 1)`: constructs a "vec4" with some real numbers
+* `VEC4(v2, z = 0, w = 1)`: constructs a "vec4" with a "vec2" and two real numbers
+* `VEC4(v3, w = 1)`: constructs a "vec4" with a "vec3" and a real number
+* `VEC4(mat44)`: extracts the rotation part from a matrix to a quaternion
+* `MAT4x4(m11 = 0, m12 = 0, ... = 0, m44 = 0)`: constructs a "mat4x4" with some real numbers
+* `MAT4x4(v4)`: constructs a rotation matrix from a quaternion
+
+And some other construction functions:
+
+* `VEC4_FROM_EULER(x, y, z)`, `VEC4_FROM_AXIS_ANGLE(axis_v3, angle)`
+* `MAT4x4_FROM_EULER(x, y, z)`, `MAT4x4_FROM_AXIS_ANGLE(axis_v3, angle)`
+* `MAT4x4_FROM_SCALE(x, y, z)`
+* `MAT4x4_FROM_TRANSLATION(x, y, z)`
+* `MAT4x4_LOOKAT(pos_v3, target_v3, up_v3, lh = FALSE)`: makes a lookat matrix
+	* `lh`: false for right-hand, true for left-hand
+* `MAT4x4_ORTHO(left, right, bottom, top, near, far, zclip, lh = FALSE)`: constructs a matrix represents for a orthographic projection
+	* `zclip`: can be -1 or 0
+* `MAT4x4_PERSPECTIVE(left, right, bottom, top, near, far, zclip, lh = FALSE)`: constructs a matrix represents for a perspective projection
+* `MAT4x4_PERSPECTIVE_FOV(fov, aspect, near, far, zclip, xfov = TRUE, lh = FALSE)`
+	* `xfov`: true for horizontal field of view, false for vertical
+
+These functions are used to unpack vector and matrix to variables, all of them accepts an input argument and a number of output variables:
+
+* `UNPACK(v2, x [, y])`:
+* `UNPACK(v3, x [, y [, z]])`:
+* `UNPACK(v4, x [, y [, z [, w]]])`:
+* `UNPACK(mat44, m11 [, m12 [, ... [, m44]]])`:
+
+These operators are used to perform component-wise calculations:
+
+* `v2 + v2`, `v3 + v3`, `v4 + v4`
+* `v2 - v2`, `v3 - v3`, `v4 - v4`
+
+* `v2 * v2`, `v3 * v3`, `v4 * v4`
+* `v2 * num`, `v3 * num`, `v4 * num`
+* `num * v2`, `num * v3`, `num * v4`
+* `mat44 * num`
+* `num * mat44`
+
+* `v2 / v2`, `v3 / v3`, `v4 / v4`
+* `v2 / num`, `v3 / num`, `v4 / num`
+* `num / v2`, `num / v3`, `num / v4`
+
+* `-v2`, `-v3`, `-v4`, `-mat44`
+
+These operators are used to transform values:
+
+* `mat44 * mat44`
+* `mat44 * v3`: equals to `mat44 * VEC4(v3, 1)`, results in "vec3"
+* `mat44 * v4`
+* `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in "vec3"
+* `v4 * mat44`
+
+Besides, these functions are used to do other math calculations:
+
+* `DOT(v2, v2)`, `DOT(v3, v3)`, `DOT(v4, v4)`
+* `CROSS(v3, v3)`
+
+* `NORMALIZE(v2)`, `NORMALIZE(v3)`, `NORMALIZE(v4)`
+* `LENGTH_SQUARE(v2)`, `LENGTH_SQUARE(v3)`, `LENGTH_SQUARE(v4)`
+* `LENGTH(v2)`, `LENGTH(v3)`, `LENGTH(v4)`
+* `DISTANCE_SQUARE(v2, v2)`, `DISTANCE_SQUARE(v3, v3)`, `DISTANCE_SQUARE(v4, v4)`
+* `DISTANCE(v2, v2)`, `DISTANCE(v3, v3)`, `DISTANCE(v4, v4)`
+* `LERP(v2, v2, beta)`, `LERP(v3, v3, beta)`
+
+* `IDENTITY()`: constructs an identity matrix
+* `CONJUGATE(v4)`
+* `TRANSPOSE(mat44)`
+* `INVERSE(v4)`, `INVERSE(mat44)`
+
+### System
 
 It's **not** recommended to use functions marked with "**platform dependent**", to get best compatibility across platforms.
 
@@ -1494,7 +1636,6 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CTOR`, `DTOR`
 * `FORK`, `JOIN`
 
-* `ADD`, `SUB`, `MUL`, `DIV`
 * `CLS`
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
@@ -1504,13 +1645,13 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NOISE`
 * `PAIR`, `TUPLE`
 * `PEEK`, `POKE`
-* `PLOT`, `TRI`, `TRIFILL`, `TRITEX`, `POLY`, `POLYFILL`, `POLYTEX`
-* `VEC2`, `VEC3`, `VEC4`, `VEC`, `MAT3x3`, `MAT4x4`, `MAT`
+* `PLOT`
+* `TRI`, `TRIFILL`, `TRITEX`, `POLY`, `POLYFILL`, `POLYTEX`
 
 ## Type names
 
 Valid type names as following: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE".
 
-Data structures of library are implemented as non-referenced "USERTYPE", or referenced "USERTYPE_REF". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, so rely on it as little as possible.
+Data structures in library may be implemented as referenced "USERTYPE_REF", or non-referenced "USERTYPE". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, so don't presume to use overridden names.
 
 [HOME](#welcome-to-basic8)

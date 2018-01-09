@@ -69,7 +69,7 @@ Click to see highlights:
 | Links | |
 |----|----|
 | Discuss | [Forums](http://steamcommunity.com/app/767240/discussions/) |
-| Chat | [FANTASY CONSOLES, Discord](https://discordapp.com/channels/290475084101976064/290479661941653506) |
+| Chat | [FANTASY CONSOLES, Discord](https://discordapp.com/channels/290475084101976064/290623887908012032) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin), [#basic8fc](https://twitter.com/hashtag/basic8fc?src=hash) |
 | Devlogs | [Steam discussion](http://steamcommunity.com/app/767240/discussions/9/) |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |

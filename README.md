@@ -10,7 +10,7 @@
 
 **Get BASIC8!**
 
-[![BASIC8 on Steam](pages/imgs/steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
+[![BASIC8 on Steam](pages/imgs/steam.png)](http://store.steampowered.com/app/767240/)
 
 For the moment, BASIC8 is released for Windows only, however, there are plans to support other systems.
 
@@ -51,7 +51,7 @@ BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing
 
 ### Get BASIC8
 
-[![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
+[![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/)
 
 ### System requirements
 

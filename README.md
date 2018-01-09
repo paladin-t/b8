@@ -16,7 +16,7 @@ For the moment, BASIC8 is released for Windows only, however, there are plans to
 
 | FANTASY | COMPUTER |
 |----|----|
-| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. You can create, share and play disks in a BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
+| <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
 
 It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
 
@@ -24,7 +24,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 
 * Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
-* Code: BASIC
+* Code: BASIC (structured/functional/prototype-based)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
@@ -41,15 +41,15 @@ BASIC8 provides built-in tools for editing sprites, tiles, maps, etc.
 
 ### Shareable disks
 
-![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
-
-BASIC8 disks can be saved as a standalone "`*.b8`" file, "`*.png`", or text based for sharing.
-
 See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
-### Get BASIC8
+![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-Click to see highlights:
+BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing. As well as handy sharing via [Workshop](https://paladin-t.github.io/b8/docs/workshop) with built-in tools.
+
+![](docs/imgs/workshop.png)
+
+### Get BASIC8
 
 [![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/BASIC8/)
 

@@ -14,7 +14,7 @@ Click the `Push` button to submit it, with agreeing to the terms of service. You
 
 ### Subscribing
 
-Use any browser to explore the entire [BASIC8 Workshop](http://steamcommunity.com/workshop/browse/?appid=767240&browsesort=trend&section=readytouseitems) on Steam to make subscriptions:
+Use any browser to explore the entire [BASIC8 Workshop](http://steamcommunity.com/app/767240/workshop/) on Steam to make subscriptions:
 
 ![](imgs/workshop_subscribe.png)
 
@@ -42,12 +42,12 @@ To check updating of a mounted disk manually, select it, click `Community`, `Wor
 
 ![](imgs/workshop_mount.png)
 
-Choose proper operation for mounting downloaded disk, check `Don't ask me` to make it quiet and defaults the operation to current selection for future updating. You can change the mounting operation later in the `Properties` dialog of a disk.
+Choose proper operation for mounting downloaded disk, check `Don't ask me` to make it quiet and defaults the operation to current selection for future updating. You can change the mounting operation later in the properties dialog of a disk.
 
 All subscribed disks will be pulled for updating automatically when BASIC8 boots up. To pull all disks manually, click `Community`, `Workshop`, `Pull all`; or click `Force to pull all` with `Shift` key pressed to force it showing mounting options for all disks.
 
 ### Dismounting
 
-To make a disk to a normal local one by dismounting it, open its properties dialog, then click `Dismount`.
+To make a disk to a normal local one by dismounting it, open the properties dialog of it, then click `Dismount`.
 
 [HOME](#sharing-via-workshop)

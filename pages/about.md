@@ -2,22 +2,20 @@
 
 Call me Tony Wang, or just Tony. I used to develop video games as an employee for years, I also developed some indie games. I found myself significantly successful at doing two kind of things: making unsuccessful indie games, and making game development tools. So I decided to put efforts on the second one to make BASIC8, hope you enjoy it.
 
-### Credits
+### Built with
 
-<!--* [C4GPU](https://github.com/paladin-t/c4gpu_runtime/), by Wang Renxin-->
-* [ImGui](https://github.com/ocornut/imgui/), by Omar Cornut
-* [jo_gif](http://www.jonolick.com/home/gif-writer/), by Jon Olick
-* [libcurl](https://curl.haxx.se/libcurl/), by Daniel Stenberg
-* [libtsf](https://github.com/paladin-t/libtsf/), by Wang Renxin, Bernhard Schelling, Steve Folta
-<!--* [lz4](http://lz4.github.io/lz4/), by Yann Collet-->
-* [md4c](https://github.com/mity/md4c/), by Martin Mitáš
-<!--* [Mongoose](https://github.com/cesanta/mongoose/), by Cesanta-->
-* [MY-BASIC](https://github.com/paladin-t/my_basic/), by Wang Renxin
-* [RapidJSON](https://github.com/Tencent/rapidjson/), by Milo Yip
-* [SDL](https://www.libsdl.org/), see its [credits](https://www.libsdl.org/credits.php)
-* [SQLite](https://sqlite.org/), by Hwaci
-* [stb](https://github.com/nothings/stb/), by Sean Barrett
-* [zlib](http://zlib.net/), by Jean-loup Gailly and Mark Adler
+* ImGui [https://github.com/ocornut/imgui/](https://github.com/ocornut/imgui/)
+* jo_gif [http://www.jonolick.com/home/gif-writer/](http://www.jonolick.com/home/gif-writer/)
+* libcurl [https://curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
+* libtsf [https://github.com/paladin-t/libtsf/](https://github.com/paladin-t/libtsf/)
+* md4c [https://github.com/mity/md4c/](https://github.com/mity/md4c/)
+<!--* Mongoose [https://github.com/cesanta/mongoose/](https://github.com/cesanta/mongoose/)-->
+* MY-BASIC [https://github.com/paladin-t/my_basic/](https://github.com/paladin-t/my_basic/)
+* RapidJSON [https://github.com/Tencent/rapidjson/](https://github.com/Tencent/rapidjson/)
+* SDL [https://www.libsdl.org/](https://www.libsdl.org/)
+* SQLite [https://sqlite.org/](https://sqlite.org/)
+* stb [https://github.com/nothings/stb/](https://github.com/nothings/stb/)
+* zlib [http://zlib.net/](http://zlib.net/)
 
 <hr>
 

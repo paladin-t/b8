@@ -1,3 +1,15 @@
+### v1.1.1
+
+Libraries:
+
+* Change IO functions to return uniformed separator
+* Fix an out of bound bug with pathfinding algorithm
+* Fix a wrong loading bug of map assets if tiles missing
+
+Editor:
+
+* Change disk overwriting to put files and directories into recycle bin
+
 ### v1.1 Jan. 2018
 
 Community:

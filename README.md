@@ -57,7 +57,7 @@ BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing
 
 | | Minimum | Recommended |
 |----|----|----|
-| OS | Windows Vista/7/8/10 | CosmOS 1.0 |
+| OS | Windows 7/8/10 | CosmOS 1.0 |
 | CPU | Atom 1.44GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |

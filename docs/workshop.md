@@ -10,7 +10,7 @@ To submit a new disk to Workshop, select it, then click `Community`, `Workshop`,
 
 ![](imgs/workshop_submit.png)
 
-Click the `Push` button to submit it, with agreeing to the terms of service. You may edit submitted information in browser later, including changing description, chaging visibility, updating preview images and videos, etc.
+Recommended to use good looking preview, choose proper genre, and write necessary introduction and notes to help people to get better acquainted with your submission. Then click the `Push` button to submit it, with agreeing to the terms of service. You may edit submitted information in browser later, including changing description, chaging visibility, updating preview images and videos, etc.
 
 ### Subscribing
 
@@ -42,9 +42,9 @@ To check updating of a mounted disk manually, select it, click `Community`, `Wor
 
 ![](imgs/workshop_mount.png)
 
-Choose proper operation for mounting downloaded disk, check `Don't ask me` to make it quiet and defaults the operation to current selection for future updating. You can change the mounting operation later in the properties dialog of a disk.
+Choose proper operation for mounting downloaded disk, check `Don't ask me` to make it quiet and defaults the operation to current selection for future updating. You can change the quiet mounting operation later in the properties dialog of a disk.
 
-All subscribed disks will be pulled for updating automatically when BASIC8 boots up. To pull all disks manually, click `Community`, `Workshop`, `Pull all`; or click `Force to pull all` with `Shift` key pressed to force it showing mounting options for all disks.
+All subscribed disks will be pulled for updating automatically when BASIC8 boots up. To pull all disks manually, click `Community`, `Workshop`, `Pull all`; or click `Force to pull all` with `Shift` key pressed to force it showing mounting options for all disks. It's required to get your Steam client set to "online" mode to download subscriptions.
 
 ### Dismounting
 

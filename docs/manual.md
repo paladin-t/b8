@@ -175,13 +175,13 @@ A big part of retro computing which makes it fun to work with is sharing and dis
 
 #### Exporter and importer
 
-To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose one of `Save "*.b8" file`, `Save "*.png" file`, and `Copy text based`; or right click on a disk, then click `Export` to open the dialog box. It packs all code, assets and customized data (*.dat) in the content directory of a disk; but doesn't deal with sub directories.
+To export a disk, select it on the main library screen, click `[Head]`, `Export`, then choose one of `Save "*.b8" file`, `Save "*.png" file`, and `Copy text based`; or right click on a disk, then click `Export` to open the dialog box. It packs all code, assets and customized data (*.data) in the content directory of a disk; but doesn't deal with sub directories.
 
 To import a disk, click `[Head]`, `Import`, then choose one of `From a "*.b8" file`, `From a "*.png" file`, and `From text based`; you should have copied text based disk onto clipboard already, before using the third option. Use option `Overwrite` (for confliction) to replace any old disk with importing, otherwise use `Keep both`; BASIC8 uses the UID (Unique IDentifier) of disks to identify them.
 
 #### Disks
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only. Besides, you can share your disk via [Workshop](workshop).
+Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks in pixels. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only. Besides, you can share your disks via [Workshop](workshop) with built-in tools.
 
 #### Recording GIF
 
@@ -1194,7 +1194,7 @@ These functions are used to perform a path finding algorithm on 2D grids:
 	* `e`: east position, maximum on x direction
 	* `s`: south position, maximum on y direction
 * `Pather.GET(x, y)`: gets walking cost of a prefilled grid at specific position, will raise an error if there's no grid prefilled
-* `Pather.SET(x, y, cost)`: sets walking cost of a prefilled grid, will initialize cost matrix with 1 for all grids before first calling to this function
+* `Pather.SET(x, y, cost)`: sets walking cost of a prefilled grid, initializes cost matrix with 1 for all grids when first calling to this function
 * `Pather.CLEAR()`: clears prefilled matrix and internal cached data
 * `Pather.SET_DIAGONAL_COST(cost = 1.414)`: sets the walking cost of diagonal direction neighbors
 * `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a path finding
@@ -1555,7 +1555,7 @@ These operators are used to transform values:
 * `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in "vec3"
 * `v4 * mat44`
 
-Besides, these functions are used to do other math calculations:
+Besides, these functions are used to do other linear computations:
 
 * `DOT(v2, v2)`, `DOT(v3, v3)`, `DOT(v4, v4)`
 * `CROSS(v3, v3)`
@@ -1640,11 +1640,10 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
 * `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
-* `MEMCMP`, `MEMCPY`, `MEMSET`
+* `MEMCMP`, `MEMCPY`, `MEMSET`, `MEMTEST`
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PEEK`, `POKE`
 * `PLOT`
 * `TRI`, `TRIFILL`, `TRITEX`, `POLY`, `POLYFILL`, `POLYTEX`
 

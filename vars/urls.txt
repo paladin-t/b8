@@ -1,11 +1,11 @@
-Discussions =
-	General Discussions = http://steamcommunity.com/app/767240/discussions/4/
-	Help Wanted = http://steamcommunity.com/app/767240/discussions/7/
-	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
-	= end
 Explore =
 	Workshop = http://steamcommunity.com/app/767240/workshop/
 	Artwork = http://steamcommunity.com/app/767240/images/
 	Screenshots = http://steamcommunity.com/app/767240/screenshots/
+	= end
+Forums =
+	General discussions = http://steamcommunity.com/app/767240/discussions/4/
+	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
+	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
 	= end
 Chat on Discord (#basic8, FC) = https://discordapp.com/channels/290475084101976064/290623887908012032

@@ -8,4 +8,4 @@ Forums =
 	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
 	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
 	= end
-Chat on Discord (#basic8, FC) = https://discordapp.com/channels/290475084101976064/290623887908012032
+Chat on Discord (#basic8, FC) = https://discordapp.com/channels/290475084101976064/290479661941653506

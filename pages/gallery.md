@@ -8,7 +8,7 @@ Create maps as well:
 
 ![](imgs/creating_maps.png)
 
-Import and quantize images:
+Import and edit quantize images:
 
 ![](imgs/importing_images.png)
 

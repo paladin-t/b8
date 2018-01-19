@@ -812,10 +812,10 @@ These functions are used to create, load or extract graphics objects and values:
 	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a disk as lookup root
 	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
 * `LOAD_BLANK(y, w, h, n = 1)`: loads a blank resource
-	* `y`: type of a resource, can be "sprite" or "map"
+	* `y`: type of a resource, can be "sprite", "map" or "quantized"
 	* `w`: width of a frame/layer
 	* `h`: height of a frame/layer
-	* `n`: count of sprite frames, or map layers
+	* `n`: count of sprite frames, or map layers; ignored by quantized
 * `CLONE(g)`: clones a graphics object, and its states
 	* `g`: source graphics object, can be sprite, map or quantized
 	* returns cloned graphics object
@@ -862,6 +862,10 @@ These functions are used to manipulate the states of a sprite:
 * `ELLIPSEFILL x, y, rx, ry [, c]`: draws a filled ellipse
 * `RECT x0, y0, x1, y1 [, c]`: draws a rectangle
 * `RECTFILL x0, y0, x1, y1 [, c]`: draws a filled rectangle
+* `TRI x0, y0, x1, y1, x2, y2 [, c]`: draws a triangle
+* `TRIFILL x0, y0, x1, y1, x2, y2 [, c]`: draws a filled triangle
+* `QUAD x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a quadrangle
+* `QUADFILL x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a filled quadrangle
 
 * `PGET i`: gets a color of a palette, at a specific index
 * `PSET i, c, ip = FALSE`: sets a color of a palette; only affects during driver's updating
@@ -920,6 +924,10 @@ The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of l
 * `SIMG i, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
+
+* `IGET i, x, y`: gets the color index of a quantized image, at a specific position
+* `ISET i, x, y, v`: sets the color index of a quantized image, at a specific position
+	* `v`: color index
 
 ## Input
 
@@ -1089,11 +1097,11 @@ To open and edit a tiles asset, open an existing map asset first, then click the
 
 ### Quantized asset
 
-A quantized image is a readonly paletted image. The only way in BASIC8 to create a quantized image is importing from an existing image file, it supports "*.png", "*.bmp" and "*.tga" files.
+A quantized image is a paletted image. There are two ways in BASIC8 to create a quantized image, one is creating a blank with specific size, the other one is importing from an existing image file (it supports "*.png", "*.bmp" and "*.tga" files).
 
-To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then browse and import from an image file.
+To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then fill in size to create a blank, or browse and import from an image file.
 
-To open an existing quantized image asset, click `Disk`, `Open asset`, then select a "*.quantized" asset. It's for preview only.
+To open an existing quantized image asset, click `Disk`, `Open asset`, then select a "*.quantized" asset.
 
 To rename a quantized image asset, click `Disk`, `Rename asset`, then select a "*.quantized" asset.
 
@@ -1500,6 +1508,7 @@ m41, m42, m43, m44
 These functions are used to construct vector and matrix:
 
 * `VEC2(x = 0, y = 0)`: constructs a "vec2" with two real numbers
+* `VEC2(v3)`: constructs a "vec2" with a "vec3", takes two components and ignores the last one
 * `VEC3(x = 0, y = 0, z = 0)`: constructs a "vec3" with three real numbers
 * `VEC3(v2, z = 0)`: constructs a "vec3" with a "vec2" and a real number
 * `VEC4(x = 0, y = 0, z = 0, w = 1)`: constructs a "vec4" with some real numbers
@@ -1644,8 +1653,8 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PLOT`
-* `TRI`, `TRIFILL`, `TRITEX`, `POLY`, `POLYFILL`, `POLYTEX`
+* `PLOT`, `POLY`, `POLYFILL`, `POLYTEX`
+* `TRITEX`, `QUADTEX`
 
 ## Type names
 

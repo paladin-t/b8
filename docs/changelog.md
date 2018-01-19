@@ -1,3 +1,26 @@
+<!-- Changes are categorized in community, language, libraries, editor. -->
+
+### v1.1.2
+
+Language:
+
+* Fix a crash bug with invalid collection index
+* Fix a memory leak with invalid invoking
+
+Libraries:
+
+* Add a loading option to `LOAD_BLANK` for quantized image
+* Add `TRI`, `TRIFILL` functions to draw triangles
+* Add `QUAD`, `QUADFILL` functions to draw quadrangles
+* Add `IGET`, `ISET` functions to access quantized image
+* Add a new constructor to `VEC2`
+* Fix a palette color setting issue
+* Fix a color interpolation bug
+
+Editor:
+
+* Add an editor for quantized image
+
 ### v1.1.1
 
 Libraries:

@@ -69,7 +69,7 @@ BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing
 | Links | |
 |----|----|
 | Discuss | [Forums](http://steamcommunity.com/app/767240/discussions/) |
-| Chat | [FANTASY CONSOLES, Discord](https://discord.gg/phR38jm) |
+| Chat | [#basic8](https://discord.gg/phR38jm) [Fantasy Consoles](https://discord.gg/e4cpeuV) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin), [#basic8fc](https://twitter.com/hashtag/basic8fc?src=hash) |
 | Devlogs | [Steam discussion](http://steamcommunity.com/app/767240/discussions/9/) |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |

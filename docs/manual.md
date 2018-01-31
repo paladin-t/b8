@@ -1559,9 +1559,9 @@ These operators are used to perform component-wise calculations:
 These operators are used to transform values:
 
 * `mat44 * mat44`
-* `mat44 * v3`: equals to `mat44 * VEC4(v3, 1)`, results in "vec3"
+* `mat44 * v3`: equals to `mat44 * VEC4(v3, 1)`, results in "vec4"
 * `mat44 * v4`
-* `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in "vec3"
+* `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in "vec4"
 * `v4 * mat44`
 
 Besides, these functions are used to do other linear computations:

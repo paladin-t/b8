@@ -1,5 +1,18 @@
 <!-- Changes are categorized in community, language, libraries, editor. -->
 
+### v1.2
+
+Libraries:
+
+* Fix a vector calculation bug
+
+Editor:
+
+* Add syntax highlighting feature to the code editor
+* Add navigation methods in the code editor
+* Add default license to prebuilt source code
+* Fix a crash bug when switching to layer 0 of a map, with invalid tool selected
+
 ### v1.1.2
 
 Language:

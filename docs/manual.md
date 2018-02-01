@@ -160,8 +160,8 @@ All disks are stored in a library directory on hard disk, each disk has its own 
 There are some configurable options available:
 
 * Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
-* Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
+* Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
 * Entering full screen: `Option`, `Graphics`, `Full screen`
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
@@ -403,7 +403,7 @@ BASIC8 supplies a set of list and dictionary manipulation functions which do cre
 * `INSERT(lst, where, v)`: inserts a value at a specific position of a list
 * `SORT(lst)`: sorts a list increasingly
 * `EXISTS(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
-* `INDEX_OF(lst)`: gets the index of a specific value in a list
+* `INDEX_OF(lst, what)`: gets the index of a specific value in a list
 * `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary, or the value of an iterator
 * `SET(coll, where, v)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
 * `REMOVE(coll, where)`: removes the element at a specific index in a list, or the element at a specific key in a dictionary

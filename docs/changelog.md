@@ -1,6 +1,6 @@
 <!-- Changes are categorized in community, language, libraries, editor. -->
 
-### v1.2
+### v1.2 Feb. 2018
 
 Libraries:
 

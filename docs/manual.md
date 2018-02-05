@@ -1416,6 +1416,7 @@ Parameter format of `NOW`:
 	* `v`: file path, or byte array
 	* `y`: target type, can be "png", "bmp" or "tga"
 
+* `Image.RESIZE(w, h)`: resizes an image
 * `Image.GET(x, y)`: gets the color of a pixel
 * `Image.SET(x, y, c)`: sets the color of a pixel
 * `Image.LEN([r])`: gets the count of total pixels, or width, or height of an image

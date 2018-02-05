@@ -1,4 +1,20 @@
-<!-- Changes are categorized in community, language, libraries, editor. -->
+<!-- Changes are categorized in community, language, driver, libraries, editor. -->
+
+### v1.2.1
+
+Driver:
+
+* Fix a frame buffer filling issue
+
+Libraries:
+
+* Add a `RESIZE` function to the image library
+* Fix an accessing bug with the `PGET` function
+
+Editor:
+
+* Fix a string literal issue with uppercase
+* Fix some coloring issues with syntax highlighting
 
 ### v1.2 Feb. 2018
 

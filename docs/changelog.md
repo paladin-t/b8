@@ -7,7 +7,9 @@ Add MacOS version.
 Editor:
 
 * Change the scale item into the expendable bar
+* Fix an error marking bug when importing another source code
 * Fix some text finding issues in the code editor
+* Fix a rendering issue with blank source code
 
 ### v1.2.1
 

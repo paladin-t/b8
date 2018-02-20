@@ -162,7 +162,7 @@ There are some configurable options available:
 * Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
-* Entering full screen: `Option`, `Graphics`, `Full screen`
+* Entering full screen: `Option`, `Graphics`, `Full screen` on Windows; click the `Maximize` button on MacOS
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
 * Showing stat. information: `Option`, check `Show stat.`

@@ -12,8 +12,6 @@
 
 [![BASIC8 on Steam](pages/imgs/steam.png)](http://store.steampowered.com/app/767240/)
 
-For the moment, BASIC8 is released for Windows only, however, there are plans to support other systems.
-
 | FANTASY | COMPUTER |
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **fantasy computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
@@ -57,7 +55,7 @@ BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing
 
 | | Minimum | Recommended |
 |----|----|----|
-| OS | Windows 7/8/10 | CosmOS 1.0 |
+| OS | Windows 7/8/10 (32/64bit); MacOS X 10.7 or above (64bit) | CosmOS 1.0 |
 | CPU | Atom 1.44GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |

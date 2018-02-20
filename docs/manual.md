@@ -153,7 +153,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 
 ### Disk library
 
-All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library on Windows is "C:/Users/YourName/Documents/BASIC8/".
+All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library is "C:/Users/YourName/Documents/BASIC8/" on Windows; "/Users/YourName/Documents/BASIC8/" on MacOS.
 
 ### Configuration
 
@@ -205,7 +205,7 @@ Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `
 
 A variable identifier is formed with letters, numbers, underline and an optional dollar postfix, but it must begin with a letter or an underline. It's not accepted to use type specifier for variable, and you don't need to declare it before accessing it neither. Assignment statements begin with optional `LET` keywords, eg. `LET pie = 22 / 7`, `s = pie * r * r`, etc.
 
-The dollar symbol `$` is reserved from traditional BASIC dialects as a postfix of a variable identifier. They stand for different identifiers depending on with or without it. But it doesn't decorates for type of string anymore in BASIC8:
+The dollar sigil `$` is reserved from traditional BASIC dialects as a valid postfix of a variable identifier. Representing for different identifiers respectively with or without it. But it doesn't denote for type of string in most cases in BASIC8:
 
 ~~~~~~~~~~bas
 A$ = 1 ' Can store any type with a "$" decorated variable.
@@ -306,14 +306,14 @@ Other string functions will be mentioned at "[String functions](#string-function
 
 ### Array
 
-BASIC8 supports array up to 4 dimensions. An array can store a set of data that each element can be accessed by the array name and indices. Arrays can hold either real number or string data. An array must be declared with a `DIM` statement before using it:
+BASIC8 supports array up to 4 dimensions. An array can store a set of data that each element can be accessed by the array name and indices. An array can hold either real number or string data, depends on whether the identifier ends up with a `$` sigil. An array must be defined with a `DIM` statement before using it:
 
 ~~~~~~~~~~bas
 DIM nums(10)
 DIM strs$(2, 5)
 ~~~~~~~~~~
 
-The naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. A `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array index begins from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid index will cause an error.
+The common naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. It's defined by a `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array index begins from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid index will cause an error.
 
 ## Control structures
 
@@ -1424,7 +1424,7 @@ Parameter format of `NOW`:
 
 ### IO
 
-* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, it is "C:/Users/YourName/Documents/" on Windows as default
+* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, often termed with "Documents" or "My Documents"
 * `COMBINE_PATH(x, y)`: combines two parts into a path
 
 * `FILE_INFO(path)`: creates a file information object

@@ -1,5 +1,14 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.2.2
+
+Add MacOS version.
+
+Editor:
+
+* Change the scale item into the expendable bar
+* Fix some text finding issues in the code editor
+
 ### v1.2.1
 
 Driver:
@@ -86,7 +95,7 @@ Editor:
 
 ### v1.0 Jan. 2018
 
-First release with features including:
+Add Windows version. First release with features including:
 
 * Add a BASIC programming language
 * Add programming interfaces

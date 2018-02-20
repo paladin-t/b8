@@ -100,8 +100,6 @@ enddef
 
 ' The main loop.
 def update(delta)
-	' Ceils it.
-	if delta > 0.1 then delta = 0.033
 	' Shows the background.
 	background()
 	' Processes bouncing.
@@ -109,6 +107,7 @@ def update(delta)
 	ball_y = parabel_x * parabel_x * 1.5
 	if ball_y >= 45 then
 		ball_y = 45
+		parabel_x = sqr(ball_y / 1.5)
 		parabel_dir = -parabel_dir
 	endif
 	' Moves the ball left and right.

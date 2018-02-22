@@ -153,7 +153,10 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 
 ### Disk library
 
-All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library is "C:/Users/YourName/Documents/BASIC8/" on Windows; "/Users/YourName/Documents/BASIC8/" on MacOS.
+All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library is:
+
+* "C:/Users/YourName/Documents/BASIC8/" on Windows
+* "/Users/YourName/Documents/BASIC8/" on MacOS
 
 ### Configuration
 

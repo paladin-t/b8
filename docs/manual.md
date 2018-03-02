@@ -4,15 +4,13 @@
 
 ## Welcome to BASIC8
 
+Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read about [Workshop](workshop)?
+
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
 It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
-For the moment, BASIC8 is released for PC only, however, there are plans for porting to other systems.
-
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
-
-Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read about [Workshop](workshop)?
 
 ## Table of content
 
@@ -157,6 +155,7 @@ All disks are stored in a library directory on hard disk, each disk has its own 
 
 * "C:/Users/YourName/Documents/BASIC8/" on Windows
 * "/Users/YourName/Documents/BASIC8/" on MacOS
+* "/home/YourName/Documents/BASIC8/" on Linux
 
 ### Configuration
 
@@ -165,7 +164,7 @@ There are some configurable options available:
 * Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
-* Entering full screen: `Option`, `Graphics`, `Full screen` on Windows; click the `Maximize` button on MacOS
+* Entering full screen: `Option`, `Graphics`, `Full screen` on Windows and Linux; click the `Maximize` button on MacOS
 * Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
 * Showing stat. information: `Option`, check `Show stat.`

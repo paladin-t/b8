@@ -1,5 +1,15 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.2.3
+
+Add Linux version.
+
+Editor:
+
+* Add a modification indicator to the code editor
+* Change large quantized image to readonly, with configurable threshold
+* Fix a crash bug with undo operation in the code editor
+
 ### v1.2.2
 
 Add MacOS version.
@@ -66,7 +76,7 @@ Editor:
 Libraries:
 
 * Change IO functions to return uniformed separator
-* Fix an out of bound bug with pathfinding algorithm
+* Fix an out of bound bug with the pathfinding algorithm
 * Fix a wrong loading bug of map assets if tiles missing
 
 Editor:

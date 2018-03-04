@@ -60,8 +60,6 @@ BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |
 
-**Requires OpenGL3.3 capable GPU**
-
 <hr>
 
 | Links | |

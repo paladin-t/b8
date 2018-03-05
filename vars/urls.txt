@@ -1,4 +1,4 @@
-Explore =
+Discover =
 	Workshop = http://steamcommunity.com/app/767240/workshop/
 	Artwork = http://steamcommunity.com/app/767240/images/
 	Screenshots = http://steamcommunity.com/app/767240/screenshots/
@@ -8,5 +8,6 @@ Forums =
 	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
 	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
 	= end
+Wiki = https://github.com/paladin-t/b8/wiki
 Like = http://store.steampowered.com/recommended/recommendgame/767240
 Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

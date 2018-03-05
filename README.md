@@ -4,7 +4,8 @@
 
 ## BASIC8
 
-[Why BASIC8?](https://paladin-t.github.io/b8/pages/why) | [Manual](https://paladin-t.github.io/b8/docs/manual) | [Changelog](https://paladin-t.github.io/b8/docs/changelog) |
+[Why BASIC8?](https://paladin-t.github.io/b8/pages/why) |
+[Learning](https://github.com/paladin-t/b8/wiki) | [Manual](https://paladin-t.github.io/b8/docs/manual) | [Changelog](https://paladin-t.github.io/b8/docs/changelog) |
 [Gallery](https://paladin-t.github.io/b8/pages/gallery) |
 [About](https://paladin-t.github.io/b8/pages/about)
 

@@ -4,11 +4,16 @@
 
 Add Linux version.
 
+Driver:
+
+* Add fixed function pipeline
+
 Editor:
 
 * Add a modification indicator to the code editor
 * Change large quantized image to readonly, with configurable threshold
 * Fix a crash bug with undo operation in the code editor
+* Fix an execution issue with large entry code
 
 ### v1.2.2
 

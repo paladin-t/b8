@@ -1442,6 +1442,7 @@ Parameter format of `NOW`:
 * `Fi.IS_BLANK()`: checks whether a file is blank
 
 * `Fi.EXISTS()`: checks whether a file exists
+* `Fi.COPY_TO(dst)`: copies the file to another location
 * `Fi.REMOVE()`: removes a file
 
 * `DIRECTORY_INFO(path)`: creates a directory information object
@@ -1651,13 +1652,17 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CLS`
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
-* `GUI`, `BUTTON`, `LABEL`, `MENU`, `MENU_ITEM`
+* `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`
 * `MEMCMP`, `MEMCPY`, `MEMSET`, `MEMTEST`
-* `NET`, `SOCKET`, `SEND`, `RECV`, `RECEIVE`
+* `MESSENGER`
+* `NEURAL`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PLOT`, `POLY`, `POLYFILL`, `POLYTEX`
-* `TRITEX`, `QUADTEX`
+* `PLOT`, `TRITEX`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
+* `SAY`
+* `SHADER`
+* `SOCKET`, `NET`, `SEND`, `RECV`, `RECEIVE`
+* `WEB`
 
 ## Type names
 

@@ -4,12 +4,26 @@
 
 Add Linux version.
 
+Language:
+
+* Fix a GC bug with ranged `FOR` statement
+* Fix a string assignment issue with class member
+* Fix a termination issue with the `END` statement
+
 Driver:
 
 * Add fixed function pipeline
 
+Libraries:
+
+* Add a `COPY_TO` to the file information library
+* Fix a path resolving bug of file and directory with UTF-8 character
+* Fix a crash bug with path concatenating
+* Fix a packing issue for existing package with the archive library
+
 Editor:
 
+* Add automatic arranging feature to editor windows
 * Add a modification indicator to the code editor
 * Change large quantized image to readonly, with configurable threshold
 * Fix a crash bug with undo operation in the code editor

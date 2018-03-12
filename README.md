@@ -44,7 +44,7 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be saved as "`*.b8`" file, "`*.png`", or text based for sharing. As well as handy sharing via [Workshop](http://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop).
+BASIC8 disks can be handily shared via [Workshop](http://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places; and even made into [standalone player as executable binary](http://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512).
 
 [![Workshop](docs/imgs/workshop.png)](http://steamcommunity.com/app/767240/workshop/)
 

@@ -1,5 +1,17 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.3
+
+Libraries:
+
+* Add a network library
+* Fix popping issues with the bytes library
+
+Editor:
+
+* Fix a key retrieving bug with input config
+* Fix a program locating issue with long path
+
 ### v1.2.3
 
 Add Linux version.

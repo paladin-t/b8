@@ -9,7 +9,7 @@ Call me Tony Wang, or just Tony. I used to develop video games as an employee fo
 * libcurl [https://curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
 * libtsf [https://github.com/paladin-t/libtsf/](https://github.com/paladin-t/libtsf/)
 * md4c [https://github.com/mity/md4c/](https://github.com/mity/md4c/)
-<!--* Mongoose [https://github.com/cesanta/mongoose/](https://github.com/cesanta/mongoose/)-->
+* Mongoose [https://github.com/cesanta/mongoose/](https://github.com/cesanta/mongoose/)
 * MY-BASIC [https://github.com/paladin-t/my_basic/](https://github.com/paladin-t/my_basic/)
 * RapidJSON [https://github.com/Tencent/rapidjson/](https://github.com/Tencent/rapidjson/)
 * SDL [https://www.libsdl.org/](https://www.libsdl.org/)

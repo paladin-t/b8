@@ -94,6 +94,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [JSON](#json)
 		* [Math](#math)
 			* [Vector and matrix](#vector-and-matrix)
+		* [Network](#network)
 		* [System](#system)
 		* [Text](#text)
 		* [Web](#web)
@@ -1585,6 +1586,62 @@ Besides, these functions are used to do other linear computations:
 * `TRANSPOSE(mat44)`
 * `INVERSE(v4)`, `INVERSE(mat44)`
 
+### Network
+
+* `NET()`: creates a network object
+* `Net.OPEN(addr, recv [, stbl [, dscn]])`: opens a network, either as server or client
+	* `addr`: parameters will be explained later
+	* `recv`: handles callback when received some data
+	* `stbl`: handles callback when connection established
+	* `dscn`: handles callback when disconnected
+* `Net.CLOSE()`: closes a network, clears all options; will neither be impossible to send nor receive anything after closing
+
+The `addr` parameter is combined with four parts, direction, protocol, address and port:
+
+| Part | Value |
+|---|---|
+| Directoy | `>` for connecting, `<` for listening |
+| Protocol | `udp://`, `tcp://` |
+| Address | IP address |
+| Port | Port number |
+
+For example:
+
+| Address string | Connectivity |
+|---|---|
+| ">tcp://192.168.0.1:12000" | As client, connects to 192.168.0.1 port 12000 via TCP |
+| "<udp://127.0.0.1:12000" | As server, listens from local host port 12000 via UDP |
+| "tcp://12000" | As server, listens from port 12000 via TCP |
+
+The callback of received event is an invokable that accepts two parameters respectively represent for the data has just received, and the remote adress in string. Eg. `LAMBDA (msg, addr) ()`. The type of the first parameter is determined by the "data_type" option.
+
+The callback of connection established is an invokable that accepts a parameter represents for the remote address in string; nil for failure for outcoming connection. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection established; ignored by UDP.
+
+The callback of disconnected is an invokable that accepts a parameter represents for the remote address in string. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection disconnected; ignored by UDP.
+
+* `Net.SEND(d)`: sends data via network
+	* `b`: can be data of one in string, bytes or JSON types
+* `Net.BROADCAST(d, e = FALSE)`: broadcasts data to all connections, cannot be used with UDP network
+	* `b`: can be data of one in string, bytes or JSON types
+	* `e`: true for excluding current receiving connection, if this function is called in a received callback
+
+* `Net.GET(k)`: gets an option value
+	* returns option string
+* `Net.SET(k, v)`: sets an option with specific key and value, options will be cleared after closing a network; set any options before opening
+	* `k`: option key as string, see following table for details
+	* `v`: option value as string, see following table for details
+
+| Key | Value | Note |
+|---|---|---|
+| "bytes_with_size" | Whether packs size before bytes | Can be "true" or "false", defaults to "true" |
+| "data_type" | Parameter type of received callback | Can be "string", "bytes" or "json", defaults to "json" |
+
+A single transmission or datagram cannot be longer than 32KB. Consider closing and setting a network instance to nil as soon as it's no longer in use.
+
+Sent string and json always end up with a zero byte; vice versa, received string and json must end up with a terminal zero byte.
+
+If the "bytes_with_size" option is set to "true", an extra 32-bit unsigned integer will be automatically packed at head of bytes before sending, the size head itself also counts; bytes parameter in the received callback doesn't contain that head. In short words, it's transparency within BASIC8 programs, but it's helpful to communicate with other terminals to distinguish different messages, and you have to adapt the rule in other environment. You have to determine how to split bytes into message if "bytes_with_size" is set to "false".
+
 ### System
 
 It's **not** recommended to use functions marked with "**platform dependent**", to get best compatibility across platforms.
@@ -1661,7 +1718,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `PLOT`, `TRITEX`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `SAY`
 * `SHADER`
-* `SOCKET`, `NET`, `SEND`, `RECV`, `RECEIVE`
+* `SOCKET`, `RECV`, `RECEIVE`, `POLL`
 * `WEB`
 
 ## Type names

@@ -1640,7 +1640,7 @@ A single transmission or datagram cannot be longer than 32KB. Consider closing a
 
 Sent string and json always end up with a zero byte; vice versa, received string and json must end up with a terminal zero byte.
 
-If the "bytes_with_size" option is set to "true", an extra 32-bit unsigned integer will be automatically packed at head of bytes before sending, the size head itself also counts; bytes parameter in the received callback doesn't contain that head. In short words, it's transparency within BASIC8 programs, but it's helpful to communicate with other terminals to distinguish different messages, and you have to adapt the rule in other environment. You have to determine how to split bytes into message if "bytes_with_size" is set to "false".
+If the "bytes_with_size" option is set to "true", an extra 32-bit unsigned integer will be automatically packed at head of bytes before sending, the size head itself also counts; bytes parameter in the received callback doesn't contain that head. In short words, it's transparency within BASIC8 programs, but it's helpful to communicate with other endpoints to distinguish different messages, and you have to adapt the rule in other environment. You have to determine how to split bytes into message if "bytes_with_size" is set to "false".
 
 ### System
 

@@ -1,6 +1,19 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
-### v1.3
+### v1.3.1
+
+Libraries:
+
+* Fix a blank content issue with the `INPUT` statement
+
+Editor:
+
+* Add a disk filter
+* Add a sprite to GIF exporter
+* Fix a GIF exporting issue with few color count at the beginning frame
+* Fix an icon arranging issue
+
+### v1.3 Mar. 2018
 
 Libraries:
 

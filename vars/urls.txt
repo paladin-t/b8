@@ -5,8 +5,8 @@ Discover =
 	= end
 Forums =
 	General discussions = http://steamcommunity.com/app/767240/discussions/4/
-	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
 	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
+	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
 	Workshop discussions = http://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
 Guides = http://steamcommunity.com/app/767240/guides/

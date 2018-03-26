@@ -1,5 +1,12 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.3.2
+
+Editor:
+
+* Add an outline view to the code editor
+* Fix a text finding issue with whitespace
+
 ### v1.3.1
 
 Libraries:
@@ -141,7 +148,7 @@ Language:
 Libraries:
 
 * Add non-referenced vector and matrix data types, with operators and functions
-* Add a path finding algorithm
+* Add a pathfinding algorithm
 
 Editor:
 

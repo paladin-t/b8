@@ -736,7 +736,7 @@ PRINT ret;
 
 ### Automatic memory management
 
-BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release unused memory. However, you are still in charge of setting unused referenced variables to `NIL`, closing databases, closing finished files, etc.
+BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release useless memory. However, consider setting referenced variables to `NIL` when the values become useless, eg. closing databases, closing finished files, closing network connections, etc.
 
 ## Generic functions
 

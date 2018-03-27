@@ -747,7 +747,7 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
 * `ASSERT(cond [, text])`: for the purpose of debugging; prompts an assertion and terminates execution immediately if `cond` results in false
-* `SWAP(x, y)`: swaps the values between `x` and `y`; this statement can be only called in the global scope
+* `SWAP(x, y)`: swaps the values between `x` and `y`; this statement can be only called in global scope
 * `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
 
 * `TRACE()`: for the purpose of debugging; prints stack trace
@@ -1174,9 +1174,9 @@ READ w, x, y, z
 PRINT w; x; y; LEN(z);
 ~~~~~~~~~~
 
-The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to do data saving and loading, such as game progress etc. in a very simple way. It can process with a couple of data types: integer, real, string, and collections. It saves the values of variables at program termination, and loads persisted values when running to the same `PERSIST` statements next time.
+The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to make a way simple saving and loading data, such as highscore, game progress, etc. It deals with a couple of data types: nil, integer, real, string, and collections. The function persists the values of variables at program exit, and regains values when running to the same `PERSIST` statements next time.
 
-* `PERSIST ...`: marks some variables as persistence variables; this statement can be only called in the global scope
+* `PERSIST ...`: marks some variables as persistence ones; this statement can be only called in global scope with global variables
 
 Eg:
 

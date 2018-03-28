@@ -1255,7 +1255,9 @@ Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate wi
 * `Archive.OPEN(path, z)`: opens an archive file
 	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 	* `z`: true for packing, otherwise unpacking
+	* returns true for success
 * `Archive.CLOSE()`: closes an archive file
+	* returns true for success
 
 * `Archive.PACK(dst, src)`: <!--**asynchronizable**, -->packs from a file or byte array
 	* `dst`: name in archive
@@ -1341,7 +1343,9 @@ BASIC8 uses [SQLite](http://sqlite.org/docs.html) as a storage engine of databas
 * `DATABASE()`: creates a database object
 * `Db.OPEN(path)`: opens a database file
 	* `path`: uses the container directory (parent of "content") of a disk as lookup root
+	* returns true for success
 * `Db.CLOSE()`: closes an opened database
+	* returns true for success
 
 * `Db.HAS_TABLE(tbl)`: checks whether a table exists or not
 	* `tbl`: table name
@@ -1379,7 +1383,9 @@ Parameter format of `NOW`:
 * `File.OPEN(path, acc)`: opens a file on disk
 	* `path`: uses the container directory (parent of "content") of a disk as lookup root
 	* `acc`: accessing mark, true for writable, otherwise readonly
+	* returns true for success
 * `File.CLOSE()`: closes an opened file
+	* returns true for success
 
 * `File.WRITE(v ...)`: writes one or more values to file
 	* `v`: writes as byte for numbers, literally for string
@@ -1594,7 +1600,9 @@ Besides, these functions are used to do other linear computations:
 	* `recv`: handles callback when received some data
 	* `stbl`: handles callback when connection established
 	* `dscn`: handles callback when disconnected
+	* returns true for success
 * `Net.CLOSE()`: closes a network, clears all options; will neither be impossible to send nor receive anything after closing
+	* returns true for success
 
 The `addr` parameter is combined with four parts, direction, protocol, address and port:
 

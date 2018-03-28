@@ -10,7 +10,7 @@ Create maps as well:
 
 Import and edit quantize images:
 
-![](imgs/importing_images.png)
+![](imgs/creating_images.png)
 
 Write programs in a BASIC dialect, in which music and sound effects are also written:
 

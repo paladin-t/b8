@@ -1,5 +1,19 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.3.3
+
+Driver:
+
+* Add an initialization procedure of `TICKS` base to the boot program
+
+Libraries:
+
+* Add error prompt to the `PERSIST` function
+* Add return value to the `OPEN`, and `CLOSE` functions of the archive library
+* Add return value to the `OPEN`, and `CLOSE` functions of the database library
+* Add return value to the `OPEN`, and `CLOSE` functions of the file library
+* Add return value to the `OPEN`, and `CLOSE` functions of the network library
+
 ### v1.3.2
 
 Editor:

@@ -10,6 +10,9 @@ Forums =
 	Workshop discussions = http://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
 Learning = http://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
-Player Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
+Utilities =
+	Player Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
+	Wave Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993
+	= end
 Like = http://store.steampowered.com/recommended/recommendgame/767240
 Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

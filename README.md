@@ -36,7 +36,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprites, tiles, maps, etc.
+BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993) to [make sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766).
 
 ### Shareable disks
 

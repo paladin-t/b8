@@ -1,5 +1,27 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.3.4
+
+Language:
+
+* Fix a boolean evaluating bug with library object
+
+Libraries:
+
+* Add an ID type to sound effect
+* Add a `WAVE` type to prefab sound effect
+* Add functionality to play prefab sound effect with wave object to the `SFX` function
+* Add a `STOP` function to stop any audio
+
+Editor:
+
+* Add an option to surf Steam pages using internal browser
+* Add a welcome page
+* Add a frame cache to the sprite editor
+* Fix a tag setting bug with undo operation in the sprite editor
+* Fix a preview issue with inactive map layers
+* Fix an unsaved state issue with new created assets
+
 ### v1.3.3
 
 Driver:

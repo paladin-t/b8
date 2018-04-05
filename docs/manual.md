@@ -984,10 +984,12 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 	* `path`: path of a sound font file, or uses the simple built-in one if no argument passed
 	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a disk instead
 
-* `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel
+* `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel, or use the following `STOP` instead
 	* `seq`: MML format string
 	* `ch`: channel to play within
 	* `preset`: preset index in sound font
+* `STOP ch`: stops music started by `PLAY`
+	* `ch`: channel to stop
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
@@ -1021,12 +1023,22 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 ### Sound effects
 
-Redundant sound effect callings will be abandoned if all the channels are occupied.
+Channel is indicated implicitly when play a sound effect; redundant sound effect will be abandoned if all the channels are occupied.
 
-* `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of tones as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
+* `WAVE()`: creates a wave object for prefab sound effect
+* `Wave.PUSH(y, hz, tm, vol = 1)`: pushes a sample node, each wave object can contain up to 256 sample nodes
 	* `y`: waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
 	* `hz`: frequency
 	* `tm`: duration in seconds
+	* `vol`: volume of the sample node, will be multiplied with global sound effect volume
+* `Wave.LEN()`: gets the sample count
+
+* `SFX wav, loop = FALSE`: plays a prefab sound effect wave
+	* returns sound effect id
+* `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of tones as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
+	* returns sound effect id
+* `STOP id`: stops sound effect started by `SFX`
+	* `id`: sound effect to stop
 
 Plus 4096 to `y` for interpolating `hz` from current set with the following one's `hz`.
 

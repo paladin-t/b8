@@ -2,19 +2,21 @@
 
 ## Sharing via Workshop
 
-You can share your creative disk with the Steam community via Workshop, subscribe to play other people's game and program, and discuss or comment on any creation.
+You can share your creative disk with the Steam community via Workshop, subscribe to play others' game and program, and discuss or comment on any creation.
+
+Notice to close any external editors that opening the source disk you are intending to push, pull, etc.
 
 ### Submitting
 
-To submit a new disk to Workshop, select it, then click `Community`, `Workshop`, `Push`. You will be prompted to fill in some information as following:
+To submit a new disk to Workshop, select it, then click `Community`, `Workshop`, `Push`. It will prompt you to fill in some information as following:
 
 ![](imgs/workshop_submit.png)
 
-Recommended to use good looking preview, choose proper genre, and write necessary introduction and notes to help people to get better acquainted with your submission. Then click the `Push` button to submit it, with agreeing to the terms of service. You may edit submitted information in browser later, including changing description, chaging visibility, updating preview images and videos, etc.
+It's recommended to use good looking preview, choose proper genre, and write necessary introduction and notes to help others to get better acquainted with your submission. Then click the `Push` button to submit it, with agreeing to the terms of service. You may edit submitted information in browser later, including changing description, chaging visibility, updating preview images and videos, etc.
 
 ### Subscribing
 
-Use any browser to explore the entire [BASIC8 Workshop](http://steamcommunity.com/app/767240/workshop/) on Steam to make subscriptions:
+Use any browser to explore the [BASIC8 Workshop](http://steamcommunity.com/app/767240/workshop/) on Steam to make subscriptions:
 
 ![](imgs/workshop_subscribe.png)
 
@@ -24,13 +26,13 @@ All subscribed disks will be automatically downloaded for mounting. Notice that 
 
 Click `Unsubscribe` on an already subscribed disk in browser to stop following it.
 
-Unsubscribe mounted disk when removing it with `Unsubscribe` option checked, otherwise it will be only removed from local storage:
+Unsubscribe mounted disk when removing it with `Unsubscribe` option checked, otherwise it will be removed from local storage only:
 
 ![](imgs/workshop_remove.png)
 
 ### Pushing
 
-When you want to push modifications of a submitted disk, select the disk, then click `Community`, `Workshop`, `Push`. You will be prompted with a (similar to submission) dialog :
+When you want to push modifications of a submitted disk, select the disk, then click `Community`, `Workshop`, `Push`. It will prompt you with a (similar to submission) dialog :
 
 ![](imgs/workshop_push.png)
 
@@ -44,7 +46,7 @@ To check updating of a mounted disk manually, select it, click `Community`, `Wor
 
 Choose proper operation for mounting downloaded disk, check `Don't ask me` to make it quiet and defaults the operation to current selection for future updating. You can change the quiet mounting operation later in the properties dialog of a disk.
 
-All subscribed disks will be pulled for updating automatically when BASIC8 boots up. To pull all disks manually, click `Community`, `Workshop`, `Pull all`; or click `Force to pull all` with `Shift` key pressed to force it showing mounting options for all disks. It's required to get your Steam client set to "online" mode to download subscriptions.
+All subscribed disks will be pulled for updating automatically when BASIC8 boots up. To pull all disks manually, click `Community`, `Workshop`, `Pull all`; or click `Force to pull all` with `Shift` key pressed to force it showing mounting options for all disks. It's required to get your Steam client to "online" mode to download subscriptions.
 
 ### Dismounting
 

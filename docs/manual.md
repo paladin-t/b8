@@ -784,14 +784,15 @@ These functions are used to communicate with a driver:
 
 * `DRIVER()`: gets current driver, there's only one driver instance for a running disk
 * `VALID(drv)`: checks whether a driver is valid
+* `SET_CLEARER(drv, auto)`: sets whether clears frame buffers automatically; defaults to true without calling this function; you need to call the `CLS` function manually if it's turned false
 * `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "nil" without calling this function
 	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands; defaults to "nil" without calling this function
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
 * `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
 	* `r`: can be an invokable routine or lambda, or its name in string, or defaults to "update"
-* `LOCK(drv)`: locks a driver, suspends its resource loading procedures
-* `UNLOCK(drv)`: unlocks a driver, resumes its resource loading procedures
+* `LOCK(drv)`: locks a driver; suspends resource loading procedures, and audio committing
+* `UNLOCK(drv)`: unlocks a driver; resumes resource loading procedures, and audio committing
 
 `UPDATE_WITH` returns if `r(...)` has just returned non-zero. Eg:
 
@@ -848,6 +849,7 @@ These functions are used to manipulate the states of a sprite:
 
 * `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
 	* returns elapsed time since last synchronizing
+* `CLS [l]`: clears a frame buffer at a specific layer, with range of values from 0 to 4, see top most of the graphics section for details; clears all layers if no argument passed
 * `COL c`: sets the default color value of future commands
 * `CLIP [x, y, w, h, ss = TRUE, ip = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
 	* `ss`: true for clipping with screen space, otherwise with world space
@@ -1726,7 +1728,6 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `CTOR`, `DTOR`
 * `FORK`, `JOIN`
 
-* `CLS`
 * `COLLIDES`, `INTERSECTS`
 * `FORMAT`
 * `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`

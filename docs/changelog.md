@@ -1,5 +1,19 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.4 Apr. 2018
+
+Driver:
+
+* Add a switch of automatic frame buffer clearing
+* Fix a state checking bug with right mouse click
+* Fix an accuracy issue with the `TOUCH` function
+
+Libraries:
+
+* Add a `CLS` function to clear frame buffer manually
+* Add a `SET_CLEARER` function to set the switch of automatic frame buffer clearing
+* Fix a termination issue with music
+
 ### v1.3.4
 
 Language:

@@ -17,7 +17,7 @@
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **Fantasy Computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprites, tiles, maps and more. |
 
-It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
+It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
 
 ### Technical specifications
 
@@ -28,7 +28,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
-* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Map: 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
 * Keyboard and mouse: supported
 
@@ -36,7 +36,7 @@ It's been a while since people used to enjoy coding and playing straightforward 
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993) to [make sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766).
+BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [making sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074) with the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766).
 
 ### Shareable disks
 
@@ -44,9 +44,15 @@ See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be handily shared via [Workshop](http://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places; and even made into [standalone player as executable binary](http://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512).
+BASIC8 disks can be handily shared via [Workshop](http://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places.
 
 [![Workshop](docs/imgs/workshop.png)](http://steamcommunity.com/app/767240/workshop/)
+
+### Redistributing
+
+![](pages/imgs/banner_platforms.png)
+
+Make redistributable [standalone player as executable binary](http://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux.
 
 ### Get BASIC8
 

@@ -9,4 +9,4 @@ There are some extra tools as regular disks available at Workshop:
 * [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512)
 * [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993)
 
-Besides, it's also possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766) with built-in libraries; or using [plugins](https://github.com/paladin-t/b8.plugins).
+Besides, it's also possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766) with built-in libraries; or use [plugins](https://github.com/paladin-t/b8.plugins).

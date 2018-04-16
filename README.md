@@ -36,7 +36,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [making sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074) with the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or using [plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [making sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074) with the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or use [plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
@@ -63,7 +63,7 @@ Make redistributable [standalone player as executable binary](http://steamcommun
 | | Minimum | Recommended |
 |----|----|----|
 | OS | Windows 7/8/10 (32/64bit) <br /> MacOS X 10.7 or later (64bit) <br /> Ubuntu (32/64bit) | CosmOS 1.0 |
-| CPU | Atom 1.44GHz | Quantum |
+| CPU | Atom 1.44GHz <br /> Core 2 Duo 1.83GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |
 

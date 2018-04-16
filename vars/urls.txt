@@ -13,6 +13,7 @@ Learning = http://steamcommunity.com/app/767240/discussions/4/169604063592230096
 Utilities =
 	Player Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
 	Wave Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993
+	Plugins = https://github.com/paladin-t/b8.plugins
 	= end
 Like = http://store.steampowered.com/recommended/recommendgame/767240
 Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

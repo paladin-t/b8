@@ -8,7 +8,7 @@ Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read a
 
 BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
-It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if the author hasn't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
+It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if you haven't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
 You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
 
@@ -147,7 +147,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
-* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Map: 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
 
 ### Disk library
@@ -166,7 +166,7 @@ There are some configurable options available:
 * Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
 * Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
 * Entering full screen: `Option`, `Graphics`, `Full screen` on Windows and Linux; click the `Maximize` button on MacOS
-* Customizing input: `Option`, `Input`, then custom for each virtual gamepad on the dialog box
+* Customizing input: `Option`, `Input`, then customize for each virtual gamepad on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
 * Showing stat. information: `Option`, check `Show stat.`
 * Making it running when double click on a disk, instead of opening it: `Option`, check `Run on click`
@@ -614,7 +614,7 @@ inst = NEW(bar)
 PRINT inst.fun(3);
 ~~~~~~~~~~
 
-The `ME` keyword always stands for current class instance. A.k.a. `SELF` or `THIS` in other languages.
+The `ME` keyword always stands for the current class instance. A.k.a. `SELF` or `THIS` in other languages.
 
 The `REFLECT` statement is used to traverse all member variables and routines in a class instance. It returns a dictionary filled with name of member as key, value of member as value.
 
@@ -661,7 +661,7 @@ A coroutine is a special data type in BASIC8, which encapsulates an invokable ob
 * `ABORT(co)`: aborts an automatically dispatching coroutine
 * `MOVE_NEXT(co)`: iterates a coroutine for one step manually
 	* returns true if can be further iterated, otherwise false for finished
-* `GET(co)`: gets any yielded or returned value of current iteration
+* `GET(co)`: gets any yielded or returned value of the current iteration
 * `GET_ERROR(co)`: gets any execution error of a coroutine
 * `WAIT_FOR(s)`: returns a non-referenced value which represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
 	* `s`: can be integer or real numbers
@@ -708,7 +708,7 @@ The `TRY` statement accepts three arguments. And works as following:
 * It invokes the first "try" invokable argument
 * Invokes the second "catch" routine and passes the error text, if any error occurred within the "try" routine
 * The third "finally" routine is optional; it's always invoked no matter error occurred or not, if it's provided
-* It raises an occurred error to outer, if it's not caught yet by current `TRY`
+* It raises an occurred error to outer, if it's not caught yet by the current `TRY`
 * A `TRY` statement returns the value of the returned result from a "try" routine
 
 Eg:
@@ -740,9 +740,9 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 
 ## Generic functions
 
-* `END`: terminates current program
+* `END`: terminates the current program
 
-* `INPUT [prompt,] x`: this function suspends current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
+* `INPUT [prompt,] x`: this function suspends the current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
 	* `x[$]`: variable identifier to be filled, accepts string when a `$` is decorated, otherwise accepts number
 * `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
@@ -768,7 +768,7 @@ Coordinate system as following:
 
 ![](imgs/coordinate.png)
 
-Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between the current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
 * "map": graphics commands are separated into 5 sub queues, later drawing covers earlier
@@ -782,11 +782,12 @@ Program execution and rendering run on different threads with respective frame r
 
 These functions are used to communicate with a driver:
 
-* `DRIVER()`: gets current driver, there's only one driver instance for a running disk
+* `DRIVER()`: gets the current driver, there's only one driver instance for a running disk
 * `VALID(drv)`: checks whether a driver is valid
-* `SET_CLEARER(drv, auto)`: sets whether clears frame buffers automatically; defaults to true without calling this function; you need to call the `CLS` function manually if it's turned false
+* `SET_CLEARER(drv, auto)`: sets whether clears frame buffers automatically
+	* `auto`: defaults to true without calling this function; you need to call the `CLS` function manually if it's set to false
 * `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "nil" without calling this function
-	* `rule`: can be "nil", "linear", respectively are no interpolation, linear interpolation
+	* `rule`: can be "nil", "linear", respectively for no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands; defaults to "nil" without calling this function
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
 * `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
@@ -824,7 +825,7 @@ These functions are used to create, load or extract graphics objects and values:
 	* `g`: source graphics object, can be sprite, map or quantized
 	* returns cloned graphics object
 
-* `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer ranged from 0 to 255
+* `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer with range of values from 0 to 255
 * `UNPACK(c, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to rest variables
 	* `c`: for input, color value
 	* `r`: for output, the red component
@@ -886,7 +887,7 @@ The beginning index of sprite frame is 1.
 	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
 	* `r`: rotation in degrees
 * `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
-	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
+	* `y`: vertical position of the top-left corner, or "step on" value of the bottom edge
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
 
@@ -953,13 +954,13 @@ The `TOUCH` statement takes an index of fingers, and assigns all result values t
 A virtual gamepad has 6 buttons, each button may be binded with a key on keyboard, or a button/trigger on a game controller.
 
 * `BTN b, p = 0`: checks whether a virtual button is pressed
-	* `b`: index of a virtual button, 0/1/2/3/4/5 for left/right/up/down/a/b
-	* `p`: player index, ranged from 0 to 7
+	* `b`: index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
+	* `p`: player index, with range of values from 0 to 7
 	* returns true for pressed
 * `BTN()`: returns true if any virtual button of the first player is pressed
 * `BTNP b, p = 0`: checks whether a virtual button is just released from pressing
-	* `b`: index of a virtual button, 0/1/2/3/4/5 for left/right/up/down/a/b
-	* `p`: player index, ranged from 0 to 7
+	* `b`: index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
+	* `p`: player index, with range of values from 0 to 7
 	* returns true for released
 * `BTNP()`: returns true if any virtual button of the first player is just released from pressing
 
@@ -976,20 +977,20 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 ## Audio
 
-* `SET_VOLUME(mv = 1, sv = 1)`: sets volume values, ranged from 0.0 to 1.0
+* `SET_VOLUME(mv = 1, sv = 1)`: sets volume values, with range of values from 0.0 to 1.0
 	* `mv`: volume of music
 	* `sv`: volume of sound effect
 
 ### Music
 
 * `USE_SOUND_FONT([path, r = TRUE])`: uses a sound font bank for music
-	* `path`: path of a sound font file, or uses the simple built-in one if no argument passed
+	* `path`: path of a sound font file, or uses the standard built-in one if no argument passed
 	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a disk instead
 
 * `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel, or use the following `STOP` instead
 	* `seq`: MML format string
-	* `ch`: channel to play within
-	* `preset`: preset index in sound font
+	* `ch`: channel to play with
+	* `preset`: preset index in a sound font
 * `STOP ch`: stops music started by `PLAY`
 	* `ch`: channel to stop
 
@@ -1032,7 +1033,7 @@ Channel is indicated implicitly when play a sound effect; redundant sound effect
 	* `y`: waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
 	* `hz`: frequency
 	* `tm`: duration in seconds
-	* `vol`: volume of the sample node, will be multiplied with global sound effect volume
+	* `vol`: volume of a sample node, will be multiplied with global sound effect volume
 * `Wave.LEN()`: gets the sample count
 
 * `SFX wav, loop = FALSE`: plays a prefab sound effect wave
@@ -1042,7 +1043,7 @@ Channel is indicated implicitly when play a sound effect; redundant sound effect
 * `STOP id`: stops sound effect started by `SFX`
 	* `id`: sound effect to stop
 
-Plus 4096 to `y` for interpolating `hz` from current set with the following one's `hz`.
+Plus 4096 to `y` for interpolating `hz` from the current set with the following one's `hz`.
 
 [HOME](#welcome-to-basic8)
 
@@ -1114,7 +1115,7 @@ To open and edit a tiles asset, open an existing map asset first, then click the
 
 ### Quantized asset
 
-A quantized image is a paletted image. There are two ways in BASIC8 to create a quantized image, one is creating a blank with specific size, the other one is importing from an existing image file (it supports "*.png", "*.bmp" and "*.tga" files).
+A quantized image is a paletted image. There are two ways in BASIC8 to create a quantized image, one is creating a blank with specific size, the other one is importing from an existing image file (it supports "*.png", "*.bmp", "*.tga" and "*.jpg" files).
 
 To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then fill in size to create a blank, or browse and import from an image file.
 
@@ -1223,16 +1224,16 @@ These functions are used to perform a path finding algorithm on 2D grids:
 * `Pather.CLEAR()`: clears prefilled matrix and internal cached data
 * `Pather.SET_DIAGONAL_COST(cost = 1.414)`: sets the walking cost of diagonal direction neighbors
 * `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a path finding
-	* `bx`: x value of beginning position
-	* `by`: y value of beginning position
-	* `ex`: x value of ending position
-	* `ey`: y value of ending position
+	* `bx`: x value of a beginning position
+	* `by`: y value of a beginning position
+	* `ex`: x value of an ending position
+	* `ey`: y value of an ending position
 	* `p`: an invokable object which accepts x, y position and returns the walking cost at that point
 	* returns found path, in a list of "[vec2](#vector-and-matrix)", may be empty
 
 Grid coordinates can be any integer, with range of values from -32,767 to 32,767. Once the `SET` function of a pather is called, a cost matrix will be prefilled; it exists until calling `CLEAR`. The `FIND` function prefers to use invokable to get grid cost, and falls to use prefilled matrix if no lazy evaluator provided.
 
-Walking cost is combined with two parts by multiplicative: neighbor cost and map cost. Neighbor cost stands for how much does it cost to walk from current grid to its neighbor directions as following, in which `D` defaults to 1.414:
+Walking cost is combined with two parts by multiplicative: neighbor cost and map cost. Neighbor cost stands for how much does it cost to walk from the current grid to its neighbor directions as following, in which `D` defaults to 1.414:
 
 ~~~~~~~~~~
  _________________
@@ -1437,7 +1438,7 @@ Parameter format of `NOW`:
 	* `v`: file path, or byte array
 * `Image.SAVE(v, y)`: saves an image to a file, or byte array
 	* `v`: file path, or byte array
-	* `y`: target type, can be "png", "bmp" or "tga"
+	* `y`: target type, can be "png", "bmp", "tga" or "jpg"
 
 * `Image.RESIZE(w, h)`: resizes an image
 * `Image.GET(x, y)`: gets the color of a pixel
@@ -1521,7 +1522,7 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 
 #### Vector and matrix
 
-There are some built-in data types for vector and matrix algebra, which are all implemented as non-referenced values. The "vec4" is also used to represent for the structure of quaternion. BASIC8 uses row-major order to store matrix:
+There are some built-in data types for vector and matrix algebra, which are all implemented as non-referenced values. The vec4 is also used to represent for the structure of quaternion. BASIC8 uses row-major order to store matrix:
 
 ~~~~~~~~~~
 m11, m12, m13, m14,
@@ -1532,15 +1533,15 @@ m41, m42, m43, m44
 
 These functions are used to construct vector and matrix:
 
-* `VEC2(x = 0, y = 0)`: constructs a "vec2" with two real numbers
-* `VEC2(v3)`: constructs a "vec2" with a "vec3", takes two components and ignores the last one
-* `VEC3(x = 0, y = 0, z = 0)`: constructs a "vec3" with three real numbers
-* `VEC3(v2, z = 0)`: constructs a "vec3" with a "vec2" and a real number
-* `VEC4(x = 0, y = 0, z = 0, w = 1)`: constructs a "vec4" with some real numbers
-* `VEC4(v2, z = 0, w = 1)`: constructs a "vec4" with a "vec2" and two real numbers
-* `VEC4(v3, w = 1)`: constructs a "vec4" with a "vec3" and a real number
+* `VEC2(x = 0, y = 0)`: constructs a vec2 with two real numbers
+* `VEC2(v3)`: constructs a vec2 with a vec3, takes two components and ignores the last one
+* `VEC3(x = 0, y = 0, z = 0)`: constructs a vec3 with three real numbers
+* `VEC3(v2, z = 0)`: constructs a vec3 with a vec2 and a real number
+* `VEC4(x = 0, y = 0, z = 0, w = 1)`: constructs a vec4 with some real numbers
+* `VEC4(v2, z = 0, w = 1)`: constructs a vec4 with a vec2 and two real numbers
+* `VEC4(v3, w = 1)`: constructs a vec4 with a vec3 and a real number
 * `VEC4(mat44)`: extracts the rotation part from a matrix to a quaternion
-* `MAT4x4(m11 = 0, m12 = 0, ... = 0, m44 = 0)`: constructs a "mat4x4" with some real numbers
+* `MAT4x4(m11 = 0, m12 = 0, ... = 0, m44 = 0)`: constructs a mat4x4 with some real numbers
 * `MAT4x4(v4)`: constructs a rotation matrix from a quaternion
 
 And some other construction functions:
@@ -1584,9 +1585,9 @@ These operators are used to perform component-wise calculations:
 These operators are used to transform values:
 
 * `mat44 * mat44`
-* `mat44 * v3`: equals to `mat44 * VEC4(v3, 1)`, results in "vec4"
+* `mat44 * v3`: equals to `mat44 * VEC4(v3, 1)`, results in vec4
 * `mat44 * v4`
-* `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in "vec4"
+* `v3 * mat44`: equals to `VEC4(v3, 1) * mat44`, results in vec4
 * `v4 * mat44`
 
 Besides, these functions are used to do other linear computations:
@@ -1645,7 +1646,7 @@ The callback of disconnected is an invokable that accepts a parameter represents
 	* `b`: can be data of one in string, bytes or JSON types
 * `Net.BROADCAST(d, e = FALSE)`: broadcasts data to all connections, cannot be used with UDP network
 	* `b`: can be data of one in string, bytes or JSON types
-	* `e`: true for excluding current receiving connection, if this function is called in a received callback
+	* `e`: true for excluding the current receiving connection, if this function is called in a received callback
 
 * `Net.GET(k)`: gets an option value
 	* returns option string
@@ -1668,16 +1669,16 @@ If the "bytes_with_size" option is set to "true", an extra 32-bit unsigned integ
 
 It's **not** recommended to use functions marked with "**platform dependent**", to get best compatibility across platforms.
 
-* `CPU_CORE_COUNT`: gets the core count of current CPU
+* `CPU_CORE_COUNT`: gets the core count of the current CPU
 
 * `SET_OUTPUT_VISIBLE(s = TRUE)`: for the purpose of debugging; sets the visibility of the output window
 	* `s`: true to show, false to hide
-* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of current BASIC8 fantasy computer
-* `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets current working directory path
+* `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the current BASIC8 fantasy computer
+* `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets the current working directory path
 * `SET_CLIPBOARD_TEXT(txt)`: sets the text content of clipboard
 * `GET_CLIPBOARD_TEXT()`: gets the text content of clipboard
 * `HAS_CLIPBOARD_TEXT()`: checks whether the clipboard is filled with text content
-* `OS()`: **platform dependent**, gets the name of current OS
+* `OS()`: **platform dependent**, gets the name of the current OS
 * `SYS(cmd)`: **platform dependent**, executes a system command
 
 ### Text

@@ -1,5 +1,18 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.4.1
+
+Libraries:
+
+* Add JPG support to the image library
+
+Editor:
+
+* Add a scriptable plugin mechanism to paintable editors
+* Add JPG support to the quantized editor
+* Fix a range selection bug with paintable assets
+* Fix an Enter key handling issue on number pad in the code editor
+
 ### v1.4 Apr. 2018
 
 Driver:

@@ -36,7 +36,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [making sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074) with the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766).
+BASIC8 provides built-in tools for editing sprites, tiles, maps, etc. And extra tools as regular disks, eg. [making sound effect](http://steamcommunity.com/sharedfiles/filedetails/?id=1352904074) with the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993). Furthermore, it's even possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or using [plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 

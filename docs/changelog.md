@@ -1,9 +1,16 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor. -->
 
+### v1.4.2
+
+Editor:
+
+* Change cursor drawing to always use system's way
+
 ### v1.4.1
 
 Libraries:
 
+* Add a rotate parameter to the `MAP` function
 * Add JPG support to the image library
 
 Editor:

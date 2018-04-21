@@ -1,10 +1,16 @@
-<!-- Changes are categorized in community, language, driver, libraries, editor. -->
+<!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
 ### v1.4.2
 
 Editor:
 
 * Change cursor drawing to always use system's way
+* Fix a crash bug with plugin missing
+
+Player:
+
+* Fix a termination issue with the `END` statement in a player
+* Fix a termination issue with errors in a player
 
 ### v1.4.1
 
@@ -101,6 +107,10 @@ Editor:
 
 * Fix a key retrieving bug with input config
 * Fix a program locating issue with long path
+
+Player:
+
+* Add native player for desktop systems, as experimental
 
 ### v1.2.3
 

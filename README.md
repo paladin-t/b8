@@ -36,11 +36,11 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512). It's furthermore possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or use [plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512). It's furthermore possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
-See [example](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/)?
+See examples including [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/), [Infinity Fighter](https://paladin-t.github.io/b8/examples/Infinity%20Fighter/) and [Boing Ball](https://paladin-t.github.io/b8/examples/Boing%20Ball/).
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 

@@ -82,6 +82,7 @@ You may read this manual in any order according to your interest, and open this 
 		* [Data transfer and persistence](#data-transfer-and-persistence)
 	* [Libraries](#libraries)
 		* [Algorithm](#algorithm)
+			* [Pathfinding](#pathfinding)
 		* [Archive](#archive)
 		<!--* [Asynchronization](#asynchronization)-->
 		* [Bytes](#bytes)
@@ -162,9 +163,9 @@ All disks are stored in a library directory on hard disk, each disk has its own 
 
 There are some configurable options available:
 
-* Maximizing the canvas when playing: `Option`, `Graphics`, checking `Maximize canvas`
-* Hiding the menu bar when playing: `Option`, `Graphics`, checking `Hide menu bar when playing`
-* Fixing the ratio of canvas size when playing: `Option`, `Graphics`, checking `Fix canvas ratio`
+* Maximizing the canvas when playing: `Option`, `Graphics`, check `Maximize canvas`
+* Hiding the menu bar when playing: `Option`, `Graphics`, check `Hide menu bar when playing`
+* Fixing the ratio of canvas size when playing: `Option`, `Graphics`, check `Fix canvas ratio`
 * Entering full screen: `Option`, `Graphics`, `Full screen` on Windows and Linux; click the `Maximize` button on MacOS
 * Customizing input: `Option`, `Input`, then customize for each virtual gamepad on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
@@ -940,13 +941,13 @@ The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of l
 
 ### Mouse and touch
 
-The `TOUCH` statement takes an index of fingers, and assigns all result values to following variables.
+The `TOUCH` statement takes an index of pressing, and assigns all result values to following variables.
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
-	* `i`: for input, pointer index; usually with 0 for either the mouse or the first finger
+	* `i`: for input, pointer index; usually with 0 for either the mouse or the first finger pressing
 	* `x`: for output, the horizontal position of a pointer
 	* `y`: for output, the vertical position of a pointer
-	* `b0`: for output, true if the left mouse button is pressed, or touched with a finger
+	* `b0`: for output, true if the left mouse button is pressed, or touched with a finger pressing
 	* `b1`: for output, true if the right mouse button is pressed
 	* `b2`: for output, true if the middle mouse button is pressed
 
@@ -1213,7 +1214,9 @@ Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noti
 
 ### Algorithm
 
-These functions are used to perform a path finding algorithm on 2D grids:
+#### Pathfinding
+
+These functions are used to perform a pathfinding algorithm on 2D grids:
 
 * `PATHER(w, n, e, s)`: creates a pather object
 	* `w`: west position, minimum on x direction
@@ -1224,7 +1227,7 @@ These functions are used to perform a path finding algorithm on 2D grids:
 * `Pather.SET(x, y, cost)`: sets walking cost of a prefilled grid, initializes cost matrix with 1 for all grids when first calling to this function
 * `Pather.CLEAR()`: clears prefilled matrix and internal cached data
 * `Pather.SET_DIAGONAL_COST(cost = 1.414)`: sets the walking cost of diagonal direction neighbors
-* `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a path finding
+* `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a pathfinding
 	* `bx`: x value of a beginning position
 	* `by`: y value of a beginning position
 	* `ex`: x value of an ending position
@@ -1411,7 +1414,7 @@ Parameter format of `NOW`:
 * `File.WRITE_S16(v)`: writes a number as 16-bit signed integer
 * `File.WRITE_INT(v)`: writes a number as 32-bit signed integer
 * `File.WRITE_REAL(v)`: writes a number as single precision float point
-* `File.WRITE_LINE(v)`: writes one value and a newline character `\n` to file
+* `File.WRITE_LINE(v)`: writes one value and a newline character `CHR(10)` to file
 
 * `File.READ([n])`: reads a byte as number, or some bytes as string
 * `File.READ_U8()`: reads a number as 8-bit unsigned integer
@@ -1731,6 +1734,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `FORK`, `JOIN`
 
 * `COLLIDES`, `INTERSECTS`
+* `EVAL`
 * `FORMAT`
 * `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`
 * `MEMCMP`, `MEMCPY`, `MEMSET`, `MEMTEST`

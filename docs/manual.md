@@ -168,6 +168,7 @@ There are some configurable options available:
 * Fixing the ratio of canvas size when playing: `Option`, `Graphics`, check `Fix canvas ratio`
 * Entering full screen: `Option`, `Graphics`, `Full screen` on Windows and Linux; click the `Maximize` button on MacOS
 * Customizing input: `Option`, `Input`, then customize for each virtual gamepad on the dialog box
+* Customizing onscreen input: `Option`, `Onscreen input`, then customize detail options on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
 * Showing stat. information: `Option`, check `Show stat.`
 * Making it running when double click on a disk, instead of opening it: `Option`, check `Run on click`
@@ -806,7 +807,7 @@ DEF update(delta)
 		RETURN m
 	ENDIF
 ENDDEF
-n = UPDATE_WITH(DRIVER, CALL(update))
+n = UPDATE_WITH(DRIVER(), CALL(update))
 PRINT "Done with: ", n;
 ~~~~~~~~~~
 

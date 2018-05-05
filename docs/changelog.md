@@ -1,248 +1,260 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.3
+
+Editor:
+
+* Added an onscreen gamepad
+* Fixed a pointing issue on touch screen
+
+Libraries:
+
+* Fixed a pointing issue on touch screen with the `TOUCH` function
+* Fixed a matching issue with regex
+
 ### v1.4.2
 
 Editor:
 
-* Change cursor drawing to always use system's way
-* Fix a crash bug with plugin missing
+* Changed cursor drawing to always use system's way
+* Fixed a crash bug with plugin missing
 
 Player:
 
-* Fix a termination issue with the `END` statement in a player
-* Fix a termination issue with errors in a player
+* Fixed a termination issue with the `END` statement
+* Fixed a termination issue with errors
 
 ### v1.4.1
 
 Libraries:
 
-* Add a rotate parameter to the `MAP` function
-* Add JPG support to the image library
+* Added a rotate parameter to the `MAP` function
+* Added JPG support to the image library
 
 Editor:
 
-* Add a scriptable plugin mechanism to paintable editors
-* Add JPG support to the quantized editor
-* Fix a range selection bug with paintable assets
-* Fix an Enter key handling issue on number pad in the code editor
+* Added a scriptable plugin mechanism to paintable editors
+* Added JPG support to the quantized editor
+* Fixed a range selection bug with paintable assets
+* Fixed an Enter key handling issue on numeric pad in the code editor
 
 ### v1.4 Apr. 2018
 
 Driver:
 
-* Add a switch of automatic frame buffer clearing
-* Fix a state checking bug with right mouse click
-* Fix an accuracy issue with the `TOUCH` function
+* Added a switch of automatic frame buffer clearing
+* Fixed a state checking bug with right mouse click
+* Fixed an accuracy issue with the `TOUCH` function
 
 Libraries:
 
-* Add a `CLS` function to clear frame buffer manually
-* Add a `SET_CLEARER` function to set the switch of automatic frame buffer clearing
-* Fix a termination issue with music
+* Added a `CLS` function to clear frame buffer manually
+* Added a `SET_CLEARER` function to set the switch of automatic frame buffer clearing
+* Fixed a termination issue with music
 
 ### v1.3.4
 
 Language:
 
-* Fix a boolean evaluating bug with library object
+* Fixed a boolean evaluating bug with library object
 
 Libraries:
 
-* Add an ID type to sound effect
-* Add a `WAVE` type to prefab sound effect
-* Add functionality to play prefab sound effect with wave object to the `SFX` function
-* Add a `STOP` function to stop any audio
+* Added an ID type to sound effect
+* Added a `WAVE` type to prefab sound effect
+* Added functionality to play prefab sound effect with wave object to the `SFX` function
+* Added a `STOP` function to stop any audio
 
 Editor:
 
-* Add an option to surf Steam pages using internal browser
-* Add a welcome page
-* Add a frame cache to the sprite editor
-* Fix a tag setting bug with undo operation in the sprite editor
-* Fix a preview issue with inactive map layers
-* Fix an unsaved state issue with new created assets
+* Added an option to surf Steam pages using internal browser
+* Added a welcome page
+* Added a frame cache to the sprite editor
+* Fixed a tag setting bug with undo operation in the sprite editor
+* Fixed a preview issue with inactive map layers
+* Fixed an unsaved state issue with new created assets
 
 ### v1.3.3
 
 Driver:
 
-* Add an initialization procedure of `TICKS` base to the boot program
+* Added an initialization procedure of `TICKS` base to the boot program
 
 Libraries:
 
-* Add error prompt to the `PERSIST` function
-* Add return value to the `OPEN`, and `CLOSE` functions of the archive library
-* Add return value to the `OPEN`, and `CLOSE` functions of the database library
-* Add return value to the `OPEN`, and `CLOSE` functions of the file library
-* Add return value to the `OPEN`, and `CLOSE` functions of the network library
+* Added error prompt to the `PERSIST` function
+* Added return value to the `OPEN`, and `CLOSE` functions of the archive library
+* Added return value to the `OPEN`, and `CLOSE` functions of the database library
+* Added return value to the `OPEN`, and `CLOSE` functions of the file library
+* Added return value to the `OPEN`, and `CLOSE` functions of the network library
 
 ### v1.3.2
 
 Editor:
 
-* Add an outline view to the code editor
-* Fix a text finding issue with whitespace
+* Added an outline view to the code editor
+* Fixed a text finding issue with whitespace
 
 ### v1.3.1
 
 Libraries:
 
-* Fix a blank content issue with the `INPUT` statement
+* Fixed a blank content issue with the `INPUT` statement
 
 Editor:
 
-* Add a disk filter
-* Add a sprite to GIF exporter
-* Fix a GIF exporting issue with few color count at the beginning frame
-* Fix an icon arranging issue
+* Added a disk filter
+* Added a sprite to GIF exporter
+* Fixed a GIF exporting issue with few color count at the beginning frame
+* Fixed an icon arranging issue
 
 ### v1.3 Mar. 2018
 
 Libraries:
 
-* Add a network library
-* Fix popping issues with the bytes library
+* Added a network library
+* Fixed popping issues with the bytes library
 
 Editor:
 
-* Fix a key retrieving bug with input config
-* Fix a program locating issue with long path
+* Fixed a key retrieving bug with input config
+* Fixed a program locating issue with long path
 
 Player:
 
-* Add native player for desktop systems, as experimental
+* Added native player for desktop systems, as experimental
 
 ### v1.2.3
 
-Add Linux version.
+Added Linux version.
 
 Language:
 
-* Fix a GC bug with ranged `FOR` statement
-* Fix a string assignment issue with class member
-* Fix a termination issue with the `END` statement
+* Fixed a GC bug with ranged `FOR` statement
+* Fixed a string assignment issue with class member
+* Fixed a termination issue with the `END` statement
 
 Driver:
 
-* Add fixed function pipeline
+* Added fixed function pipeline
 
 Libraries:
 
-* Add a `COPY_TO` to the file information library
-* Fix a path resolving bug of file and directory with UTF-8 character
-* Fix a crash bug with path concatenating
-* Fix a packing issue for existing package with the archive library
+* Added a `COPY_TO` to the file information library
+* Fixed a path resolving bug of file and directory with UTF-8 character
+* Fixed a crash bug with path concatenating
+* Fixed a packing issue for existing package with the archive library
 
 Editor:
 
-* Add automatic arranging feature to editor windows
-* Add a modification indicator to the code editor
-* Change large quantized image to readonly, with configurable threshold
-* Fix a crash bug with undo operation in the code editor
-* Fix an execution issue with large entry code
+* Added automatic arranging feature to editor windows
+* Added a modification indicator to the code editor
+* Changed large quantized image to readonly, with configurable threshold
+* Fixed a crash bug with undo operation in the code editor
+* Fixed an execution issue with large entry code
 
 ### v1.2.2
 
-Add MacOS version.
+Added MacOS version.
 
 Editor:
 
-* Change the scale item into the expendable bar
-* Fix an error marking bug when importing another source code
-* Fix some text finding issues in the code editor
-* Fix a rendering issue with blank source code
+* Changed the scale item into the expendable bar
+* Fixed an error marking bug when importing another source code
+* Fixed some text finding issues in the code editor
+* Fixed a rendering issue with blank source code
 
 ### v1.2.1
 
 Driver:
 
-* Fix a frame buffer filling issue
+* Fixed a frame buffer filling issue
 
 Libraries:
 
-* Add a `RESIZE` function to the image library
-* Fix an accessing bug with the `PGET` function
+* Added a `RESIZE` function to the image library
+* Fixed an accessing bug with the `PGET` function
 
 Editor:
 
-* Fix a string literal issue with uppercase
-* Fix some coloring issues with syntax highlighting
+* Fixed a string literal issue with uppercase
+* Fixed some coloring issues with syntax highlighting
 
 ### v1.2 Feb. 2018
 
 Libraries:
 
-* Fix a vector calculation bug
+* Fixed a vector calculation bug
 
 Editor:
 
-* Add syntax highlighting feature to the code editor
-* Add navigation methods in the code editor
-* Add default license to prebuilt source code
-* Fix a crash bug when switching to layer 0 of a map, with invalid tool selected
+* Added syntax highlighting feature to the code editor
+* Added navigation methods in the code editor
+* Added default license to prebuilt source code
+* Fixed a crash bug when switching to layer 0 of a map, with invalid tool selected
 
 ### v1.1.2
 
 Language:
 
-* Fix a crash bug with invalid collection index
-* Fix a memory leak with invalid invoking
+* Fixed a crash bug with invalid collection index
+* Fixed a memory leak with invalid invoking
 
 Libraries:
 
-* Add a loading option to `LOAD_BLANK` for quantized image
-* Add `TRI`, `TRIFILL` functions to draw triangles
-* Add `QUAD`, `QUADFILL` functions to draw quadrangles
-* Add `IGET`, `ISET` functions to access quantized image
-* Add a new constructor to `VEC2`
-* Fix a palette color setting issue
-* Fix a color interpolation bug
+* Added a loading option to `LOAD_BLANK` for quantized image
+* Added `TRI`, `TRIFILL` functions to draw triangles
+* Added `QUAD`, `QUADFILL` functions to draw quadrangles
+* Added `IGET`, `ISET` functions to access quantized image
+* Added a new constructor to `VEC2`
+* Fixed a palette color setting issue
+* Fixed a color interpolation bug
 
 Editor:
 
-* Add an editor for quantized image
+* Added an editor for quantized image
 
 ### v1.1.1
 
 Libraries:
 
-* Change IO functions to return uniformed separator
-* Fix an out of bound bug with the pathfinding algorithm
-* Fix a wrong loading bug of map assets if tiles missing
+* Changed IO functions to return uniformed separator
+* Fixed an out of bound bug with the pathfinding algorithm
+* Fixed a wrong loading bug of map assets if tiles missing
 
 Editor:
 
-* Change disk overwriting to put files and directories into recycle bin
+* Changed disk overwriting to put files and directories into recycle bin
 
 ### v1.1 Jan. 2018
 
 Community:
 
-* Add tools for Steam Workshop
+* Added tools for Steam Workshop
 
 Language:
 
-* Fix a parsing bug with the unary negative operator
-* Fix a real number parsing bug with different locales
+* Fixed a parsing bug with the unary negative operator
+* Fixed a real number parsing bug with different locales
 
 Libraries:
 
-* Add non-referenced vector and matrix data types, with operators and functions
-* Add a pathfinding algorithm
+* Added non-referenced vector and matrix data types, with operators and functions
+* Added a pathfinding algorithm
 
 Editor:
 
-* Add indicator of unsaved file
-* Add a dedicated file type for customized data
-* Fix a running issue under offline mode with Steam
+* Added indicator of unsaved file
+* Added a dedicated file type for customized data
+* Fixed a running issue under offline mode with Steam
 
 ### v1.0 Jan. 2018
 
-Add Windows version. First release with features including:
+Added Windows version. First release with features including:
 
-* Add a BASIC programming language
-* Add programming interfaces
-* Add GUI based shell
-* Add graphics primitives
-* Add input functions
-* Add audio functions
+* Added a BASIC programming language
+* Added programming interfaces
+* Added GUI based shell
+* Added graphics primitives
+* Added input functions
+* Added audio functions

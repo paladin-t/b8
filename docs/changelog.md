@@ -6,9 +6,11 @@ Editor:
 
 * Added an onscreen gamepad
 * Fixed a pointing issue on touch screen
+* Fixed a quitting bug when paused a running disk
 
 Libraries:
 
+* Added a `TRITEX` function to draw textured triangles
 * Fixed a pointing issue on touch screen with the `TOUCH` function
 * Fixed a matching issue with regex
 

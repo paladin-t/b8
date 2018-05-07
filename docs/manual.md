@@ -872,6 +872,12 @@ These functions are used to manipulate the states of a sprite:
 * `RECTFILL x0, y0, x1, y1 [, c]`: draws a filled rectangle
 * `TRI x0, y0, x1, y1, x2, y2 [, c]`: draws a triangle
 * `TRIFILL x0, y0, x1, y1, x2, y2 [, c]`: draws a filled triangle
+* `TRITEX i, v0, v1, v2, s = FALSE`: draws a textured triangle
+	* `i`: [quantized](#quantized) image object
+	* `v0`: vec4 of the first point, components are respectively for x, y position (in screen space), and u, v (from 0.0 to 1.0)
+	* `v1`: vec4 of the second point
+	* `v2`: vec4 of the third point
+	* `s`: true for both sides, false for anticlockwise only
 * `QUAD x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a quadrangle
 * `QUADFILL x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a filled quadrangle
 
@@ -1743,7 +1749,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NEURAL`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PLOT`, `TRITEX`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
+* `PLOT`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `SAY`
 * `SHADER`
 * `SOCKET`, `RECV`, `RECEIVE`, `POLL`

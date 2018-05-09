@@ -2,17 +2,22 @@
 
 ### v1.4.3
 
-Editor:
+Language:
 
-* Added an onscreen gamepad
-* Fixed a pointing issue on touch screen
-* Fixed a quitting bug when paused a running disk
+* Fixed a crash bug in invalid conditional expression with class member
+* Fixed a wrong error with the `VAL` statement
 
 Libraries:
 
 * Added a `TRITEX` function to draw textured triangles
 * Fixed a pointing issue on touch screen with the `TOUCH` function
 * Fixed a matching issue with regex
+
+Editor:
+
+* Added an onscreen gamepad
+* Fixed a pointing issue on touch screen
+* Fixed a quitting bug when paused a running disk
 
 ### v1.4.2
 

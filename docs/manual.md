@@ -402,23 +402,25 @@ BASIC8 supplies a set of list and dictionary manipulation functions which do cre
 * `LIST(...)`: creates a list, with optional initialization elements
 * `DICT(...)`: creates an unordered dictionary, with optional initialization key-value pairs
 * `PUSH(lst, v)`: pushes a value to the tail of a list
-	* `v`: value to be pushed
-* `POP(lst)`: pops a value from the tail of a list
-* `BACK(lst)`: peeks the value of the tail of a list
+	* `v`: the value to be pushed
+* `POP(lst)`: pops and returns a value from the tail of a list
+* `BACK(lst)`: peeks and returns the value at the tail of a list
 * `INSERT(lst, where, v)`: inserts a value at a specific position of a list
 * `SORT(lst)`: sorts a list increasingly
 * `EXISTS(coll, what)`: tells whether a list contains a specific **value**, or whether a dictionary contains a specific **key**
+	* returns true if exists, otherwise false
 * `INDEX_OF(lst, what)`: gets the index of a specific value in a list
-* `GET(coll, where)`: returns the value at a specific index in a list, or the value at a specific key in a dictionary, or the value of an iterator
+* `GET(coll, where)`: gets the value at a specific index in a list, or the value at a specific key in a dictionary, or the value of an iterator
 * `SET(coll, where, v)`: sets the value at a specific index in a list, or the value at a specific key in a dictionary
 * `REMOVE(coll, where)`: removes the element at a specific index in a list, or the element at a specific key in a dictionary
 * `CLEAR(coll)`: clears a list or a dictionary
 * `CLONE(coll)`: clones a collection, each element will be duplicated, except for non-copyable ones; or clones a copyable referenced usertype
 * `TO_ARRAY(lst)`: copies all elements from a list to a new array
 * `ITERATOR(coll)`: gets an iterator of a list or a dictionary
-* `MOVE_NEXT(iter)`: moves an iterator to next position on a list or a dictionary
+* `MOVE_NEXT(iter)`: advances an iterator to the next element on a list or a dictionary
+	* returns true if the iterator was successfully advanced to the next element
 
-Besides, it's also able to apply some other generic function to collections:
+Besides it's also able to apply some other generic function to collections:
 
 * `VAL(iter)`: returns the value of a dictionary iterator
 * `LEN(coll)`: gets the element count of a collection
@@ -655,18 +657,18 @@ IMPORT "directory/file_name.bas"
 A coroutine is a special data type in BASIC8, which encapsulates an invokable object. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
 
 * `COROUTINE(invokable, ...)`: creates a coroutine, with optional initialization arguments
-* `YIELD v`: yields from a coroutine, hands over the execution flow
-	* `v`: value to be yielded
+* `YIELD v`: yields from a coroutine, hands over the execution flow to other coroutines or the main program flow
+	* `v`: the value to be yielded
 * `RETURN v`: returns from a coroutine
-	* `v`: value to be returned
+	* `v`: the value to be returned
 * `START(co)`: starts a coroutine, which will be automatically scheduled by a dispatcher
 * `ABORT(co)`: aborts an automatically dispatching coroutine
 * `MOVE_NEXT(co)`: iterates a coroutine for one step manually
-	* returns true if can be further iterated, otherwise false for finished
+	* returns true if can be further iterated, otherwise false if finished
 * `GET(co)`: gets any yielded or returned value of the current iteration
 * `GET_ERROR(co)`: gets any execution error of a coroutine
-* `WAIT_FOR(s)`: returns a non-referenced value which represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
-	* `s`: can be integer or real numbers
+* `WAIT_FOR(s)`: constructs a non-referenced value which represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
+	* `s`: can be integer or real number
 
 Eg:
 
@@ -745,18 +747,19 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 * `END`: terminates the current program
 
 * `INPUT [prompt,] x`: this function suspends the current execution and opens a dialog box for inputting data to `x`, with an optional input prompt
-	* `x[$]`: variable identifier to be filled, accepts string when a `$` is decorated, otherwise accepts number
+	* `x[$]`: for output, retrieves string when a `$` is decorated, otherwise retrieves number
 * `PRINT expr, ...`: for the purpose of debugging; writes some value to the output window (click `Window`, `Output` to open it), comma `,` is used to separate arguments, semicolon `;` is used to make a new line
 
 * `ASSERT(cond [, text])`: for the purpose of debugging; prompts an assertion and terminates execution immediately if `cond` results in false
-* `SWAP(x, y)`: swaps the values between `x` and `y`; this statement can be only called in global scope
-* `IIF(cond, val0, val1)`: returns `val0` if `cond` results in true, otherwise returns `val1`
+* `SWAP(x, y)`: swaps the values of `x` and `y`; this statement can be only called in global scope
+* `IIF(cond, val0, val1)`: shortcut function to get one of the two values according to a condition expression
+	* returns `val0` if `cond` results in true, otherwise returns `val1`
 
-* `TRACE()`: for the purpose of debugging; prints stack trace
+* `TRACE()`: for the purpose of debugging; prints the current stack trace
 * `RAISE([ex])`: raises an error, with an optional exception message
-	* `ex`: exception string
+	* `ex`: the exception string
 * `GC()`: tries to trigger garbage collection, and returns how much bytes have been collected; do not need to call this manually
-* `MEM`: for the purpose of debugging; gets the size of allocated memory in bytes
+* `MEM`: for the purpose of debugging; gets the size of the allocated memory in bytes
 * `BEEP`: beeps once with the (PC) speaker, not available for all platforms
 * `TYPEOF(v)`: gets the type of a non-referenced library value
 
@@ -786,18 +789,19 @@ These functions are used to communicate with a driver:
 
 * `DRIVER()`: gets the current driver, there's only one driver instance for a running disk
 * `VALID(drv)`: checks whether a driver is valid
-* `SET_CLEARER(drv, auto)`: sets whether clears frame buffers automatically
+* `SET_CLEARER(drv, auto)`: sets whether the clears frame buffers automatically
 	* `auto`: defaults to true without calling this function; you need to call the `CLS` function manually if it's set to false
-* `SET_INTERPOLATOR(drv, rule)`: sets graphics interpolator of a driver; defaults to "nil" without calling this function
+* `SET_INTERPOLATOR(drv, rule)`: sets a graphics interpolator of a driver; defaults to "nil" without calling this function
 	* `rule`: can be "nil", "linear", respectively for no interpolation, linear interpolation
 * `SET_ORDERBY(drv, rule ...)`: sets ordering rules of graphics commands; defaults to "nil" without calling this function
 	* `rule ...`: can be one or more in "nil", "map", "spr", "all"; "all" equals to "map" and "spr"
-* `UPDATE_WITH(drv [, r])`: sets a driver to automatic updating mode, with an invokable argument
+* `UPDATE_WITH(drv [, r])`: sets a driver to the automatic updating mode, with an invokable argument
 	* `r`: can be an invokable routine or lambda, or its name in string, or defaults to "update"
-* `LOCK(drv)`: locks a driver; suspends resource loading procedures, and audio committing
-* `UNLOCK(drv)`: unlocks a driver; resumes resource loading procedures, and audio committing
+	* returns the value that just returned from the update routine
+* `LOCK(drv)`: locks a driver; suspends any resource loading procedures, and audio committing
+* `UNLOCK(drv)`: unlocks a driver; resumes any resource loading procedures, and audio committing
 
-`UPDATE_WITH` returns if `r(...)` has just returned non-zero. Eg:
+`UPDATE_WITH` returns when `r(...)` has just returned non-zero. Eg:
 
 ~~~~~~~~~~bas
 m = 1
@@ -815,21 +819,22 @@ This `UPDATE_WITH` will return in five seconds.
 
 These functions are used to create, load or extract graphics objects and values:
 
-* `LOAD_RESOURCE(path)`: loads a resource from bank
-	* `path`: path of a resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of a disk as lookup root
-	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map
+* `LOAD_RESOURCE(path)`: loads a resource from the disk
+	* `path`: the path of the resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of the running disk as lookup root
+	* returns successfully loaded resource; or nil for sprite and quantized, empty list for map when failed
 * `LOAD_BLANK(y, w, h, n = 1)`: loads a blank resource
-	* `y`: type of a resource, can be "sprite", "map" or "quantized"
-	* `w`: width of a frame/layer
-	* `h`: height of a frame/layer
-	* `n`: count of sprite frames, or map layers; ignored by quantized
+	* `y`: the type of the resource, can be "sprite", "map" or "quantized"
+	* `w`: the width of the frame/layer
+	* `h`: the height of the frame/layer
+	* `n`: the count of sprite frames, or map layers; ignored by quantized
 * `CLONE(g)`: clones a graphics object, and its states
-	* `g`: source graphics object, can be sprite, map or quantized
+	* `g`: the source graphics object, can be sprite, map or quantized
 	* returns cloned graphics object
 
-* `RGBA(r, g, b, a = 255)`: returns a color value with RGBA components, each component is an integer with range of values from 0 to 255
+* `RGBA(r, g, b, a = 255)`: constructs a color value with RGBA components, each component is an integer with range of values from 0 to 255
+	* returns color value
 * `UNPACK(c, r, g, b [, a])`: unpacks a color value with RGBA components, and assigns all result values to rest variables
-	* `c`: for input, color value
+	* `c`: for input, the color value
 	* `r`: for output, the red component
 	* `g`: for output, the green component
 	* `b`: for output, the blue component
@@ -838,32 +843,32 @@ These functions are used to create, load or extract graphics objects and values:
 These functions are used to manipulate the states of a sprite:
 
 * `PLAY(spr, b = -1, e = -1, loop = TRUE, init = FALSE)`: plays a range of frames of a sprite
-	* `spr`: sprite object
-	* `b`: begin frame index, starts from 1; or tag text of a frame
-	* `e`: end frame index, starts from 1; or tag text of a frame; setting `b` and `e` both to -1 means play through all frames
+	* `spr`: the sprite object
+	* `b`: the begin frame index, starts from 1; or the tag text of the frame
+	* `e`: the end frame index, starts from 1; or the tag text of the frame; setting `b` and `e` both to -1 means play through all the frames
 * `STOP(spr)`: stops animating a sprite
 * `FLIP_X(spr, f = FALSE)`: sets whether flipping a sprite horizontally
 * `FLIP_Y(spr, f = FALSE)`: sets whether flipping a sprite vertically
 * `SET_FLIP_CONDITION(spr, fx, fy)`: sets the flipping condition of a sprite
-	* `fx`: in horizontal directions, 1 for flipping when sprite's x is increasing, -1 for flipping when sprite's x is decreasing, 0 for none
-	* `fy`: in vertical directions, 1 for flipping when sprite's y is increasing, -1 for flipping when sprite's y is decreasing, 0 for none
+	* `fx`: in horizontal directions, 1 for flipping when the sprite's x is increasing, -1 for flipping when the sprite's x is decreasing, 0 for none
+	* `fy`: in vertical directions, 1 for flipping when the sprite's y is increasing, -1 for flipping when the sprite's y is decreasing, 0 for none
 
 ### Primitives
 
-* `SYNC`: synchronizes primitive commands to driver, only used in the manual updating mode (without calling `UPDATE_WITH`)
-	* returns elapsed time since last synchronizing
+* `SYNC`: synchronizes primitive commands to the driver, only use in the manual updating mode (without calling `UPDATE_WITH`)
+	* returns the elapsed time since last synchronizing
 * `CLS [l]`: clears a frame buffer at a specific layer, with range of values from 0 to 4, see top most of the graphics section for details; clears all layers if no argument passed
 * `COL c`: sets the default color value of future commands
 * `CLIP [x, y, w, h, ss = TRUE, ip = TRUE]`: sets a clip area, resets to none clip areas if no argument passed
-	* `ss`: true for clipping with screen space, otherwise with world space
+	* `ss`: true for clipping in screen space, otherwise in world space
 	* `ip`: true for interpolating position
 * `CAMERA [x, y]`: moves the camera to a specific position, resets its position if no argument passed
 
 * `TEXT x, y, v [, c]`: draws a text
 	* `v`: can be number or string
-	* `c`: color for drawing, uses the default color set by `COL` if no argument passed
+	* `c`: the color for drawing, uses the default color set by `COL` if no argument passed
 * `LINE x0, y0, x1, y1, w = 1 [, c]`: draws a line
-	* `w`: width (thickness)
+	* `w`: the width (thickness)
 * `CIRC x, y, r [, c]`: draws a circle
 * `CIRCFILL x, y, r [, c]`: draws a filled circle
 * `ELLIPSE x, y, rx, ry [, c]`: draws an ellipse
@@ -873,67 +878,70 @@ These functions are used to manipulate the states of a sprite:
 * `TRI x0, y0, x1, y1, x2, y2 [, c]`: draws a triangle
 * `TRIFILL x0, y0, x1, y1, x2, y2 [, c]`: draws a filled triangle
 * `TRITEX i, v0, v1, v2, s = FALSE`: draws a textured triangle
-	* `i`: [quantized](#quantized) image object
-	* `v0`: vec4 of the first point, components are respectively for x, y position (in screen space), and u, v (from 0.0 to 1.0)
+	* `i`: the quantized image object
+	* `v0`: "[vec4](#vector-and-matrix)" of the first point, the components are respectively for x, y position, and u, v with range of values from 0.0 to 1.0
 	* `v1`: vec4 of the second point
 	* `v2`: vec4 of the third point
 	* `s`: true for both sides, false for anticlockwise only
 * `QUAD x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a quadrangle
 * `QUADFILL x0, y0, x1, y1, x2, y2, x3, y3 [, c]`: draws a filled quadrangle
 
-* `PGET i`: gets a color of a palette, at a specific index
-* `PSET i, c, ip = FALSE`: sets a color of a palette; only affects during driver's updating
+* `PGET i`: gets the color of a palette, at a specific index
+* `PSET i, c, ip = FALSE`: sets the color of a palette; only affects during driver's updating
 	* `ip`: true for interpolation
 
 ### Sprite
 
 The beginning index of sprite frame is 1.
 
-* `STEP_ON(y)`: creates a "step on" non-referenced value, which represents for aligning a sprite's bottom edge to `y`
+* `STEP_ON(y)`: creates a non-referenced "step on" value, which represents for aligning a sprite's bottom edge to `y`
 * `SPR spr, x, y, r = 0`: draws a sprite
-	* `x`: horizontal position of the top-left corner
-	* `y`: vertical position of the top-left corner, or a "step on" value of the bottom edge
-	* `r`: rotation in degrees
+	* `x`: the horizontal position of the top-left corner
+	* `y`: the vertical position of the top-left corner, or the "step on" value of the bottom edge
+	* `r`: the rotation in degrees
 * `SSPR spr, sx, sy, sw, sh, x, y [, w [, h, r = 0]]`: stretches rectangle from sprite sheet `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
-	* `y`: vertical position of the top-left corner, or "step on" value of the bottom edge
+	* `y`: the vertical position of the top-left corner, or the "step on" value of the bottom edge
 	* `w`: defaults to `sw`
 	* `h`: defaults to `sh`
 
 * `SGET spr, i, x, y`: gets the color index of a sprite, at a specific position
-	* `i`: frame index, starts from 1
+	* `i`: the frame index, starts from 1
+	* returns color index as integer
 * `SGET spr, i, what`: gets the data of a sprite
-	* `i`: frame index, starts from 1
+	* `i`: the frame index, starts from 1
 	* `what`: can be "tag", "interval"
+	* returns tag as string, or interval as real
 * `SSET spr, i, x, y, v`: sets the color index of a sprite, at a specific position
-	* `i`: frame index, starts from 1
+	* `i`: the frame index, starts from 1
 	* `v`: color index
 * `SSET spr, i, what, v`: sets the data of a sprite
-	* `i`: frame index, starts from 1
+	* `i`: the frame index, starts from 1
 	* `what`: can be "tag", "interval"
-	* `v`: value to be set
+	* `v`: the value to be set
 
 ### Map
 
 The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of logic marking, with range of values from 0 to 15; layer 1, 2, and 3 are for rendering, with range of values from 0 to 239. Except for map generated by the `LOAD_BLANK` function, all layers (including layer 0) are renderable.
 
 * `MAP m, x, y, r = 0`: draws one or more map layers at a specific position
-	* `m`: single layer of a map, or list of layers
-	* `r`: rotation in degrees
+	* `m`: a single layer of the map, or list of the layers
+	* `r`: the rotation in degrees
 
 * `MGET m, i, x, y`: gets the tile index or logic mark of a map layer at a specific position
-	* `m`: list of layers
-	* `i`: layer index in `m`, starts from 0
+	* `m`: list of the layers
+	* `i`: the layer index in `m`, starts from 0
+	* returns tile index as integer
 * `MSET m, i, x, y, v`: sets the tile index or logic mark of a map layer
-	* `m`: list of layers
-	* `i`: layer index in `m`, starts from 0
-	* `v`: value to be set
+	* `m`: list of the layers
+	* `i`: the layer index in `m`, starts from 0
+	* `v`: the value to be set
 
 ### Quantized
 
 * `IMG i, x, y, r = 0, q = 0, fx = FALSE, fy = FALSE`: draws a quantized image at a specific position
-	* `i`: quantized image object
-	* `r`: rotation in degrees
-	* `q`: target index of a rendering queue
+	* `i`: the quantized image object
+	* `r`: the rotation in degrees
+	* `q`: the target index of a rendering queue
 	* `fx`: true for flipping horizontally
 	* `fy`: true for flipping vertically
 * `SIMG i, sx, sy, sw, sh, x, y [, w [, h, r = 0, q = 0, fx = FALSE, fy = FALSE]]`: stretches rectangle from a quantized image `sx, sy, sw, sh`, and draws in rectangle `x, y, w, h`
@@ -941,8 +949,9 @@ The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of l
 	* `h`: defaults to `sh`
 
 * `IGET i, x, y`: gets the color index of a quantized image, at a specific position
+	* returns color index as integer
 * `ISET i, x, y, v`: sets the color index of a quantized image, at a specific position
-	* `v`: color index
+	* `v`: the color index
 
 ## Input
 
@@ -951,7 +960,7 @@ The beginning index of map layer is 0. Moreover, layer 0 is for the purpose of l
 The `TOUCH` statement takes an index of pressing, and assigns all result values to following variables.
 
 * `TOUCH i, x, y [, b0 [, b1 [, b2]]]`: gets mouse/touch states
-	* `i`: for input, pointer index; usually with 0 for either the mouse or the first finger pressing
+	* `i`: for input, the pointer index; usually with 0 for either the mouse or the first finger pressing
 	* `x`: for output, the horizontal position of a pointer
 	* `y`: for output, the vertical position of a pointer
 	* `b0`: for output, true if the left mouse button is pressed, or touched with a finger pressing
@@ -963,45 +972,45 @@ The `TOUCH` statement takes an index of pressing, and assigns all result values 
 A virtual gamepad has 6 buttons, each button may be binded with a key on keyboard, or a button/trigger on a game controller.
 
 * `BTN b, p = 0`: checks whether a virtual button is pressed
-	* `b`: index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
-	* `p`: player index, with range of values from 0 to 7
+	* `b`: the index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
+	* `p`: the player index, with range of values from 0 to 7
 	* returns true for pressed
 * `BTN()`: returns true if any virtual button of the first player is pressed
 * `BTNP b, p = 0`: checks whether a virtual button is just released from pressing
-	* `b`: index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
-	* `p`: player index, with range of values from 0 to 7
+	* `b`: the index of a virtual button, 0/1/2/3/4/5 respectively for left/right/up/down/a/b
+	* `p`: the player index, with range of values from 0 to 7
 	* returns true for released
 * `BTNP()`: returns true if any virtual button of the first player is just released from pressing
 
 ### Keyboard
 
 * `KEY k`: checks whether a key is pressed, eg. `IF KEY ASC("a") THEN PRINT "Aha!";`
-	* `k`: key code
+	* `k`: the key code
 	* returns true for pressed
 * `KEY()`: returns true if any key is pressed
 * `KEYP k`: checks whether a key is just released from pressing
-	* `k`: key code
+	* `k`: the key code
 	* returns true for released
 * `KEYP()`: returns true if any key is just released from pressing
 
 ## Audio
 
-* `SET_VOLUME(mv = 1, sv = 1)`: sets volume values, with range of values from 0.0 to 1.0
-	* `mv`: volume of music
-	* `sv`: volume of sound effect
+* `SET_VOLUME(mv = 1, sv = 1)`: sets the volume values of audio, with range of values from 0.0 to 1.0
+	* `mv`: the volume of music
+	* `sv`: the volume of sound effect
 
 ### Music
 
 * `USE_SOUND_FONT([path, r = TRUE])`: uses a sound font bank for music
-	* `path`: path of a sound font file, or uses the standard built-in one if no argument passed
-	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of a disk instead
+	* `path`: the path of the sound font file, or uses the standard built-in one if no argument passed
+	* `r`: true to use the working directory of BASIC8 as lookup root, false to use the content directory of the running disk instead
 
 * `PLAY seq, ch = 0, preset = 0, loop = FALSE`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) string; use `PLAY "P", ch` to stop music at specific channel, or use the following `STOP` instead
-	* `seq`: MML format string
-	* `ch`: channel to play with
-	* `preset`: preset index in a sound font
+	* `seq`: the MML format string
+	* `ch`: the channel to play with
+	* `preset`: the preset index in the sound font
 * `STOP ch`: stops music started by `PLAY`
-	* `ch`: channel to stop
+	* `ch`: the channel to stop
 
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
@@ -1038,19 +1047,19 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 Channel is indicated implicitly when play a sound effect; redundant sound effect will be abandoned if all the channels are occupied.
 
 * `WAVE()`: creates a wave object for prefab sound effect
-* `Wave.PUSH(y, hz, tm, vol = 1)`: pushes a sample node, each wave object can contain up to 256 sample nodes
-	* `y`: waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
-	* `hz`: frequency
-	* `tm`: duration in seconds
-	* `vol`: volume of a sample node, will be multiplied with global sound effect volume
-* `Wave.LEN()`: gets the sample count
+* `Wave.PUSH(y, hz, tm, vol = 1)`: pushes a sample node, each wave object contains up to 256 sample nodes
+	* `y`: the waveform type, 1/2/3/4/5 respectively for sine/square/triangle/sawtooth/noise
+	* `hz`: the frequency
+	* `tm`: the duration in seconds
+	* `vol`: the volume of a sample node, will be multiplied with the global sound effect volume
+* `Wave.LEN()`: gets the sample count of a wave object
 
-* `SFX wav, loop = FALSE`: plays a prefab sound effect wave
+* `SFX wav, loop = FALSE`: plays a prefab sound effect
 	* returns sound effect id
 * `SFX y, hz, tm, ...`: plays a sound effect sequence, can be used with one or more sets of tones as `SFX y0, hz0, tm0, y1, hz1, tm1, ... yn, hzn, tmn`
 	* returns sound effect id
 * `STOP id`: stops sound effect started by `SFX`
-	* `id`: sound effect to stop
+	* `id`: the sound effect to stop
 
 Plus 4096 to `y` for interpolating `hz` from the current set with the following one's `hz`.
 
@@ -1144,6 +1153,7 @@ To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "
 
 * `ABS(n)`: gets the absolute value of a number
 * `SGN(n)`: gets the sign of a number
+	* returns -1 for negative, 0 for zero, 1 for positive
 * `SQR(n)`: gets the square root of a number
 * `FLOOR(n)`: gets the greatest integer not greater than a number
 * `CEIL(n)`: gets the least integer not less than a number
@@ -1151,9 +1161,11 @@ To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "
 * `ROUND(n)`: gets the nearest approximate integer of a number
 * `SRND(n)`: plants a random seed
 * `RND`: gets a random value between [0, 1]
+	* returns real number
 * `RND([lo = 0,] hi)`: gets a random value between [`lo`, `hi`]
 	* `lo`: integer
 	* `hi`: integer
+	* returns integer number
 * `SIN(n)`: gets the sin value of a number
 * `COS(n)`: gets the cos value of a number
 * `TAN(n)`: gets the tan value of a number
@@ -1167,23 +1179,31 @@ All trigonometric functions calculate in radians.
 
 ### String functions
 
-* `ASC(ch)`: gets the ASCII code of a character
-* `CHR(n)`: gets the character of an ASCII code
+* `ASC(ch)`: gets the ASCII code of a character; eg. `ASC("E")`
+	* returns integer number
+* `CHR(n)`: gets the character of an ASCII code; eg. `CHR(69)`
+	* returns string
 * `LEFT(txt, n)`: gets a number of characters from the left of a string
+	* returns sub string
 * `MID(txt, off, n)`: gets a number of characters from a specific position of a string
+	* returns sub string
 * `RIGHT(txt, n)`: gets a number of characters from the right of a string
-* `STR(n)`: converts a number to string
-* `VAL(txt)`: converts a string to number
+	* returns sub string
+* `STR(n)`: converts a number to string; eg. `STR(22 / 7)`
+	* returns string
+* `VAL(txt)`: converts a string to number; eg. `VAL("3.14")`
+	* returns integer or real number
 * `LEN(txt)`: gets the length of a string
+	* returns integer number
 
 ### Data transfer and persistence
 
 Retro BASIC dialects collect data before running a program with the `DATA` transfer statements, and only accepts simple data. It's different with BASIC8, it actually executes a `DATA` statement at runtime and it must appear before calling `READ`, it can also collect advanced data types in BASIC8.
 
-* `DATA ...`: declares some inline data sequence
+* `DATA ...`: declares some in-code data sequence
 	* returns total collected count until the last data argument
-* `READ ...`: retrieves some inline data to a list of variables
-	* returns latest reading position
+* `READ ...`: retrieves some in-code data to a list of variables
+	* returns the latest reading position
 * `RESTORE [p]`: accepts an indicated target position, or 0 as default to go back to the very beginning
 
 Eg:
@@ -1200,7 +1220,7 @@ PRINT w; x; y; LEN(z);
 
 The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to make a way simple saving and loading data, such as highscore, game progress, etc. It deals with a couple of data types: nil, integer, real, string, and collections. The function persists the values of variables at program exit, and regains values when running to the same `PERSIST` statements next time.
 
-* `PERSIST ...`: marks some variables as persistence ones; this statement can be only called in global scope with global variables
+* `PERSIST ...`: marks some variables as persistence; this statement can be only called in global scope with global variables
 
 Eg:
 
@@ -1226,21 +1246,21 @@ Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noti
 These functions are used to perform a pathfinding algorithm on 2D grids:
 
 * `PATHER(w, n, e, s)`: creates a pather object
-	* `w`: west position, minimum on x direction
-	* `n`: north position, minimum on y direction
-	* `e`: east position, maximum on x direction
-	* `s`: south position, maximum on y direction
-* `Pather.GET(x, y)`: gets walking cost of a prefilled grid at specific position, will raise an error if there's no grid prefilled
-* `Pather.SET(x, y, cost)`: sets walking cost of a prefilled grid, initializes cost matrix with 1 for all grids when first calling to this function
+	* `w`: the west position, minimum on the x direction
+	* `n`: the north position, minimum on the y direction
+	* `e`: the east position, maximum on the x direction
+	* `s`: the south position, maximum on the y direction
+* `Pather.GET(x, y)`: gets the walking cost of a prefilled grid at a specific position, will raise an error if there's no grid prefilled
+* `Pather.SET(x, y, cost)`: sets the walking cost of a prefilled grid, initializes cost matrix with 1 for all grids when first calling to this function
 * `Pather.CLEAR()`: clears prefilled matrix and internal cached data
 * `Pather.SET_DIAGONAL_COST(cost = 1.414)`: sets the walking cost of diagonal direction neighbors
-* `Pather.FIND(bx, by, ex, ey, p = NIL)`: performs a pathfinding
-	* `bx`: x value of a beginning position
-	* `by`: y value of a beginning position
-	* `ex`: x value of an ending position
-	* `ey`: y value of an ending position
+* `Pather.FIND(bx, by, ex, ey, p = NIL)`: resolves a pathfinding
+	* `bx`: the x value of the beginning position
+	* `by`: the y value of the beginning position
+	* `ex`: the x value of the ending position
+	* `ey`: the y value of the ending position
 	* `p`: an invokable object which accepts x, y position and returns the walking cost at that point
-	* returns found path, in a list of "[vec2](#vector-and-matrix)", may be empty
+	* returns an approachable path, in a list of "[vec2](#vector-and-matrix)", may be empty
 
 Grid coordinates can be any integer, with range of values from -32,767 to 32,767. Once the `SET` function of a pather is called, a cost matrix will be prefilled; it exists until calling `CLEAR`. The `FIND` function prefers to use invokable to get grid cost, and falls to use prefilled matrix if no lazy evaluator provided.
 
@@ -1277,26 +1297,26 @@ Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate wi
 
 ### Archive
 
-* `ZIP()`: creates an archive object with "zip" algorithms
+* `ZIP()`: creates an archive object with the "zip" algorithms
 * `Archive.OPEN(path, z)`: opens an archive file
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
+	* `path`: uses the container directory (parent of "content") of the running disk as lookup root
 	* `z`: true for packing, otherwise unpacking
 	* returns true for success
 * `Archive.CLOSE()`: closes an archive file
 	* returns true for success
 
 * `Archive.PACK(dst, src)`: <!--**asynchronizable**, -->packs from a file or byte array
-	* `dst`: name in archive
-	* `src`: path of a file, or byte array
+	* `dst`: the name in archive
+	* `src`: the path of the file, or the byte array
 * `Archive.UNPACK(src, dst)`: <!--**asynchronizable**, -->unpacks to a file or byte array
-	* `src`: name in archive
-	* `dst`: path of a file, or byte array
+	* `src`: the name in archive
+	* `dst`: the path of the file, or the byte array
 * `Archive.UNPACK_ALL(dir)`: <!--**asynchronizable**, -->unpacks everything to a directory
 
 * `COMPRESS(bytes)`: <!--**asynchronizable**, -->compresses a byte array
-	* returns a compressed byte array
+	* returns compressed byte array
 * `DECOMPRESS(bytes)`: <!--**asynchronizable**, -->decompresses a byte array
-	* returns a decompressed byte array
+	* returns decompressed byte array
 
 <!--
 ### Asynchronization
@@ -1304,17 +1324,17 @@ Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate wi
 Most functions in BASIC8 are executed synchronously, however, some of the functions can be executed asynchronously. Each asynchronous calling returns a task object.
 
 * `ASYNC(task [, callback])`: begins an asynchronous context
-	* `task`: an execution invocation
+	* `task`: the execution invocation
 	* `callback(r)`: optional, will be called when the `task` finishing
-		* `r`: execution result
-	* returns a task object
+		* `r`: the execution result
+	* returns task object
 * `AWAIT(task)`: waits for finishing of a task, only returns after the task is finished
 
 * `COST(task)`: gets the execution time of a task
 
 For task objects:
 
-* `Task.GET()`: gets the execution result, if there was
+* `Task.GET()`: gets any execution result
 
 It supports asynchronously execution, if a function is marked with "**asynchronizable**". For example, `SLEEP(0.5)` can be called asynchronously as:
 
@@ -1367,27 +1387,27 @@ PRINT task;
 BASIC8 uses [SQLite](http://sqlite.org/docs.html) as a storage engine of database. See its documentation for the [SQL syntax](http://sqlite.org/lang.html).
 
 * `DATABASE()`: creates a database object
-* `Db.OPEN(path)`: opens a database file
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
+* `Db.OPEN(path)`: opens a database connection
+	* `path`: uses the container directory (parent of "content") of the running disk as lookup root
 	* returns true for success
-* `Db.CLOSE()`: closes an opened database
+* `Db.CLOSE()`: closes a database connection
 	* returns true for success
 
 * `Db.HAS_TABLE(tbl)`: checks whether a table exists or not
-	* `tbl`: table name
+	* `tbl`: the table name
 * `Db.QUERY(sql)`: <!--**asynchronizable**, -->executes an SQL query
-	* `sql`: SQL statement
+	* `sql`: the SQL statement
 	* returns queried result
 * `Db.EXEC(sql)`: <!--**asynchronizable**, -->executes an SQL statement
-	* `sql`: SQL statement
+	* `sql`: the SQL statement
 	* returns execution result
 
 ### Date time
 
 * `SLEEP(s)`: <!--**asynchronizable**, -->sleeps for certain seconds
-	* `s`: can be integer or real numbers
+	* `s`: can be integer or real number
 
-* `TICKS()`: gets wall clock independent ticks in milliseconds, relevant to specific hardware cycles or platform ticks
+* `TICKS()`: gets the wall clock independent ticks in milliseconds, relevant to specific hardware cycles or platform ticks
 
 * `NOW([fmt])`: gets the current time in string
 	* `fmt`: see following for details
@@ -1407,13 +1427,13 @@ Parameter format of `NOW`:
 
 * `FILE()`: creates a file object
 * `File.OPEN(path, acc)`: opens a file on disk
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
-	* `acc`: accessing mark, true for writable, otherwise readonly
+	* `path`: uses the container directory (parent of "content") of the running disk as lookup root
+	* `acc`: the accessing mark, true for writable, otherwise readonly
 	* returns true for success
-* `File.CLOSE()`: closes an opened file
+* `File.CLOSE()`: closes a file
 	* returns true for success
 
-* `File.WRITE(v ...)`: writes one or more values to file
+* `File.WRITE(v ...)`: writes one or more values to a file
 	* `v`: writes as byte for numbers, literally for string
 * `File.WRITE_U8(v)`: writes a number as 8-bit unsigned integer
 * `File.WRITE_S8(v)`: writes a number as 8-bit signed integer
@@ -1440,58 +1460,65 @@ Parameter format of `NOW`:
 
 ### GUI
 
-* `MSGBOX(msg)`: shows a message box with some text
+* `MSGBOX(msg)`: shows a message box with text
 
 ### Image
 
 * `IMAGE()`: creates an image object
 * `Image.LOAD(v)`: loads an image from a file, or byte array
-	* `v`: file path, or byte array
+	* `v`: the file path, or the byte array
 * `Image.SAVE(v, y)`: saves an image to a file, or byte array
-	* `v`: file path, or byte array
-	* `y`: target type, can be "png", "bmp", "tga" or "jpg"
+	* `v`: the file path, or the byte array
+	* `y`: the target type, can be "png", "bmp", "tga" or "jpg"
 
 * `Image.RESIZE(w, h)`: resizes an image
 * `Image.GET(x, y)`: gets the color of a pixel
 * `Image.SET(x, y, c)`: sets the color of a pixel
 * `Image.LEN([r])`: gets the count of total pixels, or width, or height of an image
-	* `r`: for total pixels if no argument passed, 0 for width, or 1 for height
+	* `r`: for the total pixels if no argument passed, 0 for the width, or 1 for the height
 
 ### IO
 
 * `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, often termed with "Documents" or "My Documents"
-* `COMBINE_PATH(x, y)`: combines two parts into a path
+* `COMBINE_PATH(x, y)`: combines two parts into a path string
+	* returns combined path string
 
 * `FILE_INFO(path)`: creates a file information object
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
-* `Fi.READ_ALL()`: reads all content of a file as string
+	* `path`: uses the container directory (parent of "content") of the running disk as lookup root
+* `Fi.READ_ALL()`: reads all the content of a file as string
 * `Fi.CREATE()`: tries to create a file
 * `Fi.PARENT()`: gets the directory information of a file's parent
+	* returns directory information
 
 * `Fi.GET_FULL_PATH()`: returns the full path of a file
 * `Fi.GET_PARENT_PATH()`: gets the directory path of a file's parent
 * `Fi.GET_FILE_NAME()`: gets the file name of a file
 * `Fi.GET_EXT_NAME()`: gets the extension name of a file
 * `Fi.IS_BLANK()`: checks whether a file is blank
+	* returns true for blank file
 
 * `Fi.EXISTS()`: checks whether a file exists
-* `Fi.COPY_TO(dst)`: copies the file to another location
+* `Fi.COPY_TO(dst)`: copies a file to another location
 * `Fi.REMOVE()`: removes a file
 
 * `DIRECTORY_INFO(path)`: creates a directory information object
-	* `path`: uses the container directory (parent of "content") of a disk as lookup root
+	* `path`: uses the container directory (parent of "content") of the running disk as lookup root
 * `Dir.CREATE()`: tries to create a directory
 * `Dir.PARENT()`: gets the directory information of a directory's parent
+	* returns directory information
 
-* `Dir.GET_FILES([p, r = FALSE])`: gets files in a directory
-	* `p`: matching pattern, supports wildcard
+* `Dir.GET_FILES([p, r = FALSE])`: gets the files in a directory
+	* `p`: the matching pattern, supports wildcard
 	* `r`: true for recursive matching
-* `Dir.GET_DIRECTORIES(r = FALSE)`: gets sub directories under a directory
+	* returns list of file information
+* `Dir.GET_DIRECTORIES(r = FALSE)`: gets the sub directories under a directory
 	* `r`: true for recursive matching
+	* returns list of directory information
 * `Dir.GET_FULL_PATH()`: returns the full path of a directory
-* `Dir.GET_PARENT_PATH()`: gets the directory path of a directory' parent
+* `Dir.GET_PARENT_PATH()`: gets the directory path of a directory's parent
 * `Dir.GET_DIR_NAME()`: gets the directory name of a directory
 * `Dir.IS_BLANK()`: checks whether a directory is blank
+	* returns true for blank directory
 
 ### JSON
 
@@ -1501,6 +1528,7 @@ Parameter format of `NOW`:
 	* returns JSON string
 
 * `Json.GET()`: gets BASIC8 objects and values from a JSON object
+	* returns collection
 * `Json.SET(v)`: sets BASIC8 objects and values to a JSON object
 
 Conversions from JSON values to BASIC8 values, or vice versa:
@@ -1528,8 +1556,8 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 * `DEG(r)`: converts radians to degrees
 * `RAD(d)`: converts degrees to radians
 
-* `MIN(...)`: gets the minimum one among some numbers
-* `MAX(...)`: gets the maximum one among some numbers
+* `MIN(...)`: gets the minimum value among some numbers
+* `MAX(...)`: gets the maximum value among some numbers
 
 #### Vector and matrix
 
@@ -1623,9 +1651,9 @@ Besides, these functions are used to do other linear computations:
 * `NET()`: creates a network object
 * `Net.OPEN(addr, recv [, stbl [, dscn]])`: opens a network, either as server or client
 	* `addr`: parameters will be explained later
-	* `recv`: handles callback when received some data
-	* `stbl`: handles callback when connection established
-	* `dscn`: handles callback when disconnected
+	* `recv`: handles the callback when received some data
+	* `stbl`: handles the callback when connection established
+	* `dscn`: handles the callback when disconnected
 	* returns true for success
 * `Net.CLOSE()`: closes a network, clears all options; will neither be impossible to send nor receive anything after closing
 	* returns true for success
@@ -1661,9 +1689,9 @@ The callback of disconnected is an invokable that accepts a parameter represents
 
 * `Net.GET(k)`: gets an option value
 	* returns option string
-* `Net.SET(k, v)`: sets an option with specific key and value, options will be cleared after closing a network; set any options before opening
-	* `k`: option key as string, see following table for details
-	* `v`: option value as string, see following table for details
+* `Net.SET(k, v)`: sets an option with a specific key and value, the options will be cleared after closing a network; set any options before opening
+	* `k`: the option key as string, see following table for details
+	* `v`: the option value as string, see following table for details
 
 | Key | Value | Note |
 |---|---|---|
@@ -1686,8 +1714,8 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 	* `s`: true to show, false to hide
 * `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the current BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets the current working directory path
-* `SET_CLIPBOARD_TEXT(txt)`: sets the text content of clipboard
-* `GET_CLIPBOARD_TEXT()`: gets the text content of clipboard
+* `SET_CLIPBOARD_TEXT(txt)`: sets the text content of the clipboard
+* `GET_CLIPBOARD_TEXT()`: gets the text content of the clipboard
 * `HAS_CLIPBOARD_TEXT()`: checks whether the clipboard is filled with text content
 * `OS()`: **platform dependent**, gets the name of the current OS
 * `SYS(cmd)`: **platform dependent**, executes a system command
@@ -1698,11 +1726,12 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 * `UCASE(txt)`: transforms a string to upper case
 
 * `SPLIT(txt, d)`: splits a string into parts
-	* `d`: delimit
-	* returns a list of strings
+	* `d`: the delimit
+	* returns list of strings
 
 * `STARTS_WITH(txt, what, ci = TRUE)`: checks whether a string starts with a sub string
 	* `ci`: true for case-insensitive matching
+	* returns true if matched, otherwise false
 * `ENDS_WITH(txt, what, ci = TRUE)`: checks whether a string ends with a sub string
 	* `ci`: true for case-insensitive matching
 
@@ -1718,9 +1747,9 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 ### Web
 
 * `WEB_REQUEST(url, met = "get" [, f])`: performs an http request
-	* `url`: URL to request
-	* `met`: request method, can be "get" or "post"
-	* `f`: fields for post
+	* `url`: the URL to request
+	* `met`: the request method, can be "get" or "post"
+	* `f`: the fields for post
 	* returns response
 
 [HOME](#welcome-to-basic8)

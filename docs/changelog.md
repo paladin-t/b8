@@ -1,5 +1,24 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.4
+
+Language:
+
+* Added call stack checking to prevent stack overflow
+
+Libraries:
+
+* Fixed a directory path splitting bug
+* Fixed an unzipping bug with sub directories
+
+Editor:
+
+* Fixed a crash bug with invalid font setting
+
+Player:
+
+* Fixed a crash bug if error occurs at parsing time
+
 ### v1.4.3
 
 Language:

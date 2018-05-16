@@ -17,7 +17,7 @@
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **Fantasy Computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprite, tiles, map, quantized, etc. |
 
-It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done.
+It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for contemporary development for everyone.
 
 ### Technical specifications
 

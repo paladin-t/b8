@@ -52,7 +52,7 @@ BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app
 
 ![](pages/imgs/banner_platforms.png)
 
-BASIC8 can be productive. Make redistributable [standalone player as executable binary](https://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux, and [standalone player as web page](https://steamcommunity.com/sharedfiles/filedetails/?id=1391950196) with the [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686) for browsers.
+BASIC8 can be productive. Make redistributable standalone player [as executable binary](https://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux, and [as web page](https://steamcommunity.com/sharedfiles/filedetails/?id=1391950196) with the [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686) for browsers.
 
 ### Get BASIC8
 

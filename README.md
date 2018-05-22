@@ -11,7 +11,7 @@
 
 **Get BASIC8!**
 
-[![BASIC8 on Steam](pages/imgs/steam.png)](http://store.steampowered.com/app/767240/)
+[![BASIC8 on Steam](pages/imgs/steam.png)](https://store.steampowered.com/app/767240/)
 
 | FANTASY | COMPUTER |
 |----|----|
@@ -36,7 +36,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512). It's furthermore possible to [bring your own tools](http://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). It's furthermore possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
@@ -44,19 +44,19 @@ See examples including [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cos
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be handily shared via [Workshop](http://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places.
+BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places.
 
-[![Workshop](docs/imgs/workshop.png)](http://steamcommunity.com/app/767240/workshop/)
+[![Workshop](docs/imgs/workshop.png)](https://steamcommunity.com/app/767240/workshop/)
 
 ### Redistributing
 
 ![](pages/imgs/banner_platforms.png)
 
-BASIC8 can be productive. Make redistributable [standalone player as executable binary](http://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux.
+BASIC8 can be productive. Make redistributable [standalone player as executable binary](https://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux, and [standalone player as web page](https://steamcommunity.com/sharedfiles/filedetails/?id=1391950196) with the [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686) for browsers.
 
 ### Get BASIC8
 
-[![BASIC8 on Steam](pages/imgs/on_steam.png)](http://store.steampowered.com/app/767240/)
+[![BASIC8 on Steam](pages/imgs/on_steam.png)](https://store.steampowered.com/app/767240/)
 
 ### System requirements
 
@@ -71,8 +71,8 @@ BASIC8 can be productive. Make redistributable [standalone player as executable 
 
 | Links | |
 |----|----|
-| Discuss | [Forums](http://steamcommunity.com/app/767240/discussions/) |
+| Discuss | [Forums](https://steamcommunity.com/app/767240/discussions/) |
 | Chat | [#basic8](https://discord.gg/phR38jm) [Fantasy Consoles](https://discord.gg/e4cpeuV) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin) |
-| Devlogs | [Steam discussion](http://steamcommunity.com/app/767240/discussions/9/) |
+| Devlogs | [Steam discussion](https://steamcommunity.com/app/767240/discussions/9/) |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |

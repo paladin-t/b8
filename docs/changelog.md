@@ -1,5 +1,15 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.5
+
+Driver:
+
+* Fixed an audio sampling issue
+
+Player:
+
+* Added HTML player for web browsers, as experimental
+
 ### v1.4.4
 
 Language:

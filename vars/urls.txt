@@ -1,19 +1,20 @@
 Discover =
-	Workshop = http://steamcommunity.com/app/767240/workshop/
-	Artwork = http://steamcommunity.com/app/767240/images/
-	Screenshots = http://steamcommunity.com/app/767240/screenshots/
+	Workshop = https://steamcommunity.com/app/767240/workshop/
+	Artwork = https://steamcommunity.com/app/767240/images/
+	Screenshots = https://steamcommunity.com/app/767240/screenshots/
 	= end
 Forums =
-	General discussions = http://steamcommunity.com/app/767240/discussions/4/
-	Devlogs = http://steamcommunity.com/app/767240/discussions/9/
-	Help wanted = http://steamcommunity.com/app/767240/discussions/7/
-	Workshop discussions = http://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
+	General discussions = https://steamcommunity.com/app/767240/discussions/4/
+	Devlogs = https://steamcommunity.com/app/767240/discussions/9/
+	Help wanted = https://steamcommunity.com/app/767240/discussions/7/
+	Workshop discussions = https://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
-Learning = http://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
+Learning = https://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
 Utilities =
-	Player Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
-	Wave Maker = http://steamcommunity.com/sharedfiles/filedetails/?id=1352790993
+	Player Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
+	HTML Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686
+	Wave Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993
 	Plugins = https://github.com/paladin-t/b8.plugins
 	= end
-Like = http://store.steampowered.com/recommended/recommendgame/767240
+Like = https://store.steampowered.com/recommended/recommendgame/767240
 Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

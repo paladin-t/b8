@@ -6,7 +6,7 @@
 
 Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read about [Workshop](workshop)?
 
-BASIC8 is an integrated fantasy computer for game and other program development. Users can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
+BASIC8 is an integrated fantasy computer for game and other program development. You can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
 
 It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license, if you haven't explicitly chosen other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
 
@@ -111,11 +111,11 @@ You may read this manual in any order according to your interest, and open this 
 
 ## Getting started
 
-It's been a while since people used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is to bring a sense of joy back from retro/vintage computing and gaming, also be quick at getting higher level stuff done. It's trying to stay at a balance point of simplicity, creativity, fun and usability.
+It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for contemporary development for everyone. It's focusing to stay at a balance point of simplicity, creativity, fun and usability.
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It's supported to use keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It supports to use keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
@@ -123,15 +123,16 @@ Most home computers from 1970-80s use keyboards as the only developer input meth
 * Ctrl+R: run a disk
 * Ctrl+.: stop running a disk
 * Ctrl+S: save all data
-* Ctrl+Z/Ctrl+Y: undo/redo
-* Ctrl+X: cut data
 * Ctrl+C: copy data
+* Ctrl+X: cut data
 * Ctrl+V: paste data
-* W/S/A/D: select painting sources
-* Z/X: select painting tools
+* Ctrl+Z/Ctrl+Y: undo/redo
+* W/S/A/D: select painting source
+* Z/X: select painting tool
 * B/N: select active frame or layer
-
-See tips in editors for other details.
+* Ctrl+F: find text in code
+* Ctrl+G: goto code line
+* Tab/Ctrl+Shift+Tab: indent/unindent
 
 When speaking of clicking `[Head]` in this document, it means the first icon item on the main menu bar:
 
@@ -328,7 +329,7 @@ Normal statements execute line by line. However, you can do more than that with 
 
 A conditional structure is used to execute particular code block depending on conditions, with `IF`/`THEN`/`ELSEIF`/`ELSE`/`ENDIF` statements.
 
-It's supported to write conditional `IF` statements in two ways. One is single line which the whole conditional block is written in a compact form:
+It supports to write conditional `IF` statements in two ways. One is single line which the whole conditional block is written in a compact form:
 
 ~~~~~~~~~~bas
 IF n MOD 2 THEN PRINT "Odd"; ELSE PRINT "Even";
@@ -1766,11 +1767,8 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 Some words are not implemented for actual functions, yet they are reserved for future. It's suggested not to use them as identifiers:
 
 * `ASYNC`, `AWAIT`, `COST`
-* `CTOR`, `DTOR`
-* `FORK`, `JOIN`
-
 * `COLLIDES`, `INTERSECTS`
-* `EVAL`
+* `EVAL`, `FORK`, `JOIN`
 * `FORMAT`
 * `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`
 * `MEMCMP`, `MEMCPY`, `MEMSET`, `MEMTEST`

@@ -16,7 +16,7 @@ It's recommended to use good looking preview, choose proper genre, and write nec
 
 ### Subscribing
 
-Use any browser to explore the [BASIC8 Workshop](http://steamcommunity.com/app/767240/workshop/) on Steam to make subscriptions:
+Use any browser to explore the [BASIC8 Workshop](https://steamcommunity.com/app/767240/workshop/) on Steam to make subscriptions:
 
 ![](imgs/workshop_subscribe.png)
 

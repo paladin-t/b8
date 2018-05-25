@@ -4,9 +4,11 @@
 
 ## BASIC8
 
-[Why BASIC8?](https://paladin-t.github.io/b8/pages/why) |
-[Learning](https://github.com/paladin-t/b8/wiki) | [Manual](https://paladin-t.github.io/b8/docs/manual) | [Changelog](https://paladin-t.github.io/b8/docs/changelog) |
+[Manual](https://paladin-t.github.io/b8/docs/manual) |
+[Changelog](https://paladin-t.github.io/b8/docs/changelog) |
 [Gallery](https://paladin-t.github.io/b8/pages/gallery) |
+[Why BASIC8?](https://paladin-t.github.io/b8/pages/why) |
+[Wiki](https://github.com/paladin-t/b8/wiki) |
 [About](https://paladin-t.github.io/b8/pages/about)
 
 **Get BASIC8!**
@@ -17,18 +19,18 @@
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **Fantasy Computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprite, tiles, map, quantized, etc. |
 
-It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for contemporary development for everyone.
+It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for modern development for everyone.
 
 ### Technical specifications
 
 * Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
-* Code: BASIC (structured/functional/prototype-based)
+* Code: BASIC (structured/prototype-based/functional)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
-* Map: 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
 * Keyboard and mouse: supported
 
@@ -36,15 +38,15 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). It's furthermore possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). Furthermore it's possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
-See examples including [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/), [Infinity Fighter](https://paladin-t.github.io/b8/examples/Infinity%20Fighter/) and [Boing Ball](https://paladin-t.github.io/b8/examples/Boing%20Ball/).
+See examples [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/), [Infinity Fighter](https://paladin-t.github.io/b8/examples/Infinity%20Fighter/) and [Boing Ball](https://paladin-t.github.io/b8/examples/Boing%20Ball/).
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing to other places.
+BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing through other ways.
 
 [![Workshop](docs/imgs/workshop.png)](https://steamcommunity.com/app/767240/workshop/)
 
@@ -72,7 +74,7 @@ BASIC8 can be productive. Make redistributable standalone player [as executable 
 | Links | |
 |----|----|
 | Discuss | [Forums](https://steamcommunity.com/app/767240/discussions/) |
-| Chat | [#basic8](https://discord.gg/phR38jm) [Fantasy Consoles](https://discord.gg/e4cpeuV) |
+| Chat | [#BASIC8 on Discord](https://discord.gg/phR38jm) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin) |
 | Devlogs | [Steam discussion](https://steamcommunity.com/app/767240/discussions/9/) |
 | Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |

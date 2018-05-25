@@ -144,13 +144,14 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 
 * Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
-* Code: BASIC
+* Code: BASIC (structured/prototype-based/functional)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
 * Sprite: up to 32x32 pixels per frame, up to 512 frames per sprite
 * Tiles: 240 cels
-* Map: 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
+* Map: up to 128x64 tiles per layer, up to 4 layers (including a layer of logic mark) per page
 * Gamepad: 6 buttons for each pad (D-Pad + A/B), up to 8 players
+* Keyboard and mouse: supported
 
 ### Disk library
 

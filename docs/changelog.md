@@ -6,6 +6,11 @@ Driver:
 
 * Fixed an audio sampling issue
 
+Editor:
+
+* Fixed a crash of wrong error raised with scriptable plugin
+* Fixed a target selection bug with scriptable plugin
+
 Player:
 
 * Added HTML player for web browsers, as experimental

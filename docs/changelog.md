@@ -4,6 +4,7 @@
 
 Driver:
 
+* Fixed a crash bug with the `LOAD_BLANK` function
 * Fixed an audio sampling issue
 
 Editor:
@@ -119,7 +120,7 @@ Editor:
 
 Driver:
 
-* Added an initialization procedure of `TICKS` base to the boot program
+* Added an initialization procedure of the `TICKS` base to the boot program
 
 Libraries:
 
@@ -171,7 +172,7 @@ Added Linux version.
 
 Language:
 
-* Fixed a GC bug with ranged `FOR` statement
+* Fixed a GC bug with the ranged `FOR` statement
 * Fixed a string assignment issue with class member
 * Fixed a termination issue with the `END` statement
 
@@ -243,7 +244,7 @@ Language:
 
 Libraries:
 
-* Added a loading option to `LOAD_BLANK` for quantized image
+* Added a loading option to the `LOAD_BLANK` for quantized image
 * Added `TRI`, `TRIFILL` functions to draw triangles
 * Added `QUAD`, `QUADFILL` functions to draw quadrangles
 * Added `IGET`, `ISET` functions to access quantized image

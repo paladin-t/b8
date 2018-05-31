@@ -7,6 +7,12 @@ Driver:
 * Fixed a crash bug with the `LOAD_BLANK` function
 * Fixed an audio sampling issue
 
+Libraries:
+
+* Added rotation center specifier to the `SPR`, `SSPR`, `MAP`, `IMG`, `SIMG` functions
+* Fixed a crash bug with invalid file accessor
+* Fixed potential memory leaks when passing unexpected referenced values to some functions
+
 Editor:
 
 * Fixed a crash of wrong error raised with scriptable plugin

@@ -921,7 +921,7 @@ The beginning index of sprite frame is 1.
 	* `what`: can be "tag", "interval"
 	* `v`: the value to be set
 
-A rotation can be either specified by simple angle as real number, or by `VEC3(center_x, center_y, degree)`; the former rotates around the center of a sprite, while the latter rotates relatively to x, y.
+A rotation can be either specified by simple angle as real number, or by `VEC3(center_x, center_y, degrees)`; the former rotates around the center of a sprite, while the latter rotates relatively to ratio x, y, with range of values usually from 0.0 to 1.0. This rule also applies to functions for map and quantized image.
 
 ### Map
 

@@ -4,13 +4,13 @@
 
 Editor:
 
-* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` functions
-* Added an option to disable invoking the `SYS()` functions
+* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` function
+* Added an option to disable invoking the `SYS()` function
 
 Player:
 
-* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` functions
-* Added an option to disable invoking the `SYS()` functions
+* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` function
+* Added an option to disable invoking the `SYS()` function
 
 ### v1.4.5
 

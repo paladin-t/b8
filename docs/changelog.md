@@ -1,5 +1,17 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.6
+
+Editor:
+
+* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` functions
+* Added an option to disable invoking the `SYS()` functions
+
+Player:
+
+* Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` functions
+* Added an option to disable invoking the `SYS()` functions
+
 ### v1.4.5
 
 Driver:

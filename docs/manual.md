@@ -172,6 +172,7 @@ There are some configurable options available:
 * Customizing input: `Option`, `Input`, then customize for each virtual gamepad on the dialog box
 * Customizing onscreen input: `Option`, `Onscreen input`, then customize detail options on the dialog box
 * Changing the root directory of library: `Option`, `Directory`, `Browse`, `Apply`, this will move all existing disks to the new path; **important notice**, if you are willing to move it, create a new empty directory as your new location, rather than choosing an existing one, BASIC8 will not create any empty sub directory
+* Enabling or disabling functions: some functions are disabled by default for security reason, chech corresponding options via `Option`, `Security` to change it
 * Showing stat. information: `Option`, check `Show stat.`
 * Making it running when double click on a disk, instead of opening it: `Option`, check `Run on click`
 * Allowing multiple editor windows: `Option`, check `Multiple windows`

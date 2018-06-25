@@ -1,6 +1,6 @@
 ![](imgs/welcome.png)
 
-Press F1 to read the [manual](manual), or read about [Workshop](workshop).
+Press F1 to read the [manual](manual), or click to read about [Workshop](workshop).
 
 Double click on a disk to run it directly by default; right click on a disk then `Open` it for editing, this will show the entry source code of the disk, click corresponding items under the `Disk` menu on the main menu bar to create, open assets in the editing disk.
 

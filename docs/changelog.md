@@ -2,6 +2,15 @@
 
 ### v1.4.6
 
+Driver:
+
+* Fixed a sharp/flat accidental issue with music playing
+
+Libraries:
+
+* Fixed a loop bug with the `PLAY` function
+* Fixed a deadlock issue with the `PLAY` function
+
 Editor:
 
 * Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` function

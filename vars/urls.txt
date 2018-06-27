@@ -9,12 +9,11 @@ Forums =
 	Help wanted = https://steamcommunity.com/app/767240/discussions/7/
 	Workshop discussions = https://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
-Learning = https://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
 Utilities =
 	Player Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512
 	HTML Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686
 	Wave Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993
 	Plugins = https://github.com/paladin-t/b8.plugins
 	= end
-Like = https://store.steampowered.com/recommended/recommendgame/767240
+Learning = https://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
 Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

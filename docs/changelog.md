@@ -15,6 +15,7 @@ Editor:
 
 * Added an option to disable invoking the `GET_CLIPBOARD_TEXT()` function
 * Added an option to disable invoking the `SYS()` function
+* Fixed a real number input bug with different locales
 
 Player:
 

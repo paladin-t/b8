@@ -400,7 +400,7 @@ BASIC8 offers a `GOTO` statement which performs unconditional control transfer. 
 
 ### Collections
 
-BASIC8 supplies a set of list and dictionary manipulation functions which do creation, accessing, iteration, etc. as following:
+BASIC8 supplies generic list and dictionary collections, which accept almost all types of data; and associated manipulation functions for creation, accessing, iteration, etc. as following:
 
 * `LIST(...)`: creates a list, with optional initialization elements
 * `DICT(...)`: creates an unordered dictionary, with optional initialization key-value pairs
@@ -423,7 +423,7 @@ BASIC8 supplies a set of list and dictionary manipulation functions which do cre
 * `MOVE_NEXT(iter)`: advances an iterator to the next element on a list or a dictionary
 	* returns true if the iterator was successfully advanced to the next element
 
-Besides it's also able to apply some other generic function to collections:
+It's also supported to apply some other generic function to collections:
 
 * `VAL(iter)`: returns the value of a dictionary iterator
 * `LEN(coll)`: gets the element count of a collection
@@ -603,7 +603,7 @@ acc(2)
 
 ### Class
 
-BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's able to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new object of a prototype.
+BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's possible to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new object of a prototype.
 
 See the following example of class:
 

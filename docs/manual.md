@@ -120,16 +120,20 @@ Most home computers from 1970-80s use keyboards as the only developer input meth
 * F1: show this manual
 * F7: take a screenshot when playing
 * F8: record frames when playing, or stop recording
-* Ctrl+R: run a disk
-* Ctrl+.: stop running a disk
+* Ctrl+R: run an opened disk
+* Ctrl+.: stop running an opened disk
+* Ctrl+Tab: navigate through assets in an opened disk
+
 * Ctrl+S: save all data
 * Ctrl+C: copy data
 * Ctrl+X: cut data
 * Ctrl+V: paste data
 * Ctrl+Z/Ctrl+Y: undo/redo
+
 * W/S/A/D: select painting source
 * Z/X: select painting tool
 * B/N: select active frame or layer
+
 * Ctrl+F: find text in code
 * Ctrl+G: goto code line
 * Tab/Ctrl+Shift+Tab: indent/unindent
@@ -867,6 +871,11 @@ These functions are used to manipulate the states of a sprite:
 	* `ip`: true for interpolating position
 * `CAMERA [x, y]`: moves the camera to a specific position, resets its position if no argument passed
 
+* `FONT [i, cw = 8, ch = 8, channel = -1]`: customizes the font face to be used with the `TEXT` function with a quantized image, only determines whether pixels are transparent but not the final color; resets to the default built-in font if no argument passed
+	* `i`: the quantized image object, with slices for ASCII characters arranged incrementally from top-left to bottom-right in row-major order, with any amount of slices per line
+	* `cw`: the width per character slice, cannot be greater than 8
+	* `ch`: the height per character slice, cannot be greater than 8
+	* `channel`: the channel index to use as non-transparent mask, with range of values from 0 to 3 by rule: to plot when `BAND(palette_in_image, SHL(1, channel))` is non-zero; or to plot for all non-zero indexed pixels with value -1
 * `TEXT x, y, v [, c]`: draws a text
 	* `v`: can be number or string
 	* `c`: the color for drawing, uses the default color set by `COL` if no argument passed

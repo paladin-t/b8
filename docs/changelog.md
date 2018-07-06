@@ -1,5 +1,17 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.7
+
+Libraries:
+
+* Added a `FONT` function to customize font face with quantized image for the `TEXT` function
+
+Editor:
+
+* Added an assets navigation tab, by pressing Ctrl+Tab
+* Added shortcut GUI elements to create new disks
+* Fixed a number clamp issue with the ranged slider controls
+
 ### v1.4.6
 
 Driver:

@@ -11,6 +11,7 @@ Editor:
 * Added an assets navigation tab, by pressing Ctrl+Tab
 * Added shortcut GUI elements to create new disks
 * Fixed a number clamp issue with the ranged slider controls
+* Fixed a wrong context menu appearance bug by right mouse click
 
 ### v1.4.6
 

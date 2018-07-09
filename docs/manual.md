@@ -1676,7 +1676,7 @@ The `addr` parameter is combined with four parts, direction, protocol, address a
 
 | Part | Value |
 |---|---|
-| Directoy | `>` for connecting, `<` for listening |
+| Direction | `>` for connecting, `<` for listening |
 | Protocol | `udp://`, `tcp://` |
 | Address | IP address |
 | Port | Port number |
@@ -1689,19 +1689,19 @@ For example:
 | "<udp://127.0.0.1:12000" | As server, listens from local host port 12000 via UDP |
 | "tcp://12000" | As server, listens from port 12000 via TCP |
 
-The callback of received event is an invokable that accepts two parameters respectively represent for the data has just received, and the remote adress in string. Eg. `LAMBDA (msg, addr) ()`. The type of the first parameter is determined by the "data_type" option.
+The callback of received event is an invokable that accepts two parameters respectively represent for the data has been just received, and the remote adress in string. Eg. `LAMBDA (msg, addr) ()`. The type of the first parameter is determined by the "data_type" option.
 
-The callback of connection established is an invokable that accepts a parameter represents for the remote address in string; nil for failure for outcoming connection. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection established; ignored by UDP.
+The callback of connection established is an invokable that accepts a parameter represents for the remote address in string; nil for failure for outcoming connection. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection established; this is ignored by UDP.
 
-The callback of disconnected is an invokable that accepts a parameter represents for the remote address in string. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection disconnected; ignored by UDP.
+The callback of disconnected is an invokable that accepts a parameter represents for the remote address in string. Eg. `LAMBDA (addr) ()`. It's invoked when either incoming or outcoming connection disconnected; this is ignored by UDP.
 
 * `Net.SEND(d)`: sends data via network
-	* `b`: can be data of one in string, bytes or JSON types
-* `Net.BROADCAST(d, e = FALSE)`: broadcasts data to all connections, cannot be used with UDP network
-	* `b`: can be data of one in string, bytes or JSON types
-	* `e`: true for excluding the current receiving connection, if this function is called in a received callback
+	* `b`: can be data in string, bytes or JSON type
+* `Net.BROADCAST(d, e = FALSE)`: broadcasts data to all connections, cannot be used with UDP instance
+	* `b`: can be data in string, bytes or JSON type
+	* `e`: true for excluding the current receiving connection, when this function is called in a received callback
 
-* `Net.GET(k)`: gets an option value
+* `Net.GET(k)`: gets an option value with a specific key
 	* returns option string
 * `Net.SET(k, v)`: sets an option with a specific key and value, the options will be cleared after closing a network; set any options before opening
 	* `k`: the option key as string, see following table for details
@@ -1712,7 +1712,11 @@ The callback of disconnected is an invokable that accepts a parameter represents
 | "bytes_with_size" | Whether packs size before bytes | Can be "true" or "false", defaults to "true" |
 | "data_type" | Parameter type of received callback | Can be "string", "bytes" or "json", defaults to "json" |
 
-A single transmission or datagram cannot be longer than 32KB. Consider closing and setting a network instance to nil as soon as it's no longer in use.
+* `POLL()`: polls all network events; do not need to call this function if a program already entered main loop by calling `UPDATE_WITH` (or loop and `SYNC` manually), in this case network events will be polled automatically; only call this when before (or without) main loop
+
+A single transmission or datagram cannot be longer than 32KB.
+
+Consider closing and setting a network instance to nil as soon as it's no longer in use.
 
 Sent string and json always end up with a zero byte; vice versa, received string and json must end up with a terminal zero byte.
 
@@ -1792,7 +1796,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `PLOT`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `SAY`
 * `SHADER`
-* `SOCKET`, `RECV`, `RECEIVE`, `POLL`
+* `SOCKET`, `RECV`, `RECEIVE`
 * `WEB`
 
 ## Type names

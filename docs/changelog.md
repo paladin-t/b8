@@ -5,6 +5,8 @@
 Libraries:
 
 * Added a `FONT` function to customize font face with quantized image for the `TEXT` function
+* Added a `POLL` function to poll network events manually
+* Fixed a return value overwriting bug with network callback
 
 Editor:
 
@@ -12,6 +14,10 @@ Editor:
 * Added shortcut GUI elements to create new disks
 * Fixed a number clamp issue with the ranged slider controls
 * Fixed a wrong context menu appearance bug by right mouse click
+
+Player:
+
+* Added an option to disable pause on focus lost
 
 ### v1.4.6
 

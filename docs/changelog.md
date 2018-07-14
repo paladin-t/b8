@@ -2,6 +2,10 @@
 
 ### v1.4.7
 
+Language:
+
+* Fixed a multiple disposing bug with lambda
+
 Libraries:
 
 * Added a `FONT` function to customize font face with quantized image for the `TEXT` function

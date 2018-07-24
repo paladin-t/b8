@@ -1,16 +1,14 @@
-<!-- Do not use any undocumented or commented functions, they may be changed or removed. -->
-
 ![](imgs/logo.png)
 
 ## Welcome to BASIC8
 
-Read this [manual online](https://paladin-t.github.io/b8/docs/manual)? Or read about [Workshop](workshop)?
+Click to read this [manual online](https://paladin-t.github.io/b8/docs/manual); or read about [Workshop](workshop).
 
-BASIC8 is an integrated fantasy computer for game and other program development. You can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and some built-in tools for editing sprites, maps, sounds, etc.
+BASIC8 is an integrated fantasy computer for game and other program development. You can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and built-in tools for editing sprite, tiles, map, quantized, etc.
 
-It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you didn't explicitly prefer other licenses. Every code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guidelines are just to be polite and respectful to other people and their work too; and, don't do anything bad.
+It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you had not chosen other license explicitly. Every supported code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guideline is just be polite and respectful to other users and their work too; and don't do anything bad.
 
-You may read this manual in any order according to your interest, and open this to lookup for explanations at any time.
+You could read this manual in any order as you wish, and get back to lookup for explanations at any time.
 
 ## Table of content
 
@@ -115,7 +113,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It supports to use keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It supports using keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
@@ -138,13 +136,13 @@ Most home computers from 1970-80s use keyboards as the only developer input meth
 * Ctrl+G: goto code line
 * Tab/Ctrl+Shift+Tab: indent/unindent
 
-When speaking of clicking `[Head]` in this document, it means the first icon item on the main menu bar:
+It refers to the first icon item on the main menu bar, when speaking of clicking `[Head]` in this document:
 
 ![](imgs/head.png)
 
 ### Specifications
 
-The limitations of BASIC8 are carefully chosen to make it easy and simple during making programs:
+The limitations of BASIC8 are carefully chosen to make programs way easy and simple:
 
 * Display: 160x128 pixels
 * Audio: 2 music channels, 4 sound effect channels
@@ -159,7 +157,7 @@ The limitations of BASIC8 are carefully chosen to make it easy and simple during
 
 ### Disk library
 
-All disks are stored in a library directory on hard disk, each disk has its own sub directory for all code and data. The default root path of library is:
+All disks are stored in a library directory on hard drive, each disk has its own sub directory for all code, assets and data. The default root path of library is:
 
 * "C:/Users/YourName/Documents/BASIC8/" on Windows
 * "/Users/YourName/Documents/BASIC8/" on MacOS
@@ -183,7 +181,7 @@ There are some configurable options available:
 
 ### Sharing
 
-A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents through magazines and other medias. It is convenient to export disk and record frames in BASIC8 for sharing.
+A big part of retro computing which makes it fun to work with is sharing and discussing user generated contents on magazines and other networks. It is convenient to export disk and record frames in BASIC8 for sharing.
 
 #### Exporter and importer
 
@@ -193,7 +191,7 @@ To import a disk, click `[Head]`, `Import`, then choose one of `From a "*.b8" fi
 
 #### Disks
 
-Standalone "*.b8" files are standard "zip" packages, you may use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks in pixels. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only. Besides, you can share your disks via [Workshop](workshop) with built-in tools.
+Standalone "*.b8" files are standard "zip" packages, you could use them for the purpose of archiving and attaching. Standalone "*.png" files are encoded disks in pixels. Text based disks are generated with ASCII characters, which are friendlier when posting to places with text allowed only. Besides, you can share your disks via [Workshop](workshop) with built-in tools.
 
 #### Recording GIF
 
@@ -235,7 +233,7 @@ Only `0`, `FALSE`, `NIL` and `JSON_BOOL(FALSE)` result in "false" within boolean
 
 #### Number
 
-There are two types of number in BASIC8, integer and real (float point). Integer is implemented as 32-bit signed, with range of values from -2,147,483,648 to 2,147,483,647. Real is implemented as single precision float point of [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard. An arithmetic expression with real number may result an integer, if the result value doesn't have a fractional part, eg. `1.5 / 0.5` results in `3` rather than `3.0`.
+There are two types of number in BASIC8, integer and real (float point). Integer is implemented as 32-bit signed, with range of values from -2,147,483,648 to 2,147,483,647. Real is implemented as single precision float point of [IEEE 754](https://en.wikipedia.org/wiki/IEEE_754) standard. An arithmetic expression with real number might result an integer, if the result value doesn't have a fractional part, eg. `1.5 / 0.5` results in `3` rather than `3.0`.
 
 An octal integer begins with a `0` prefix, a hexadecimal begins with a `0x`, eg. `010` (oct) equals to `8` (dec), `0x10` (hex) equals to `16` (dec).
 
@@ -245,7 +243,7 @@ A string begins and ends with a pair of double quotation marks `""`, it stores w
 
 ### Comment
 
-A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begins with `'[` and ends with `']`, all text between them are ignored.
+A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begins with `'[` and ends with `']`, all text between them are ignored for computing.
 
 ### Arithmetic and relational operations
 
@@ -396,9 +394,9 @@ UNTIL a > 10
 
 The `EXIT` statement is used to discontinue a loop.
 
-BASIC8 offers a `GOTO` statement which performs unconditional control transfer. You can call it as `GOTO label`, it executes from `label:` in next step, rather than the following line of a `GOTO` statement. A labeled target constructs of a label identifier and a following colon as `label:`.
+A labeled target constructs of a label identifier and a following colon as `label:`. BASIC8 supports a `GOTO` statement that performs unconditional control transfer. You can call it as `GOTO label`, to transfer the execution flow to `label:` at next step, rather than the following line of the `GOTO`.
 
-`GOSUB` is similar to `GOTO`, but it can be returned with a `RETURN` statement.
+`GOSUB` is similar to `GOTO`, but it can be returned by a `RETURN` statement.
 
 ## Advanced syntax
 
@@ -505,9 +503,9 @@ NEXT
 
 ### Sub routine
 
-A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be mentioned uniformly as "routine" for short in this document. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Use the name of a routine directly to call it, with a list of arguments clamped with a pair of brackets. But it requires an extra `CALL` statement when a routine is declared below where it's called. The `RETURN` statement is also used there to exit a routine, with an optional result value.
+A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be hereinafter described as "routine" for short. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Call a routine by its name, with a list of arguments clamped with a pair of brackets. It requires an extra `CALL` statement when a routine is declared below the invocation. The `RETURN` statement is also used to end a routine, with an optional result value to its caller.
 
-Each routine has its own scope, in which statements in that routine body would lookup for variables, before looking into outer scopes.
+Each routine has its own scope, in which statements in that routine body lookup for variables preferentially, before looking into outer scopes.
 
 Eg:
 
@@ -522,7 +520,7 @@ ENDDEF
 PRINT foo(1, 2);
 ~~~~~~~~~~
 
-It's also possible to use the `CALL` statement with brackets clamped routine name to get an invokable object, instead of calling it immediately, as:
+It's also possible to use the `CALL` statement with brackets clamped routine name to get an invokable object, instead of calling it instantly:
 
 ~~~~~~~~~~bas
 c = CALL(bar)
@@ -535,7 +533,7 @@ But, there's a limitation that it's not accepted to use mixed routines with `DEF
 
 #### Variadic
 
-It's supposed to receive indefinite arity with invokable sometimes. BASIC8 uses the variadic symbol `...` for both routine definition, and argument unpacking. It refers to "more arguments" can be passed in the parameter list of a routine; or refers to all remaining arguments in the body of a routine. Eg:
+An invokable is supposed to receive indefinite arity sometimes. BASIC8 uses the variadic symbol `...` for both parameter list definition, and argument unpacking. It refers to "more arguments" can be passed as a parameter list; or refers to all remaining arguments in the body of a routine. Eg:
 
 ~~~~~~~~~~bas
 DEF foo(a, b, ...)
@@ -547,7 +545,7 @@ ENDDEF
 PRINT bar("Variadic", "argument", "list", "...");
 ~~~~~~~~~~
 
-Use the `LEN` statement to tell the count of remaining arguments. Iterating all arguments, eg:
+Use the `LEN` statement to tell the count of remaining arguments. To iterate all arguments, eg:
 
 ~~~~~~~~~~bas
 l = LEN(...)
@@ -574,7 +572,7 @@ DO
 UNTIL TYPE(t) = TYPE("UNKNOWN")
 ~~~~~~~~~~
 
-Triple dots are also used to describe that a library function accepts more than one arity in this document.
+Triple dots are also used to denote that a library function accepts more than one arity in this document.
 
 ### Lambda
 
@@ -607,7 +605,7 @@ acc(2)
 
 ### Class
 
-BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). When speaking of "class instance" or "prototype" in BASIC8, they mean the same thing. This programming paradigm can also be known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable of a class. It's possible to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (which means using it as a meta class). Use `NEW` to instantiate a new object of a prototype.
+BASIC8 supports a [prototype-based](https://en.wikipedia.org/wiki/Prototype-based_programming) programming paradigm which is a kind of OOP (Object-Oriented Programming). They all mean the same thing by "class instance" or "prototype" in BASIC8. This programming paradigm is also known as "prototypal", "prototype-oriented", "classless", or "instance-based" programming. Use a pair of `CLASS`/`ENDCLASS` statements to define a class (a prototype object). Use `VAR` to declare a member variable in a class. It's possible to define member function, a.k.a. "method" of a class with the `DEF`/`ENDDEF` statements as well. Write another prototype surrounding with a pair of brackets after a declaration statement to inherit from it (or say using it as a meta class). Use `NEW` to instantiate an instance of a prototype.
 
 See the following example of class:
 
@@ -627,7 +625,7 @@ PRINT inst.fun(3);
 
 The `ME` keyword always stands for the current class instance. A.k.a. `SELF` or `THIS` in other languages.
 
-The `REFLECT` statement is used to traverse all member variables and routines in a class instance. It returns a dictionary filled with name of member as key, value of member as value.
+The `REFLECT` statement is used to traverse all member variables and routines in a class instance. It returns a dictionary filled by member names and their values as key-value pairs.
 
 The generic `GET` statement can be also applied to a class instance to get a member of it. It results in the value of a variable or the invokable object of a routine:
 
@@ -661,7 +659,7 @@ IMPORT "directory/file_name.bas"
 
 ### Coroutine
 
-A coroutine is a special data type in BASIC8, which encapsulates an invokable object. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow by itself. Besides, there is also an automatically dispatched mode.
+A coroutine is a special data type in BASIC8 encapsulating an invokable object. It's a programming component that generalizes subroutines for non-preemptive multitasking, by allowing multiple entry points for suspending and resuming execution at certain locations. It obtains the execution flow when iterating on it, then keeps executing until all invokable statements finished or it hands over the flow proactively. Besides, there is also an automatically dispatched mode.
 
 * `COROUTINE(invokable, ...)`: creates a coroutine, with optional initialization arguments
 * `YIELD v`: yields from a coroutine, hands over the execution flow to other coroutines or the main program flow
@@ -747,7 +745,7 @@ PRINT ret;
 
 ### Automatic memory management
 
-BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release useless memory. However, consider setting referenced variables to `NIL` when the values become useless, eg. closing databases, closing finished files, closing network connections, etc.
+BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't need to explicitly release memory no longer in use. However, consider setting referenced variables to `NIL` when the values become useless, eg. closing databases, finished files, network connections, etc.
 
 ## Generic functions
 
@@ -776,11 +774,11 @@ BASIC8 automatically manages memory with GC (Garbage Collection). Thus you don't
 
 ## Graphics
 
-Coordinate system as following:
+The coordinate definition in BASIC8 is:
 
 ![](imgs/coordinate.png)
 
-Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between the current and previous frames, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
+Program execution and rendering run on different threads with respective frame rates in BASIC8, program at 30 FPS and rendering at 60. Some properties of graphics commands, such as positions, rotations, etc. can be interpolated between the current and previous logic frames for rendering, see `SET_INTERPOLATOR` for details. Render queue can be ordered by rules:
 
 * "nil": not ordered, all graphics commands execute in a same queue
 * "map": graphics commands are separated into 5 sub queues, later drawing covers earlier
@@ -824,7 +822,7 @@ PRINT "Done with: ", n;
 
 This `UPDATE_WITH` will return in five seconds.
 
-These functions are used to create, load or extract graphics objects and values:
+These functions are used to create, load and extract graphics objects and values:
 
 * `LOAD_RESOURCE(path)`: loads a resource from the disk
 	* `path`: the path of the resource, can be "*.sprite", "*.map" or "*.quantized" files; uses the content directory of the running disk as lookup root
@@ -862,7 +860,7 @@ These functions are used to manipulate the states of a sprite:
 
 ### Primitives
 
-* `SYNC`: synchronizes primitive commands to the driver, only use in the manual updating mode (without calling `UPDATE_WITH`)
+* `SYNC`: synchronizes primitive commands to the driver, used in the manual updating mode only (without calling `UPDATE_WITH`)
 	* returns the elapsed time since last synchronizing
 * `CLS [l]`: clears a frame buffer at a specific layer, with range of values from 0 to 4, see top most of the graphics section for details; clears all layers if no argument passed
 * `COL c`: sets the default color value of future commands
@@ -1232,9 +1230,9 @@ READ w, x, y, z
 PRINT w; x; y; LEN(z);
 ~~~~~~~~~~
 
-The `PERSIST` statement automatically saves and loads data with variables, all data are persisted on disk. It's helpful to make a way simple saving and loading data, such as highscore, game progress, etc. It deals with a couple of data types: nil, integer, real, string, and collections. The function persists the values of variables at program exit, and regains values when running to the same `PERSIST` statements next time.
+The `PERSIST` statement automatically saves and loads data with variables, for nonvolatile storage. It makes a way simple saving and loading data, such as highscore, game progress, etc. It can deal with a couple of data types: nil, integer, real, string, and collections. The function persists the values of variables at program exit, and regains values when running to the same `PERSIST` statements at next execution.
 
-* `PERSIST ...`: marks some variables as persistence; this statement can be only called in global scope with global variables
+* `PERSIST ...`: marks some variables as nonvolatile persistence; can be only called in global scope with global variables
 
 Eg:
 
@@ -1251,7 +1249,7 @@ w = LIST(-1, -2, -3)
 
 ## Libraries
 
-Most aspects in BASIC8 are hardware independent. Nevertheless, it should be noticed that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
+Most aspects in BASIC8 are hardware independent. Nevertheless, keep in mind that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
 
 ### Algorithm
 
@@ -1274,7 +1272,7 @@ These functions are used to perform a pathfinding algorithm on 2D grids:
 	* `ex`: the x value of the ending position
 	* `ey`: the y value of the ending position
 	* `p`: an invokable object which accepts x, y position and returns the walking cost at that point
-	* returns an approachable path, in a list of "[vec2](#vector-and-matrix)", may be empty
+	* returns an approachable path, in a list of "[vec2](#vector-and-matrix)", might be empty
 
 Grid coordinates can be any integer, with range of values from -32,767 to 32,767. Once the `SET` function of a pather is called, a cost matrix will be prefilled; it exists until calling `CLEAR`. The `FIND` function prefers to use invokable to get grid cost, and falls to use prefilled matrix if no lazy evaluator provided.
 
@@ -1801,8 +1799,10 @@ Some words are not implemented for actual functions, yet they are reserved for f
 
 ## Type names
 
-Valid type names as following: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE".
+Valid type names: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE". It's guaranteed these names won't be changed in future release.
 
-Data structures in library may be implemented as referenced "USERTYPE_REF", or non-referenced "USERTYPE". You may get particular type name with the `TYPE` statement if a structure has overridden typing, like "SPRITE", "JSON", etc. Also the `TYPEOF` statement is used to get overridden typing for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. All overridden type names may be changed in future version, so don't presume to use overridden names.
+Data structures in library might be implemented as referenced "USERTYPE_REF", or non-referenced "USERTYPE". You could get particular type name with the `TYPE` statement if a structure has overridden it, like "SPRITE", "JSON", etc. Also use the `TYPEOF` statement to get overridden names for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. However all overridden type names might be changed in future, so don't presume these strings for specific types.
 
 [HOME](#welcome-to-basic8)
+
+<!-- Do not use any undocumented or commented features. -->

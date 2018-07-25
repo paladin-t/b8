@@ -11,6 +11,7 @@ Libraries:
 * Added a `FONT` function to customize font face with quantized image for the `TEXT` function
 * Added a `POLL` function to poll network events manually
 * Fixed a return value overwriting bug with network callback
+* Fixed a real number formatting bug with different locales
 
 Editor:
 

@@ -6,9 +6,9 @@
 
 [Manual](https://paladin-t.github.io/b8/docs/manual) |
 [Changelog](https://paladin-t.github.io/b8/docs/changelog) |
+[Wiki](https://github.com/paladin-t/b8/wiki) |
 [Gallery](https://paladin-t.github.io/b8/pages/gallery) |
 [Why BASIC8?](https://paladin-t.github.io/b8/pages/why) |
-[Wiki](https://github.com/paladin-t/b8/wiki) |
 [About](https://paladin-t.github.io/b8/pages/about)
 
 **Get BASIC8!**
@@ -38,7 +38,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). Furthermore it's possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). Furthermore it's possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), and [use plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
@@ -54,7 +54,7 @@ BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app
 
 ![](pages/imgs/banner_platforms.png)
 
-BASIC8 can be productive. Make redistributable standalone player [as executable binary](https://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux, and [as web page](https://steamcommunity.com/sharedfiles/filedetails/?id=1391950196) with the [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686) for browsers.
+BASIC8 is productive. Make redistributable standalone player [as executable binary](https://steamcommunity.com/sharedfiles/filedetails/?id=1328785409) with the [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512) for Windows, Mac OS X and Linux, and [as web based](https://steamcommunity.com/sharedfiles/filedetails/?id=1391950196) with the [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686) for browsers.
 
 ### Get BASIC8
 
@@ -74,7 +74,7 @@ BASIC8 can be productive. Make redistributable standalone player [as executable 
 | Links | |
 |----|----|
 | Discuss | [Forums](https://steamcommunity.com/app/767240/discussions/) |
-| Chat | [#BASIC8 on Discord](https://discord.gg/phR38jm) |
+| Chat | [#basic8 on Discord](https://discord.gg/phR38jm) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin) |
-| Devlogs | [Steam discussion](https://steamcommunity.com/app/767240/discussions/9/) |
-| Projects | [Tracking boards](https://github.com/paladin-t/b8/projects) |
+| Devlogs | [On Steam](https://steamcommunity.com/app/767240/discussions/9/) |
+| Roadmap | [Tracking boards](https://github.com/paladin-t/b8/projects) |

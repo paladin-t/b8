@@ -12,6 +12,6 @@ There are also some extra tools as regular disks available at Workshop:
 * [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686)
 * [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993)
 
-Besides it's also possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766) with built-in libraries; or use [plugins](https://github.com/paladin-t/b8.plugins) to extend the editors.
+It's also possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766) with built-in libraries; and use [plugins](https://github.com/paladin-t/b8.plugins) to extend the editors.
 
 [Like](https://store.steampowered.com/recommended/recommendgame/767240) BASIC8?

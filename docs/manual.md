@@ -6,7 +6,7 @@ Click to read this [manual online](https://paladin-t.github.io/b8/docs/manual); 
 
 BASIC8 is an integrated fantasy computer for game and other program development. You can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and built-in tools for editing sprite, tiles, map, quantized, etc.
 
-It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you had not chosen other license explicitly. Every supported code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even cooperate together. The only community guideline is just be polite and respectful to other users and their work too; and don't do anything bad.
+It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you had not chosen other license explicitly. Every supported code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even collaborate together. The only community guideline is just be polite and respectful to other users and their work too; and don't do anything bad.
 
 You could read this manual in any order as you wish, and get back to lookup for explanations at any time.
 
@@ -209,7 +209,7 @@ Identifiers and keywords are case-insensitive, but it stores what exactly you ty
 
 ### Variable and data types
 
-BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The built-in types are nil, numbers, string, type, array, collections, iterators, class, routine, lambda, coroutine; besides, BASIC8 offers some data structures as libraries, which will be explained later.
+BASIC8 is a dynamic programming language, therefore variables don't have types, but values do. The built-in types are nil, numbers, string, type, array, collections, iterators, class, routine, lambda, coroutine; besides, BASIC8 offers some data structures as libraries which will be explained later.
 
 Nil is a special type, the only valid value is `NIL`, a.k.a. `NULL`, `NONE` or `NOTHING`.
 
@@ -243,7 +243,7 @@ A string begins and ends with a pair of double quotation marks `""`, it stores w
 
 ### Comment
 
-A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comments begin with `REM` statements, which stands for "REMark", and single quotation marks `'` as shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comments, begins with `'[` and ends with `']`, all text between them are ignored for computing.
+A comment is a user readable explanation or annotation in source code. They are added with the purpose of making source code easier for humans to understand, and are ignored by compilers and interpreters. BASIC8 supports traditional single line comment begins with the `REM` statement, which stands for "REMark", and single quotation mark `'` as a shortcut. All text from a comment mark till the end of line are ignored. Besides, BASIC8 supports a form of multiline comment, begins with `'[` and ends with `']`, all text between are ignored for computing.
 
 ### Arithmetic and relational operations
 
@@ -323,7 +323,7 @@ DIM nums(10)
 DIM strs$(2, 5)
 ~~~~~~~~~~
 
-The common naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. It's defined by a `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array index begins from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression which results in an integer; invalid index will cause an error.
+The common naming rule for array identifiers is the same as naming variables, actually all user identifiers in BASIC8 do the same. It's defined by a `DIM` keyword followed with an array identifier, begins with an open bracket and ends with a close bracket. Dimensions are separated by commas. Array index begins from zero in BASIC8, therefore `nums(0)` is the first element of array `nums`, it's a little different from other BASIC dialects, but more common in most modern programming languages. An array index can be a non-negative integer value from a constant, a variable or an expression that results in an integer; invalid index will cause an error.
 
 ## Control structures
 
@@ -394,7 +394,7 @@ UNTIL a > 10
 
 The `EXIT` statement is used to discontinue a loop.
 
-A labeled target constructs of a label identifier and a following colon as `label:`. BASIC8 supports a `GOTO` statement that performs unconditional control transfer. You can call it as `GOTO label`, to transfer the execution flow to `label:` at next step, rather than the following line of the `GOTO`.
+A labeled target constructs of a label identifier and a following colon as `label:`. BASIC8 supports a `GOTO` statement which performs unconditional control transfer. You can call it as `GOTO label`, to transfer the execution flow to `label:` at next step, rather than the following line of the `GOTO`.
 
 `GOSUB` is similar to `GOTO`, but it can be returned by a `RETURN` statement.
 
@@ -505,7 +505,7 @@ NEXT
 
 A sub routine, a.k.a. "routine", "sub", "function", or "procedure", is often supposed to be a good abstraction of common and reusable code blocks. A sub routine in BASIC8 begins with `DEF` and ends with `ENDDEF`, it will be hereinafter described as "routine" for short. A routine name follows after `DEF`, then with a list of parameters clamped with a pair of brackets. Call a routine by its name, with a list of arguments clamped with a pair of brackets. It requires an extra `CALL` statement when a routine is declared below the invocation. The `RETURN` statement is also used to end a routine, with an optional result value to its caller.
 
-Each routine has its own scope, in which statements in that routine body lookup for variables preferentially, before looking into outer scopes.
+Each routine has its own scope, from where statements in that routine body look up for variables preferentially, before looking into outer scopes.
 
 Eg:
 
@@ -585,7 +585,7 @@ A Lambda becomes a closure after it captured some values from an outer scope.
 
 BASIC8 offers full support for lambda, including invokable as a value, higher order function, closure, currying, etc.
 
-It begins with a `LAMBDA` keyword, follows with a parameter list, with none or multiple parameter identifiers; then a lambda body, which is also clamped with a pair of brackets. It's able to write multiline statements in a lambda body. Use the `RETURN` statement to return a value and exit from a lambda execution as well. The tilde symbol `~` is short for `LAMBDA`.
+It begins with a `LAMBDA` keyword, follows with a parameter list, with none or multiple parameter identifiers; and then a lambda body, that is also clamped with a pair of brackets. It's able to write multiline statements in a lambda body. Use the `RETURN` statement to return a value and exit from a lambda execution as well. The tilde symbol `~` is short for `LAMBDA`.
 
 Eg:
 
@@ -672,7 +672,7 @@ A coroutine is a special data type in BASIC8 encapsulating an invokable object. 
 	* returns true if can be further iterated, otherwise false if finished
 * `GET(co)`: gets any yielded or returned value of the current iteration
 * `GET_ERROR(co)`: gets any execution error of a coroutine
-* `WAIT_FOR(s)`: constructs a non-referenced value which represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
+* `WAIT_FOR(s)`: constructs a non-referenced value that represents for waiting for certain seconds before dispatching to next coroutine cycle, only works with automatically dispatched coroutine
 	* `s`: can be integer or real number
 
 Eg:
@@ -904,7 +904,7 @@ These functions are used to manipulate the states of a sprite:
 
 The beginning index of sprite frame is 1.
 
-* `STEP_ON(y)`: creates a non-referenced "step on" value, which represents for aligning a sprite's bottom edge to `y`
+* `STEP_ON(y)`: creates a non-referenced "step on" value, that represents for aligning a sprite's bottom edge to `y`
 * `SPR spr, x, y, r = 0`: draws a sprite
 	* `x`: the horizontal position of the top-left corner
 	* `y`: the vertical position of the top-left corner, or the "step on" value of the bottom edge
@@ -1249,7 +1249,7 @@ w = LIST(-1, -2, -3)
 
 ## Libraries
 
-Most aspects in BASIC8 are hardware independent. Nevertheless, keep in mind that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
+Most aspects in BASIC8 are architecture independent. Nevertheless, keep in mind that BASIC8 always uses [little-endian](https://en.wikipedia.org/wiki/Endianness#Little-endian) as sequential bit order.
 
 ### Algorithm
 
@@ -1547,12 +1547,12 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 
 | JSON | BASIC8 |
 |---|---|
-| Null | NIL |
-| Bool | JSON_BOOL |
-| Number | INTEGER or REAL |
-| String | STRING |
-| Array | LIST |
-| Object | DICT (unordered) |
+| NULL | NIL |
+| BOOL | JSON_BOOL |
+| NUMBER | INTEGER or REAL |
+| STRING | STRING |
+| ARRAY | LIST |
+| OBJECT | DICT (unordered) |
 
 * `JSON_BOOL(b)`: creates a JSON bool with a BASIC8 integer
 	* `b`: BASIC8 integer as bool

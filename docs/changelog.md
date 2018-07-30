@@ -5,6 +5,7 @@
 Language:
 
 * Fixed a multiple disposing bug with lambda
+* Fixed a crash bug with incomplete structures
 
 Libraries:
 

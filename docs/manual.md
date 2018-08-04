@@ -6,7 +6,7 @@ Click to read this [manual online](https://paladin-t.github.io/b8/docs/manual); 
 
 BASIC8 is an integrated fantasy computer for game and other program development. You can create, share and play disks in a BASIC dialect, with retro 8-bit style flavour, and built-in tools for editing sprite, tiles, map, quantized, etc.
 
-It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you had not chosen other license explicitly. Every supported code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even collaborate together. The only community guideline is just be polite and respectful to other users and their work too; and don't do anything bad.
+It's encouraged to share your creativity. All disks are shared under the [CC-BY](https://creativecommons.org/licenses/by/4.0) license as default, if you had not chosen other license explicitly. Every supported code, sprite, map and other data are viewable and editable to other users, it is recommended to learn and communicate with each other, also allowed to derive from other users' work or even collaborate together. The only community guideline is just be polite and respectful to other users and their work too.
 
 You could read this manual in any order as you wish, and get back to lookup for explanations at any time.
 

@@ -6,6 +6,7 @@ Language:
 
 * Fixed a multiple disposing bug with lambda
 * Fixed a crash bug with incomplete structures
+* Fixed a crash bug with unused coroutine
 
 Libraries:
 
@@ -13,6 +14,7 @@ Libraries:
 * Added a `POLL` function to poll network events manually
 * Fixed a return value overwriting bug with network callback
 * Fixed a real number formatting bug with different locales
+* Fixed a potential crash bug with network callback
 
 Editor:
 

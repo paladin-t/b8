@@ -296,7 +296,7 @@ def gameover(delta)
 	endif
 enddef
 
-' Next level state.
+' Next level stage.
 def nextlv(delta)
 	' Ticks.
 	t = t + delta

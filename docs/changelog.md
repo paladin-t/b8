@@ -15,6 +15,7 @@ Libraries:
 * Fixed a return value overwriting bug with network callback
 * Fixed a real number formatting bug with different locales
 * Fixed a potential crash bug with network callback
+* Fixed a random seeding issue
 
 Editor:
 

@@ -1795,6 +1795,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `SAY`
 * `SHADER`
 * `SOCKET`, `RECV`, `RECEIVE`
+* `TRY`
 * `WEB`
 
 ## Type names

@@ -976,8 +976,8 @@ The `TOUCH` statement takes an index of pressing, and assigns all result values 
 	* `x`: for output, the horizontal position of a pointer
 	* `y`: for output, the vertical position of a pointer
 	* `b0`: for output, true if the left mouse button is pressed, or touched with a finger pressing
-	* `b1`: for output, true if the right mouse button is pressed
-	* `b2`: for output, true if the middle mouse button is pressed
+	* `b1`: for output, true if the right mouse button is pressed, ignored by finger pressing
+	* `b2`: for output, true if the middle mouse button is pressed, ignored by finger pressing
 
 ### Gamepad
 

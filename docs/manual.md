@@ -1474,6 +1474,17 @@ Parameter format of `NOW`:
 
 * `MSGBOX(msg)`: shows a message box with text
 
+* `OPEN_FILE_DIALOG([y [, m]])`: shows a file opening dialog box
+	* `y`: file types; separated by comma for multiple types, semicolon for categories
+	* `m`: whether allows multiple selection
+	* returns string for single selection, list of strings for multiple, or nil for canceled
+* `SAVE_FILE_DIALOG([y])`: shows a file saving dialog box
+	* `y`: file types; separated by comma for multiple types, semicolon for categories
+	* returns string for selection, or nil for canceled
+* `PICK_DIRECTORY_DIALOG([d])`: shows a directory picking dialog box
+	* `d`: default directory
+	* returns string for selection, or nil for canceled
+
 ### Image
 
 * `IMAGE()`: creates an image object
@@ -1726,7 +1737,7 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 * `CPU_CORE_COUNT`: gets the core count of the current CPU
 
-* `SET_OUTPUT_VISIBLE(s = TRUE)`: for the purpose of debugging; sets the visibility of the output window
+* `SET_OUTPUT_VISIBLE(s = TRUE)`: for the purpose of debugging; sets the visibility of the output window programmatically
 	* `s`: true to show, false to hide
 * `GET_APP_DIRECTORY()`: **platform dependent**, gets the directory path of the current BASIC8 fantasy computer
 * `GET_CURRENT_DIRECTORY()`: **platform dependent**, gets the current working directory path

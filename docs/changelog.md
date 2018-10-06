@@ -1,5 +1,11 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.8
+
+Libraries:
+
+* Added file and directory selection dialogs to the GUI library
+
 ### v1.4.7
 
 Language:

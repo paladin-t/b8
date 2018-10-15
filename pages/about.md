@@ -1,6 +1,6 @@
 ## About
 
-Call me Tony Wang, or just Tony. I used to develop video games in big companies for many years, and also developed some indie games. Eventually I found myself significantly successful at doing two kind of things: making unsuccessful indie games, and making game development tools. So I decided to put efforts on the latter making BASIC8, hope you enjoy it as much as I do creating it.
+Call me Tony Wang, or just Tony. I used to develop video games in big companies for quite a bit of time, and also developed some indie games. Eventually I found myself doing significantly successful at two kind of things: making unsuccessful indie games, and making game development tools. So I decided to put efforts on the latter making BASIC8, everything here begins from that day, hope you enjoy it as much as I do creating it.
 
 ### Built with
 

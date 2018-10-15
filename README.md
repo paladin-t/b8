@@ -19,7 +19,7 @@
 |----|----|
 | <img src="pages/imgs/app.png" width="256"> | BASIC8 is an integrated **Fantasy Computer** for game and other program development. You can create, share and play disks in a modern BASIC dialect, with built-in tools for editing sprite, tiles, map, quantized, etc. |
 
-It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for modern development for everyone.
+It's been a while since we used to enjoy coding and playing straightforward after a computer bootup. The goal of BASIC8 is bringing a sense of joy back from retro/vintage computing and gaming, also being quick at getting higher level stuff done for modern development.
 
 ### Technical specifications
 
@@ -38,15 +38,15 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ![](pages/imgs/tools.png)
 
-BASIC8 provides built-in tools for editing sprite, tiles, map, quantized, etc. And extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). Furthermore it's possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), and [use plugins](https://github.com/paladin-t/b8.plugins).
+BASIC8 offers a range of built-in tools for editing sprite, tiles, map, quantized, etc; and extra tools as regular disks, such as the [Wave Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1352790993), [Player Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512), and [HTML Maker](https://steamcommunity.com/sharedfiles/filedetails/?id=1391948686). Furthermore it's possible to [bring your own tools](https://steamcommunity.com/sharedfiles/filedetails/?id=1350153766), or [use plugins](https://github.com/paladin-t/b8.plugins).
 
 ### Shareable disks
 
-See examples [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/), [Infinity Fighter](https://paladin-t.github.io/b8/examples/Infinity%20Fighter/) and [Boing Ball](https://paladin-t.github.io/b8/examples/Boing%20Ball/).
+See examples, [Cosmos Saga](https://paladin-t.github.io/b8/examples/Cosmos%20Saga/), [Infinity Fighter](https://paladin-t.github.io/b8/examples/Infinity%20Fighter/), and [Boing Ball](https://paladin-t.github.io/b8/examples/Boing%20Ball/), for the first image.
 
 ![](pages/imgs/cosmos_saga.gif) ![](pages/imgs/infinity_fighter.gif) ![](pages/imgs/boing_ball.gif)
 
-BASIC8 disks can be handily shared via [Workshop](https://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`" file, "`*.png`", or text based for sharing through other ways.
+BASIC8 disks can be handily shared via the [Workshop](https://steamcommunity.com/app/767240/workshop/) with built-in [tools](https://paladin-t.github.io/b8/docs/workshop); saved as "`*.b8`", "`*.png`" file, or text based through other sharing ways.
 
 [![Workshop](docs/imgs/workshop.png)](https://steamcommunity.com/app/767240/workshop/)
 

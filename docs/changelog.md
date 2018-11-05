@@ -8,6 +8,7 @@ Libraries:
 * Fixed a crash bug with invalid database value
 * Fixed a crash bug when using an iterator in a conditional expression
 * Fixed a crash bug with closed archive
+* Fixed a memory leak with wrong iterator usage
 
 ### v1.4.7
 

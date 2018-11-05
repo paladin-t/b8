@@ -5,6 +5,9 @@
 Libraries:
 
 * Added file and directory selection dialogs to the GUI library
+* Fixed a crash bug with invalid database value
+* Fixed a crash bug when using an iterator in a conditional expression
+* Fixed a crash bug with closed archive
 
 ### v1.4.7
 

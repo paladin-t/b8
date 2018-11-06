@@ -4,10 +4,10 @@ Discover =
 	Screenshots = https://steamcommunity.com/app/767240/screenshots/
 	= end
 Forums =
-	General discussions = https://steamcommunity.com/app/767240/discussions/4/
+	General Discussions = https://steamcommunity.com/app/767240/discussions/4/
+	Help Wanted = https://steamcommunity.com/app/767240/discussions/7/
 	Devlogs = https://steamcommunity.com/app/767240/discussions/9/
-	Help wanted = https://steamcommunity.com/app/767240/discussions/7/
-	Workshop discussions = https://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
+	Workshop Discussions = https://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
 Utilities =
 	Player Maker = https://steamcommunity.com/sharedfiles/filedetails/?id=1328727512

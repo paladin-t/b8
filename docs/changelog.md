@@ -9,6 +9,7 @@ Libraries:
 * Fixed a crash bug when using an iterator in a conditional expression
 * Fixed a crash bug with closed archive
 * Fixed a memory leak with wrong iterator usage
+* Fixed a memory leak with non-closed archive
 
 ### v1.4.7
 

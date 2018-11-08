@@ -2,13 +2,16 @@
 
 ### v1.4.8
 
+Language:
+
+* Fixed a crash bug when using an iterator in a conditional expression
+* Fixed a memory leak with wrong iterator usage
+
 Libraries:
 
 * Added file and directory selection dialogs to the GUI library
 * Fixed a crash bug with invalid database value
-* Fixed a crash bug when using an iterator in a conditional expression
 * Fixed a crash bug with closed archive
-* Fixed a memory leak with wrong iterator usage
 * Fixed a memory leak with non-closed archive
 
 ### v1.4.7

@@ -5,6 +5,7 @@
 Language:
 
 * Fixed a crash bug when using an iterator in a conditional expression
+* Fixed a crash bug when `MOD` by zero
 * Fixed a memory leak with wrong iterator usage
 
 Libraries:

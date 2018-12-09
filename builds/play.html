@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--
+BASIC8 Player
+Copyright (C) 2017 - 2018 Wang Renxin
+Learn more: https://paladin-t.github.io/b8/
+Get BASIC8: https://store.steampowered.com/app/767240/
+-->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>BASIC8 Player</title>
+		<style type="text/css">
+			body {
+				margin: 0; padding: 0;
+				background-color: #789;
+				font: 14px Helvetica, Arial, sans-serif;
+			}
+			#page {
+				width: 600px; margin: 2em auto; padding: 20px 50px;
+				border-radius: 1em;
+				background-color: #fff;
+			}
+			#content {
+				position: relative;
+			}
+			#loading {
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+				z-index: 10;
+			}
+			.spinner {
+				width: 50px; height: 50px; margin: 0px auto;
+				border-left: 10px solid rgb(52,152,219); border-right: 10px solid rgb(52,152,219); border-bottom: 10px solid rgb(52,152,219); border-top: 10px solid rgb(49,109,223);
+				border-radius: 100%;
+				background-color: rgb(119,136,153);
+				-webkit-animation: rotation .8s linear infinite; -moz-animation: rotation .8s linear infinite; -o-animation: rotation .8s linear infinite; animation: rotation 0.8s linear infinite;
+			}
+			@-webkit-keyframes rotation { from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(360deg); } }
+			@-moz-keyframes rotation { from { -moz-transform: rotate(0deg); } to { -moz-transform: rotate(360deg); } }
+			@-o-keyframes rotation { from { -o-transform: rotate(0deg); } to { -o-transform: rotate(360deg); } }
+			@keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+			.button {
+				background: #3498db;
+				border-radius: 6px;
+				color: #ffffff;
+				font-size: 14px;
+				background: #3498db;
+				padding: 5px 20px 5px 20px;
+				text-decoration: none;
+			}
+			.button:hover {
+				background: #3cb0fd;
+				text-decoration: none;
+			}
+			a:link, a:visited { text-decoration: none; color: #69c; }
+			@media (max-width: 700px) {
+				body { background-color: #fff; }
+				#page {
+					width: auto; margin: 0 auto; padding: 1em;
+					border-radius: 0;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="page">
+			<div id="content">
+				<canvas id="canvas" width="480" height="384" style="max-width: 100%; height: auto; width: auto\9; margin: 0 auto; display: block;" oncontextmenu="event.preventDefault()" onmousedown="window.focus()"></canvas>
+				<div id="loading"><figure id="spinner"><div class="spinner" /></figure></div>
+			</div>
+			<div id="controls" style="display: none;">
+				<p align="center"><input id="fullscreen" type="button" class="button" value="Fullscreen" onclick="Module.requestFullscreen(false);" /></p>
+			</div>
+			<p align="center">Powered by <a href="https://paladin-t.github.io/b8/">BASIC8</a>, disk player build (17)</p>
+		</div>
+		<script type="text/javascript">
+			// Initializes the module.
+			var Module = {
+				canvas: document.getElementById('canvas'),
+				spinner: document.getElementById('spinner'),
+				controls: document.getElementById('controls'),
+				print: function(text) {
+					console.log(text);
+				},
+				setStatus: function(text) {
+					if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
+					if (text === Module.setStatus.text) return;
+					var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+					var now = Date.now();
+					if (m && now - Date.now() < 30) return;
+					if (m) {
+						text = m[1];
+						Module.spinner.hidden = false;
+						Module.controls.style.display = 'none';
+					} else {
+						if (!text) {
+							Module.spinner.hidden = true;
+							Module.controls.style.display = 'block';
+						}
+					}
+				}
+			};
+			Module.setStatus('Downloading...');
+			window.onerror = function() {
+				Module.setStatus('Exception thrown, see JavaScript console.');
+				Module.spinner.style.display = 'none';
+				Module.setStatus = function(text) { if (text) Module.printErr('[post-exception status] ' + text); };
+			};
+			// Returns whether shows a play button before running.
+			function getPlayButtonEnabled() {
+				return true;
+			}
+			// Returns input config for gamepads.
+			function getInputConfig() {
+				// Contains two gamepads, each has six buttons; with configuration as [device, index, code].
+				//   device: 2 for keyboard
+				//    index: ignored, use zero for keyboard
+				//     code: see https://wiki.libsdl.org/SDLScancodeLookup for keyboard scancodes as integer
+				return JSON.stringify(
+					[
+						[[2,0,4],[2,0,7],[2,0,26],[2,0,22],[2,0,13],[2,0,14]],
+						[[2,0,80],[2,0,79],[2,0,82],[2,0,81],[2,0,74],[2,0,77]]
+					]
+				);
+			}
+			// Returns whether the onscreen gamepad is enabled.
+			// Enabling this doesn't force gamepad to show, but disabling forces it to hide.
+			function getOnscreenGamepadEnabled() {
+				return true;
+			}
+			// Returns whether the stat. information is visible.
+			function getStatVisible() {
+				return false;
+			}
+			// Returns time interval in seconds to persist automatically,
+			// or zero for non-automatic persistence.
+			function getPersistInterval() {
+				return 5.0;
+			}
+			// Functions to implement clipboard operations.
+			var clipboard = undefined;
+			function setClipboardText(txt) {
+				clipboard = txt; return 1;
+			}
+			function getClipboardText() {
+				return clipboard;
+			}
+			function hasClipboardText() {
+				return hasClipboardText != undefined;
+			}
+		</script>
+		<script async type="text/javascript" src="b8p.js"></script>
+	</body>
+</html>

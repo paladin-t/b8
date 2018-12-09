@@ -14,6 +14,7 @@ Libraries:
 * Fixed a crash bug with invalid database value
 * Fixed a crash bug with closed archive
 * Fixed a memory leak with non-closed archive
+* Fixed an option accessing issue with the network library
 
 ### v1.4.7
 

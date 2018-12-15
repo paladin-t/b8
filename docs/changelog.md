@@ -16,6 +16,10 @@ Libraries:
 * Fixed a memory leak with non-closed archive
 * Fixed an option accessing issue with the network library
 
+Editor:
+
+* Fixed a crash bug with pen size greater than 1px
+
 ### v1.4.7
 
 Language:

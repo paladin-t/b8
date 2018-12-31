@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 BASIC8 Player
-Copyright (C) 2017 - 2018 Wang Renxin
+Copyright (C) 2017 - 2019 Wang Renxin
 Learn more: https://paladin-t.github.io/b8/
 Get BASIC8: https://store.steampowered.com/app/767240/
 -->
@@ -17,7 +17,8 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 				font: 14px Helvetica, Arial, sans-serif;
 			}
 			#page {
-				width: 600px; margin: 2em auto; padding: 20px 50px;
+				width: 600px;
+				margin: 2em auto; padding: 20px 50px;
 				border-radius: 1em;
 				background-color: #fff;
 			}
@@ -31,7 +32,8 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 				z-index: 10;
 			}
 			.spinner {
-				width: 50px; height: 50px; margin: 0px auto;
+				width: 50px; height: 50px;
+				margin: 0px auto;
 				border-left: 10px solid rgb(52,152,219); border-right: 10px solid rgb(52,152,219); border-bottom: 10px solid rgb(52,152,219); border-top: 10px solid rgb(49,109,223);
 				border-radius: 100%;
 				background-color: rgb(119,136,153);
@@ -42,23 +44,23 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 			@-o-keyframes rotation { from { -o-transform: rotate(0deg); } to { -o-transform: rotate(360deg); } }
 			@keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 			.button {
-				background: #3498db;
+				padding: 5px 20px 5px 20px;
 				border-radius: 6px;
+				background: #3498db;
 				color: #ffffff;
 				font-size: 14px;
-				background: #3498db;
-				padding: 5px 20px 5px 20px;
 				text-decoration: none;
 			}
 			.button:hover {
 				background: #3cb0fd;
 				text-decoration: none;
 			}
-			a:link, a:visited { text-decoration: none; color: #69c; }
+			a:link, a:visited { color: #69c; text-decoration: none; }
 			@media (max-width: 700px) {
 				body { background-color: #fff; }
 				#page {
-					width: auto; margin: 0 auto; padding: 1em;
+					width: auto;
+					margin: 0 auto; padding: 1em;
 					border-radius: 0;
 				}
 			}
@@ -73,7 +75,7 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 			<div id="controls" style="display: none;">
 				<p align="center"><input id="fullscreen" type="button" class="button" value="Fullscreen" onclick="Module.requestFullscreen(false);" /></p>
 			</div>
-			<p align="center">Powered by <a href="https://paladin-t.github.io/b8/">BASIC8</a>, disk player build (17)</p>
+			<p align="center">Powered by <a href="https://paladin-t.github.io/b8/">BASIC8</a>, disk player build (19)</p>
 		</div>
 		<script type="text/javascript">
 			// Initializes the module.

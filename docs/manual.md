@@ -65,15 +65,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 		* [Music](#music)
 		* [Sound effects](#sound-effects)
 
-* Part IV. Editors
-	* [Editors](#editors)
-		* [Code](#code)
-		* [Sprite asset](#sprite-asset)
-		* [Map asset](#map-asset)
-			* [Tiles asset](#tiles-asset)
-		* [Quantized asset](#quantized-asset)
-
-* Part V. Functions
+* Part IV. Functions
 	* [Basic functions](#basic-functions)
 		* [Math functions](#math-functions)
 		* [String functions](#string-functions)
@@ -97,6 +89,14 @@ You could read this manual in any order as you wish, and get back to lookup for 
 		* [System](#system)
 		* [Text](#text)
 		* [Web](#web)
+
+* Part V. Editors
+	* [Editors](#editors)
+		* [Code](#code)
+		* [Sprite asset](#sprite-asset)
+		* [Map asset](#map-asset)
+			* [Tiles asset](#tiles-asset)
+		* [Quantized asset](#quantized-asset)
 
 * Part VI. Appendix
 	* [Built-in sound fonts](#built-in-sound-fonts)
@@ -1042,7 +1042,7 @@ Ln     Sets the duration (length) of the notes. The variable n does not indicate
 On     Sets the current octave. Valid values for n are 0 through 6. An octave begins with C and ends with B.
        Remember that C- is equivalent to B. 
 < >    Changes the current octave respectively down or up one level.
-Nn     Plays a specified note in the seven-octave range. Valid values are from 0 to 84. (0 is a pause.)
+Nn     Plays a specified note in the seven-octave range. Valid values are from 0 to 84. (0 is a pause).
        Cannot use with sharp and flat. Cannot use with the shorthand notation neither.
 MN     Stand for Music Normal. Note duration is 7/8ths of the length indicated by Ln. It is the default mode.
 ML     Stand for Music Legato. Note duration is full length of that indicated by Ln.
@@ -1077,87 +1077,7 @@ Plus 4096 to `y` for interpolating `hz` from the current set with the following 
 
 [HOME](#welcome-to-basic8)
 
-# Part IV. Editors
-
-## Editors
-
-To open a disk for editing, select it, then click `[Head]`, `Open`; or right click on a disk, then click `Open`; or simply double click on it when the `Run on click` option is disabled. You can only have one disk opened at a time.
-
-To run a disk, select it, then click `Disk`, `Run`; or right click on a disk, then click `Run`; or simply double click on it when the `Run on click` option is enabled.
-
-To pause a running disk, click `Disk`, `Pause`, it is only clickable with an opened disk.
-
-To stop a running disk, click `Disk`, `Stop`; or just click the close button on a running canvas.
-
-To edit the properties of a disk, right click on it, then click `Properties`.
-
-To duplicate a disk, select it, then click `[Head]`, `Duplicate`.
-
-To purge all persistence data of a disk, select it, then click `[Head]`, `Cleanup`.
-
-To reload example disks, click `Help`, `Examples`, `Reload all`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
-
-All paletted assets (sprites, tiles, quantized images) in a disk share a same palette data.
-
-The title bar of an unsaved asset will be shown in different color. It automatically saves modifications when closing an asset, or closing a disk; to close without saving, click `Disk`, `Close without saving` with `Shift` key pressed.
-
-### Code
-
-Each disk has an entry source code file "main.bas", it starts execution from there.
-
-To create a new code file, click `Disk`, `New asset`, `Source code`.
-
-To open an existing code file, click `Disk`, `Open asset`, then select a "*.bas" file.
-
-To rename a code file, click `Disk`, `Rename asset`, then select a "*.bas" file.
-
-To delete a code file, click `Disk`, `Delete asset`, then select a "*.bas" file.
-
-### Sprite asset
-
-You can edit colors of palette by right clicking on it.
-
-To create a new sprite asset, click `Disk`, `New asset`, `Sprite`.
-
-To open an existing sprite asset, click `Disk`, `Open asset`, then select a "*.sprite" asset.
-
-To rename a sprite asset, click `Disk`, `Rename asset`, then select a "*.sprite" asset.
-
-To delete a sprite asset, click `Disk`, `Delete asset`, then select a "*.sprite" asset.
-
-### Map asset
-
-To create a new map asset, click `Disk`, `New asset`, `Map`.
-
-To open an existing map asset, click `Disk`, `Open asset`, then select a "*.map" asset.
-
-To rename a map asset, click `Disk`, `Rename asset`, then select a "*.map" asset.
-
-To delete a map asset, click `Disk`, `Delete asset`, then select a "*.map" asset.
-
-#### Tiles asset
-
-You can edit colors of palette by right clicking on it.
-
-All map assets in a disk use a shared tiles asset as reference. You'll be asked to specify the size of a tile when creating first map asset for a disk.
-
-To open and edit a tiles asset, open an existing map asset first, then click the `Edit` button on the top-left corner of a map editor.
-
-### Quantized asset
-
-A quantized image is a paletted image. There are two ways in BASIC8 to create a quantized image, one is creating a blank with specific size, the other one is importing from an existing image file (it supports "*.png", "*.bmp", "*.tga" and "*.jpg" files).
-
-To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then fill in size to create a blank, or browse and import from an image file.
-
-To open an existing quantized image asset, click `Disk`, `Open asset`, then select a "*.quantized" asset.
-
-To rename a quantized image asset, click `Disk`, `Rename asset`, then select a "*.quantized" asset.
-
-To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "*.quantized" asset.
-
-[HOME](#welcome-to-basic8)
-
-# Part V. Functions
+# Part IV. Functions
 
 ## Basic functions
 
@@ -1579,8 +1499,8 @@ Conversions from JSON values to BASIC8 values, or vice versa:
 * `DEG(r)`: converts radians to degrees
 * `RAD(d)`: converts degrees to radians
 
-* `MIN(...)`: gets the minimum value among some numbers
-* `MAX(...)`: gets the maximum value among some numbers
+* `MIN(...)`: gets the minimum one among some numbers
+* `MAX(...)`: gets the maximum one among some numbers
 
 #### Vector and matrix
 
@@ -1781,6 +1701,88 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 [HOME](#welcome-to-basic8)
 
+# Part V. Editors
+
+## Editors
+
+To open a disk for editing, select it, then click `[Head]`, `Open`; or right click on a disk, then click `Open`; or simply double click on it when the `Run on click` option is disabled. You can have only one disk opened at a time.
+
+To run a disk, select it, then click `Disk`, `Run`; or right click on a disk, then click `Run`; or simply double click on it when the `Run on click` option is enabled.
+
+To pause a running disk, click `Disk`, `Pause`, it is only doable with an opened disk.
+
+To stop a running disk, click `Disk`, `Stop`; or just click the close button on a running canvas.
+
+To edit the properties of a disk, right click on it, then click `Properties`.
+
+To duplicate a disk, select it, then click `[Head]`, `Duplicate`.
+
+To purge all persistence data of a disk, select it, then click `[Head]`, `Cleanup`. This will delete all files in the container directory (parent of "content"), except for the content directory.
+
+To reload example disks, click `Help`, `Examples`, `Reload all`. BASIC8 uses UID to identify different disks, this operation will overwrite the disk with the same UID.
+
+All paletted assets (sprites, tiles, quantized images) in a disk share a same palette data.
+
+The title bar of an unsaved asset will be shown in different color. It automatically saves modifications when closing an asset, or closing a disk; to close without saving, click `Disk`, `Close without saving` with `Shift` key pressed.
+
+### Code
+
+Each disk has an entry source code file "main.bas", where execution starts from.
+
+To create a new code file, click `Disk`, `New asset`, `Source code`.
+
+To open an existing code file, click `Disk`, `Open asset`, then select a "*.bas" file.
+
+To rename a code file, click `Disk`, `Rename asset`, then select a "*.bas" file.
+
+To delete a code file, click `Disk`, `Delete asset`, then select a "*.bas" file.
+
+### Sprite asset
+
+You can edit colors of a shared palette by right clicking on it.
+
+To create a new sprite asset, click `Disk`, `New asset`, `Sprite`.
+
+To open an existing sprite asset, click `Disk`, `Open asset`, then select a "*.sprite" asset.
+
+To rename a sprite asset, click `Disk`, `Rename asset`, then select a "*.sprite" asset.
+
+To delete a sprite asset, click `Disk`, `Delete asset`, then select a "*.sprite" asset.
+
+### Map asset
+
+To create a new map asset, click `Disk`, `New asset`, `Map`.
+
+To open an existing map asset, click `Disk`, `Open asset`, then select a "*.map" asset.
+
+To rename a map asset, click `Disk`, `Rename asset`, then select a "*.map" asset.
+
+To delete a map asset, click `Disk`, `Delete asset`, then select a "*.map" asset.
+
+#### Tiles asset
+
+You can edit colors of a shared palette by right clicking on it.
+
+All map assets in a disk use a shared tiles asset as reference. You'll be asked to specify the size per tile when creating first map asset for a disk.
+
+To open and edit a tiles asset, open an existing map asset first, then click the `Edit` button on the top-left corner of a map editor.
+
+### Quantized asset
+
+You can edit colors of a shared palette by right clicking on it.
+
+A quantized image is a paletted image. There are two ways in BASIC8 to create a quantized image, one is creating a blank with specific size, the other one is importing from an existing image file (supports "*.png", "*.bmp", "*.tga" and "*.jpg" files).
+
+To create a new quantized image asset, click `Disk`, `New asset`, `Quantized image`, then fill in size to create a blank, or browse and import from an image file.
+
+To open an existing quantized image asset, click `Disk`, `Open asset`, then select a "*.quantized" asset.
+
+To rename a quantized image asset, click `Disk`, `Rename asset`, then select a "*.quantized" asset.
+
+To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "*.quantized" asset.
+
+[HOME](#welcome-to-basic8)
+
 # Part VI. Appendix
 
 ## Built-in sound fonts
@@ -1811,10 +1813,10 @@ Some words are not implemented for actual functions, yet they are reserved for f
 
 ## Type names
 
-Valid type names: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE". It's guaranteed these names won't be changed in future release.
+The valid type names are: "NIL", "UNKNOWN", "INTEGER", "REAL", "NUMBER", "STRING", "TYPE", "USERTYPE", "USERTYPE_REF", "ARRAY", "LIST", "LIST_ITERATOR", "DICT", "DICT_ITERATOR", "COLLECTION", "ITERATOR", "CLASS", "ROUTINE". It's guaranteed that these names won't be changed in future release.
 
-Data structures in library might be implemented as referenced "USERTYPE_REF", or non-referenced "USERTYPE". You could get particular type name with the `TYPE` statement if a structure has overridden it, like "SPRITE", "JSON", etc. Also use the `TYPEOF` statement to get overridden names for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. However all overridden type names might be changed in future, so don't presume these strings for specific types.
+Library data structures might be implemented as either referenced "USERTYPE_REF", or non-referenced "USERTYPE". It is possible to get particular type name with the `TYPE` statement if a structure has overridden it, like "SPRITE", "JSON", etc; and use the `TYPEOF` statement to get overridden names for non-referenced structures, like "DRIVER", "JSON_BOOL", etc. However all overridden type names might be changed in future, so don't presume these strings for specific types.
 
 [HOME](#welcome-to-basic8)
 
-<!-- Do not use any undocumented or commented features. -->
+<!-- Do not use anything that is not in this document or commented. -->

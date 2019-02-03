@@ -259,7 +259,7 @@ Driver:
 
 Libraries:
 
-* Added a `COPY_TO` to the file information library
+* Added a `COPY_TO` function to the file information library
 * Fixed a path resolving bug of file and directory with UTF-8 character
 * Fixed a crash bug with path concatenating
 * Fixed a packing issue for existing package with the archive library

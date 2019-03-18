@@ -1804,7 +1804,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NEURAL`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PLOT`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
+* `PLOT`, `ARC`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `SAY`
 * `SHADER`
 * `SOCKET`, `RECV`, `RECEIVE`

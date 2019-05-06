@@ -6,7 +6,7 @@ Call me Tony Wang, or just Tony. I used to develop video games in big companies 
 
 * CML [https://github.com/demianmnave/CML/](https://github.com/demianmnave/CML/)
 * ImGui [https://github.com/ocornut/imgui/](https://github.com/ocornut/imgui/)
-* jo_gif [http://www.jonolick.com/home/gif-writer/](http://www.jonolick.com/home/gif-writer/)
+* jo_gif [https://www.jonolick.com/home/gif-writer/](https://www.jonolick.com/home/gif-writer/)
 * libcurl [https://curl.haxx.se/libcurl/](https://curl.haxx.se/libcurl/)
 * libtsf [https://github.com/paladin-t/libtsf/](https://github.com/paladin-t/libtsf/)
 * md4c [https://github.com/mity/md4c/](https://github.com/mity/md4c/)
@@ -16,7 +16,7 @@ Call me Tony Wang, or just Tony. I used to develop video games in big companies 
 * SDL [https://www.libsdl.org/](https://www.libsdl.org/)
 * SQLite [https://sqlite.org/](https://sqlite.org/)
 * stb [https://github.com/nothings/stb/](https://github.com/nothings/stb/)
-* zlib [http://zlib.net/](http://zlib.net/)
+* zlib [https://zlib.net/](https://zlib.net/)
 
 <hr>
 

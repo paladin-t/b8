@@ -877,19 +877,17 @@ These functions are used to manipulate the states of a sprite:
 * `TEXT x, y, v [, c]`: draws a text
 	* `v`: can be number or string
 	* `c`: the color for drawing, uses the default color set by `COL` if no argument passed
-<!--* `PLOT x, y [, col]`: plots a point-->
+* `PLOT x, y [, c]`: plots a point
 * `LINE x0, y0, x1, y1, w = 1 [, c]`: draws a line
 	* `w`: the width (thickness)
 * `CIRC x, y, r [, c]`: draws a circle
 * `CIRCFILL x, y, r [, c]`: draws a filled circle
 * `ELLIPSE x, y, rx, ry [, c]`: draws an ellipse
 * `ELLIPSEFILL x, y, rx, ry [, c]`: draws a filled ellipse
-<!--
-* `ARC x, y, r, sa, ea, pie = FALSE [, col]`: draws an arc
+* `ARC x, y, r, sa, ea, pie = FALSE [, c]`: draws an arc
 	* `sa`: the start angle
 	* `ea`: the end angle
-* `ARCFILL x, y, r, sa, ea, pie = FALSE [, col]`: fills an arc
--->
+* `ARCFILL x, y, r, sa, ea, pie = FALSE [, c]`: draws a filled arc
 * `RECT x0, y0, x1, y1 [, c]`: draws a rectangle
 * `RECTFILL x0, y0, x1, y1 [, c]`: draws a filled rectangle
 * `TRI x0, y0, x1, y1, x2, y2 [, c]`: draws a triangle
@@ -1811,7 +1809,7 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NEURAL`
 * `NOISE`
 * `PAIR`, `TUPLE`
-* `PLOT`, `ARC`, `ARCFILL`, `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
+* `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
 * `SAY`
 * `SHADER`
 * `SOCKET`, `RECV`, `RECEIVE`

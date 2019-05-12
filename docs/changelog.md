@@ -1,5 +1,20 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.4.9
+
+Language:
+
+* Fixed a crash bug with number parsing
+* Fixed a crash bug with invalid expression
+* Fixed a crash bug with invalid routine invoking
+* Fixed a memory leak when reassigning an array element with string
+
+Libraries:
+
+* Added a `PLOT` function to put individual pixels
+* Added an `ARC` function to draw arc or pie shapes
+* Added an `ARCFILL` function to fill arc or pie shapes
+
 ### v1.4.8
 
 Language:

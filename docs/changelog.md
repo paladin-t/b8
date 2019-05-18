@@ -15,6 +15,11 @@ Libraries:
 * Added an `ARC` function to draw arc or pie shapes
 * Added an `ARCFILL` function to fill arc or pie shapes
 
+Editor:
+
+* Added immediate saving on new sprite, map assets created
+* Changed plot mode of the pencil tool to linked
+
 ### v1.4.8
 
 Language:

@@ -6,7 +6,6 @@ Discover =
 Forums =
 	General Discussions = https://steamcommunity.com/app/767240/discussions/4/
 	Help Wanted = https://steamcommunity.com/app/767240/discussions/7/
-	Devlogs = https://steamcommunity.com/app/767240/discussions/9/
 	Workshop Discussions = https://steamcommunity.com/workshop/discussions/18446744073709551615/?appid=767240
 	= end
 Utilities =

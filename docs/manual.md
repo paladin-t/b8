@@ -113,7 +113,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 
 ### Operations
 
-Most home computers from 1970-80s use keyboards as the only developer input method, but mouse and touch are everywhere nowadays. It supports using keyboard, mouse/touch and gamepad to play disks. But BASIC8 uses mouse as the main operation method on the GUI of editors; keyboard is mainly used to write code, and do some shortcuts:
+Most home computers from 1970-80s use keyboard as the only input method for users, other than widespread mouse and touch nowadays. Disks are supposed to be played using keyboard, mouse/touch and gamepad. Mouse is mainly used in BASIC8 to operate on the GUI of editors; while keyboard is mainly used to write code (since it's text based), and do some shortcuts:
 
 * F1: show this manual
 * F7: take a screenshot when playing
@@ -1427,8 +1427,8 @@ Parameter format of `NOW`:
 
 ### IO
 
-* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, often termed with "Documents" or "My Documents"
-* `COMBINE_PATH(x, y)`: combines two parts into a path string
+* `GET_DOCUMENT_PATH()`: gets the document path, with writable accessing rights, often termed as "Documents" or "My Documents"
+* `COMBINE_PATH(x, y)`: combines two path parts into a path string
 	* returns combined path string
 
 * `FILE_INFO(path)`: creates a file information object
@@ -1467,6 +1467,9 @@ Parameter format of `NOW`:
 * `Dir.GET_DIR_NAME()`: gets the directory name of a directory
 * `Dir.IS_BLANK()`: checks whether a directory is blank
 	* returns true for blank directory
+
+* `Dir.EXISTS()`: checks whether a directory exists
+* `Dir.REMOVE()`: removes a directory
 
 ### JSON
 

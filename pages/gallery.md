@@ -20,7 +20,7 @@ Then mix all your work into a playable game, or a decent program:
 
 ![](imgs/playable_now.png)
 
-You can create, edit, import, export, and play redistributable disks in an integrated environment:
+Create, edit, import, export, and play sharable disks in an integrated environment:
 
 ![](imgs/integrated.png)
 

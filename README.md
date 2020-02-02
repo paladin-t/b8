@@ -68,6 +68,7 @@ BASIC8 is productive. Make redistributable standalone player [as executable bina
 | CPU | Atom 1.44GHz <br /> Core 2 Duo 1.83GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |
+| Storage | 50MB available space | 50MB available space |
 
 <hr>
 

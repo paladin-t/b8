@@ -64,6 +64,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 	* [Audio](#audio)
 		* [Music](#music)
 		* [Sound effects](#sound-effects)
+		* [Speech](#speech)
 
 * Part IV. Functions
 	* [Basic functions](#basic-functions)
@@ -145,7 +146,7 @@ It refers to the first icon item on the main menu bar, when speaking of clicking
 The limitations of BASIC8 are carefully chosen to make programs way easy and simple:
 
 * Display: 160x128 pixels
-* Audio: 2 music channels, 4 sound effect channels
+* Audio: 2 music channels, 4 sound effect channels, 1 speech channel
 * Code: BASIC (structured/prototype-based/functional)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
@@ -1012,9 +1013,10 @@ A virtual gamepad has 6 buttons, each button may be binded with a key on keyboar
 
 ## Audio
 
-* `SET_VOLUME(mv = 1, sv = 1)`: sets the volume values of audio, with range of values from 0.0 to 1.0
+* `SET_VOLUME(mv = 1, sv = 1, sp = 1)`: sets the volume values of audio, with range of values from 0.0 to 1.0
 	* `mv`: the volume of music
 	* `sv`: the volume of sound effect
+	* `sp`: the volume of speech
 
 ### Music
 
@@ -1079,6 +1081,15 @@ Channel is indicated implicitly when play a sound effect; redundant sound effect
 	* `id`: the sound effect to stop
 
 Plus 4096 to `y` for interpolating `hz` from the current set with the following one's `hz`.
+
+### Speech
+
+* `SAY words, speed = 72, pitch = 64, throat = 128, mouth = 128`: synthesizes speech according to specific text
+	* `words`: the text to synthesize in English
+	* `speed`: with range of value from 0 to 255
+	* `pitch`: with range of value from 0 to 255
+	* `throat`: with range of value from 0 to 255
+	* `mouth`: with range of value from 0 to 255
 
 [HOME](#welcome-to-basic8)
 
@@ -1813,7 +1824,6 @@ Some words are not implemented for actual functions, yet they are reserved for f
 * `NOISE`
 * `PAIR`, `TUPLE`
 * `QUADTEX`, `POLY`, `POLYFILL`, `POLYTEX`
-* `SAY`
 * `SHADER`
 * `SOCKET`, `RECV`, `RECEIVE`
 * `TRY`

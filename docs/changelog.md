@@ -1,5 +1,17 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5 Feb. 2020
+
+Editor:
+
+* Added a `SAY` function to synthesize speech
+* Added a `PICK_DIRECTORY_DIALOG` function to scriptable plugin
+* Added `GET_ASSETS`, `OPEN_ASSETS` functions to scriptable plugin
+* Fixed a crash bug if frame count was greater than the limitation with scriptable plugin
+* Fixed a selection bug when frame count was greater than 256
+* Fixed an asset invalidation issue with cross frame operations with scriptable plugin
+* Fixed an acquiring issue when copying an entire asset
+
 ### v1.4.9
 
 Language:

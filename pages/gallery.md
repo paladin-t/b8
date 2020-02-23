@@ -12,7 +12,7 @@ Import and edit quantize images:
 
 ![](imgs/creating_images.png)
 
-Write programs in a BASIC dialect, in which music and sound effects can be made also:
+Write programs in BASIC, compose music, sound effects and speech:
 
 ![](imgs/writing_programs.png)
 

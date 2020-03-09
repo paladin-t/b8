@@ -2,9 +2,12 @@
 
 ### v1.5 Feb. 2020
 
-Editor:
+Libraries:
 
 * Added a `SAY` function to synthesize speech
+
+Editor:
+
 * Added a `PICK_DIRECTORY_DIALOG` function to scriptable plugin
 * Added `GET_ASSETS`, `OPEN_ASSETS` functions to scriptable plugin
 * Fixed a crash bug if frame count was greater than the limitation with scriptable plugin

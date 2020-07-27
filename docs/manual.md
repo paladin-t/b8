@@ -1712,10 +1712,11 @@ It's **not** recommended to use functions marked with "**platform dependent**", 
 
 ### Web
 
-* `WEB_REQUEST(url, met = "get" [, f])`: performs an http request
+* `WEB_REQUEST(url, method = "get" [, fields[, headers]])`: performs an http request
 	* `url`: the URL to request
-	* `met`: the request method, can be "get" or "post"
-	* `f`: the fields for post
+	* `method`: the request method, can be "get" or "post"
+	* `fields`: the fields for post
+	* `headers`: the custom headers as a list of string
 	* returns response
 
 [HOME](#welcome-to-basic8)

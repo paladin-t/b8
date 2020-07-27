@@ -1,5 +1,16 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5.1
+
+Libraries:
+
+* Added custom headers for the `WEB_REQUEST` function
+* Added a return value for expected duration of a `SAY` calling
+
+Editor:
+
+* Fixed an inoperable issue after clicking a URL
+
 ### v1.5 Feb. 2020
 
 Libraries:

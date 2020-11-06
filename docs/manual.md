@@ -74,6 +74,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 	* [Libraries](#libraries)
 		* [Algorithm](#algorithm)
 			* [Pathfinding](#pathfinding)
+			* [Walk](#walk)
 		* [Archive](#archive)
 		<!--* [Asynchronization](#asynchronization)-->
 		* [Bytes](#bytes)
@@ -1242,6 +1243,23 @@ NEXT
 ~~~~~~~~~~
 
 Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate with walking cost `m` for grid `x`, `y`.
+
+#### Walk
+
+These functions are used to perform a smooth walk algorithm on 2D grids:
+
+* `WALKER()`: creates a walker object
+* `Walker.SET_OBJECT_SIZE(w, h)`: sets the object size, defaults to 8x8
+* `Walker.SET_TILE_SIZE(w, h)`: sets the tile size, defaults to 8x8
+* `Walker.SET_OFFSET(x, y)`: sets the offset, defaults to 0, 0
+* `Walker.SOLVE(objx, objy, expx, expy, p = NIL, slidable = 5)`: resolves a walking step
+	* `objx`: the x value of the object position
+	* `objy`: the y value of the object position
+	* `expx`: the x value of the expected direction
+	* `expy`: the y value of the expected direction
+	* `p`: an invokable object which accepts x, y position and returns true for blocked, false for pass
+	* `slidable`: non-zero for slidable
+	* returns a resolved directional "[vec2](#vector-and-matrix)", or nil
 
 ### Archive
 

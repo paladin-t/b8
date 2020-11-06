@@ -1,5 +1,18 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5.2
+
+Driver:
+
+* Fixed an indexing bug with multiple joysticks
+
+Libraries:
+
+* Added a walker algorithm
+* Added an error code for the `MGET` function instead of raising an error
+* Added a new stable random generator
+* Fixed a type checking bug with JSON serialization
+
 ### v1.5.1
 
 Libraries:

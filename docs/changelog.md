@@ -13,6 +13,10 @@ Libraries:
 * Added a new stable random generator
 * Fixed a type checking bug with JSON serialization
 
+Editor:
+
+* Added font customization by config for code editor
+
 ### v1.5.1
 
 Libraries:

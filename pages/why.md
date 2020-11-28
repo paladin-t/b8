@@ -4,9 +4,9 @@ There are several fantasy computers/consoles coming up these days, it is possibl
 
 BASIC8 is different from existing fantasy computers. It's designed by thinking of three aspects: how it looks and sounds, how it works, and how it speaks to a human. I'm not willing to make everything strictly retro, instead I prefer to make it retro at appearance, simple to work with, and fun to play with. I hope BASIC8 brings the fun back, as straightforward coding and playing after a home computer bootup.
 
-### BASIC rather than Lua
+### BASIC vs. Lua
 
-Lua is nice, it fits well in particular fields, so do other programming languages. BASIC8 offers both retro BASIC syntax, and modern concepts. You would find BASIC8 easy to learn regardless you are experienced with programming or not. Overall it's great to introduce BASIC to the fantasy computer genre!
+Lua is nice, it fits well in particular fields. BASIC8 offers both retro BASIC syntax, and modern concepts. You would find BASIC8 easy to learn regardless you are experienced with programming or not. Overall it's great to introduce BASIC to the fantasy computer genre, since BASIC is significant to me.
 
 ### No RAM, VRAM or ROM mapping
 

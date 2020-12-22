@@ -1,5 +1,21 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5.3
+
+Libraries:
+
+* Added a `RAYCASTER` algorithm
+* Fixed a crash bug of UDP sending
+* Fixed an input value validation issue of the `WALKER` module
+
+Editor:
+
+* Fixed a menu loading issue
+
+Player:
+
+* Added SoundFont support for HTML5 build
+
 ### v1.5.2
 
 Driver:
@@ -8,7 +24,7 @@ Driver:
 
 Libraries:
 
-* Added a walker algorithm
+* Added a `WALKER` algorithm
 * Added an error code for the `MGET` function instead of raising an error
 * Added a new stable random generator
 * Fixed a type checking bug with JSON serialization

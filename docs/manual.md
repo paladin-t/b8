@@ -74,6 +74,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 	* [Libraries](#libraries)
 		* [Algorithm](#algorithm)
 			* [Pathfinding](#pathfinding)
+			* [Raycast](#raycast)
 			* [Walk](#walk)
 		* [Archive](#archive)
 		<!--* [Asynchronization](#asynchronization)-->
@@ -1244,6 +1245,21 @@ NEXT
 
 Use invokable as `p.FIND(-3, -3, 3, 3, LAMBDA (x, y) (RETURN m))` to evaluate with walking cost `m` for grid `x`, `y`.
 
+#### Raycast
+
+These functions are used to perform a raycasting algorithm on 2D grids:
+
+* `RAYCASTER()`: creates a raycaster object
+* `Ray.SET_TILE_SIZE(w, h)`: sets the tile size, defaults to 8x8
+* `Ray.SET_OFFSET(x, y)`: sets the offset, defaults to 0, 0
+* `Ray.CAST(rayposx, rayposy, raydirx, raydiry, p = NIL)`: casts on map
+	* `rayposx`: the x value of the ray position
+	* `rayposy`: the y value of the ray position
+	* `raydirx`: the x value of the ray direction
+	* `raydiry`: the y value of the ray direction
+	* `p`: an invokable object which accepts x, y position and returns true for blocked, false for pass
+	* returns an approximate intersection position as "[vec2](#vector-and-matrix)", or nil
+
 #### Walk
 
 These functions are used to perform a smooth walk algorithm on 2D grids:
@@ -1673,7 +1689,7 @@ The callback of disconnected is an invokable that accepts a parameter represents
 	* `k`: the option key as string, see following table for details
 	* `v`: the option value as string, see following table for details
 
-| Key | Value | Note |
+| Key | Note | Value |
 |---|---|---|
 | "bytes_with_size" | Whether packs size before bytes | Can be "true" or "false", defaults to "true" |
 | "data_type" | Parameter type of received callback | Can be "string", "bytes" or "json", defaults to "json" |

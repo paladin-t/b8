@@ -88,6 +88,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 		* [JSON](#json)
 		* [Math](#math)
 			* [Vector and matrix](#vector-and-matrix)
+			* [Intersection detection](#intersection-detection)
 		* [Network](#network)
 		* [System](#system)
 		* [Text](#text)
@@ -1642,6 +1643,49 @@ Besides, these functions are used to do other linear computations:
 * `TRANSPOSE(mat44)`
 * `INVERSE(v4)`, `INVERSE(mat44)`
 
+#### Intersection detection
+
+* `POINT_INTERSECTS_POINT(v2a, v2b)`: detects whether the specific point intersects with another one
+	* `v2a`: the first point
+	* `v2b`: the second point
+	* returns true for intersects
+* `POINT_INTERSECTS_LINE(v2, v4)`: detects whether the specific point intersects with another line
+	* `v2`: the first point
+	* `v4`: the second line; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+* `POINT_INTERSECTS_CIRCLE(v2, v3)`: detects whether the specific point intersects with another circle
+	* `v2`: the first point
+	* `v3`: the second circle; as `VEC3(x, y, radius)`
+	* returns true for intersects
+* `POINT_INTERSECTS_AABB(v2, v4)`: detects whether the specific point intersects with another AABB
+	* `v2`: the first point
+	* `v4`: the second AABB; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+* `LINE_INTERSECTS_LINE(v4a, v4b)`: detects whether the specific line intersects with another one
+	* `v4a`: the first line; as `VEC4(x0, y0, x1, y1)`
+	* `v4b`: the second line; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+* `LINE_INTERSECTS_CIRCLE(v4, v3)`: detects whether the specific line intersects with another circle
+	* `v4`: the first line; as `VEC4(x0, y0, x1, y1)`
+	* `v3`: the second circle; as `VEC3(x, y, radius)`
+	* returns true for intersects
+* `LINE_INTERSECTS_AABB(v4a, v4b)`: detects whether the specific line intersects with another AABB
+	* `v4a`: the first line; as `VEC4(x0, y0, x1, y1)`
+	* `v4b`: the second AABB; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+* `CIRCLE_INTERSECTS_CIRCLE(v3a, v3b)`: detects whether the specific circle intersects with another one
+	* `v3a`: the first circle; as `VEC3(x, y, radius)`
+	* `v3b`: the second circle; as `VEC3(x, y, radius)`
+	* returns true for intersects
+* `CIRCLE_INTERSECTS_AABB(v3, v4)`: detects whether the specific circle intersects with another AABB
+	* `v3`: the first circle; as `VEC3(x, y, radius)`
+	* `v4`: the second AABB; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+* `AABB_INTERSECTS_AABB(v4a, v4b)`: detects whether the specific AABB intersects with another one
+	* `v4a`: the first AABB; as `VEC4(x0, y0, x1, y1)`
+	* `v4b`: the second AABB; as `VEC4(x0, y0, x1, y1)`
+	* returns true for intersects
+
 ### Network
 
 * `NET()`: creates a network object
@@ -1849,7 +1893,7 @@ To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "
 Some words are not implemented for actual functions, yet they are reserved for future. It's suggested not to use them as identifiers:
 
 * `ASYNC`, `AWAIT`, `COST`
-* `COLLIDES`, `INTERSECTS`
+* `COLLIDES`
 * `EVAL`, `FORK`, `JOIN`
 * `FORMAT`
 * `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`

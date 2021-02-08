@@ -1,5 +1,21 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5.4
+
+Driver:
+
+* Added MIDI support
+
+Libraries:
+
+* Added intersection detection functions
+
+Editor:
+
+* Fixed a table splitting issue in the document viewer
+* Fixed a mouse cursor rendering issue of the code editor
+* Fixed a selection issue after typing in the code editor
+
 ### v1.5.3
 
 Libraries:

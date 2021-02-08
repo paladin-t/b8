@@ -63,6 +63,7 @@ You could read this manual in any order as you wish, and get back to lookup for 
 		* [Keyboard](#keyboard)
 	* [Audio](#audio)
 		* [Music](#music)
+		* [MIDI](#midi)
 		* [Sound effects](#sound-effects)
 		* [Speech](#speech)
 
@@ -149,7 +150,7 @@ It refers to the first icon item on the main menu bar, when speaking of clicking
 The limitations of BASIC8 are carefully chosen to make programs way easy and simple:
 
 * Display: 160x128 pixels
-* Audio: 2 music channels, 4 sound effect channels, 1 speech channel
+* Audio: 2 music channels, 1 MIDI channel, 4 sound effect channels, 1 speech channel
 * Code: BASIC (structured/prototype-based/functional)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support
@@ -1064,6 +1065,15 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
        It can be used for a pause as well.
 ~~~~~~~~~~
 
+### MIDI
+
+* `PLAY(midi, loop = FALSE`): plays a MIDI resource
+	* `midi`: the specific MIDI resource to play
+	* returns the estimated duration of the MIDI resource
+* `STOP(midi)`: stops MIDI
+
+MIDI resource is loaded by the `LOAD_RESOURCE` function. MIDI shares same sound font with MML music.
+
 ### Sound effects
 
 Channel is indicated implicitly when play a sound effect; redundant sound effect will be abandoned if all the channels are occupied.
@@ -1893,7 +1903,6 @@ To delete a quantized image asset, click `Disk`, `Delete asset`, then select a "
 Some words are not implemented for actual functions, yet they are reserved for future. It's suggested not to use them as identifiers:
 
 * `ASYNC`, `AWAIT`, `COST`
-* `COLLIDES`
 * `EVAL`, `FORK`, `JOIN`
 * `FORMAT`
 * `LABEL`, `BUTTON`, `MENU`, `MENU_ITEM`

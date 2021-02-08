@@ -24,7 +24,7 @@ It's been a while since we used to enjoy coding and playing straightforward afte
 ### Technical specifications
 
 * Display: 160x128 pixels
-* Audio: 2 music channels, 4 sound effect channels, 1 speech channel
+* Audio: 2 music channels, 1 MIDI channel, 4 sound effect channels, 1 speech channel
 * Code: BASIC (structured/prototype-based/functional)
 * Graphics: up to 65535 drawing commands per cycle
 * Palette: 16 colors with transparency support

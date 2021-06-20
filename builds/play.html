@@ -70,12 +70,14 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 		<div id="page">
 			<div id="content">
 				<canvas id="canvas" width="480" height="384" style="max-width: 100%; height: auto; width: auto\9; margin: 0 auto; display: block;" oncontextmenu="event.preventDefault()" onmousedown="window.focus()"></canvas>
-				<div id="loading"><figure id="spinner"><div class="spinner" /></figure></div>
+				<div id="loading"><figure id="spinner"><div class="spinner"></div></figure></div>
 			</div>
 			<div id="controls" style="display: none;">
 				<p align="center"><input id="fullscreen" type="button" class="button" value="Fullscreen" onclick="Module.requestFullscreen(false);" /></p>
 			</div>
-			<p align="center">Powered by <a href="https://paladin-t.github.io/b8/">BASIC8</a>, disk player build (31)</p>
+			<div id="error" style="display: none;">
+			</div>
+			<p align="center">Powered by <a href="https://paladin-t.github.io/b8/">BASIC8</a>, disk player build (32)</p>
 		</div>
 		<script type="text/javascript">
 			// Initializes the module.
@@ -83,10 +85,10 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 				canvas: document.getElementById('canvas'),
 				spinner: document.getElementById('spinner'),
 				controls: document.getElementById('controls'),
-				print: function(text) {
+				print: function (text) {
 					console.log(text);
 				},
-				setStatus: function(text) {
+				setStatus: function (text) {
 					if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
 					if (text === Module.setStatus.text) return;
 					var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
@@ -105,10 +107,20 @@ Get BASIC8: https://store.steampowered.com/app/767240/
 				}
 			};
 			Module.setStatus('Downloading...');
-			window.onerror = function() {
+			window.onerror = function (message) {
 				Module.setStatus('Exception thrown, see JavaScript console.');
 				Module.spinner.style.display = 'none';
-				Module.setStatus = function(text) { if (text) Module.printErr('[post-exception status] ' + text); };
+				Module.setStatus = function (text) {
+					if (text)
+						Module.printErr('[post-exception status] ' + text);
+				};
+
+				message += '<br>';
+				message += 'Failed to load. Did you open this page by clicking the html file directly?<br>';
+				message += 'Please host it under a web server and try again. <a href="https://mongoose.ws/">Mongoose</a> is recommended for debug hosting.<br>';
+				var error = document.getElementById('error');
+				error.style.display = 'block';
+				error.innerHTML = message;
 			};
 			// Returns whether shows a play button before running.
 			function getPlayButtonEnabled() {

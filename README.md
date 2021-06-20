@@ -64,7 +64,7 @@ BASIC8 is productive. Make redistributable standalone player [as executable bina
 
 | | Minimum | Recommended |
 |----|----|----|
-| OS | Windows 7/8/10 (32/64bit) <br /> MacOS X 10.7 or later (64bit) <br /> Ubuntu (32/64bit) | CosmOS 1.0 |
+| OS | Windows 7 or later (32/64bit) <br /> MacOS X 10.7 or later (64bit) <br /> Ubuntu (32/64bit) | CosmOS 1.0 |
 | CPU | Atom 1.44GHz <br /> Core 2 Duo 1.83GHz | Quantum |
 | RAM | 512MB | 38911GB |
 | GPU | Intel HD | Dark matter |

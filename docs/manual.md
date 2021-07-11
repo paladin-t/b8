@@ -656,11 +656,13 @@ Besides, there is also a `TYPEOF` function, which gets the type of a non-referen
 
 ### Importing another file
 
-The `IMPORT` statement is used to import another source file, as if its content was just written at where the `IMPORT` statement is:
+The `IMPORT` statement is used to import another source file to help organize long programs:
 
 ~~~~~~~~~~bas
 IMPORT "directory/file_name.bas"
 ~~~~~~~~~~
+
+It could be placed in outermost scope only without conditional or other structured trunks. All source files share a same global scope.
 
 ### Coroutine
 

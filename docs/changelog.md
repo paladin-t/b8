@@ -5,6 +5,7 @@
 Driver:
 
 * Added MIDI support
+* Fixed an unexpected error when set SoundFont more than once
 
 Libraries:
 

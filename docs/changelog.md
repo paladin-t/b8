@@ -1,5 +1,21 @@
 <!-- Changes are categorized in community, language, driver, libraries, editor, player. -->
 
+### v1.5.5
+
+Community:
+
+* Fixed a Workshop submission issue after stuck
+
+Editor:
+
+* Added font customization by config for full app
+* Added navigation by keypad support
+* Changed the in-app document reader to support key navigation and sidebar index
+
+Player:
+
+* Added icon, splash, frame customization
+
 ### v1.5.4
 
 Driver:

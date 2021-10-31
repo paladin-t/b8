@@ -108,6 +108,8 @@ You could read this manual in any order as you wish, and get back to lookup for 
 	* [Reserved words](#reserved-words)
 	* [Type names](#type-names)
 
+<!-- End Table of Content -->
+
 [HOME](#welcome-to-basic8)
 
 # Part I. Fundamental

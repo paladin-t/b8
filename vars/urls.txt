@@ -15,4 +15,3 @@ Utilities =
 	Plugins = https://github.com/paladin-t/b8.plugins
 	= end
 Learning = https://steamcommunity.com/app/767240/discussions/4/1696040635922300967/
-Chat on Discord (#basic8, FC) = https://discord.gg/phR38jm

@@ -75,5 +75,6 @@ BASIC8 is productive. Make redistributable standalone player [as executable bina
 | Links | |
 |----|----|
 | Discuss | [Forums](https://steamcommunity.com/app/767240/discussions/) |
+| Chat | [#basic8 on Discord](https://discord.gg/jcT9CXDgHB) |
 | Twitter | [@wangrenxin](https://twitter.com/wangrenxin) |
 | Roadmap | [Tracking boards](https://github.com/paladin-t/b8/projects) |
